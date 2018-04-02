@@ -2,32 +2,21 @@
 
 <div class="conteneur" style="display: flex; justify-content: center; align-items: center;flex-wrap: wrap;">
 
-  <div style="font-size: 8px">
-    <form action="/action_page.php">
-      First name:<br>
-      <input type="text" name="firstname" value="Mickey"><br>
-      Last name:<br>
-      <input type="text" name="lastname" value="Mouse"> <br>
-      <input type="submit" value="Submit">
-    </form>
-    <p > If  click "Submit" button,form-data will be sent<br> to a page called "/action_page.php".</p>
+  <%= render 'blocs', nb: 1, titre: "none", method_controler: projects_testo_path %>
 
-  </div>
+  <%= render 'blocs', nb: 2, titre: "ScrapUrlsPros", method_controler: projects_scraping_sites_pro_path %>
 
+  <%= render 'blocs', nb: 3, titre: "ScrapGoogleCal", method_controler: projects_scraping_google_calendar_path  %>
 
-  <%= render 'blocs', titre: "second" %>
+  <%= render 'blocs', nb: 4, titre: "ScrapFbPros", method_controler: projects_scraping_facebook_path  %>
 
-  <%= render 'blocs', titre: "third" %>
+  <%= render 'blocs', nb: 5, titre: "ScrapPDFstage", method_controler: projects_projectsparsing_stage_CAJ_pdf_path  %>
 
-  <%= render 'blocs', titre: "fourth" %>
+  <%= render 'blocs', nb: 6, titre: "sixth", method_controler: projects_testo_path  %>
 
-  <%= render 'blocs', titre: "fifth" %>
+  <%= render 'blocs', nb: 7, titre: "seventh", method_controler: projects_testo_path  %>
 
-  <%= render 'blocs', titre: "sixth" %>
+  <%= render 'blocs', nb: 8, titre: "eighth", method_controler: projects_testo_path  %>
 
-  <%= render 'blocs', titre: "seventh" %>
-
-  <%= render 'blocs', titre: "eighth" %>
-
-  <%= render 'blocs', titre: "ninth" %>
+  <%= render 'blocs', nb: 9, titre: "ninth", method_controler: projects_testo_path  %>
 </div>

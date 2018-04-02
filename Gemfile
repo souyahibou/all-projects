@@ -6,6 +6,24 @@ git_source(:github) do |repo_name|
 end
 
 
+
+gem 'geocoder'                    #ajout    or gem 'google-maps'
+gem 'paper-pdf-parser'
+
+gem 'activerecord-diff'           #ajout
+gem 'differ'                      #ajout
+
+gem "figaro"			                #ajout
+gem "koala"			                  #ajout  gem facebook
+
+gem "google_drive"                #ajout
+gem 'watir'                       #ajout
+gem 'pry'                	        #ajout
+gem 'nokogiri'
+
+
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
