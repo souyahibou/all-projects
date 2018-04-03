@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'projects/testo'  => 'projects#testo', as: :projects_testo
+  get 'projects/testos'  => 'projects#testo', as: :projects_testo
+
+  get 'projects/scraping_cdiscount'  => 'projects#scrap1', as: :scraping_cdiscount
+
+  get 'projects/reformatage_contact'  => 'projects#reformat2', as: :reformat_contact
+
+  get 'projects/reformatage_keys_env'  => 'projects#reformat', as: :reformat_key_env
+
+  get 'projects/federdo_calculatrice'  => 'projects#federdo_calculatrice'
 
   get 'projects/projectsparsing_stage_CAJ_pdf'
 

@@ -21,8 +21,8 @@ gem 'watir'                       #ajout
 gem 'pry'                	        #ajout
 gem 'nokogiri'
 
-
-
+#require 'gmail'
+gem 'roo'                         #ajout
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

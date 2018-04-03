@@ -1,4 +1,9 @@
-class PDFParseStageCAJProject
+class ScrapCajStage
+      def initialize
+         Struct.new('Lieu',:employeur, :localisation, :etablissement ,:adresse , :adresse_militaire)
+
+      end
+
       def perform
           #reader = PDF::Reader.new("CAJ.pdf");
           reader = PDF::Reader.new("zizani/CAJ.pdf");
@@ -64,8 +69,8 @@ class PDFParseStageCAJProject
                   adresse           =  extraction.call(bloc_lieu, '(Adresse : )'        ,'(Adresse militaire : )')
                   adresse_militaire =  extraction.call(bloc_lieu, '(Adresse militaire : )',-1)
 
-                  Lieu ||= Struct.new(:employeur, :localisation, :etablissement ,:adresse , :adresse_militaire)
-                  hash_lieu = Lieu.new(employeur, localisation, etablissement, adresse , adresse_militaire).to_h
+                  # Lieu ||= Struct.new(:employeur, :localisation, :etablissement ,:adresse , :adresse_militaire)
+                  hash_lieu = Struct::Lieu.new(employeur, localisation, etablissement, adresse , adresse_militaire).to_h
               #bloc contact
               ##--------------------------------------------------------------------------------------------------------------------------------------------------
                   row_fonction = bloc_contact.slice!(extraction.call(bloc_contact, '(Fonction : )', '(Adresse mèl : )', true))   #certaines fonction sont sur 2 lignes
@@ -112,6 +117,7 @@ class PDFParseStageCAJProject
           end
       end
 end
-PDFParseStageCAJProject.new.perform
+
+#ScrapCajStage.new.perform
 # rails g model Stage Nombre_de_places Période Duree Niveau_demandé Descriptif:text Autres_commentaires:text Logement Restauration précision_durée employeur localisation etablissement adresse  adresse_militaire Identité Adresse_mèl Téléphone Fax Fonction
 # rails db:migrate
