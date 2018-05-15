@@ -16,7 +16,7 @@ class ScrapCdiscount
                tab_of_pages << ("https://seller.cdiscount.com/Product/Search/verre%20trempe%20iphone%204/1"+i.to_s)
                page = Nokogiri::HTML(open(tab_of_pages[i-1]))
                tab_of_ean = page.css("html").text         #html tr td:contains("@")  ('.tablePdtTitle').text().match(/[0-9]{13}/g);
-               tab_of_ean_all_pages << tab_of_ean      #'.tablePdtTitle:contains("/[0-9]{13}/g")'
+               tab_of_ean_all_pages << tab_of_ean         #'.tablePdtTitle:contains("/[0-9]{13}/g")'
              end
 
               return tab_of_ean_all_pages

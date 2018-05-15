@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'projects/googleMapsAPI_THP_P43' => 'projects#googleMapsAPI_THP_P43', as: :googleMapsAPI_THP_P43
+
+  get 'projects/scraping_cabinets' => 'projects#scraping_annuaire_cabinets', as: :scraping_annuaire_cabinets
+
   get 'projects/testos'  => 'projects#testo', as: :projects_testo
 
   get 'projects/scraping_cdiscount'  => 'projects#scrap1', as: :scraping_cdiscount

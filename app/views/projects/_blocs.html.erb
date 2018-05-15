@@ -1,8 +1,12 @@
+<%to_del = '/home/syb8/Documents/Projet/All_Projects/zizani/resultat2.csv'%>
 <div >
   <form name= "bloc_projet" accept-charset="UTF-8" method="get" action= <%= method_controler %> >
     <fieldset>
-        <label for="project">Poject n° <%= nb %></label><br>
-        <input type="text" id="project" name="project" placeholder="something.." value= <%= titre %> ><br>
+        <label for="project">Poject n° <%= nb %>,  <%= titre %> ></label><br>
+        Source : <input type="text" id="project" name="project" placeholder="enter rel/abs file path" value= "zizani/file.ext" ><br>
+        <label for="result_path">Results : </label>
+        <input type="text" id="result_path" name="result_path" placeholder="enter file absolute path" value = <%to_del%>  ><br>
+        Tab_data: <input type="text" id="table" name="table" placeholder="enter bdd table" value= "nom_de_la_table" ><br>
         <span id="sms-warning">messaging or ...</span><br>
         <input type="submit" id="submit" value="See Project"  name="commit">
         <%=if false then link_to 'Back', projects_testo_path end%>

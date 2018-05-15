@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-    protect_from_forgery except: :federdo_calculatrice
+    protect_from_forgery except: [:federdo_calculatrice, :googleMapsAPI_THP_P43]
       def init
           @var
       end
@@ -22,8 +22,8 @@ class ProjectsController < ApplicationController
           render :json => @var
       end
 
-      def parsing_stage_CAJ_pdf
-          @var = PDFParseStageCAJProject.new.perform
+      def projectsparsing_stage_CAJ_pdf
+          @var = ScrapCajStage.new(stage_file: params[:project], result_file: params[:result_path], table_name: params[:table]).perform
           render :json => @var
       end
 
@@ -53,4 +53,12 @@ class ProjectsController < ApplicationController
         render :json => @var
       end
 
+      def scraping_annuaire_cabinets
+        @var = ScrapCadremploi.new.perform
+        render :json => @var
+      end
+
+      def googleMapsAPI_THP_P43
+        render layout: false
+      end
 end

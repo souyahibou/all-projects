@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- fichiers CSS -->
+     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+  </head>
+  <body onload="">
+	<!-- <div class="container-fluid"> -->
+	<div class="container" style="display:flex;flex-direction: column;">
+ 	<!-- Content here -->
+      <form action="#" style="display:inline;align-self:center;">
+       <fieldset style="display:flex;flex-direction:column;">
+           <legend>Google maps API:</legend>
+
+           <div class="form-group row" style="display:inline">
+               <label for="label1" style="">The Lattitude:</label>
+               <input type="text" name="lattitude" value="[A-Za-z]+ (regex presence)" id="label1" placeholder="Enter a word or a string" pattern="[0-9.-]+" title="Only letter no special chars no numbers">
+
+               <label for="reverse" style="">The Longitude:</label>
+               <input type="text" name="longitude" value="[A-Za-z0-9]+ (regex presence)" id="label2" placeholder="Enter a word or a string or a number" pattern="[0-9.-]+" title="Only letter no special chars" >
+
+               <input type="button" value="Submit Localization" onclick="localize();" id="button_localize"><br>
+           </div>
+
+           <div class="form-group row" style="display:inline;display:flex;">
+             <label for="labelzoom" style="margin:auto;">The Zoom:</label>
+             <input type="text" name="longitude" value="" id="labelzoom" placeholder="Enter a word or a string or a numbe [-0-9]+ (regex presence)r [-0-9]+ (regex presence)" pattern="[0-9.-]+" title="Only letter no special chars" style="flex:7";>
+             <input type="button" value="Submit Zoom" onclick="zoom();" id="button_zoom"><br>
+           </div>
+
+           <div class="form-group row" style="display:inline;display:flex;">
+             <label for="labelmsg" style="margin:auto;">Any message:</label>
+             <input type="text" name="msg" value="" id="labelmsg" placeholder="Enter a word to display on the marker" pattern="[Ww]+" title="A short message" style="flex:7";>
+             <input type="button" value="Submit msg" onclick="note();" id="button_msg"><br>
+           </div>
+
+       </fieldset>
+     </form>
+     <div id="googleMap1" style="width:100%;height:500px;align-self:center;"></div>
+     <div id="googleMapWiki" style="width:100%;height:500px;align-self:center;">
+          <h2>How to use this Masterpiece GoogleMap API</h2>
+          <ul>
+            <li>1. Enter the Lattitude(-90 up to 90) and Longitude(between -180 up to 180) numbers then click submit.</li>
+            <li>2. Enter a number corresponding to the zoom scale (between 0 up to 22 )</li>
+            <li>3. click anywhere on the map to get the position(GPS coordinates) of an location</li>
+          </ul>
+
+          <h2>Composition of the code</h2>
+          <ul>
+            <li>1. the whole code in on one file </li>
+            <li>2. html(form,label,input,ul/li,legend,fieldset,body,head,tilte,meta,link,html,script tags</li>
+            <li>3. CSS are directly include inner html tag(through style option)</li>
+            <li>4. Script code is important, there is implemented in script tag
+                <ul>
+                  <li>the functions implemented are:  myMap(latti,longi,order,msg)/localize(order, msg, longitude, lattitude)/zoom(msg)/note()/placeMarker(map, location)/test()</li>
+                  <li> myMap(latti,longi,order,msg): contains two events actions performed at clicks: zoom on marker click and the execution of placeMarker function</li>
+                  <li>$(document).ready(main.salut());  -  var main = {salut(){alert("Bonjour");}}  are not usefull</li>
+                </ul>
+            </li>
+            <li>5. Resources: jquery/ajax(useless)/bootstrap/googleapis[maps] </li>
+          </ul>
+     </div>
+
+     <input type="button" value="Submit test" onclick="test();" id="button_test"><br>
+
+</div>
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <!-- Optional JavaScript -->
+    <script type="text/javascript">
+
+
+      var main = {salut(){alert("Bonjour");}        }
+
+
+
+      function myMap(latti,longi,order,msg) {
+        var mapOptions1 = {
+          center: new google.maps.LatLng(latti,longi),
+          zoom:order,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+
+        };
+        var map = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
+        var marker = new google.maps.Marker({position:(new google.maps.LatLng(latti,longi))});
+        marker.setMap(map);
+
+        var infowindow = new google.maps.InfoWindow({content: msg});
+        infowindow.open(map,marker);
+
+        google.maps.event.addListener(marker,'click',function() {      map.setZoom(9);            map.setCenter(marker.getPosition());   });
+        google.maps.event.addListener(map, 'click', function(event) {  placeMarker(map, event.latLng);        });
+
+      }
+
+
+        function localize(order, msg, longitude, lattitude){
+          if ((typeof(longitude) == 'undefined' ) && (typeof(lattitude) == 'undefined')) {
+                longitude = $(':input').filter($('#label1')).prop('value');
+                lattitude = $(':input').filter($('#label2')).prop('value');
+          }
+          if (typeof(order) == 'undefined'){order = 6;}
+          if (typeof(msg) == 'undefined'){msg = "Hello World!";}
+          myMap(longitude, lattitude, order, msg);
+        }
+
+
+        function zoom(msg){
+            ordre = $(':input').filter($("#labelzoom")).prop('value');
+            localize(Number(ordre), undefined);
+        }
+
+        function note(){
+          message = $(':input').filter($("#labelmsg")).prop('value');
+          localize(undefined, String(message));
+        }
+
+        function test(){
+          $(':input').filter($('#label1')).prop('value',14);
+          $(':input').filter($('#label2')).prop('value',-14);
+          $(':input').filter($("#button_localize")).trigger( "click" );
+        }
+
+        function placeMarker(map, location) {
+            var marker = new google.maps.Marker({
+              position: location, map: map      });
+            var infowindow = new google.maps.InfoWindow({
+              content: 'Latitude: ' + location.lat() + '<br>Longitude: ' + location.lng() });
+            infowindow.open(map,marker);
+        }
+
+        $(document).ready(main.salut());
+    </script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM5QMhmPxBB-SJaN9eMMKcqH23Cuitbig&callback=localize"></script>
+  </body>
+</html>
