@@ -5,7 +5,7 @@ class ProjectsController < ApplicationController
       end
 
       def home
-          render :layout => 'application', formats: [:html]
+          render action: 'home',:layout => 'application', formats: [:html]
       end
 
       def scraping_facebook
@@ -63,7 +63,7 @@ class ProjectsController < ApplicationController
       end
 
       def cv
-          # render :layout => 'application', formats: [:pdf]
+        render action: 'cv', :layout => 'application'#, formats: [:pdf]
       end
 
       def main

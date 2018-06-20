@@ -2,36 +2,35 @@
 
 <div class="conteneur" style="display: flex; justify-content: center; align-items: center;flex-wrap: wrap;">
 
-  <iframe src="/*/*" style="border: none;" width="100%" height="100%">
-  </iframe>
 
-  <%= render 'blocs', nb: 1, titre: "none", method_controler: projects_testo_path,                                    bg_color: :cadetblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "" %>
+  <%= render 'blocs', nb: 1, titre: "none", method_controler: projects_testo_path,                                    finish: true, bg_color: :cadetblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "" %>
 
-  <%= render 'blocs', nb: 2, titre: "ScrapUrlsPros", method_controler: projects_scraping_sites_pro_path,              bg_color: :powderblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "faire de la gestion d'erreur" %>
+  <%= render 'blocs', nb: 2, titre: "ScrapUrlsPros", method_controler: projects_scraping_sites_pro_path,              finish: false, bg_color: :powderblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "faire de la gestion d'erreur" %>
 
-  <%= render 'blocs', nb: 3, titre: "ScrapGoogleCal", method_controler: projects_scraping_google_calendar_path,       bg_color: :lightblue, file_source:  "none", file_results: "none",  data_table_bdd: "", message: "<br>create EvenementGoogle activerecord <br> model or reconfigurer avec <br> creation de model dynamique"  %>
+  <%= render 'blocs', nb: 3, titre: "ScrapGoogleCal", method_controler: projects_scraping_google_calendar_path,       finish: false, bg_color: :lightblue, file_source:  "none", file_results: "none",  data_table_bdd: "", message: "<br>create EvenementGoogle activerecord <br> model or reconfigurer avec <br> creation de model dynamique"  %>
 
-  <%= render 'blocs', nb: 4, titre: "ScrapFbPros", method_controler: projects_scraping_facebook_path,                 bg_color: :lightsteelblue, file_source:  "none", file_results: "none",  data_table_bdd: "", message: "<br>create EvenementGoogle activerecord <br> model or reconfigurer avec <br> creation de model dynamique"  %>
+  <%= render 'blocs', nb: 4, titre: "ScrapFbPros", method_controler: projects_scraping_facebook_path,                 finish: false, bg_color: :lightsteelblue, file_source:  "none", file_results: "none",  data_table_bdd: "", message: "<br>create EvenementGoogle activerecord <br> model or reconfigurer avec <br> creation de model dynamique"  %>
 
-  <%= render 'blocs', nb: 5, titre: "ScrapPDFstage", method_controler: projects_projectsparsing_stage_CAJ_pdf_path,   bg_color: :skyblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "<br>Parsing/scrapping catalog PDF CAJ"  %>
+  <%= render 'blocs', nb: 5, titre: "ScrapPDFstage", method_controler: projects_projectsparsing_stage_CAJ_pdf_path,   finish: false, bg_color: :skyblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "<br>Parsing/scrapping catalog PDF CAJ"  %>
 
-  <%= render 'blocs', nb: 6, titre: "ScrapCdiscount", method_controler: scraping_cdiscount_path,                      bg_color: :lightskyblue, file_source:  "none", file_results: "",  data_table_bdd: "none", message: "<br> 2 program de scrapping <br> reconfigurer app :add out file <br> until provided:the_scrap_2.csv may be changed"  %>
+  <%= render 'blocs', nb: 6, titre: "ScrapCdiscount", method_controler: scraping_cdiscount_path,                      finish: true, bg_color: :lightskyblue, file_source:  "none", file_results: "",  data_table_bdd: "none", message: "<br> 2 program de scrapping <br> reconfigurer app :add out file <br> until provided:the_scrap_2.csv may be changed"  %>
 
-  <%= render 'blocs', nb: 7, titre: "conversion_vcf/xls", method_controler: reformat_contact_path,                    bg_color: :deepskyblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: ""  %>
+  <%= render 'blocs', nb: 7, titre: "conversion_vcf/xls", method_controler: reformat_contact_path,                    finish: false, bg_color: :deepskyblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: ""  %>
 
-  <%= render 'blocs', nb: 8, titre: "conversion_string/string", method_controler: reformat_key_env_path,              bg_color: :dodgerblue, file_source:  "présent,_à_reconfigurer", file_results: "présent,_à_reconfigurer",  data_table_bdd: "none", message: ""  %>
+  <%= render 'blocs', nb: 8, titre: "conversion_string/string", method_controler: reformat_key_env_path,              finish: false, bg_color: :dodgerblue, file_source:  "présent,_à_reconfigurer", file_results: "présent,_à_reconfigurer",  data_table_bdd: "none", message: ""  %>
 
-  <%= render 'blocs', nb: 9, titre: "federdo calculatrice", method_controler: projects_federdo_calculatrice_path,     bg_color: :royalblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Complete App: Litle Calculator"  %>
+  <%= render 'blocs', nb: 9, titre: "federdo calculatrice", method_controler: projects_federdo_calculatrice_path,     finish: true, bg_color: :royalblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Complete App: Litle Calculator"  %>
 
-  <%= render 'blocs', nb: 10, titre: "scraping annuaire cabinets", method_controler: scraping_annuaire_cabinets_path, bg_color: :cyan, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: ""  %>
+  <%= render 'blocs', nb: 10, titre: "scraping annuaire cabinets", method_controler: scraping_annuaire_cabinets_path, finish: false, bg_color: :cyan, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: ""  %>
 
-  <%= render 'blocs', nb: 11, titre: "googleMapsAPI_THP_P43", method_controler: googleMapsAPI_THP_P43_path,           bg_color: :aqua, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Operational App: Using google map API"  %>
+  <%= render 'blocs', nb: 11, titre: "googleMapsAPI_THP_P43", method_controler: googleMapsAPI_THP_P43_path,           finish: true, bg_color: :aqua, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Operational App: Using google map API"  %>
 
-  <%= render 'blocs', nb: 12, titre: "CV", method_controler: cv_path,                                                 bg_color: :steelblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using Rails-Latex Gem: My CV:converting latex code <br> from a view into pdf file"  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 12, titre: "CV", method_controler: cv_path,                                                 finish: true, bg_color: :steelblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using Rails-Latex Gem: My CV:converting latex code <br> from a view into pdf file"  %>    <!-- <%= link_to "cv", cv_path%> -->
 
-  <%= render 'blocs', nb: 13, titre: "Nom de couleurs HTML", method_controler: color_names_path,                      bg_color: :cornflowerblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using regex and hashes:<br>Displaying color names"  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 13, titre: "Nom de couleurs HTML", method_controler: color_names_path,                      finish: true, bg_color: :cornflowerblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using regex and hashes:<br>Displaying color names"  %>    <!-- <%= link_to "cv", cv_path%> -->
 
-  <embed src= <%= cv_path %>.pdf width="100%" height="1500" type='application/pdf'>
+  <!-- <embed src= <%= cv_path %> width="100%" height="1500" type='application/pdf'> -->
+  <iframe src=<%= cv_path %>.pdf width="100%" height="1500"> This browser does not support PDFs. Please download the PDF to view it: <a href=<%= cv_path %>.pdf>Download PDF</a></iframe>
 
 </div>
 

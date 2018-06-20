@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'projects/scraping_cabinets' => 'projects#scraping_annuaire_cabinets', as: :scraping_annuaire_cabinets
 
-  get 'projects/testos'  => 'projects#testo', as: :projects_testo
+  get 'projects/testo'  => 'projects#testo', as: :projects_testo
 
   get 'projects/scraping_cdiscount'  => 'projects#scrap1', as: :scraping_cdiscount
 

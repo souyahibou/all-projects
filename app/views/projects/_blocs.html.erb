@@ -3,14 +3,21 @@
   <form name= "bloc_projet" accept-charset="UTF-8" method="get" action= <%= method_controler %> style="background-color:<%= bg_color %>">
     <fieldset>
         <label for="project">Poject n° <%= nb %>,  <%= titre %></label><br>
+
         <%if file_source != "none" then%>    Source : <input type="text" id="project" name="project" placeholder="enter rel/abs file path" value= <%= file_source==""?"zizani/file.ext":file_source %> ><br>  <%end%>
         <%if file_results != "none" then%>
                                               <label for="result_path">Results : </label>
                                               <input type="text" id="result_path" name="result_path" placeholder="enter file absolute path" value = <%= file_results==""?to_del:file_results %>  ><br>
         <%end%>
         <%if data_table_bdd != "none" then%> Tab_data: <input type="text" id="table" name="table" placeholder="enter bdd table" value= "nom_de_la_table" ><br>   <%end%>
+
         <span id="sms-warning">message: <%= (message!="")? message.html_safe : "messaging or ..." %></span><br>
-        <input type="submit" id="submit" value="See Project"  name="commit">
+
+        <input type="submit" id="submit" value="See Project"  name="commit"><br>
+
+        <input type="radio" name="complete" value="Oui" <%=if  finish then "checked" end%>> Operationnal
+        <input type="radio" name="complete" value="Non" <%=if !finish then "checked" end%>> Not Completely<br>
+
         <%=if false then link_to 'Back', projects_testo_path end%>
     </fieldset>
   </form>
