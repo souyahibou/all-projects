@@ -1,0 +1,354 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% "ModernCV" CV and Cover Letter
+% LaTeX Template
+% Version 1.11 (19/6/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Xavier Danaux (xdanaux@gmail.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important note:
+% This template requires the moderncv.cls and .sty files to be in the same
+% directory as this .tex file. These files provide the resume style and themes
+% used for structuring the document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt,a4paper,sans,usenames,dvipsnames]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+\moderncvstyle{classic} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+
+\usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+
+\usepackage[scale=0.94]{geometry} % Reduce document margins
+%\setlength{\hintscolumnwidth}{3cm} % Uncomment to change the width of the dates column
+%\setlength{\makecvtitlenamewidth}{10cm} % For the 'classic' style, uncomment to adjust the width of the space allocated to your name
+\usepackage{array}
+%\usepackage{tabular}
+\usepackage{tabularx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage{textcase}
+\usepackage{enumitem}		%itemisecolor
+\usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[absolute,overlay]{textpos}
+
+\definecolor{blue_spe}{RGB}{56,114,177}
+\usepackage{tikz}			%for skills bar
+
+\usepackage{multirow}
+\usepackage{transparent}
+\usepackage{xargs}
+\newcommandx{\flag}[3][1=0.025, 3=0.01]{\includegraphics[height=#3\textheight, width=#1\textwidth]{<%= File.join(Rails.root,'pictures/') %>#2}}
+
+%----------------------------------------------------------------------------------------
+%	NAME AND CONTACT INFORMATION SECTION
+%----------------------------------------------------------------------------------------
+
+\firstname{\Huge{Souyahibou}} % Your first name
+\familyname{\uppercase{Kanout\'e}} % Your last name
+
+% All information in this block is optional, comment out any lines you don't need
+%\title{Candidat Alternant Master 2 Génie Industriel en Énergétique et Matériaux pour 2018/2019}
+%\title{Candidat Stagiaire Appui à la Recherche et Structuration de la filière Biométhane-DTPA }
+%\title{ Alternant en Master 2 Génie Industriel en Energétique et Matériaux pour 2018/2019}
+\title{Candidat Stagiaire Développeur Backend en Master 1 Génie Industriel en Énergétique et Matériaux ~~~~~~~~~~~~ (3 mois min) à partir de Juin 2018   \vspace*{-0.5cm}}
+\address  {5, la Justice Pourpre~~~~~~~~~}{ 95000, Cergy-Pontoise~~~~~~~}
+\address  {8, Allée de l'Université~~~~~~}{ 92000, Nanterre~~~~~~~~~~~~~~}
+\mobile	  {07 61 29 88 30~~~~~~~~~~~~}
+\email	  {souyahibou@kanoute.pro}
+\extrainfo{23 ans - Permis B~~~~~~~~~~~~~}
+%\homepage{https://www.linkedin.com/pub/daniele-perrotta/64/5b9/794} {staff.org.edu/$\sim$jsmith} % The first argument is the url for the clickable link, the second argument is the url displayed in the template - this allows special characters to be displayed such as the tilde in this example
+%\extrainfo{additional information}
+\photo[70pt][0pt]{<%= File.join(Rails.root,'pictures/PhotoCV1') %>}
+%\photo[70pt][.4pt]{pictures/PhotoCV1}
+%\photo[70pt][.4pt]{pictures/daniele} % The first bracket is the picture height, the second is the thickness of the frame around the picture (0pt for no frame)
+
+%\quote{"Attrait pour la modélisation et la programmation informatique"}
+\quote{Autodidacte, Curieux et Persévérant, \\je m’investis un maximum dans ce que j'entreprends
+%pluridisciplinaire,	Écosensible
+}
+
+%----------------------------------------------------------------------------------------
+
+%  \vspace*{-0.5cm}
+\begin{document}
+
+
+
+\makecvtitle % Print the CV title
+
+
+\vspace*{-1cm}
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+\section{Formations universitaires %\hspace{8pt} \flag[0.1]{2560px-Logo_Paris_Nanterre.jpg}[0.015]}
+}
+%\vspace{4pt}
+%\flushleft{\flag[0.1]{2560px-Logo_Paris_Nanterre.jpg}[0.015]\vspace{8pt}}
+
+%\cventry{ 2016/2018  }{Master g\'enie industriel Parcours: Energ\'etique et Mat\'eriaux}{Universit\'e U-PARIS X}{Nanterre}{}{ 1\`ere Ann\'ee (En formation initiale validation par stage)}
+
+\cventry{2016/2019\\ %\footnotesize{2018/2019}
+					  \footnotesize{2016/2018}}
+{Master g\'enie industriel: Energ\'etique et Mat\'eriaux}{Universit\'e U-PARIS X}{Nanterre}{\flag[0.1]{2560px-Logo_Paris_Nanterre.jpg}[0.015]}{
+	%\textbf{\small{\hspace*{0,2cm}-2\`eme Ann\'ee}} (En formation initiale validation par contrat apprentissage ou stage)\\
+	\textbf{\small{\hspace*{0,2cm}-1\`ere Ann\'ee}} (En formation initiale validation par stage)
+}
+
+\cventry{2012/2016}{Licence (SPI) Sciences pour l'ing\'enieur}{Universit\'e U-PARIS X}{Nanterre}{\flag[0.1]{2560px-Logo_Paris_Nanterre.jpg}[0.015]}{}  % Arguments not required can be left empty
+\cvitem{\footnotesize{2015/2016}}{\textbf{\small{\hspace*{0,2cm}-3\`eme Ann\'ee:}} sp\'ecialit\'e \'energ\'etique en apprentissage.
+Alternant dans le service qualit\'e de Groupe PSA (contexte international).}
+\cvitem{\footnotesize{2014/2015}}{\textbf{\small{\hspace*{0,2cm}-2\`eme Ann\'ee:}} Projet d'\'etude sur les propri\'et\'es physiques de m\'etaux : Mise en place et analyse d'une nouvelle installation d\'eterminant la conductivit\'e thermique et \'electrique sur deux m\'etaux (cuivre et aluminium)
+}
+\cventry{2011/2012}{Bac technologique (STI) option g\'enie \'energ\'etique {(mention bien)}}{Lyc\'ee Galil\'ee}{Cergy}{}{TPE =Dimensionnement et Analyse de syst\`emes de production d'\'energie et R\'eseaux de distribution (chaudi\`ere, panneau hydraulique, groupe froid, VMC)}{}
+%\cventry{}{Licence (SPI) Sciences pour l'ing\'enieur}{Universit\'e U-PARIS X}{Nanterre}{}
+
+
+%\section{Masters Thesis}
+
+%\cvitem{Title}{\emph{Technologies and characterization of ferroelectric polymers for biomedical sensors}}
+%\cvitem{Supervisors}{Professor Antonino Fiorillo}
+%\cvitem{Description}{This thesis is based on the implementation of a temperature sensor.}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Exp\'eriences professionnelles}
+
+\definecolor{java}{RGB}{12,52,61}
+\definecolor{bash}{RGB}{243,146,0}
+\definecolor{android}{RGB}{217,56,18}
+\definecolor{python}{RGB}{51,102,204}
+\definecolor{c}{RGB}{0,153,198}
+\definecolor{other}{RGB}{3,149,222}
+\definecolor{html}{RGB}{16,149,24}
+
+
+
+\cventry{\vspace{-7 mm} \footnotesize{ \flushleft{ Oct. 2017}
+- \vspace{-3 mm} \flushleft{Mars 2018}} \vspace{-5 mm} \center{\flag[0.1]{bilobaba_logo.png}[0.03]}\hspace*{4.5 mm}}{Développeur Web Ruby On Rails}{\textsc{Bilobaba}}{Collaboration}{}{
+\begin{itemize}[label=\Large$\circ$, font= \color{blue_spe}, itemsep=-3pt]
+\item	Contribution à la mise en place d'un site web de proposition/réservation d'événements via l'architecture ruby on rails
+\item	{Programmation de scripts de web scraping (sites pro, Google Calendar, groupes Facebook, catalogues PDF)}				%\vspace*{-0,2cm}
+\item	Manipulation de base de données via postgreSQL;Programmation Front et Back-end de fonctionnalités
+\item	{Utilisation d'outils de travail collaboratif github/git Trello Slack}
+\item	{implémentation d'applications en production sur Heroku}
+\end{itemize}
+}
+
+\cventry{2015 -- 2016 \vspace{5 mm} \center{\flag[0.07]{PSA_Group_2.png}[0.03]}\hspace*{4.5 mm}}{Pilote optimisation de processus informatiques}{\textsc{Groupe PSA}}{V\'elizy}{}{
+\begin{itemize}[label=\Large$\circ$, font= \color{blue_spe}, itemsep=-3pt]
+\item	{Programmation d'outils(macros) VBA Excel de collecte automatique de donn\'ees}				%\vspace*{-0,2cm}
+\item	Gestion de base de donn\'ees de sujet d'incidentologie (éxécution de requêtes, manipulation BDD via Excel)					%\vspace*{-0,2cm}
+\item	Proposition et participation d'optimisation de standards d'am\'elioration continue%\vspace*{-0,2cm}
+\item	Supervision de collaborateurs internationaux sur le respect de standards			%\vspace*{-0,2cm}
+\item	{D\'etermination et mise en place des indicateurs de suivi d'efficacit\'e}		%\vspace*{-0,1cm}
+\item	\'Elaboration/simplification des grilles d'\'evaluation du respect des standards	%\vspace*{-0,2cm}
+\item	Administration de boite mail fonctionnelle de la direction						%\vspace*{-0,2cm}
+\end{itemize}
+}
+
+%
+%\cventry{Nov 2013 --
+%Maggio 2014}{Junior Consulting}{\textsc{Alten SpA}}{Torino}{}{HelpDesk del Sistema Informativo Intesa San Paolo:  Interazione  su Database  (Toad  for Oracle),  utilizzo di Eclipse, utilizzo di Web Service (tramite SOAPUI)  e verifica dei log di Sistema (attraverso  comandi Unix) per l'identificazione dei bug.}
+%
+%\cventry{Luglio 2013 --
+%Luglio 2013}{Ricercatore Industriale}{\textsc{CETMA}}{Brindisi}{}{Studio su dispositivi robotici per la Neuroriabilitazione degli arti superiori in pazienti con esiti stabilizzanti  di gravi cerebrolesioni acquisite  post-stroke  e post-traumatici.   Studio delle soluzioni robotiche presenti allo stato  dell'arte, analisi delle catene cinematiche, delle tecniche e degli algoritmi di controllo. Durata in ore: 100.}
+%
+%\cventry{Giugno 2013 --
+%Luglio 2013}{Matlab Developer}{\textsc{Istituto S. Anna}}{Crotone}{}{Sviluppo e Realizzazione di un Tool in MATLAB per l'analisi di correlati psico-fisiologici nei disordini di coscienza, utilizzati per la Neuroriabilitazione. Durata in ore: 160.}
+%------------------------------------------------
+
+\section{Compétences}
+
+
+\cvitem{Modules}{Energ\'etique (thermodynamique, thermique, climatique, \'exergie, environnement) M\'ecanique (Solides, Fluides, milieux continus) - El\'ements Finis - Qualit\'e - Ondes
+Mat\'eriaux (m\'etalliques, composites) – Couplage, Mesures et Mod\'elisation}
+
+\cvitem{{Certificat}}{ Certificat C2I (Certificat Internet Informatique en 2013)
+\vfill  Développement (Formation intensive The Hacking Project en 2017)
+}
+
+%\cvitem{{Certificat}}{-Certificat C2I (Certificat Internet Informatique en 2013)
+%\vfill -Simulation / Calcul num\'erique / CAO :
+%\vfill     LabVIEW     MATLAB     COMSOL Multiphysics®     ANSYS      CATIA V5
+%\vfill - Bureautique / Programmation / OS / Versioning / Serveur:
+%\vfill     Pack Office     C++     Ruby     VBA     G     Linux(Ubuntu)	Git	Heroku
+%\vfill -Web / BDD (\'ecole The Hacking Project en 2017):
+%\vfill     HTML5/CSS3	JavaScript(jQuery)	Ruby on Rails	    PostgreSQL}
+%\LaTeX
+%----------------------------------------------------------------------------------------
+%	Bloc before MAJ
+%----------------------------------------------------------------------------------------
+
+%\cvitem{Logiciel}{\textsc{LabVIEW     MATLAB}     COMSOL Multiphysics®     ANSYS      						\textsc{CATIA V5}	Pack Office	Git}
+%%\cvitem{Langages:}{     C++     Ruby     VBA     G     Linux(Ubuntu)		Heroku}
+%%\cvitem{Web / BDD:}{HTML5/CSS3	JavaScript(jQuery)	Ruby on Rails	    PostgreSQL}
+%%\cvitem{Cloud Computing}{Heroku}
+%\vspace*{-0,3cm}
+%\setlength{\tabcolsep}{0,4em}
+%\begin{center}
+%	\begin{tabular}{c |c| c| c| c| c}
+%		{Langages ~~~~~~~~~~~~~~~~~~~~}&{Web }&{IDE }&{Technologie/Architecture}&{BDD }&{OS } \\
+%%		\hline
+%		\footnotesize{\textsc{\textbf{C/C++}     \textbf{Ruby}     \textbf{VBA}     G 	LaTeX	SQL}} &
+%		\footnotesize{\textsc{HTML, CSS, JS}} &
+%		\footnotesize{Atom} &
+%		\footnotesize{\textsc{MVC}, \textbf{Ruby on Rails},\textsc{AJAX}, Git } &
+%		\footnotesize{PostgreSQL}&{Windows, Unix}\\
+%	\end{tabular}
+%\end{center}
+%
+
+
+
+
+	%----------------------------------------------------------------------------------------
+%	Bloc MAJ after
+%----------------------------------------------------------------------------------------
+
+	\newcommandx{\tablo}{
+	\begin{tikzpicture}[font=\sffamily\bfseries\large,
+     text=white,
+     border/.style={line width=15mm}]
+\foreach \angle/\col [remember=\angle as \last (initially 0)] in
+    {90/html, 125/cyan, 160/green!30!black, 212/python, 270/orange, 360/android}{
+        \draw[\col, border] (\last:1cm)
+             arc[start angle=\last, end angle=\angle, radius=1cm];
+        \draw[white, line width=1mm] (\last:0.7)--++(\last:1);
+}
+
+\node[line width=0.4mm, draw, circle, minimum width=1cm, white, fill=blue!80] {\scriptsize{\textbf{C/C++}}};
+\node [text width=1.2cm, align=center, font=\sffamily\bfseries\small] at (50:1.2cm) {\scriptsize{VBA Excel}};
+\node[text width=1.2cm, align=center, font=\sffamily\bfseries\small] at (108:1.4cm) {\scriptsize{Latex}};
+\node at (143:1.2cm) {\scriptsize{Bash}};
+\node[text width=1.2cm, align=center, font=\sffamily\bfseries\small] at (185:1.2cm) {\scriptsize{SQL Postgre}};
+\node[text width=1.2cm, align=center, font=\sffamily\bfseries\small] at (240:1.2cm) {\scriptsize{HTML CSS JS}};
+\node at (315:1.23cm)[text width=1cm, align=center, font=\sffamily\bfseries\small] {\scriptsize{\vspace*{-4pt}Ruby \vspace*{-3pt}on Rails}};
+\end{tikzpicture}
+}
+
+\vspace{.2cm}
+\begin{center}
+	\begin{tabular}{p{0.9 cm}  p{4.3 cm} p{0.8cm} p{4cm}  p{3.5cm}  p{0.9cm}  l  }
+		Language & \multirow{5}{*}{\tablo } & Logiciels & & & Langues\\
+		& & &
+		\begin{tikzpicture}
+		\node [anchor=west] at (.05,.4) {\footnotesize{CATIA V5}};
+		\draw [fill=gray!30!white] (0,0) rectangle (2.5,.25);
+		\draw [fill=blue_spe] (0,0) rectangle (.5,.25);
+		\end{tikzpicture}
+		&
+		%\hspace{.5cm}
+		\begin{tikzpicture}
+		\node [anchor=west] at (0.05,0.4) {\footnotesize{ANSYS}};
+		\draw [fill=gray!30!white] (0,0) rectangle (2.5,0.25);
+		\draw [fill=blue_spe] (0,0) rectangle (0.7,0.25);
+		\end{tikzpicture}
+		& &
+		\flag{1200px-Flag_of_the_United_Kingdom.png}	{Anglais :} {Anglais technique}
+
+		\\
+		& & &
+		%\hspace{.5cm}
+		\begin{tikzpicture}
+		\node [anchor=west] at (0.05,0.4) {\footnotesize{COMSOL Multiphysics®}};
+		\draw [fill=gray!30!white] (0,0) rectangle (2.5,0.25);
+		\draw [fill=blue_spe] (0,0) rectangle (1,0.25);
+		\end{tikzpicture}
+		\hspace{.5cm}
+		&
+		\begin{tikzpicture}
+		\node [anchor=west] at (0.05,0.4) {\scriptsize\textsc{LabVIEW, MATLAB}};
+		\draw [fill=gray!30!white] (0,0) rectangle (2.5,0.25);
+		\draw [fill=blue_spe] (0,0) rectangle (1.3,0.25);
+		\end{tikzpicture}
+		& &
+		\flag{1500px-Flag_of_Spain.png} {Espagnol :} {Niveau bac (LV2)} \\
+		& & &
+		%\vspace{.05cm}
+		\begin{tikzpicture}
+		\node [anchor=west] at (0.05,0.4) {\footnotesize{Pack Office}};
+		\draw [fill=gray!30!white] (0,0) rectangle (2.5,0.25);
+		\draw [fill=blue_spe] (0,0) rectangle (1.25,0.25);
+		\end{tikzpicture}
+		&
+		\begin{tikzpicture}
+		\node [anchor=west] at (0.05,0.4) {\footnotesize{MVC, Git, AJAX, Heroku}};
+		\draw [fill=gray!30!white] (0,0) rectangle (2.5,0.25);
+		\draw [fill=blue_spe] (0,0) rectangle (1.7,0.25);
+		\end{tikzpicture}
+		\\	\\
+
+		\end{tabular}
+\end{center}
+
+
+
+
+
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+%\section{Langues}
+%\begin{center}
+%	\begin{tabular}{ c c  p{5em} c c }
+%		\flag{1200px-Flag_of_the_United_Kingdom.png}
+%   		{Anglais :} & {Anglais technique} & &
+%   		\flag{1500px-Flag_of_Spain.png}
+%
+%   		{Espagnol :} & { Niveau bac (LV2)} \\
+%	\end{tabular}
+%\end{center}
+%%\cventry{Anglais :}{Bonnes Notions}{}{}{}{}
+%%\cventry{Espagnol :}{Niveau bac (LV2)}{}{}{}{}
+
+%----------------------------------------------------------------------------------------
+%	COMPUTER SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+
+\section{Centres d'int\'erêt}
+
+\renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
+\centering
+{Sports: pratique hebdomadaire Five (soccer) au sein d'une ligue}\\
+{Passion pour les sciences physiques, la culture num\'erique et l'informatique}\\
+
+%----------------------------------------------------------------------------------------
+%	COMMUNICATION SKILLS SECTION
+%----------------------------------------------------------------------------------------
+
+%\section{Communication Skills}
+%\cvitem{2010}{Oral Presentation at the California Business Conference}
+%\cvitem{2009}{Poster at the Annual Business Conference in Oregon}
+\vspace*{-1.5cm}
+%\transparent{0.3}{{\textcolor{black}{\tiny{ $2^{Ingénieur - Chef de Projet - Bureau d'étude - Recherche et Développement - Bilan R\&D QHSE Bilan Mécanique Systèmes Méthodes Performances- Test Validation- Amélioration continue Qualité Lean Management Manufacturing Santé Environnement Sécurité - MOA Conduite du changement}_{- Stage Alternant Apprenti Responsable Administrateur Gestion Pilotage Assistant Appui chef expert- Moteur Turbo-alternateur - Chargé de Mission - Transition Réseaux Biogaz GNV - Bac+3 Bac+4 Bac+5 - esprit d’analyse synthèse Autonomie polyvalence Rigueur - Programmation Developpement}$}}}}
+\transparent{0}{{\textcolor{black}{\tiny{ {Ingénieur - Chef de Projet - Bureau d'étude - Recherche et Développement - Bilan R\&D QHSE Bilan Mécanique Systèmes Méthodes Performances- Test Validation- Amélioration continue Qualité Lean Management Manufacturing Santé Environnement Sécurité - MOA Conduite du changement}{- Stage Alternant Apprenti Responsable Administrateur Gestion Pilotage Assistant Appui chef expert- Moteur Turbo-alternateur - Chargé de Mission - Transition Réseaux Biogaz GNV - Bac+3 Bac+4 Bac+5 - esprit d’analyse synthèse Autonomie polyvalence Rigueur - Programmation Developpement}}}}}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

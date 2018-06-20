@@ -1,0 +1,29 @@
+<h2 style="text-align:center;">    <%= link_to "Afficher le CV", cv_path(:format => :pdf) %>  </h2>
+
+<h3 style="text-align:center;">    <%= link_to "REDIRECTION VERS PAGE PRINCIPAL", projects_home_url %>  </h3>
+
+<div id="compte_a_rebours" style="text-align:center;"><noscript>Compte à rebour avant l'affichage du pdf.</noscript></div>
+
+<div id="stop_compte" style="text-align:center;" onclick="stop_compte();">STOP</div>
+
+<button type="button" style="text-align:center;" onclick="stop_compte();"> STOP </button>
+
+
+<!-- Optional JavaScript -->
+<script type="text/javascript">
+var main = {salut(){document.getElementsByTagName("a")[0].click();}}
+var stop = false
+function compte_a_rebours(secondes){
+    var compte_a_rebours = document.getElementById("compte_a_rebours");
+    var prefixe = "Compte à rebours terminé dans ";
+    var mot_seconde = "secondes";
+    var secondes = secondes-1;
+
+    if (secondes < 0 || stop){ compte_a_rebours.innerHTML = 'Compte à rebours terminé.';main.salut(); }
+    else {                     compte_a_rebours.innerHTML = prefixe + secondes + ' ' + mot_seconde;      var actualisation = setTimeout("compte_a_rebours(" + secondes + ");", 1000);}
+}
+
+function stop_compte(){ stop = true;}
+
+compte_a_rebours(7)
+</script>

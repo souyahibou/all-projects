@@ -61,12 +61,12 @@
             <li>3. CSS are directly include inner html tag(through style option)</li>
             <li>4. Script code is important, there is implemented in script tag
                 <ul>
-                  <li>the functions implemented are:  myMap(latti,longi,order,msg)/localize(order, msg, longitude, lattitude)/zoom(msg)/note()/placeMarker(map, location)/test()</li>
+                  <li>the functions implemented are:  myMap(latti,longi,order,msg)-localize(order, msg, longit, lattit)-zoom(msg)-note()-placeMarker(map, loca°)-test()</li>
                   <li> myMap(latti,longi,order,msg): contains two events actions performed at clicks: zoom on marker click and the execution of placeMarker function</li>
                   <li>$(document).ready(main.salut());  -  var main = {salut(){alert("Bonjour");}}  are not usefull</li>
                 </ul>
             </li>
-            <li>5. Resources: jquery/ajax(useless)/bootstrap/googleapis[maps] </li>
+            <li>5. Resources: jquery/ajax(useless)/bootstrap/googleapis[maps] <br> https://www.w3schools.com/graphics/google_maps_reference.asp </li>
           </ul>
      </div>
 
@@ -96,17 +96,18 @@
 
         };
         var map = new google.maps.Map(document.getElementById("googleMap1"), mapOptions1);
+
+      if (msg != undefined){
         var marker = new google.maps.Marker({position:(new google.maps.LatLng(latti,longi))});
         marker.setMap(map);
 
         var infowindow = new google.maps.InfoWindow({content: msg});
         infowindow.open(map,marker);
-
+      }
         google.maps.event.addListener(marker,'click',function() {      map.setZoom(9);            map.setCenter(marker.getPosition());   });
         google.maps.event.addListener(map, 'click', function(event) {  placeMarker(map, event.latLng);        });
 
       }
-
 
         function localize(order, msg, longitude, lattitude){
           if ((typeof(longitude) == 'undefined' ) && (typeof(lattitude) == 'undefined')) {
@@ -116,6 +117,10 @@
           if (typeof(order) == 'undefined'){order = 6;}
           if (typeof(msg) == 'undefined'){msg = "Hello World!";}
           myMap(longitude, lattitude, order, msg);
+        }
+
+        function initmap(){
+          myMap(0, 0, 2, undefined)
         }
 
 
@@ -145,6 +150,6 @@
 
         $(document).ready(main.salut());
     </script>
-    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM5QMhmPxBB-SJaN9eMMKcqH23Cuitbig&callback=localize"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM5QMhmPxBB-SJaN9eMMKcqH23Cuitbig&callback=initmap"></script>
   </body>
 </html>

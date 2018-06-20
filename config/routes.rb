@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'projects/displaying_color_names' => 'projects#displaying_color_names', as: :color_names
+
+  get 'projects/cv' => 'projects#cv', as: :cv
+
   get 'projects/googleMapsAPI_THP_P43' => 'projects#googleMapsAPI_THP_P43', as: :googleMapsAPI_THP_P43
 
   get 'projects/scraping_cabinets' => 'projects#scraping_annuaire_cabinets', as: :scraping_annuaire_cabinets
@@ -23,6 +27,8 @@ Rails.application.routes.draw do
   get 'projects/scraping_sites_pro'
 
   get 'projects/home'
+
+  root to: 'projects#main'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

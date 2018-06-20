@@ -1,10 +1,11 @@
 class ProjectsController < ApplicationController
     protect_from_forgery except: [:federdo_calculatrice, :googleMapsAPI_THP_P43]
-      def init
+      def initialize
           @var
       end
 
       def home
+          render :layout => 'application', formats: [:html]
       end
 
       def scraping_facebook
@@ -16,7 +17,6 @@ class ProjectsController < ApplicationController
           @var = ScrapGoogleCal.new.perform
           render :json => @var
       end
-
       def scraping_sites_pro
           @var = ScrapUrlsPros.new.perform
           render :json => @var
@@ -60,5 +60,18 @@ class ProjectsController < ApplicationController
 
       def googleMapsAPI_THP_P43
         render layout: false
+      end
+
+      def cv
+          # render :layout => 'application', formats: [:pdf]
+      end
+
+      def main
+        render :home
+      end
+
+      def displaying_color_names
+          @var = ColorNames.new.res
+          @var2 = ColorNames.new.res2
       end
 end

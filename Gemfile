@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'rails-latex'                 #ajout
 
 gem 'geocoder'                    #ajout    or gem 'google-maps'
 gem 'paper-pdf-parser'
