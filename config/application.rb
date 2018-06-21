@@ -13,6 +13,7 @@ module AllProjects
     config.assets.paths << Rails.root.join("app", "assets", "fonts")    #added
     # Enable the asset pipeline
     config.assets.enabled = true    #added
+    config.assets.initialize_on_precompile = false #added
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
