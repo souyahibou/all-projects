@@ -1,8 +1,8 @@
 class ScrapCajStage
       def initialize( stage_file: nil, table_name: nil, result_file: nil )
-         @file_stage_path  =  stage_file || 'zizani/CAJ.pdf'
+         @file_stage_path  =  stage_file ||  File.join(Rails.root,'app/assets/zizani/CAJ.pdf')
          @table_name       =  table_name || 'nom_de_la_table'
-           @file_result_path = result_file || '/home/syb8/Bureau/results1.csv'
+         @file_result_path =  result_file || File.join(Rails.root,'app/assets/zizani/results1.csv')
          Struct.new('Lieu',:employeur, :localisation, :etablissement ,:adresse , :adresse_militaire)
          #Create one table 'Stage' or create BDD dynamicly
       end

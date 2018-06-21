@@ -1,10 +1,10 @@
-<%to_del = '/home/syb8/Documents/Projet/All_Projects/zizani/resultat2.csv'%>
+<%to_del =Rails.root,'app/assets/zizani/results2.csv'%>
 <div >
   <form name= "bloc_projet" accept-charset="UTF-8" method="get" action= <%= method_controler %> style="background-color:<%= bg_color %>">
     <fieldset>
         <label for="project">Poject n° <%= nb %>,  <%= titre %></label><br>
 
-        <%if file_source != "none" then%>    Source : <input type="text" id="project" name="project" placeholder="enter rel/abs file path" value= <%= file_source==""?"zizani/file.ext":file_source %> ><br>  <%end%>
+        <%if file_source != "none" then%>    Source : <input type="text" id="project" name="project" placeholder="enter rel/abs file path" value= <%= file_source==""?"app/assets/zizani/file.ext":file_source %> ><br>  <%end%>
         <%if file_results != "none" then%>
                                               <label for="result_path">Results : </label>
                                               <input type="text" id="result_path" name="result_path" placeholder="enter file absolute path" value = <%= file_results==""?to_del:file_results %>  ><br>
