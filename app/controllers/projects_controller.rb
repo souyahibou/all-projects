@@ -49,8 +49,8 @@ class ProjectsController < ApplicationController
       end
 
       def testo
-        @var = (1..5).to_a
-        render :json => @var
+        # @var = (1..5).to_a
+        # render :json => @var
       end
 
       def scraping_annuaire_cabinets
