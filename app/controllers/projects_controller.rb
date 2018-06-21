@@ -51,6 +51,8 @@ class ProjectsController < ApplicationController
       def testo
         # @var = (1..5).to_a
         # render :json => @var
+        render action: 'testo', :layout => 'application', formats: [:pdf]
+
       end
 
       def scraping_annuaire_cabinets
