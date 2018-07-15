@@ -76,4 +76,11 @@ class ProjectsController < ApplicationController
           @var = ColorNames.new.res
           @var2 = ColorNames.new.res2
       end
+
+      def scraping_image_tag_to_download
+          ScrapImageHtmlTag
+          @var = Dir.glob(["images/*.jpg", "images/*.png", "images/*"]) 
+          render :json => @var
+      end
+
 end

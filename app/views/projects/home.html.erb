@@ -29,6 +29,9 @@
 
   <%= render 'blocs', nb: 13, titre: "Nom de couleurs HTML", method_controler: color_names_path,                      finish: true, bg_color: :cornflowerblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using regex and hashes:<br>Displaying color names"  %>    <!-- <%= link_to "cv", cv_path%> -->
 
+  <%= render 'blocs', nb: 14, titre: "Scraping & Donwload des tag img", method_controler: download_img_path, finish: true, bg_color: :cornflowerblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using net/http & nokogiri gems and Dir & File Objects"  %>    <!-- <%= link_to "cv", cv_path%> -->
+
+scraping_image_tag_to_download
   <!-- <embed src= <%= cv_path %> width="100%" height="1500" type='application/pdf'> -->
   <iframe src=<%= cv_path %>.pdf width="100%" height="1500"> This browser does not support PDFs. Please download the PDF to view it: <a href=<%= cv_path %>.pdf>Download PDF</a></iframe>
 

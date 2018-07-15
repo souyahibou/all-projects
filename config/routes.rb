@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'projects/scraping_image_tag' => 'projects#scraping_image_tag_to_download', as: :download_img
+
   get 'projects/displaying_color_names' => 'projects#displaying_color_names', as: :color_names
 
   get 'projects/cv' => 'projects#cv', as: :cv
