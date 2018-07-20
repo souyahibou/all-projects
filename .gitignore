@@ -21,5 +21,7 @@
 # Ignore application configuration
 /config/application_fb.yml
 /All_Projects/images/
+/images_slack
+/slack.csv
 
 #see zizani directory

@@ -41,7 +41,7 @@ Procédure pour chaque nouveau projet
 
 
 --------------------------------------------------------------------------------------
-Le Projet ScrapImageHtmlTag:   Le 15:07/2018
+Le Projet ScrapImageHtmlTag:   Le 15/07/2018
 Ce script permet à partir d'une Url d'un site donnée:
 1. de récupérer les Url des valise HTML img
 2. de les télécharger dans un dossier images crée si non-éxistant
@@ -55,4 +55,25 @@ Ce script permet à partir d'une Url d'un site donnée:
 
 3. ajouter le dossier des images au git ignore
 4. Gems/Objects used:  ['net/http' , 'nokogiri']/[Dir, File]
+-------------------------------------------------------------------------------------
+Le projet ScrapSlackMbr: Le 19/07/2018
+Ce script permet de récupérer les informations et images de tous les membres du slack THP:
+1. récupère le pseudo/nom-prénom/statut/identifiant/url_images depuis le jobboard slack THP
+2. sauvegarde le résultat en base de données et export dans un fichier de format csv avec une éxécution de Commande bash %x!cmd!
+
+3. ajouter le dossier images_slack au git ignore
+4. Gems/Object useed: [Watir PG CSV Net::HTTP]/[Proc Struct File Rails URI Dir]
+
+  def Scrap_members_from_board
+  def save_on_database_and_csv_file(tab_membre)
+  def downloading_images_members
+                        ScrapUrlsPros.set_browser_session
+                        ScrapImageHtmlTag.downloader
+5. files generated: dossier contenant images_slack et fichier csb mbrs slack.csv
+6. a faire gerer les quelque bug de scrap()/faire method initialize avec IOput/parametre app/view/controller pour récupérer des arguments de fct°
+
+"Completed 500 Internal Server Error in 59168ms
+Selenium::WebDriver::Error::StaleElementReferenceError (The element reference of <a class="c-unified_member c-unified_member--large c-unified_member--linked member_preview_link focus-ring" href="/team/U76U5TEVB"> is stale; either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed):"
+to solve with on error resume next
+
 -------------------------------------------------------------------------------------

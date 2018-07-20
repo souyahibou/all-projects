@@ -7,12 +7,12 @@ BEGIN {   puts "Initialition du programme de Scrap d'images"}
 class ScrapImageHtmlTag                 #add
 
     #IO
-    def initialize                     #add
-        @XPATH = "//img[@data-normal]"
-        @FILTRE = 'data-normal'
-        @DOSSIER = "images"
-        @SITE_URL_COMMUM = "https://image.slidesharecdn.com/slideshowpwp2018revealvf-180601125402/95/paris-workplace-ifopsfl-2018-reveal-1-638.jpg"
-        @URL = 'https://www.slideshare.net/slideshow/embed_code/key/adtv03zfqkcwmj'
+    def initialize(xpath = nil,filtre = nil,dossier = nil,url_com = nil,url = nil)                    #add
+        @XPATH = xpath            || "//img[@data-normal]"
+        @FILTRE = filtre          || 'data-normal'
+        @DOSSIER = dossier        ||"images"
+        @SITE_URL_COMMUM = url_com|| "https://image.slidesharecdn.com/slideshowpwp2018revealvf-180601125402/95/paris-workplace-ifopsfl-2018-reveal-1-638.jpg"
+        @URL = url                ||'https://www.slideshare.net/slideshow/embed_code/key/adtv03zfqkcwmj'
         # peut etre redefinir la fonction donwloder | ∀ image, le host soit charger.
     end
 
@@ -20,7 +20,7 @@ class ScrapImageHtmlTag                 #add
     def get_html(url)
       uri = URI(url)
       response = Net::HTTP.start(uri.host, uri.port,
-                                 :use_ssl => uri.scheme == 'https') do |http|
+                                  :use_ssl => uri.scheme == 'https') do |http|
         resp = http.get(uri.path)
         case resp
         when Net::HTTPSuccess then
@@ -44,7 +44,7 @@ class ScrapImageHtmlTag                 #add
     end
 
     def downloader(url, paths)
-      host_uri = URI(@SITE_URL_COMMUM)                          #modified
+      host_uri = URI(@SITE_URL_COMMUM)                          #modified ex URI(url)
       Dir.mkdir(@DOSSIER) unless Dir.exist?(@DOSSIER)          #modified
       Net::HTTP.start(host_uri.host, host_uri.port,
                         :use_ssl => host_uri.scheme == 'https') { |http|
@@ -87,4 +87,4 @@ class ScrapImageHtmlTag                 #add
     end
 end
 
-ScrapImageHtmlTag.new.perform        #add
+#ScrapImageHtmlTag.new.perform        #add

@@ -78,8 +78,13 @@ class ProjectsController < ApplicationController
       end
 
       def scraping_image_tag_to_download
-          ScrapImageHtmlTag
-          @var = Dir.glob(["images/*.jpg", "images/*.png", "images/*"]) 
+          ScrapImageHtmlTag.new.perform
+          @var = Dir.glob(["images/*.jpg", "images/*.png", "images/*"])
+          render :json => @var
+      end
+
+      def scraping_membres_THP_by_slack
+          @var = ScrapSlackMbr.new.perform
           render :json => @var
       end
 
