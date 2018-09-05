@@ -1,0 +1,47 @@
+<h1 style="text-align:center">Nom des Coleurs HTML</h1>
+
+<div class="" style="display: flex; justify-content: center;">
+      <table>
+          <tr> <th colspan="3"><h2>Classed by names</h2> </th> </tr>
+          <tbody>
+                  <tr>
+                      <th style="width:25%">Color Name</th>
+                      <th style="width:15%">HEX</th>
+                      <th style="width:43%">Color</th>
+                  </tr>
+
+              <% @var.each do |color_selected|%>
+                  <tr>
+                      <td><a target="_blank" href="#"><%= color_selected[0] %></a>&nbsp;</td>
+                      <td><a target="_blank" href="#"><%= color_selected[1] %></a></td>
+                      <td style="background-color:<%= color_selected[1] %>">&nbsp;</td>
+                  </tr>
+              <% end %>
+          </tbody>
+      </table>
+
+      <div class="" style="flex-grow: 1"> </div>
+
+      <table>
+          <tr> <th colspan="3"><h2>Classed by names</h2> </th> </tr>
+          <% @var2.each do |group_name, group_colors|%>
+          <tbody>
+                  <tr>
+                      <th style="width:25%">Color Name</th>
+                      <th style="width:15%">HEX</th>
+                      <th style="width:43%">Color</th>
+                  </tr>
+
+              <% group_colors.each do |color_name, color_code|%>
+                  <tr>
+                      <td><a target="_blank" href="#"><%= color_name %></a>&nbsp;</td>
+                      <td><a target="_blank" href="#"><%= color_code %></a></td>
+                      <td style="background-color:<%= color_code %>">&nbsp;</td>
+                  </tr>
+              <% end %>
+          </tbody>
+          <% end %>
+      </table>
+</div>
+
+<!-- faire une boucle for pour toutes les couleur et ajour un tri pour classer par ordre alpha ou par valeur hexa -->

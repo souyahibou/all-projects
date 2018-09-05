@@ -1,0 +1,7 @@
+*.csv
+*.xlsx
+moderncv/
+log/
+tmp/
+public/
+app/assets/zizani/
