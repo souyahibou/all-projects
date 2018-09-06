@@ -120,6 +120,53 @@ Ce script permet de scrapper toutes les VCs de france du site journal du net:
 
 
 
+
+-------------------------------------------------------------------------------------
+To complete push on heroku:			
+1. install Yarn
+2. set/add in config\application.rb => config.assets.initialize_on_precompile = false
+3. run command : RAILS_ENV=production bundle exec rake assets:precompile
+4. git commit -a -m "msg"
+5. git push heroku master
+6. heroku open
+
+
+
+
+..................................................
+to complete
+
+Basics:
+heroku create
+git push heroku master
+[export BROWSER='/mnt/c/Program Files (x86)/Opera/launcher.exe']    in linux subsytem
+[echo "export BROWSER='/mnt/c/Program Files (x86)/Opera/launcher.exe'" >> ~/.bashrc] semems useless
+heroku open
+
+See the logs:
+heroku logs
+heroku logs -n 200                              display nbr lines
+heroku logs --tail                              logs in real time
+heroku logs --dyno (router|web|worker)          to filter
+heroku logs --source app                        to filter
+
+heroku ps[:scale web=1]                         to see/set procfile
+
+Run the app locally:
+which psql                                      check if postgresql is installed
+bundle install
+bundle exec rake db:create db:migrate
+heroku local web
+Open http://localhost:5000
+  then other times
+bundle install
+heroku local
+Open http://localhost:5000
+
+heroku addons:create
+heroku addons
+heroku addons:open
+
 -------------------------------------------------------------------------------------
 Linux subsystem Configuation:			https://www.mirrorcommunications.com/blog/how-to-install-ruby-on-rails-on-windows-10-with-postgresql
 					https://medium.com/@colinrubbert/installing-ruby-on-rails-in-windows-10-w-bash-postgresql-e48e55954fbf
