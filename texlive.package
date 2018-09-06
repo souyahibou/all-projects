@@ -1,12 +1,10 @@
 environ
 latexmkenviron
 latexmk
-
 collection-bibtexextra
 collection-fontsextra
 collection-langgerman
 collection-xetex
-
 article
 mdwfonts
 if­sym
@@ -15,7 +13,6 @@ textcomp
 mathptmx
 tocloft
 enumitem
-
 usenames
 dvipsnames
 moderncv
