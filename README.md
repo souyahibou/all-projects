@@ -156,16 +156,30 @@ Run the app locally:
 which psql                                      check if postgresql is installed
 bundle install
 bundle exec rake db:create db:migrate
+[npm install]                                   seems useless
+touch Procfile
+echo "web: bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}" >> Profile
 heroku local web
 Open http://localhost:5000
   then other times
-bundle install
-heroku local
-Open http://localhost:5000
+    bundle install
+    heroku local
+    Open http://localhost:5000
 
 heroku addons:create
 heroku addons
 heroku addons:open
+
+Consoles
+heroku run rails console
+heroku run bash
+
+heroku config
+heroku config:set VAR=val
+
+heroku run rake db:migrate          to connect to the database
+heroku pg
+heroku pg:psql
 
 -------------------------------------------------------------------------------------
 Linux subsystem Configuation:			https://www.mirrorcommunications.com/blog/how-to-install-ruby-on-rails-on-windows-10-with-postgresql

@@ -1,3 +1,15 @@
 environ
 latexmkenviron
 latexmk
+collection-bibtexextra
+collection-fontsextra
+collection-langgerman
+collection-xetex
+article
+mdwfonts
+if­sym
+amssymb
+textcomp
+mathptmx
+tocloft
+enumitem
