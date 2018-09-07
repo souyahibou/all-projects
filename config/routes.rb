@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'projects/testo1'  => 'projects#testo1', as: :projects_testo1
+  get 'projects/testo2'  => 'projects#testo2', as: :projects_testo2
+  get 'projects/testo3'  => 'projects#testo3', as: :projects_testo3
+  get 'projects/testo4'  => 'projects#testo4', as: :projects_testo4
+  get 'projects/testo5'  => 'projects#testo5', as: :projects_testo5
+  get 'projects/testo6'  => 'projects#testo6', as: :projects_testo6
+  get 'projects/testo7'  => 'projects#testo7', as: :projects_testo7
+
   get 'projects/scraping_annuaire_startups' => 'projects#scraping_annuaire_startups', as: :scraping_annuaire_startups
 
   get 'projects/scraping_annuaire_cabinets2' => 'projects#scraping_annuaire_cabinets2', as: :scraping_annuaire_cabinets2
