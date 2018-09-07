@@ -1,1 +1,0 @@
-environ latexmk collection-bibtexextra collection-fontsextra collection-langgerman collection-xetex collection-fontsrecommended moderncv fontawesome if­sym tocloft babel textcase enumitem textpos multirow xargs textcomp mathptmx psnfss tools graphics greek-inputenc greek-fontenc
