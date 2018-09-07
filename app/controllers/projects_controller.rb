@@ -93,6 +93,21 @@ class ProjectsController < ApplicationController
         # render :json => @var
         render action: 'testo7', :layout => 'application', formats: [:pdf]
       end
+      def testo8
+        # @var = (1..5).to_a
+        # render :json => @var
+        render action: 'testo8', :layout => 'application', formats: [:pdf]
+      end
+      def testo9
+        # @var = (1..5).to_a
+        # render :json => @var
+        render action: 'testo9', :layout => 'application', formats: [:pdf]
+      end
+      def testo0
+        # @var = (1..5).to_a
+        # render :json => @var
+        render action: 'testo0', :layout => 'application', formats: [:pdf]
+      end
 
       def scraping_annuaire_cabinets
         @var = ScrapCadremploi.new.perform

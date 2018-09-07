@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'projects/testo5'  => 'projects#testo5', as: :projects_testo5
   get 'projects/testo6'  => 'projects#testo6', as: :projects_testo6
   get 'projects/testo7'  => 'projects#testo7', as: :projects_testo7
+  get 'projects/testo8'  => 'projects#testo8', as: :projects_testo8
+  get 'projects/testo9'  => 'projects#testo9', as: :projects_testo9
+  get 'projects/testo0'  => 'projects#testo0', as: :projects_testo0
 
   get 'projects/scraping_annuaire_startups' => 'projects#scraping_annuaire_startups', as: :scraping_annuaire_startups
 
