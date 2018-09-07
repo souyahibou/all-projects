@@ -10,4 +10,4 @@ graphics
 greek-fontenc
 greek-inputenc
 enumitem
-collection-xetex collection-fontsrecommended fontawesome ifsym tocloft
+environ latexmk collection-bibtexextra collection-langgerman collection-xetex collection-fontsrecommended fontawesome ifsym tocloft
