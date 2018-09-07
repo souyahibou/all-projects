@@ -7,7 +7,6 @@ collection-xetex
 collection-fontsrecommended
 moderncv
 fontawesome
-
 if­sym
 tocloft
 babel
@@ -18,7 +17,6 @@ multirow
 xargs
 textcomp
 mathptmx
-
 psnfss
 tools
 graphics
