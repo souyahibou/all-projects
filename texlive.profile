@@ -1,6 +1,6 @@
 selected_scheme scheme-small
 binary_x86_64-linux 1
-collection-fontutils 1
+collection-fontutils 0
 collection-latex 1
 option_adjustrepo 1
 option_autobackup 0
