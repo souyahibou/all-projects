@@ -12,3 +12,4 @@ greek-inputenc
 enumitem
 environ latexmk collection-bibtexextra collection-langgerman collection-xetex collection-fontsrecommended fontawesome ifsym tocloft
 etoolbox unicode-math microtype fontspec xcolor pgf lipsum
+xkeyval
