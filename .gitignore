@@ -1,6 +1,32 @@
 *.csv
 *.xlsx
+
 moderncv/
-log/
-tmp/
+
+
+
+# Ignore bundler config.
+/.bundle
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
+
+/node_modules
+/yarn-error.log
+
+.byebug_history
+
+# Ignore application configuration
+/config/application_fb.yml
+/All_Projects/images/
+/images_slack
+/slack.csv
+
+#see zizani directory
 app/assets/zizani/
+!app/assets/zizani/pictures
+!app/assets/zizani/*.pdf
+!app/assets/zizani/*.json
