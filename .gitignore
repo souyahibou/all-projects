@@ -1,10 +1,3 @@
-*.csv
-*.xlsx
-
-moderncv/
-
-
-
 # Ignore bundler config.
 /.bundle
 
@@ -19,14 +12,19 @@ moderncv/
 
 .byebug_history
 
-# Ignore application configuration
+# Ignore application configuration data generated
 /config/application_fb.yml
 /All_Projects/images/
 /images_slack
 /slack.csv
+*.csv
+*.xlsx
+
+moderncv/
+
 
 #see zizani directory
-#app/assets/zizani/
-#!app/assets/zizani/pictures
-#!app/assets/zizani/*.pdf
-#!app/assets/zizani/*.json
+/app/assets/zizani/*
+!/app/assets/zizani/pictures
+!/app/assets/zizani/*.pdf
+!/app/assets/zizani/*.json

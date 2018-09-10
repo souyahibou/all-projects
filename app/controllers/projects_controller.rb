@@ -51,12 +51,7 @@ class ProjectsController < ApplicationController
       def testo
         # @var = (1..5).to_a
         # render :json => @var
-        render action: 'testo', :layout => 'application', formats: [:pdf]
-      end
-      def testo
-        # @var = (1..5).to_a
-        # render :json => @var
-        render action: 'testo', :layout => 'application', formats: [:pdf]
+        render action: 'testo', :layout => 'application', formats: [:html]
       end
       def testo1
         # @var = (1..5).to_a
