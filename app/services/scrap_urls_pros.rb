@@ -3,19 +3,33 @@ require "googleauth"
 
 class ScrapUrlsPros #< Thor
 
+      # def set_google_drive_session  #connexion_to_GoogleDrive
+      # def set_browser_session       #exe  new_browser
+      # def set_first_connexion       #activate_first_connexion_GoogleDrive connexion_to_GoogleDrive("first")
+      # def set_refresh_connexion     #Pour reactiver la connection à google drive si non la premiere connexion exe connexion_to_GoogleDrive("refresh")
+      # def initialize                #réglage de toute les configuration externes(keys(GoogleDrive)), des nom&&nombre des colonnes
+
+
       # public
-      #   scrap_links_for_all_webpages
-      #   scrap_soft_link(link)
-      #   scrap_justdancewithlife_link(link)
+      #   scrap_links_for_all_webpages    exe scrap_soft_link or scrap_hard_links and return one tab of hash
+      #   scrap_soft_link(link)           use nokogiri
+      #   scrap_hard_links()              use watir
+      #   scrap_justdancewithlife_link(link) use watir specificly for extact data in googleagenda
       #
-      #   get_all_professors_urls
-      #   comp_data_in_SpreadSheet(table_data)
-      #   save_from_on_GoogleDrive(table_data)
-      #
+      #   get_all_professors_urls               recupere les urls a scraper dans un spreadsheets
+      #   comp_data_in_SpreadSheet(table_data)  test if one scrap has change(new event) and return table_data modified or not if has some change
+      #   save_from_on_GoogleDrive(table_data)  save tab of hash in spreadsheets(only the new hash(lines(event)) if not first time)
+      #   perform
+                   # tab = [];
+                   # list_urls = get_all_professors_urls
+                   # tab = scrap_links_for_all_webpages(list_urls);
+                   # comp_data_in_SpreadSheet(tab);
+                   # save_from_on_GoogleDrive(tab);
+                   # return tab;
       # private
-      #   new_browser
-      #   connexion_to_GoogleDrive(type_connex)
-      #   column_code_of_hash_keys
+      #   new_browser                             configuration de watir en local ou heroku return un navigateur
+      #   connexion_to_GoogleDrive(type_connex)   configuration de la connexion à google drive
+      #   column_code_of_hash_keys                attribution des code colonne pour spreadsheet pour each key
 
       attr_accessor :spreadsheet_fb_events_key, :spreadsheet_urls_key,  :spreadsheet_liens_et_ids_key, :get_code_col_name_hash
 
@@ -24,17 +38,17 @@ class ScrapUrlsPros #< Thor
       end
 
 
-      def set_browser_session
+      def set_browser_session #work the 1srt and others
           new_browser
       end
 
 
-      def set_first_connexion     #activate_first_connexion_GoogleDrive
+      def set_first_connexion     #activate_first_connexion_GoogleDrive   #finally don't work test test the 11/09/2018
           connexion_to_GoogleDrive("first")
       end
 
 
-      def set_refresh_connexion     #activate_first_connexion_GoogleDrive
+      def set_refresh_connexion     #activate_first_connexion_GoogleDrive  #finally don't work test test the 11/09/2018
           connexion_to_GoogleDrive("refresh")
       end
 
@@ -218,7 +232,7 @@ class ScrapUrlsPros #< Thor
                     "scope": [
                               "https://www.googleapis.com/auth/drive",
                               "https://spreadsheets.google.com/feeds/"
-                             ],
+                             ], # enter the scope for a service whichever you want to use
                     "refresh_token": ENV["GOOGLE_refresh_token"],
                     "redirect_uri": ENV["GOOGLE_redirect_uri"])
               auth_url = credentials.authorization_uri

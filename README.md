@@ -41,7 +41,7 @@ Procédure pour chaque nouveau projet
   3. add view with same name of the action
   4. define route associated with the view and the action controller
   5. add project on index of projects in home view
-  6. complete readme.md for how to use app && what is the app && how app is build
+  6. complete readme.md for how to use app && what is the app && how app is build && how long taking && ext. config
 **************************************************************************************
 
 
@@ -64,6 +64,7 @@ Ce script permet à partir d'une Url d'un site donnée:
 
 3. ajouter le dossier des images au git ignore
 4. Gems/Objects used:  ['net/http' , 'nokogiri']/[Dir, File]
+
 -------------------------------------------------------------------------------------
 Le projet ScrapSlackMbr: Le 19/07/2018
 Ce script permet de récupérer les informations et images de tous les membres du slack THP:
@@ -140,6 +141,161 @@ Ce script permet de scrapper toutes les VCs de france du site journal du net:
 
 
 
+
+
+
+
+
+-------------------------------------------------------------------------------------
+Le Projet program scrap urls pro:   redigé Le 10/09/2018
+Ce script permet de copier le contenu des sites d'un site, de l'enregistrer(spreadsheet), et comparer(entre 2 copie):
+
+PARAMÈTRE
+Gem : "googleauth", "watir", "google_drive", 'nokogiri', "koala", "differ"
+Buildpacks: "google chrome", "Selenium chromedriver","Ruby(Bundler)oR"
+Class: "ScrapUrlsPros", "attr_accessor", "Hash", "scan(Regx)", "gsub"
+Notes:
+données in/out: données dans spreadsheets  
+ENV["SPREADSHEET_SCRAPPING_FB_EVENTS"]
+ENV["SPEADSHEET_SCRAPPING_URLS"]
+ENV["SPEADSHEET_LIENS_ET_IDS"]
+ENV["LOCAL_OR_HEROKU"]
+ENV["GOOGLE_CHROME_BIN"]
+ENV["GOOGLE_client_id"]
+ENV["GOOGLE_client_secret"]
+ENV["GOOGLE_refresh_token"]
+ENV["GOOGLE_redirect_uri"]
+
+DURÉE
+
+DESCRIPTION
+  #   perform
+             # tab = [];
+             # list_urls = get_all_professors_urls
+             # tab = scrap_links_for_all_webpages(list_urls);
+             # comp_data_in_SpreadSheet(tab);
+             # save_from_on_GoogleDrive(tab);
+             # return tab;
+  1. récupération des urls de site à scrapper
+  2. récupérations des copies de pages de chaque sites
+  3. compare si les copies sont identique au précédent  enregistrement en base
+  4. sauvegarde toute les copies des pages en base
+
+
+METHODES
+#config
+# set_google_drive_session  #connexion_to_GoogleDrive
+# set_browser_session       #exe  new_browser
+# set_first_connexion       #activate_first_connexion_GoogleDrive(GgDrv): connexion_to_GoogleDrive("first")
+# set_refresh_connexion     #Pour reactiver la connection GgDrv ifnot first time: connexion_to_GoogleDrive("refresh")
+# initialize                #set all configurations externes(keys(GoogleDrive)), des nom&&nombre des colonnes
+
+# public
+#  scrap_links_for_all_webpages    exe scrap_soft_link or scrap_hard_links and return one tab of hash
+#   scrap_soft_link(link)           use nokogiri
+#   scrap_hard_links()              use watir
+#   scrap_justdancewithlife_link(link) use watir specificly for extact data in googleagenda
+#
+#   get_all_professors_urls               recupere les urls a scraper dans un spreadsheets
+#   comp_data_in_SpreadSheet(table_data)  test if one scrap has change(new event) and return table_data modified or not if has some change
+#   save_from_on_GoogleDrive(table_data)  save tab of hash in spreadsheets(only the new hash(lines(event)) if not first time)
+
+# private
+#   new_browser                             configuration de watir en local ou heroku return un navigateur            
+#   connexion_to_GoogleDrive(type_connex)   configuration de la connexion à google drive
+#   column_code_of_hash_keys                attribution des code colonne pour spreadsheet pour each key
+
+
+
+-------------------------------------------------------------------------------------
+Le Projet program scrap fb pro:   redigé Le 10/09/2018
+Ce script permet de recupérer les datas d'events de groupe fb via FB API, de l'enregistrer(spreadsheet), et comparer(entre 2 requete):
+
+PARAMÈTRE
+Gem : "Koala", "ActiveRecord", "FBGraph"
+Buildpacks: 0
+Class: "ScrapUrlsPros", "ScrapFbPros", "attr_accessor", "Hash", Time
+Notes:
+données in/out:
+fields_of_events:   data expected on the fb request
+database_of_events: un model Evenement
+access_token:   ENV["token"]
+ENV["SPEADSHEET_LIENS_ET_IDS"]
+[ ENV["FIRST_APP_ID"], ENV["FACEBOOK_redirect_uri"], ENV["FACEBOOK_scopes_auths2"]
+  ENV["FACEBOOK_EMAIL"], ENV["FACEBOOK_MDP"], ENV["FACEBOOK_redirect_uri"]       ]
+
+DURÉE
+
+DESCRIPTION
+  #perform
+      #groups = get_all_facebook_groups                                        #get all group ids
+      #scrap_events_facebook_groups(groups, @database_of_events)               #extraction data request & save
+      #compare_datas_in_database(@database_of_events)                          #edit/update the events status
+      #@tab                                                                    #allow to print the database
+
+METHODES
+#config
+rails generate model Evenement  event_id    event_name      event_start_time      event_end_time      event_description      event_place_id      event_place_name      event_place_location_data      change      event_place_city      event_place_country      event_place_latitude      event_place_longitude      event_place_street      event_place_zip      event_event_times_data      event_owner_name      event_photos_images      last_date      groupe_id    origin_base  event_owner_id    changements origin_base:string:index
+
+add into model:
+      require 'active_record/diff'
+      class Evenement < ApplicationRecord
+          include ActiveRecord::Diff
+          validates_uniqueness_of :event_id, scope: [:origin_base]
+      end
+# initialize                #set all config externes(keys(Fbgraphtoken),database), des nom&&nombre champs,msgs
+
+# public
+    get_all_facebook_groups
+    compare_datas_in_database
+    scrap_events_facebook_groups
+    perform modified or not if has some change
+
+# private
+    #get_access_token    connec fb from browser to get token by uri generated, temp save in ENV var      
+
+
+-------------------------------------------------------------------------------------
+Le Projet program scrap google pro:   redigé Le 10/09/2018
+Ce script permet de recupérer les datas d'events de calendrier google, make clean, de l'enregistrer(en base)
+
+PARAMÈTRE
+Gem : "Koala", "ActiveRecord", "FBGraph", "Geocoder"
+Buildpacks: 0
+Class: "ScrapUrlsPros", "Proc", "Sleep", "Hash", Date, Struct, Time
+Notes:
+données in/out:
+database_model: un model EvenementGoogle
+
+DURÉE
+
+DESCRIPTION
+  #perform
+      #groups = get_all_facebook_groups                                        #get all group ids
+      #scrap_events_facebook_groups(groups, @database_of_events)               #extraction data request & save
+      #compare_datas_in_database(@database_of_events)                          #edit/update the events status
+      #@tab                                                                    #allow to print the database
+
+METHODES
+#config
+  # rails generate model EvenementGoogle site heure titre date lieu map description
+
+# public
+    get_google_links
+    scrap_google_calendar links
+    scrap_events_facebook_groups
+    save_in_database(@database_model)
+    @all_events
+    data_enrichment
+
+
+
+
+
+
+
+
+
 %----------------------------------------------------------------------------------------
 %	HARD CONFIRUGATION USES FOR THIS THIS BIG PROJECT "ALL-PROJECTS"
 %----------------------------------------------------------------------------------------
@@ -170,6 +326,36 @@ Delete or implement this file, do not leave this file empty
 
 
 1. Rails s -e production
+
+..............................................................................
+configuration of heroku watir buildpacks (need of google chrome, selenium driver [and ruby(bundler)])
+
+1. https://github.com/souyahibou/heroku-buildpack-google-chrome
+2. https://github.com/souyahibou/heroku-buildpack-chromedriver
+3. https://github.com/souyahibou/heroku-buildpack-ruby
+
+
+
+..............................................................................
+configuration of facebook program
+## Démarche pour récupérer les événements sur facebook:
+* étape n°0 :avoir les variable d'environnement définies
+* étape n°1 :récupérer/Avoir un token valide:                     ScrapFbPros.new.get_token(ou par un autre moyen possible)
+* étape n°2 :créer une table de BDD suivant le modèle Evenement   rails db:create
+* étape n°3 :Lancer le programme principal:                       ScrapFbPros.new.perform
+
+
+## pour récupérer un token via ScrapFbPros.new.get_token:
+
+```ruby
+1 mettre ses identifiant Facebook
+            ENV["FACEBOOK_EMAIL"]
+            ENV["FACEBOOK_MDP"]
+2 copié le nouveau token et remplacer l'ancien token de la variable environnement ENV["token"] par le nouveau token récupéré. Ce token est valide pendant 6mois.
+            2 bis possibilité d'utiliser le token disponible via l'interface API graph facebook, celui-ci est valide pendant 1 heure.
+```
+
+
 
 
 

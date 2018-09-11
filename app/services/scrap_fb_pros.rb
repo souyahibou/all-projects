@@ -65,7 +65,7 @@ class ScrapFbPros
 
 
 
-      def get_token
+      def get_token #allow to an have access token that during six month but by this method the code isn't store forever in var ENV
           get_access_token
       end
 
