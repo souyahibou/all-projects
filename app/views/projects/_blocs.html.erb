@@ -1,5 +1,5 @@
 <%to_del =Rails.root,'app/assets/zizani/results2.csv'%>
-<div style="display:flex; flex: auto;  min-height: 180px;    border: 5px solid green;    padding: 5px;    margin: 5px;">
+<div style="display:flex; flex: auto;  min-height: 180px;    border: 5px solid green;    padding: 5px;    margin: 5px; outline:thick ridge pink;outline-offset: -15px">
   <form name= "bloc_projet" accept-charset="UTF-8" method="get" action= <%= method_controler %> style="background-color:<%= bg_color %>; margin:auto;">
     <fieldset>
         <label for="project">Poject n° <%= nb %>,  <%= titre %></label><br>
@@ -27,4 +27,18 @@
     form {background-color: powerblue;}
     h1   {color: blue;}
     p    {color: black;}
+</style> -->
+
+
+<!-- <style>
+p {outline-color:red;}
+
+p.dotted {outline-style: dotted;}
+p.dashed {outline-style: dashed;}
+p.solid {outline-style: solid;}
+p.double {outline-style: double;}
+p.groove {outline-style: groove;}
+p.ridge {outline-style: ridge;}
+p.inset {outline-style: inset;}
+p.outset {outline-style: outset;}
 </style> -->
