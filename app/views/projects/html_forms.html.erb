@@ -1,0 +1,613 @@
+<h1 style="text-align: center"> All Buttons and form elements </h1>
+
+<h2>The output Element</h2>
+<p>The output element represents the result of a calculation.</p>
+
+<form action="/#projects/action_page" oninput="x.value=parseInt(a.value)+parseInt(b.value)" name="myForm" id="form1" onsubmit ="alert('submission')" target="_blank|_self|_parent|_top|framename" accept-charset="ISO-8859-1">
+
+	<fieldset>
+	 		<legend>Spécials</legend>
+			  <p>see oninput form value</p>
+				0
+				<input type="range" id="a" name="a" value="50">
+				100 +
+				<input type="number" id="b" name="b" value="50">
+				=
+				<output name="x" for="a b"></output>
+
+
+				<h2>The onsearch Event Attribute and The form Attribute</h2>
+				Write in search and press "ENTER"(js):
+				<p id="demo"></p>
+				<input type="search" id="myInput" onsearch="myFunction()" form="form1">
+				<script src="html_forms.js"></script>
+
+				<h2>The Progress tag</h2>
+				Downloading progress:
+				<progress value="22" max="100">	</progress>
+
+				<h2>The Preformated tag(allow displaying of [back]spaces)</h2>
+				<pre>
+						Text in a pre element
+						is displayed in a fixed-width
+						font, and it preserves
+						both      spaces and
+						line breaks
+				</pre>
+	</fieldset>
+
+	<fieldset>
+   <legend>Select lists drop down checkbox & buttons:</legend>
+
+				<h2>The datalist Element</h2>
+				  <input list="browsers" name="browser">
+				 <datalist id="browsers">
+				   <option value="Internet Explorer">
+				   <option value="Firefox">
+				   <option value="Chrome">
+				   <option value="Opera">
+				   <option value="Safari">
+				 </datalist>
+
+
+				 <h2>The button Element</h2>
+				 <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+
+				 <h2>Textarea</h2>
+				   <textarea name="message" rows="10" cols="30"  <%if false then style="width:200px; height:600px" else "" end %> >The cat was playing in the garden.</textarea>
+
+
+
+				 <h2>Allow Multiple Seletcions</h2>   <p>Hold down the Ctrl to select multiple.</p>
+				   <select name="cars" size="4" multiple>
+				     <option value="volvo">Volvo</option>
+				     <option value="saab">Saab</option>
+				     <option value="fiat">Fiat</option>
+				     <option value="audi">Audi</option>
+				   </select>
+
+				 <h2>The select Element</h2>      <p>defines a drop-down list:</p>
+
+				   <select name="cars">
+				     <option value="volvo">Volvo</option>
+				     <option value="saab">Saab</option>
+				     <option value="fiat">Fiat</option>
+				     <option value="audi">Audi</option>
+				   </select>
+
+				<h2>The select Element with Group related</h2>
+					 <select>
+					   <optgroup label="Swedish Cars">
+					     <option value="volvo">Volvo</option>
+					     <option value="saab">Saab</option>
+					   </optgroup>
+					   <optgroup label="German Cars">
+					     <option value="mercedes">Mercedes</option>
+					     <option value="audi">Audi</option>
+					   </optgroup>
+					 </select>
+					 <br><br>
+
+				<h2>Labels links</h2>
+				<p>Click on one of the text labels to toggle the related control:</p>
+			  <label for="male">Male</label>	  <input type="radio" name="gender" id="male" value="male"><br>
+			  <label for="female">Female</label>  <input type="radio" name="gender" id="female" value="female"><br>
+			  <label for="other">Other</label>  <input type="radio" name="gender" id="other" value="other"><br><br>
+
+		 		<h2>Radio Buttons</h2>
+			  <input type="radio" name="gender" value="male" checked> Male<br>
+			  <input type="radio" name="gender" value="female"> Female<br>
+			  <input type="radio" name="gender" value="other"> Other
+
+				<h2>Checkbox Buttons</h2>
+			  <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+			  <input type="checkbox" name="vehicle2" value="Car"> I have a car
+
+				<h2>Inputs Buttons</h2>
+				<input type="text" name="testreset" value="defaultvalue"><br>
+	  		<input type="button" onclick="alert('Hello World!')" value="Button(js)">
+				<input type="submit" value="Submit">
+				<input type="reset" onclick="alert('re-init value')">
+
+				<h2>Buttons not associed to the form</h2>
+				<button type="button" value="button">Button</button>
+				<button type="submit" value="submit">Submit</button>
+				<button type="reset" 	value="reset">Reset</button>
+</fieldset>
+
+	<fieldset>
+	 <legend>Spécials Fields inputs:</legend>
+			  <h2>Color Picker</h2>
+			  <input type="color" name="favcolor" value="#ff0000">
+
+				<h2>Text Field</h2>
+				 First name:<br>
+	 		  <input type="text" name="firstname" value="Mickey"><br>
+	 		  <input type="text" name="lastname" value="Mouse"><br>
+
+				<h2>Password Field</h2>
+	 			 Passworde:<br>
+	 		  <input type="password" name="psw"><br>
+
+				<h2>The Maxlength and The Size </h2>
+				<input type="text" name="firstname" maxlength="10" value="John" size="40">
+
+				<h2>The readonly </h2>
+				<input type="text" name="firstname" value ="John" readonly>
+
+				<h2>The disabled </h2>
+				<input type="text" name="firstname" value ="John" disabled>
+
+				<h2>The Hidden </h2>
+				<input type="hidden" id="custId" name="custId" value="3487">
+
+			  <h2>Date Field</h2>
+			  Birthday:
+			  <input type="date" name="bday" max="1979-12-31" min="2000-01-02">
+
+			  <h2>Local Date Field</h2>
+			  Birthday (date and time):
+			  <input type="datetime-local" name="bdaytime">
+
+				<h2>E-mail Field</h2>
+			  E-mail:
+			  <input type="email" name="email">
+
+			  <h2>File upload</h2>
+			  Select a file: <input type="file" name="myFile" multiple><br><br>
+
+			  <h2>Number Field</h2>
+			  Quantity (between 0 and 100):
+			  <input type="number" name="quantity" min="0" max="100" step="10" value="30">
+
+			  <h2>Range Field</h2>
+			  Points:
+			  <input type="range" name="points" min="0" max="10">
+
+			  <h2>Search Field</h2>
+			  Search Google:
+			  <input type="search" name="googlesearch">
+
+			  <h2>Telephone Field</h2>
+			  Telephone:
+			  <input type="tel" name="usrtel">
+
+			  <h2>Time Field</h2>
+			  Select a time:
+			  <input type="time" name="usr_time">
+
+			  <h2>URL Field</h2>
+			  Add your homepage:
+			  <input type="url" name="homepage">
+
+			  <h2>Week Field</h2>
+			  Select a week:
+			  <input type="week" name="year_week">
+ </fieldset>
+
+
+	<fieldset>
+	 <legend>Spécials Fields inputs:</legend>
+			  <h2>The pattern and The placeholder  and The formmethod  and The formnovalidate  and The autofocus  and The autocomplete and The Title</h2>
+			  Country code: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Three letter country code" placeholder="[A-Za-z]{3}" autofocus autocomplete="on">
+			  <input type="submit" formmethod="post" value="Submit using POST">
+			  <input type="submit" formnovalidate value="Submit without validation">
+
+				<h2>The formtarget/The formaction Attribute</h2>
+				<input type="submit" value="Submit as normal">
+				<input type="submit" formtarget="_blank" value="Submit to a new window/tab" formaction="/projects/cv">
+
+			  <h2>The Image Field and  width/height</h2>
+			  <input type="image" src="/assets/pictures/daniele-b02ac11bb92058c972de43b8fb7e56a173fe448e4f6fbd3df08f4a691a1aaee5.jpg" alt="Submit" width="48" height="48">
+
+
+			  <h2>The Title </h2>
+			  <p><abbr title="World Health Organization">WHO</abbr> was founded in 1948.</p>
+				<p title="Free Web tutorials">W3Schools.com</p>
+	</fieldset>
+
+<p>
+  <strong>size</strong>        specifies the size (in characters) of the input field
+  <strong>readonly</strong>    specifies that the input field is read only (cannot be changed):
+  <strong>disabled</strong>    specifies that the input field is disabled
+  <strong>disabled:</strong>	 Specifies that an input field should be disabled<br>
+  <strong>max:</strong>		     Specifies the maximum/minimum value for an input field               => input types: number, range, date, datetime-local, month, time and week.<br>
+  <strong>maxlength:</strong>	 Specifies the maximum number of character for an input field<br>
+  <strong>pattern:</strong>		 Specifies a regular expression to check the input value against  => input types: text, search, url, tel, email, and password.<br>
+  <strong>readonly:</strong>	 Specifies that an input field is read only (cannot be changed)<br>
+  <strong>required:</strong>	 Specifies that an input field is required (must be filled out) => input types: text, search, url, tel, email, password, date pickers, number, checkbox, radio, and file.<br>
+  <strong>size:</strong>	     Specifies the width (in characters) of an input field<br>
+  <strong>step:</strong>	     Specifies the legal number intervals for an input field            => input types: number, range, date, datetime-local, month, time and week.<br>
+  <strong>value:</strong>	     Specifies the default value for an input field<br>
+  <strong>placeholder:</strong> specifies a hint of an input field, displayed if value entered  => input types: text, search, url, tel, email, and password.<br>
+  <strong>multiple:</strong>          => works with file<br>
+  <strong>height/width</strong>  =>         specifies the dimensions of a input type="image" element<br>
+  <strong>formtarget:</strong> specifies where to display the response that after submit    => input types: submit, image<br>
+  <strong>formnovalidate:</strong> allow to submit even if the restriction of some input are invalidate => input types: submit<br>
+  <strong>novalidate:</strong> Specifies that the form data should not be validated when submitted => input types: form<br>
+  <strong>formmethod:</strong> defines the HTTP method for sending form-data to the action URL => input types: submit, image<br>
+  <strong>formenctype:</strong> specifies how the form data should be encoded when submitted =>  input types: submit, image<br>
+  <strong>form:</strong>      specify inputs field located outside of an HTML form but ever belonged to the form(by id) => all<br>
+  <strong>autofocus:</strong> specifies that the input field should automatically get focus when the page loads<br>
+  <strong>autocomplete:</strong> on/off=>  works with form/input types: text, search, url, tel, email, password, datepickers, range, and color.<br>
+</p>
+</form>
+
+
+<fieldset>
+ <legend>helpers brouillons to delete if needed without problems:</legend>
+				<h2>Los Helpers</h2>
+				<br><br>
+
+				<%= form_tag do %>
+				  Form contents
+				<% end %>
+
+				<br><br>
+
+
+				<%= form_tag("/search", method: "get") do %>
+				  <%= label_tag(:q, "Search for:") %>
+				  <%= text_field_tag(:q) %>
+				  <%= submit_tag("Search") %>
+				<% end %>
+
+				<br><br>
+
+
+				<!-- <%=form_tag(controller: "projects", action: "html_forms", method: "get", class: "nifty_form")%>
+				<%=form_tag({controller: "projects", action: "html_forms"}, method: "get", class: "nifty_form")%> -->
+
+				<%= check_box_tag(:pet_dog) %>
+				<%= label_tag(:pet_dog, "I own a dog") %>
+				<%= check_box_tag(:pet_cat) %>
+				<%= label_tag(:pet_cat, "I own a cat") %>
+
+				<br><br>
+
+				<%= radio_button_tag(:age, "child") %>
+				<%= label_tag(:age_child, "I am younger than 21") %>
+				<%= radio_button_tag(:age, "adult") %>
+				<%= label_tag(:age_adult, "I'm over 21") %>
+
+				<br><br>
+
+				<%= text_area_tag(:message, "Hi, nice site", size: "24x6") %>
+				<%= password_field_tag(:password) %>
+				<%= hidden_field_tag(:parent_id, "5") %>
+				<%= search_field(:user, :name) %>
+				<%= telephone_field(:user, :phone) %>
+				<%= date_field(:user, :born_on) %>
+				<%= datetime_local_field(:user, :graduation_day) %>
+				<%= month_field(:user, :birthday_month) %>
+				<%= week_field(:user, :birthday_week) %>
+				<%= url_field(:user, :homepage) %>
+				<%= email_field(:user, :address) %>
+				<%= color_field(:user, :favorite_color) %>
+				<%= time_field(:task, :started_at) %>
+				<%= number_field(:product, :price, in: 1.0..20.0, step: 0.5) %>
+				<%= range_field(:product, :discount, in: 1..100) %>
+
+				<br><br>
+
+				<%= text_field(:person, :name) %>
+				<%= options_for_select([['Lisbon', 1], ['Madrid', 2], ]) %>
+				<%= options_for_select([['Lisbon', 1], ['Madrid', 2], ], 2) %>
+				<%= select_tag(:city_id, '<option value="1">Lisbon</option>...') %>
+				<%= options_for_select(
+				  [
+				    ['Lisbon', 1, { 'data-size' => '2.8 million' }],
+				    ['Madrid', 2, { 'data-size' => '3.2 million' }]
+				  ], 2
+				) %>
+
+				<br><br>
+
+
+				<%= select_date Date.today, prefix: :start_date %>
+				<%= date_select :person, :birth_date %>
+				<%= select_year(2009) %>
+				<%= select_year(Time.now) %>
+	</fieldset>
+
+
+	<h1 style="text-align: center"> HTML TAGS </h1>
+
+
+
+<video width="320" height="240" controls autoplay	loop muted  poster="/assets/pictures/daniele-b02ac11bb92058c972de43b8fb7e56a173fe448e4f6fbd3df08f4a691a1aaee5.jpg" preload="auto|metadata|none">	<!-- preload ignored if autoplay -->
+		<source src="/Guys excited_for_Halo(addafter).webm" type="video/webm">
+  	Your browser does not support the video tag.
+
+		<source src="forrest_gump.mp4" type="video/mp4">
+		<source src="forrest_gump.ogg" type="video/ogg">
+		<track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">	<!-- kind="captions|chapters|descriptions|metadata|subtitles" -->
+		<track src="subtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
+</video>
+
+<!-- MP4 = MPEG 4 files with H264 video codec and AAC audio codec
+WebM = WebM files with VP8 video codec and Vorbis audio codec
+Ogg = Ogg files with Theora video codec and Vorbis audio codec -->
+
+<p>This is a <u>parragraph</u>.</p> underlign u = text-decoration: underline;
+<p>This text contains <sub>subscript</sub> text.</p>	 sub = vertical-align: sub;    font-size: smaller;
+<p>This text contains <sup>superscript</sup> text.</p>	 sup = vertical-align: super;    font-size: smaller;
+<p>Error => Correction: <s>My car is blue.</s> => My new car is silver.</p>  s/del=text-decoration: line-through; 				 ins text-decoration: underline;
+<p>Suppression/Insertion: My favorite color is <del datetime="2015-11-15T22:55:03Z" cite="why.fr">blue</del> <insdatetime="2015-11-15T22:55:03Z" cite="why.fr">red</ins>!</p>
+<p><small>Copyright 1999-2050 by Refsnes Data</small></p>	small font-size: smaller;
+pre {
+    display: block;
+    font-family: monospace;
+    white-space: pre;
+    margin: 1em 0;}
+
+<del >This text has been deleted</del>
+<h2>Phrase Tags</h2>
+<em>Emphasized text</em><br>
+<strong>Strong text</strong><br>
+<code>A piece of computer code</code><br>
+<samp>Sample output from a computer program</samp><br>		samp 	font-family: monospace;
+<kbd>Keyboard input</kbd><br>
+<var>Variable</var>
+
+<h2	>An Unordered List:</h2>
+<ul style="list-style-type: disc|square|circle">
+	 <li>Coffee</li>
+	 <li>Tea</li>
+	 		<ul>
+				 <li>Black tea</li>
+				 <li>Green tea</li>
+				 		<ul>
+						 	<li>Green tea light</li>
+						 	<li>Green tea High</li>
+									<ul>
+											<li>Green tea Qualité Supérieur</li>
+											<li>Green tea High Quality</li>
+									</ul>
+							<li>Green tea fake</li>
+ 				 		</ul>
+					<li>Grey tea</li>
+			</ul>
+	 <li>Milk</li>
+</ul>
+
+<h2>Ordered List:</h2>
+<ol  start="50" type = "1">
+	 <li>Coffee</li>
+	 <li>Tea</li>
+	 		<ol type ="I">
+				 <li>Black tea</li>
+				 <li>Green tea</li>
+				 		<ol type ="A">
+						 	<li>Green tea light</li>
+						 	<li>Green tea High</li>
+									<ol reversed type ="a">
+											<li>Green tea Qualité Supérieur</li>
+											<li>Green tea High Quality</li>
+													<ol reversed type ="i">
+															<li>888</li>
+															<li>Athaya</li>
+													</ol>
+											<li>Chinese Green Tea</li>
+									</ol>
+							<li>Green tea fake</li>
+ 				 		</ol>
+					<li>Grey tea</li>
+			</ol>
+	 <li>Milk</li>
+</ol>
+
+
+
+
+
+
+<h2	>Table elements:</h2>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+<table>
+  <tr>
+    <th>Month</th>
+    <th>Savings</th>
+  </tr>
+  <tr>
+    <td>January</td>
+    <td>$100</td>
+  </tr>
+  <tr>
+    <td>February</td>
+    <td>$80</td>
+  </tr>
+</table>
+
+<br>
+th: header cell
+td: stadard cell
+tr: row
+group part of a table :
+thead:
+tbody:
+tfoot:  group part of a table
+
+"<thead> tag must be used in the following context: As a child of a <table> element, after any <caption>, and <colgroup> elements, and before any <tbody>, <tfoot>, and <tr> elements."
+<style>
+thead {color:green;}
+tbody {color:blue;}
+tfoot {color:red;}
+
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+
+<table>
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Savings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>January</td>
+      <td>$100</td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>$80</td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td>Sum</td>
+      <td>$180</td>
+    </tr>
+  </tfoot>
+</table>
+
+<h2>The Title element:</h2>
+<p>The title tag is required in all HTML documents and it defines the title of the document.<br><br>
+
+The title element:<br>
+    defines a title in the browser toolbar<br>
+    provides a title for the page when it is added to favorites<br>
+    displays a title for the page in search-engine results<br><br>
+
+Placed in head as style tags: not visible in body<br>
+HTML Tag Reference:<title>HTML Tag Reference</title>
+</p>
+
+
+
+<h2> The Details/Summary:</h2>
+<details>
+ <summary>Copyright 1999-2014.</summary>
+ <p> - by Refsnes Data. All Rights Reserved.</p>
+ <p>All content and graphics on this web site are the property of the company Refsnes Data.</p>
+</details>
+
+
+
+
+
+<h2>The template Tag</h2>
+
+<button onclick="showContent()">Show content</button>
+
+<template>
+  <h2>Flower</h2>
+  <img src="/assets/pictures/daniele-b02ac11bb92058c972de43b8fb7e56a173fe448e4f6fbd3df08f4a691a1aaee5.jpg" width="214" height="204">
+</template>
+
+<script>
+function showContent() {
+  var temp = document.getElementsByTagName("template")[0];
+  var clon = temp.content.cloneNode(true);
+  document.body.appendChild(clon);
+}
+</script>
+
+<h2> SVG (powerfull see SVG tutorial)</h2>
+<svg width="100" height="100">
+ <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+</svg>
+
+<svg width="400" height="100">
+ <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+</svg>
+
+<svg width="400" height="180">
+ <rect x="50" y="20" rx="20" ry="20" width="150" height="150" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+</svg>
+
+<svg width="300" height="200">
+ <polygon points="100,10 40,198 190,78 10,78 160,198" style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+</svg>
+
+<svg height="130" width="500">
+	<defs>
+		<linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+		 <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+		 <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+		</linearGradient>
+	</defs>
+
+	<ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+
+	<text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+</svg>
+
+<svg height="200" width="500">
+  <ellipse cx="240" cy="100" rx="220" ry="30" style="fill:purple" />
+  <ellipse cx="220" cy="70" rx="190" ry="20" style="fill:lime" />
+  <ellipse cx="210" cy="45" rx="170" ry="15" style="fill:yellow" />
+  <ellipse cx="240" cy="150" rx="220" ry="30" style="fill:yellow" />
+  <ellipse cx="220" cy="150" rx="190" ry="20" style="fill:white;stroke:purple;stroke-width:2" />
+  Sorry, your browser does not support inline SVG.
+</svg>
+
+<svg height="210" width="500">
+ <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
+</svg>
+
+<svg height="200" width="500">
+ <polyline points="20,20 40,25 60,40 80,120 120,140 200,180"
+ style="fill:none;stroke:black;stroke-width:3" />
+</svg>
+
+<svg height="180" width="500">
+ <polyline points="0,40 40,40 40,80 80,80 80,120 120,120 120,160"
+ style="fill:white;stroke:red;stroke-width:4" />
+</svg>
+
+<svg height="60" width="200">
+ <text x="0" y="15" fill="red" transform="rotate(30 20,40)">I love SVG</text>
+</svg>
+
+<h3>Stroking</h3>
+<svg height="300" width="300">
+  <g fill="none" stroke="black" stroke-width="4">
+    <path stroke-dasharray="5,5" d="M5 20 l215 0" />
+    <path stroke-dasharray="10,10" d="M5 40 l215 0" />
+    <path stroke-dasharray="20,10,5,5,5,10" d="M5 60 l215 0" />
+    <path stroke-linecap="butt" d="M5 80 l215 0" />
+    <path stroke-linecap="round" d="M5 100 l215 0" />
+    <path stroke-linecap="square" d="M5 120 l215 0" />
+    <path stroke-width="2" d="M5 140 l215 0" />
+    <path stroke-width="4" d="M5 160 l215 0" />
+    <path stroke-width="6" d="M5 180 l215 0" />
+    <path stroke="red" d="M5 200 l215 0" />
+    <path stroke="black" d="M5 220 l215 0" />
+    <path stroke="blue" d="M5 240 l215 0" />
+    <text x="225" y="80" stroke-width="0.1" fill="red"> butt </text>
+    <text x="225" y="100" stroke-width="0.5" fill="red"> round </text>
+    <text x="225" y="120" stroke-width="0.8" fill="red"> square </text>
+  </g>
+</svg>
+<path stroke="blue" d="M5 60 l215 0" />
+
+<h2>The Source and media&srcset attrs</h2>
+Allow The browser to choose the correct file depends of conditions(media queries&srcset) or if format supported
+<picture>
+  <source media="(min-width: 650px)" srcset="/img_pink_flowers.jpg">
+  <source media="(min-width: 465px)" srcset="/img_white_flower.jpg">
+  <img src="/img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+</picture>
+<p>Resize the browser to see different versions of the picture</p>
+<p>The img element is required as the last child tag of the picture declaration block.</p>
+
+
+<audio controls autoplay loop>
+	<source src="/horse.ogg" type="audio/ogg">
+	<source src="/horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+<object data="/horse.mp3">
+</object>
+
+<object width="400" height="400" data="/helloworld.swf">
+</object>

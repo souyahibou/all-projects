@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-    protect_from_forgery except: [:federdo_calculatrice, :googleMapsAPI_THP_P43]
+    protect_from_forgery except: [:federdo_calculatrice, :googleMapsAPI_THP_P43, :html_forms]
       def initialize
           @var
       end
@@ -97,6 +97,7 @@ class ProjectsController < ApplicationController
         # @var = (1..5).to_a
         # render :json => @var
         render action: 'testo9', :layout => 'application', formats: [:pdf]
+        render template: projects_home_path
       end
       def testo0
         # @var = (1..5).to_a
@@ -145,6 +146,9 @@ class ProjectsController < ApplicationController
       def scraping_annuaire_startups
         @var = ScrapUsineDigital.new.perform
         render :json => @var
+      end
+
+      def html_forms
       end
 
 end

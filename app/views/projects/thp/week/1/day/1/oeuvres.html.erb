@@ -1,0 +1,12 @@
+<p>Write something in the perform field and press "ENTER".</p>
+<input type="search" id="myInput" onsearch="myFunction()" rows="10" cols="30">
+<input type="number" name="quantity" min="0" max="100" step="3" value="26">
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+   var x = document.getElementById("myInput");
+   var y = document.getElementsByName("quantity")[0];
+   document.getElementById("demo").innerHTML = "You are searching for: " + y.value;
+}
+</script>

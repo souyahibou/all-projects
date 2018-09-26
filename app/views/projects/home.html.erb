@@ -39,22 +39,24 @@
 
   <%= render 'blocs', nb: 17, titre: "Scraping annuaire starts ups Fr. (Be Free Talent)", method_controler: scraping_annuaire_startups_path,  finish: true, bg_color: :cornflowerblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "To complete "  %>    <!-- <%= link_to "cv", cv_path%> -->
 
+  <%= render 'blocs', nb: 18, titre: "HTML Forms", method_controler: html_forms_path,                                 finish: true, bg_color: :cornflowerblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using only html format"  %>
+
   <!-- <embed src= <%= cv_path %> width="100%" height="1500" type='application/pdf'> -->
   <iframe src=<%= cv_path %>.pdf width="100%" height="1500"> This browser does not support PDFs. Please download the PDF to view it: <a href=<%= cv_path %>.pdf>Download PDF</a></iframe>
 
 
   <div class="conteneur">
 
-  <%= render 'week_blocs', week: "Semaine1 Introduction Code",  title1:"Introductions", act_cntrl1: cv_path, msg1:"hehehe", fin1: false,
-                                                                title2:"HTML/CSS, basis", act_cntrl2: cv_path, msg2:"hehehe", fin2: false,
-                                                                title3:"Google", act_cntrl3: cv_path, msg3:"hehehe", fin3: false,
-                                                                title4:"Javascript, hype", act_cntrl4: cv_path, msg4:"hehehe", fin4: false,
-                                                                title5:"Jquery", act_cntrl5: cv_path, msg5:"hehehe", fin5: false%>
-  <%= render 'week_blocs', week: "Semaine2 Découverte Ruby",    title1:"Initiation Ruby",  act_cntrl1: cv_path, msg1:"hehehe",fin1: false,
-                                                                title2:"RSpec", act_cntrl2: cv_path, msg2:"hehehe", fin2: false,
-                                                                title3:"twitter", act_cntrl3: cv_path, msg3:"hehehe", fin3: false,
-                                                                title4:"Nokogiri",         act_cntrl4: cv_path, msg4:"hehehe", fin4: false,
-                                                                title5:"Watir", act_cntrl5: cv_path, msg5:"hehehe", fin5: false%>
+  <%= render 'week_blocs', week: "Semaine1 Introduction Code",  title1:"Introductions", act_cntrl1: projects_oeuvres1_1_path, msg1:"hehehe", fin1: false,
+                                                                title2:"HTML/CSS, basis", act_cntrl2: projects_oeuvres1_2_path, msg2:"hehehe", fin2: false,
+                                                                title3:"Google", act_cntrl3: projects_oeuvres1_3_path, msg3:"hehehe", fin3: false,
+                                                                title4:"Javascript, hype", act_cntrl4: projects_oeuvres1_4_path, msg4:"hehehe", fin4: false,
+                                                                title5:"Jquery", act_cntrl5: projects_oeuvres1_5_path, msg5:"hehehe", fin5: false%>
+  <%= render 'week_blocs', week: "Semaine2 Découverte Ruby",    title1:"Initiation Ruby",  act_cntrl1: projects_oeuvres2_1_path, msg1:"hehehe",fin1: false,
+                                                                title2:"RSpec", act_cntrl2: projects_oeuvres2_2_path, msg2:"hehehe", fin2: false,
+                                                                title3:"twitter", act_cntrl3: projects_oeuvres2_3_path, msg3:"hehehe", fin3: false,
+                                                                title4:"Nokogiri",         act_cntrl4: projects_oeuvres2_4_path, msg4:"hehehe", fin4: false,
+                                                                title5:"Watir", act_cntrl5: projects_oeuvres2_5_path, msg5:"hehehe", fin5: false%>
   <%= render 'week_blocs', week: "Semaine3 Ruby Intermédiaire", title1:"Excel", act_cntrl1: cv_path, msg1:"hehehe",fin1: false,
                                                                 title2:"Envoi Emails", act_cntrl2: cv_path, msg2:"hehehe", fin2: false,
                                                                 title3:"POO, scrabbler", act_cntrl3: cv_path, msg3:"hehehe", fin3: false,
@@ -74,7 +76,7 @@
                                                                 title2:"Gemme Devise", act_cntrl2: cv_path, msg2:"hehehe", fin2: false,
                                                                 title3:"Asset Pipeline", act_cntrl3: cv_path, msg3:"hehehe", fin3: false,
                                                                 title4:"Services, APis", act_cntrl4: cv_path, msg4:"hehehe", fin4: false,
-                                                                title5:"None", act_cntrl5: cv_path, msg5:"hehehe", fin5: false%>
+                                                                title5:"None", act_cntrl5: projects_oeuvres1_1_path, msg5:"hehehe", fin5: false%>
   <%= render 'week_blocs', week: "Semaine7 HTML/CSS",           title1:"Come Back To HTML/CSS", act_cntrl1: cv_path, msg1:"hehehe",fin1: false,
                                                                 title2:"Formulaires", act_cntrl2: cv_path, msg2:"hehehe", fin2: false,
                                                                 title3:"Page New York Times", act_cntrl3: cv_path, msg3:"hehehe", fin3: false,
