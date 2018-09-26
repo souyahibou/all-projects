@@ -28,3 +28,7 @@ moderncv/
 !/app/assets/zizani/pictures
 !/app/assets/zizani/*.pdf
 !/app/assets/zizani/*.json
+
+#THP
+/app/services/the_hacking_project/*
+!/app/services/the_hacking_project/s2_decouverte_ruby
