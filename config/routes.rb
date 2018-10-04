@@ -15,10 +15,13 @@ namespace :projects do
     (1..9).each do |w_nbr|
         (1..5).each do |d_nbr|
             nbr = w_nbr.to_s + "_" + d_nbr.to_s
-            get "thp/week/#{w_nbr}/day/#{d_nbr}/oeuvres", action: "oeuvres#{nbr}", controller: 'thp', as:	:"oeuvres#{nbr}"#, module: 'admin'# path: '/projects/thps/:id'
+            match "thp/week/#{w_nbr}/day/#{d_nbr}/oeuvres", action: "oeuvres#{nbr}", controller: 'thp', as:	:"oeuvres#{nbr}", via: [:get, :post]#, module: 'admin'# path: '/projects/thps/:id'
         end
     end
 end
+
+  match 'projects/thp/execute', via: [:get, :post]
+
   get 'projects/html_forms' => :html_forms, controller: 'projects', as: :html_forms
 
   get 'projects/scraping_annuaire_startups' => 'projects#scraping_annuaire_startups', as: :scraping_annuaire_startups, defaults: { format: 'html' }

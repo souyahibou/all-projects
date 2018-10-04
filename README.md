@@ -415,6 +415,13 @@ HEROKU
 
 
 
+AJAX
+    https://launchschool.com/blog/the-detailed-guide-on-how-ajax-works-with-ruby-on-rails
+    https://medium.com/backticks-tildes/unobtrusive-javascript-in-rails-c37fc757d8b1
+
+
+
+
 
 
 %----------------------------------------------------------------------------------------

@@ -1,0 +1,8 @@
+   // alert("<%= escape_javascript(@a) %>");
+   // document.getElementsByTagName("body")[0].innerHTML = "Milk";
+<% if @a%=nil %>
+   var x = document.getElementById("myInput");
+   var y = document.getElementsByName("cesar[number]")[0];
+   document.getElementById("demo").innerHTML = "You are searching for: " + "(" + x.value +", " + y.value + ")=> <%= escape_javascript(@a) %>; ";
+   alert('<%= escape_javascript(render partial: "some_code") %>')
+<% end %>

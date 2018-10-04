@@ -1,6 +1,13 @@
 module Projects
   class ThpController < ApplicationController
-      protect_from_forgery except: [:federdo_calculatrice, :googleMapsAPI_THP_P43]
+      protect_from_forgery except: :execute
+      def execute
+
+      end
+
+
+
+
       def oeuvres
           # render :html => "ok"
           filepath = Rails.root.join('app/services/The_Hacking_Project/S2_Decouverte_Ruby/J1_Init_Ruby/chiffre_de_cesar.rb')
@@ -81,10 +88,14 @@ module Projects
 
 
         def oeuvres1_1
+            if params.permit(:commit).values.join.include?("Search") then
+                task_params = params.require(:cesar).permit(:search, :number)
+                @a = TheHackingProject::S2DecouverteRuby::J1InitRuby::ChiffreDeCesar.new.chiffre_de_cesar(task_params[:search].to_s, task_params[:number].to_i)
+            end
             render :template => projects_oeuvres1_1_path
         end
         def oeuvres1_2
-            
+
         end
         def oeuvres1_3
         end

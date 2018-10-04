@@ -1,12 +1,44 @@
-<p>Write something in the perform field and press "ENTER".</p>
-<input type="search" id="myInput" onsearch="myFunction()" rows="10" cols="30">
-<input type="number" name="quantity" min="0" max="100" step="3" value="26">
-<p id="demo"></p>
+<h1> The cesar code </h1>
+
+<%= form_tag projects_oeuvres1_1_path, remote: true do  %>
+  <p>Write something in the perform field and press "ENTER".</p>
+  <input type="search" name ="cesar[search]" rows="10" cols="30" id="myInput" onsearch="//myFunction();" >
+  <input type="number" name="cesar[number]" min="0" max="100" step="3" value="26">
+  <%= submit_tag("Search") %>
+  <p id="demo"></p>
+<% end %>
+
+<!-- <%= link_to 'Execute ChiffreDeCesar AJAX', projects_thp_execute_path, remote: true %> -->
 
 <script>
-function myFunction() {
-   var x = document.getElementById("myInput");
-   var y = document.getElementsByName("quantity")[0];
-   document.getElementById("demo").innerHTML = "You are searching for: " + y.value;
-}
+    // function myFunction() {
+    //    var x = document.getElementById("myInput");
+    //    var y = document.getElementsByName("quantity")[0];
+    //    document.getElementById("demo").innerHTML = "You are searching for: " + y.value;
+    // }
 </script>
+
+<pre>
+
+
+  
+What
+To solve a problem
+To seize an opportunity
+
+When
+how coordinates, how to use
+
+Write
+Executive summary:
+Background: History, Requirement, Solutions
+Proposition: Vision/Goals, Ressources, Issues/Risks, Implications, Autorisations
+
+
+Executive summary:
+Background: from THP, ,Uses AJAX
+Proposition: To script an text, [.chr .ord], no risks, no implications, none autorisations
+
+# /home/syb8/Documents/Projet/All_Projects_WSL/all-projects/app/services/the_hacking_project/s2_decouverte_ruby/j1_init_ruby/chiffre_de_cesar.rb
+# TheHackingProject::S2DecouverteRuby::J1InitRuby::ChiffreDeCesar.new.chiffre_de_cesar("test", 27)
+</pre>

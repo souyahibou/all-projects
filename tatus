@@ -1,0 +1,553 @@
+[33mcommit d6202d81d33c585d8a11bd989c0f63cdf2359c42[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Wed Sep 26 10:14:50 2018 +0200
+
+    modif gitignore
+
+[33mcommit ea3a7a6805f0b851395ebd815f25d04ce21bf55a[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Wed Sep 26 09:31:16 2018 +0200
+
+    a lot of modif
+
+[33mcommit 7232c43174b6c6bda673770e21187ed97c2223a7[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Thu Sep 13 06:32:28 2018 +0200
+
+    First initialisation des views pour les project THP fini
+
+[33mcommit 270ecc29c0515b60424ead1237e551560cad746b[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Thu Sep 13 04:51:51 2018 +0200
+
+    67th commit add <meta name="robots" content="noindex,nofollow"/> in home.html to block googlerobots
+
+[33mcommit 521a96039e9c7c5bee67225b938779412e6d45f3[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Wed Sep 12 07:11:08 2018 +0200
+
+    66th commit add outline style
+
+[33mcommit 64bc2552660f1eb4e57bab13dd3fb030f8b77867[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Wed Sep 12 05:47:31 2018 +0200
+
+    65th commit forget to track _week_blocs.html.erb :liste of 5 blocs represant une semaine THP
+
+[33mcommit 67fd1b79b5cf867de7904f4eed1e27898214f5dc[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Wed Sep 12 05:45:19 2018 +0200
+
+    64th commit configuration des views(blocs) pour la liste des projets THP
+
+[33mcommit a26be79da4512e8ed9286028d7ffc7295e6645ef[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Wed Sep 12 02:12:50 2018 +0200
+
+    63th commit done a good job with flexbox to arrange the projects in main page
+
+[33mcommit 5e298a50e9e61c09b566a30aeb45721586a1b6de[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Tue Sep 11 06:22:56 2018 +0200
+
+    62th commit add style border <div style="  height: 180px;    border: 5px solid green;    padding: 5px;    margin: 5px> to _bloc
+
+[33mcommit bb7e18c91ab4c5b54009fb6fb3088166277a1d8e[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Tue Sep 11 05:58:47 2018 +0200
+
+    readme of 3 bilobaba scrap add all buildpacks: tex chrome selenium ruby
+
+[33mcommit 800f2b5d1f7d99097d5e91afa51ca2a645516699[m
+Merge: 19ccaff 3d54cff
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Mon Sep 10 05:30:06 2018 +0200
+
+    Merge branch 'All-projects-master'
+
+[33mcommit 19ccaff23ae8fd1b9c3dbd514d4db8f97dd02047[m
+Merge: 57227d8 ccb1cc8
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Mon Sep 10 04:52:31 2018 +0200
+
+    git pull heroku success
+
+[33mcommit ccb1cc8add547679640739d383a4ef8d0b314292[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Mon Sep 10 00:55:33 2018 +0200
+
+    55th bis from ubuntu 100% remove lines in gitignore that block the tracking of zizani directory adjust conditions rules
+
+[33mcommit a22f6e3d7e567e808a3601ef0f83992a752f46d0[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Mon Sep 10 00:33:34 2018 +0200
+
+    55th from ubuntu 100% remove lines in gitignore that block the tracking of zizani directory
+
+[33mcommit 57227d856f32ac161d0411a71223f879695908c5[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Sun Sep 9 04:04:38 2018 +0200
+
+    56th test from Ubuntu100% bash
+
+[33mcommit 26d55970214d0c4b2513205562d273b352770ba5[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Sun Sep 9 03:52:39 2018 +0200
+
+    55th test from Ubuntu100% bash
+
+[33mcommit 90e39308800152dc554b9306f38d99a54a77a65e[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Sat Sep 8 07:16:21 2018 +0200
+
+    54th test with path (radjusted
+
+[33mcommit 2658b9f3933e47c2d3aee6d5a96f85be5283be37[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Sat Sep 8 07:04:11 2018 +0200
+
+    53th test with new path (ruby)
+
+[33mcommit 5bbc01259d871bdfd178454df876a55b196700c7[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Sat Sep 8 06:35:19 2018 +0200
+
+    52th uncomment some lines
+
+[33mcommit bd641c3bfe70ae18977c4f535b8af258336f7839[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Sat Sep 8 06:23:57 2018 +0200
+
+    51 success of the last commit nom add right paths the
+
+[33mcommit 09a60df488d831ea9fdf9e14f1bc6009fd445fc3[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Sat Sep 8 03:12:35 2018 +0200
+
+    50th commit adding packages needed xkeyval and xcolor and add batterie of tests
+
+[33mcommit 13b9d1fc2cfe12eb32734a84ee209381456283cb[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Sat Sep 8 02:52:49 2018 +0200
+
+    49th commit add xkeyval package for xargs packages and insert usepackage xcolor for define color
+
+[33mcommit 6114d89e36090b693ff51f3ce35a520484c921e7[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Sat Sep 8 02:21:07 2018 +0200
+
+    48th commit lot of test talex codes
+
+[33mcommit 373591ea665a48e79ad42a02a9ae0c6f74dc95c1[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Sat Sep 8 02:11:54 2018 +0200
+
+    47th commit remove define_color line in one example
+
+[33mcommit ccdf2c6862369d8b45d512bb74f742d669af0922[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Sat Sep 8 02:05:33 2018 +0200
+
+    46th commit test some possibilities of code
+
+[33mcommit 1472ed0ca4bc59ce34505b11db97612eda2ebee2[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Sat Sep 8 01:58:44 2018 +0200
+
+    45th commit add one package 44th was a good one integration
+
+[33mcommit 2e97eb72fc164115939a9d34107124d6ef3eafa8[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Sat Sep 8 01:25:33 2018 +0200
+
+    44th commit remove some packages of precedent added
+
+[33mcommit 46be77b7120bb22b2dd31c4fade5ed8a9b0905cc[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Sat Sep 8 01:19:44 2018 +0200
+
+    43th commit remove some packages of precedent added
+
+[33mcommit 04780c127a5eb365b9eacac2d9de888f469861ec[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Sat Sep 8 01:08:13 2018 +0200
+
+    42th commit add 3 routes,view,action to test multiple latex code config on heroku and add packages
+
+[33mcommit 0e0cd0bc544a8a3d513b623763c5cf6a42d06fdb[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 23:12:04 2018 +0200
+
+    41th commit add 7 routes,view,action to test multiple latex code config on heroku
+
+[33mcommit 08fdc0032e22e628b0f61993087dcfd3f2fea3e1[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 22:31:52 2018 +0200
+
+    40th commit remove all package without moderncv and reduce text at the minimal as possible
+
+[33mcommit 891f2c97f1ed39fd2dec176cbbf6b22e784dfd0f[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 21:50:39 2018 +0200
+
+    39th commit remove all externsfile dependence of latex code
+
+[33mcommit 269e157440cb3def39202b2d9fc2bc03ae49853b[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 21:16:59 2018 +0200
+
+    38th commit add all packages without collection fontextra
+
+[33mcommit 9c5d7882ccbfc55c8fb6bba2b37cd8903c8c5120[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 20:42:42 2018 +0200
+
+    37th commit some pck remvoed  because too big again
+
+[33mcommit c4f966dafbc6c5f0934a855a5f35be4ba813a655[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 20:22:10 2018 +0200
+
+    36th commit two package collection removed because tail of slug was too big 716 Mo
+
+[33mcommit c83d1a9addb7fe5478418f32703bd075ee65907d[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 19:57:02 2018 +0200
+
+    34th commit add more packages and rest original heroku stack to heroku-16
+
+[33mcommit 5881a5fef11ef4f7ab8c43876ed7ba148d1b319b[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 19:50:01 2018 +0200
+
+    33th commit reset original cv
+
+[33mcommit fcb4de7a6d3fe0698ce2ea3b4378abecf60e6c43[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 19:46:38 2018 +0200
+
+    32th commit add all packages valided
+
+[33mcommit 7a63accd9059fc739f87c900ee7dc395374c986c[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 19:35:24 2018 +0200
+
+    31th commit (30th works by adding text from bash and not from atom app in windows) now add two others packages
+
+[33mcommit b5d179e137c11dd4701c1529440558033ef814d3[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 19:27:01 2018 +0200
+
+    30th commit
+
+[33mcommit 9958d74161507fb3112b8ae54fcd893b4b8aa325[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 19:21:22 2018 +0200
+
+    29th commit
+
+[33mcommit b2221d331f91a23c4578b48ccf9f9c5c213b6982[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 19:19:20 2018 +0200
+
+    28th commit
+
+[33mcommit 2dbf4d70ab95de420aa15bbf96e17aeb1ea1c23c[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 18:46:58 2018 +0200
+
+    27th commit chance stack into cedar-14
+
+[33mcommit 5d507a04ebac4bf7f173790fdf17c2239c1d13ad[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 18:37:46 2018 +0200
+
+    25th commit cp of packages from original thermondo repo
+
+[33mcommit f640c5ee8dc3d58830cce7707bbfa12a8e0318d2[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 18:30:49 2018 +0200
+
+    25th commit rm all expect geomtry
+
+[33mcommit fbd2cb4d6aac8ba923e3f9528202607dd3b5cdf0[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 18:26:35 2018 +0200
+
+    24th commit rm all packages doesn't work tested in bash heroku
+
+[33mcommit f8495fa6be21cc3c3242619064bb28fb27d72643[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 17:48:05 2018 +0200
+
+    23th commit add backspace
+
+[33mcommit 472514d7acb4f28e995c20c937a70dabf5ee796e[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 17:44:24 2018 +0200
+
+    21th commit rm one tex package two remain
+
+[33mcommit 4ea438c6908a4284538526af77e29ddeaa599a0a[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 17:42:22 2018 +0200
+
+    21th commit mv one tex package by three others
+
+[33mcommit 18a8a268af4390ad546a400b51bad6e54bd09f94[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 17:35:33 2018 +0200
+
+    2°th commit one tex package remain
+
+[33mcommit a072c6a8fb702dfd832521b5edbc202bf5cb87a2[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 17:29:22 2018 +0200
+
+    19th commit rm add mid of all tex packages (18th work in heoku)
+
+[33mcommit 6fe8350e658ef5baa0b8875da0441f18f3e41436[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 17:20:13 2018 +0200
+
+    18th commit rm  all tex packages
+
+[33mcommit 5cb5a71996b46b97192586cfede0c17a75fa7b44[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 03:31:40 2018 +0200
+
+    17th commit some modifs sub backspace by space
+
+[33mcommit 73db63775aa5901e3d53a96a83efc8fad74db010[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 03:25:09 2018 +0200
+
+    16th commit some modifs
+
+[33mcommit 418ff04809667a6f71dd47af5610a9e10784d98d[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 03:22:13 2018 +0200
+
+    15th commit come modifs
+
+[33mcommit 0daf7b53fb1d3982db4a16a713f9a25f47bba31f[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 02:43:56 2018 +0200
+
+    14th commit cv(soft(hello world)) clean texlive.packages
+
+[33mcommit 6979fc1fb119dd32a00f271ffb48e4b2a48b8d38[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Fri Sep 7 00:06:38 2018 +0200
+
+    13th commit change texlive.package with s at the end
+
+[33mcommit a0b623a59b92eb5c7c4d9cb095a9019d07a17f51[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Thu Sep 6 17:19:05 2018 +0200
+
+    12th commit change 2018 => 2017
+
+[33mcommit 7ed7762cb1b3bede671b58ab6e648854a63b07d2[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Thu Sep 6 17:17:00 2018 +0200
+
+    11th commit another test to know how buildpacks works
+
+[33mcommit ce7973c2c5ff9186a2709bf901def9b04af2d64b[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Thu Sep 6 15:56:04 2018 +0200
+
+    10th commit i hope is done
+
+[33mcommit ab524ac702ca27ce39cd79e69cc5d2f80ff236d2[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Thu Sep 6 15:52:01 2018 +0200
+
+    9th commit success come back of the original cv tex text with the new config on package.textlive
+
+[33mcommit e007850a8264e4470a2d67b15a3b35f281e8e413[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Thu Sep 6 15:37:53 2018 +0200
+
+    8th commit anothers tex buildpacks configurations adjustements
+
+[33mcommit 176d2b344d57b9def85de06f6bf2d3041c953919[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Thu Sep 6 15:24:23 2018 +0200
+
+    7th commit buildpacks configurations adjustements
+
+[33mcommit 40ff02b6a29fd96e8ba7957a6ba7fdaea8dc7df1[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Thu Sep 6 15:07:19 2018 +0200
+
+    6th commit test buildpacks thermondo tex
+
+[33mcommit bcbf60557deb99380d6860875ff1c5351ac70f6b[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Thu Sep 6 13:05:42 2018 +0200
+
+    4th commit add heroku buildpacks and 3 file textlive and change cd.pdf.erb
+
+[33mcommit 76f18b3c69c94dadd28abb08fcbe86b7168a71ad[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Thu Sep 6 13:04:50 2018 +0200
+
+    4th commit add heroku buildpacks and 3 file textlive and change cd.pdf.erb
+
+[33mcommit 6a390e2e23cc28d3ed248834e713eaa52ad9cbc0[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Thu Sep 6 02:15:31 2018 +0200
+
+    3rd add yarn et rails env=prod exec rake assets:precompile
+
+[33mcommit 4fadc8aa486685e2ebab842a460d689da7f4c0f7[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Thu Sep 6 01:55:13 2018 +0200
+
+    2nd commit rm public from gitignore because trouble assets during heroku push
+
+[33mcommit edfd8630b52eb779c1f66679686a310c75f89d65[m
+Author: souyahibou <souyahibou@kanoute.pro>
+Date:   Thu Sep 6 01:21:24 2018 +0200
+
+    first commit All_Projects from ubuntu subsytem
+
+[33mcommit 3d54cff50fea957db62cde6b8fd58d774cee6303[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Fri Jul 20 14:21:15 2018 +0200
+
+    add new project: scraping/membre slack
+
+[33mcommit 06fe097017584ed8b0e754a24ce4674e3e154278[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Sun Jul 15 06:31:43 2018 +0200
+
+    maj gitignore
+
+[33mcommit 56f8ac8d900e7234291244da18e9fc20b34b0a39[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Sun Jul 15 06:30:57 2018 +0200
+
+    some refeactoring delete images
+
+[33mcommit cc3e9f9503e54ffa0bbb39119f9922fc32ec8657[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Sun Jul 15 06:28:11 2018 +0200
+
+    add new project: scraping/donwload image by img tag
+
+[33mcommit c6f7225b17d67d6ca9ff2812e6f10e7cb830459a[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Fri Jun 22 13:32:28 2018 +0200
+
+    Test 6.7 remove builpack holiture on heroku
+
+[33mcommit 9268bea5ce7fbd6de6ce92762a316c023a71ae3f[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Fri Jun 22 13:28:51 2018 +0200
+
+    Test 6.5 add the new own builpack on heroku
+
+[33mcommit dac4c5efaf3d812bf6dd899db5136007cca3b527[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Fri Jun 22 04:26:23 2018 +0200
+
+    Test 6.4 add moderncv directory to move on server
+
+[33mcommit b323781b75f1126fcbb253d09218890f7aa1aae7[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Thu Jun 21 15:17:59 2018 +0200
+
+    Test 6.3.1 add builpack on heroku
+
+[33mcommit c3cc56d0dec64bcc215ef40d184f9b0515e22325[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Thu Jun 21 15:06:29 2018 +0200
+
+    Test 6.3 add builpack
+
+[33mcommit 90fd43b5f5035fd4b886a82735434dbbdb14ccb0[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Thu Jun 21 14:36:43 2018 +0200
+
+    Test 6.2 bazard test pdflatex command on heroku adjust testo for pdflatex command
+
+[33mcommit 6b7a05187b89e9c7c36140782049fa3afb161524[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Thu Jun 21 14:09:23 2018 +0200
+
+    Test 6.1 bazard test pdflatex command on heroku adjust path
+
+[33mcommit 42f4c5e57a0ceab8776e777dc00c7e89ae36ab64[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Thu Jun 21 13:53:46 2018 +0200
+
+    Test 6 bazard test pdflatex command on heroku
+
+[33mcommit fb68e72eb473dd4f96dd377e6591bfd880a1e499[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Thu Jun 21 07:17:21 2018 +0200
+
+    Test 7 some modif in production.rb add sprocket
+
+[33mcommit 8eb19530a69ef79de0696b4336797f494388753c[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Thu Jun 21 07:06:05 2018 +0200
+
+    Test 6 change config.assets.compile = false to => true
+
+[33mcommit 23a0a442982a48211c0021d0bfaf315cd4d906b6[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Thu Jun 21 06:58:36 2018 +0200
+
+    Test 5 integration exec assets precompile and add config.assets.initialize_on_precompile = false on application.rb
+
+[33mcommit 5aa5a3cd209b30ec2fd7ff4ff13634f3e3fc5cd2[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Thu Jun 21 03:43:42 2018 +0200
+
+    Test 4 integration on heroku move zizani directory in assets
+
+[33mcommit 39f2e82c19a5615c55e557ccd3379c022408ed31[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Thu Jun 21 01:12:11 2018 +0200
+
+    Test 3 integration on heroku: config.assets.compile false=>true add rails_12factor gem(useless)
+
+[33mcommit 1d681cb6013f594605299fade48fb7a8a9779cd7[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Thu Jun 21 00:38:31 2018 +0200
+
+    debug layout view pdf | integration on heroku | add some features (radio check button)
+
+[33mcommit 19712c557d2a7ef3431cac693ac1c97f08b6e4e9[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Wed Jun 20 10:25:50 2018 +0200
+
+    adding two new projects: => 1 cv using rails-latex gem; => 2 html color names using hashes regex html tags; also (pictures directory may be rearranged)
+
+[33mcommit fe6230a12e28bcc2fe3672125dfacf25129c9538[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Tue May 15 21:09:38 2018 +0200
+
+    add 2 project: 1 monkam scrap agence SSII / 2 thp project n°43 googlemapAPI
+
+[33mcommit 0a21c5454b36e405d98cfe38f25871265e13ac60[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Tue Apr 3 19:40:33 2018 +0200
+
+    third commit lots adjustements mainly the integration of federdo_calc project
+
+[33mcommit 6d06a7bcfd0b6635de7064d85a1eee18c2c0a32c[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Mon Apr 2 15:05:41 2018 +0200
+
+    second commit
+
+[33mcommit 1938b46f58663dad703f75433d1c7e197e4a7a67[m
+Author: Souyahibou <souaybou.k@live.fr>
+Date:   Sat Mar 31 16:02:25 2018 +0200
+
+    first commit of the biggest project ;)
