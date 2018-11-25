@@ -2,39 +2,49 @@
 <p>Find me in app/views/users/edit.html.erb</p>
 
 
-<h1>Edit gossip</h1>
+<h1>Edit user</h1>
 
 
-<%= form_with model: @gossip, local: true do |form| %>
+<%= form_with model: @user, local: true do |form| %>
 
-  <% if @gossip.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@gossip.errors.count, "error") %> prohibited
-        this gossip from being saved:
-      </h2>
-      <ul>
-        <% @gossip.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-
-  <h1>2e version for update</h1>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@user.errors.count, "error") %> prohibited
+          this user from being saved:
+        </h2>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
 
-   <%= form_tag(@gossip, :method=>:put) do %>
-    <%= label_tag('anonymous_author', 'Anonymous_Author : ') %>
-    <%= text_field_tag('anonymous_author') %>
-    <%= label_tag('content','Content :') %>
-    <%= text_area_tag('content') %>
-    <%= submit_tag("Actualiser") %>
-   <% end %>
+    <h1>user</h1>
+
+
+     <%= form_tag(@user, :method=>:put) do %>
+      <%= label_tag('user_name', 'name : ') %>
+      <%= form.text_field('name') %>
+      <%= label_tag('user_content','Content :') %>
+      <%= text_area_tag('user[content]') %>
+      <%= submit_tag("Actualiser") %>
+     <% end %>
 
  <% end %>
 
+<br>
+<br>
 
-<%= link_to 'Back', gossips_path %>
+  <h1>events of user</h1>
+
+ <% @user.created_events.each do |event| %>
+   <%= render '/events/form', event: event %>
+   <br>   <br>
+ <% end %>
+
+
+
+<%= link_to 'Back', users_path %>

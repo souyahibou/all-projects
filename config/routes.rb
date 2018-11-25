@@ -1,24 +1,44 @@
 Rails.application.routes.draw do
-  get 'projects/testo1'  => 'projects#testo1', as: :projects_testo1
-  get 'projects/testo2'  => 'projects#testo2', as: :projects_testo2
-  get 'projects/testo3'  => 'projects#testo3', as: :projects_testo3
-  get 'projects/testo4'  => 'projects#testo4', as: :projects_testo4
-  get 'projects/testo5'  => 'projects#testo5', as: :projects_testo5
-  get 'projects/testo6'  => 'projects#testo6', as: :projects_testo6
-  get 'projects/testo7'  => 'projects#testo7', as: :projects_testo7
-  get 'projects/testo8'  => 'projects#testo8', as: :projects_testo8
-  get 'projects/testo9'  => 'projects#testo9', as: :projects_testo9
-  get 'projects/testo0'  => 'projects#testo0', as: :projects_testo0
+  # mount JeMePresente::Engine,     at: "/je_me_presente_engine"
+  # mount MovieMaker::Engine,       at: "/movie_maker_engine"
+  # mount ReFormer::Engine,         at: "/re_former_engine"
+  #
+  # mount TheGossipProject::Engine, at: "/the_gossip_project_engine"
+  # mount ThpMoussaillons::Engine,  at: "/thp_moussaillons_engine"
+  #
+  # mount BaseDeDonnees::Engine,    at: "/base_de_donnees_engine"
+  #
+  # mount UniversResponse::Engine,  at: "/univers_response_engine"
+  #
+  # mount Reservation::Engine,      at: "/reservation_engine"
+  # mount Usine::Engine,            at: "/usine_engine"
+  # mount Generate::Engine,         at: "/generate_engine"
+  # mount Courses::Engine,          at: "/courses_engine"
+  # #
+  # # mount Eventbrite::Engine,       at: "/eventbrite_engine"
+  # #
+  # mount ReservationVol::Engine,   at: "/reservation_vol_engine"
+  #
+  # mount DeviseDemo::Engine,       at: "/devise_demo_engine"
+  # mount HomePage::Engine,         at: "/home_page_engine"
+  #
+  # mount TwitterBis::Engine,       at: "/twitter_bis_engine"
+  #
+  # mount FormulaireStylay::Engine, at: "/formulaire_stylay_engine"
+  # #
+  # mount EmailViewer::Engine,      at: "/email_viewer_engine"
 
-namespace :projects do
-    # get 'thp/week/:w_nbr/day/:d_nbr/oeuvres', action: 'oeuvres', controller: 'thp', as:	:oeuvres#, module: 'admin'# path: '/projects/thps/:id'      #may be used with switch case in the controlleur
-    (1..9).each do |w_nbr|
-        (1..5).each do |d_nbr|
-            nbr = w_nbr.to_s + "_" + d_nbr.to_s
-            match "thp/week/#{w_nbr}/day/#{d_nbr}/oeuvres", action: "oeuvres#{nbr}", controller: 'thp', as:	:"oeuvres#{nbr}", via: [:get, :post]#, module: 'admin'# path: '/projects/thps/:id'
-        end
-    end
-end
+  get 'projects/testo9'  => 'projects#testo9', as: :projects_testo9
+
+  namespace :projects do
+      # get 'thp/week/:w_nbr/day/:d_nbr/oeuvres', action: 'oeuvres', controller: 'thp', as:	:oeuvres#, module: 'admin'# path: '/projects/thps/:id'      #may be used with switch case in the controlleur
+      (1..9).each do |w_nbr|
+          (1..5).each do |d_nbr|
+              nbr = w_nbr.to_s + "_" + d_nbr.to_s
+              match "thp/week/#{w_nbr}/day/#{d_nbr}/oeuvres", action: "oeuvres#{nbr}", controller: 'thp', as:	:"oeuvres#{nbr}", via: [:get, :post]#, module: 'admin'# path: '/projects/thps/:id'
+          end
+      end
+  end
 
   match 'projects/thp/execute', via: [:get, :post]
 

@@ -53,56 +53,11 @@ class ProjectsController < ApplicationController
         # render :json => @var
         render action: 'testo', :layout => 'application', formats: [:html]
       end
-      def testo1
-        # @var = (1..5).to_a
-        # render :json => @var
-        render action: 'testo1', :layout => 'application', formats: [:pdf]
-      end
-      def testo2
-        # @var = (1..5).to_a
-        # render :json => @var
-        render action: 'testo2', :layout => 'application', formats: [:pdf]
-      end
-      def testo3
-        # @var = (1..5).to_a
-        # render :json => @var
-        render action: 'testo3', :layout => 'application', formats: [:pdf]
-      end
-      def testo4
-        # @var = (1..5).to_a
-        # render :json => @var
-        render action: 'testo4', :layout => 'application', formats: [:pdf]
-      end
-      def testo5
-        # @var = (1..5).to_a
-        # render :json => @var
-        render action: 'testo5', :layout => 'application', formats: [:pdf]
-      end
-      def testo6
-        # @var = (1..5).to_a
-        # render :json => @var
-        render action: 'testo6', :layout => 'application', formats: [:pdf]
-      end
-      def testo7
-        # @var = (1..5).to_a
-        # render :json => @var
-        render action: 'testo7', :layout => 'application', formats: [:pdf]
-      end
-      def testo8
-        # @var = (1..5).to_a
-        # render :json => @var
-        render action: 'testo8', :layout => 'application', formats: [:pdf]
-      end
       def testo9
         # @var = (1..5).to_a
         # render :json => @var
         render action: 'testo9', :layout => 'application', formats: [:pdf]
         render template: projects_home_path
-      end
-      def testo0
-        # @var = (1..5).to_a
-        # render :json => @var
-        render action: 'testo0', :layout => 'application', formats: [:pdf]
       end
 
       def scraping_annuaire_cabinets

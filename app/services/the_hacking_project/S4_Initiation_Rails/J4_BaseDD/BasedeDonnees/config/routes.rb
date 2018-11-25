@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :links
   resources :matters
   resources :students
+  root :to => 'firstc#index'
 end

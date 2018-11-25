@@ -15,8 +15,9 @@
 
         <input type="submit" id="submit" value="See Project"  name="commit"><br>
 
-        <input type="radio" name="complete" value="Oui" <%=if  finish then "checked" end%>> Operationnal
-        <input type="radio" name="complete" value="Non" <%=if !finish then "checked" end%>> Not Completely<br>
+        <input type="radio" name="complete" value="Oui" <%=if finish!="Mid" then "checked" end%>> Operationnal
+        <input type="radio" name="complete" value="Mid" <%=if finish=="Mid" then "checked" end%>> Not Completely<br>
+        <input type="radio" name="complete" value="Non" <%=if !finish then       "checked" end%>> Not Begun<br>
 
         <%=if false then link_to 'Back', projects_testo_path end%>
     </fieldset>

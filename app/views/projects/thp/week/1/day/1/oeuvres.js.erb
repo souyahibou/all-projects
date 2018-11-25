@@ -1,5 +1,5 @@
-<% unless @a.nil? %>
+<% unless @res.nil? %>
    var x = document.getElementById("myInput");
    var y = document.getElementsByName("cesar[number]")[0];
-  document.getElementById("demo").innerHTML = "You are searching for: " + "(" + x.value +", " + y.value + ")=> <%= escape_javascript(@a) %>; ";
+  document.getElementById("demo").innerHTML = "You are searching for: " + "(" + x.value +", " + y.value + ")=> <%= escape_javascript(@res) %>; ";
 <% end %>

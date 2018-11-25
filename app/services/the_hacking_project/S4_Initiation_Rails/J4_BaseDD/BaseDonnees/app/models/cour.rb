@@ -1,2 +1,0 @@
-class Cour < ApplicationRecord
-end

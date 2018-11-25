@@ -1,0 +1,10 @@
+<h2> <%= title %> </h2>
+
+<%= form_tag post_remote, method: action, remote: remote do  %>
+    <p>Write something in the perform field and press "ENTER".</p>
+    <%= search_field(:"#{task}", :search, rows: "10", cols: "30", id: "myInput_#{task}", onsearch: "//myFunction();" ) if display_search %>
+    <%= number_field(:"#{task}", :number, in: 0.0..200.0, step: 0.5, value: "26")           if display_number%>
+    <%= text_area_tag(:"#{task}[text]", "The cat was playing in the garden.", size: "24x6") if display_text%>
+    <%= submit_tag("Search") %>
+    <p id="demo_<%= task %>"></p>
+<% end %>

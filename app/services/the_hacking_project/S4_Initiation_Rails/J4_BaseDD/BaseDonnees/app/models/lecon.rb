@@ -1,2 +1,0 @@
-class Lecon < ApplicationRecord
-end

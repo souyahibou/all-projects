@@ -7,92 +7,87 @@ module Projects
 
 
 
-
-      def oeuvres
-          # render :html => "ok"
-          filepath = Rails.root.join('app/services/The_Hacking_Project/S2_Decouverte_Ruby/J1_Init_Ruby/chiffre_de_cesar.rb')
-          output = `ruby -r #{filepath} -e 'ChiffreDeCesar.new("nil",32)'`
-          puts output
-          @var = output
-          render :html => @var
-          # render :template => projects_oeuvres_path
-
-          case day_nbr # /!\ day and week are inversed     use this method only if tou use the root :  get 'thp/week/:w_nbr/day/:d_nbr/oeuvres', action: 'oeuvres', controller: 'thp', as:	:oeuvres
-              when 1
-                  case week_nbr
-                      when 1 then oeuvres1_1
-                      when 2 then oeuvres2_1
-                      when 3 then oeuvres3_1
-                      when 4 then oeuvres4_1
-                      when 5 then oeuvres5_1
-                      when 6 then oeuvres6_1
-                      when 7 then oeuvres7_1
-                      when 8 then oeuvres8_1
-                      when 9 then oeuvres9_1
-                  end
-              when 2
-                  case week_nbr
-                      when 1 then oeuvres1_2
-                      when 2 then oeuvres2_2
-                      when 3 then oeuvres3_2
-                      when 4 then oeuvres4_2
-                      when 5 then oeuvres5_2
-                      when 6 then oeuvres6_2
-                      when 7 then oeuvres7_2
-                      when 8 then oeuvres8_2
-                      when 9 then oeuvres9_2
-                  end
-              when 3
-                  case week_nbr
-                      when 1 then oeuvres1_3
-                      when 2 then oeuvres2_3
-                      when 3 then oeuvres3_3
-                      when 4 then oeuvres4_3
-                      when 5 then oeuvres5_3
-                      when 6 then oeuvres6_3
-                      when 7 then oeuvres7_3
-                      when 8 then oeuvres8_3
-                      when 9 then oeuvres9_3
-                  end
-              when 4
-                  case week_nbr
-                      when 1 then oeuvres1_4
-                      when 2 then oeuvres2_4
-                      when 3 then oeuvres3_4
-                      when 4 then oeuvres4_4
-                      when 5 then oeuvres5_4
-                      when 6 then oeuvres6_4
-                      when 7 then oeuvres7_4
-                      when 8 then oeuvres8_4
-                      when 9 then oeuvres9_4
-                  end
-              when 5
-                  case week_nbr
-                      when 1 then oeuvres1_5
-                      when 2 then oeuvres2_5
-                      when 3 then oeuvres3_5
-                      when 4 then oeuvres4_5
-                      when 5 then oeuvres5_5
-                      when 6 then oeuvres6_5
-                      when 7 then oeuvres7_5
-                      when 8 then oeuvres8_5
-                      when 9 then oeuvres9_5
-                  end
-
-              else
-                "You gave me #{day_nbr} -- I have no idea what to do with that."
-          end
-      end
-
+      # #not use for now
+      # def oeuvres
+      #     # render :html => "ok"
+      #     filepath = Rails.root.join('app/services/The_Hacking_Project/S2_Decouverte_Ruby/J1_Init_Ruby/chiffre_de_cesar.rb')
+      #     output = `ruby -r #{filepath} -e 'ChiffreDeCesar.new("nil",32)'`
+      #     puts output
+      #     @var = output
+      #     render :html => @var
+      #     # render :template => projects_oeuvres_path
+      #
+      #     case day_nbr # /!\ day and week are inversed     use this method only if tou use the root :  get 'thp/week/:w_nbr/day/:d_nbr/oeuvres', action: 'oeuvres', controller: 'thp', as:	:oeuvres
+      #         when 1
+      #             case week_nbr
+      #                 when 1 then oeuvres1_1
+      #                 when 2 then oeuvres2_1
+      #                 when 3 then oeuvres3_1
+      #                 when 4 then oeuvres4_1
+      #                 when 5 then oeuvres5_1
+      #                 when 6 then oeuvres6_1
+      #                 when 7 then oeuvres7_1
+      #                 when 8 then oeuvres8_1
+      #                 when 9 then oeuvres9_1
+      #             end
+      #         when 2
+      #             case week_nbr
+      #                 when 1 then oeuvres1_2
+      #                 when 2 then oeuvres2_2
+      #                 when 3 then oeuvres3_2
+      #                 when 4 then oeuvres4_2
+      #                 when 5 then oeuvres5_2
+      #                 when 6 then oeuvres6_2
+      #                 when 7 then oeuvres7_2
+      #                 when 8 then oeuvres8_2
+      #                 when 9 then oeuvres9_2
+      #             end
+      #         when 3
+      #             case week_nbr
+      #                 when 1 then oeuvres1_3
+      #                 when 2 then oeuvres2_3
+      #                 when 3 then oeuvres3_3
+      #                 when 4 then oeuvres4_3
+      #                 when 5 then oeuvres5_3
+      #                 when 6 then oeuvres6_3
+      #                 when 7 then oeuvres7_3
+      #                 when 8 then oeuvres8_3
+      #                 when 9 then oeuvres9_3
+      #             end
+      #         when 4
+      #             case week_nbr
+      #                 when 1 then oeuvres1_4
+      #                 when 2 then oeuvres2_4
+      #                 when 3 then oeuvres3_4
+      #                 when 4 then oeuvres4_4
+      #                 when 5 then oeuvres5_4
+      #                 when 6 then oeuvres6_4
+      #                 when 7 then oeuvres7_4
+      #                 when 8 then oeuvres8_4
+      #                 when 9 then oeuvres9_4
+      #             end
+      #         when 5
+      #             case week_nbr
+      #                 when 1 then oeuvres1_5
+      #                 when 2 then oeuvres2_5
+      #                 when 3 then oeuvres3_5
+      #                 when 4 then oeuvres4_5
+      #                 when 5 then oeuvres5_5
+      #                 when 6 then oeuvres6_5
+      #                 when 7 then oeuvres7_5
+      #                 when 8 then oeuvres8_5
+      #                 when 9 then oeuvres9_5
+      #             end
+      #
+      #         else
+      #           "You gave me #{day_nbr} -- I have no idea what to do with that."
+      #     end
+      # end
+      #
 
 
 
         def oeuvres1_1
-            if params.permit(:commit).values.join.include?("Search") then
-                task_params = params.require(:cesar).permit(:search, :number)
-                @a = TheHackingProject::S2DecouverteRuby::J1InitRuby::ChiffreDeCesar.new.chiffre_de_cesar(task_params[:search].to_s, task_params[:number].to_i)
-            end
-            render :template => projects_oeuvres1_1_path
         end
         def oeuvres1_2
 
@@ -106,68 +101,140 @@ module Projects
 
 
         def oeuvres2_1
+          arguments = { "cesar"        =>  Proc.new { @res = TheHackingProject::S2DecouverteRuby::J1InitRuby::ChiffreDeCesar.new.chiffre_de_cesar(@task_params[:search].to_s, @task_params[:number].to_i)},
+                        "multiplesum"  =>  Proc.new { @res = TheHackingProject::S2DecouverteRuby::J1InitRuby::SumOfMultiples.new.sum_of_multiples(*@task_params[:search].split(",").map{|nbr| nbr.to_i}, 0, @task_params[:number].to_i)},
+                        "trader"       =>  Proc.new { @res = TheHackingProject::S2DecouverteRuby::J1InitRuby::StockPicker.new.trader_du_dimanche(@task_params[:search].split(",").map{|nbr| nbr.to_i}).to_s},
+                        "decomptemots" =>  Proc.new { @res = TheHackingProject::S2DecouverteRuby::J1InitRuby::CompterLesMots.new.jean_michel_data(@task_params[:text].to_s, @task_params[:search].to_s).to_s}
+          }
+          perform_search_choice_selection(arguments, projects_oeuvres2_1_path)
         end
         def oeuvres2_2
+            arguments = {
+                          "hello"       =>  Proc.new { |arg| render :template => "/projects/thp/week/2/day/2/rspec_results.html" and return},
+                          "temperature" =>  Proc.new {render :template => "/projects/thp/week/2/day/2/rspec_results0.html" and return},
+                          "calculator"  =>  Proc.new {render :template => "/projects/thp/week/2/day/2/rspec_results1.html" and return},
+                          "simon_says"  =>  Proc.new {render :template => "/projects/thp/week/2/day/2/rspec_results2.html" and return},
+                          "pig_latin"   =>  Proc.new {render :template => "/projects/thp/week/2/day/2/rspec_results3.html" and return},
+                          "book_titles" =>  Proc.new {render :template => "/projects/thp/week/2/day/2/rspec_results4.html" and return},
+                          "timer"       =>  Proc.new {render :template => "/projects/thp/week/2/day/2/rspec_results5.html" and return}
+                        }
+            perform_search_choice_selection(arguments, projects_oeuvres2_2_path)
         end
         def oeuvres2_3
+            render :html => "not done"
         end
+
         def oeuvres2_4
+            arguments = { "incubateur" =>  Proc.new {render :json => TheHackingProject::S2DecouverteRuby::J4Nokogiri::Projet::Incubateurs.new.incubateurs and return},
+                          "obscur_trader" =>  Proc.new {render :json => TheHackingProject::S2DecouverteRuby::J4Nokogiri::Projet::ObscurTrader.new.obscur_trader and return},
+                          "route_mairie" =>  Proc.new {render :json => TheHackingProject::S2DecouverteRuby::J4Nokogiri::Projet::RouteMairie.new.perform and return}       }
+            render_default =  projects_oeuvres2_4_path
+            perform_search_choice_selection(arguments, render_default)
         end
+
         def oeuvres2_5
+            render :html => TheHackingProject::S2DecouverteRuby::J5Watir::WatirGoogle.new.perform
         end
 
 
         def oeuvres3_1
+            render :html => "connexion backend"
         end
         def oeuvres3_2
+            render :html => "program mail back-end"
         end
         def oeuvres3_3
+            arguments = { "hi" =>            Proc.new {render :html => TheHackingProject::S3RubyIntermediaire::J3Poo::Hi.new.perform and return},
+                          "monkey" =>        Proc.new {render :html => TheHackingProject::S3RubyIntermediaire::J3Poo::Monkey.new.run_spec and return},
+                          "orange_tree" =>   Proc.new {TheHackingProject::S3RubyIntermediaire::J3Poo::OrangeTree.new.run_spec},
+                          "scrabble_word" => Proc.new {TheHackingProject::S3RubyIntermediaire::J3Poo::ScrabbleWord.new.run_spec},
+                          "superhero" =>     Proc.new {render :html => TheHackingProject::S3RubyIntermediaire::J3Poo::Superhero.new("name","age","superpower") and return}
+                        }
+            render_default =  projects_oeuvres3_3_path
+            perform_search_choice_selection(arguments, render_default)
+            # the main render path generated# render :html => "../services/the_hacking_project/s3_ruby_intermediaire/j3_poo/rspec_results.html" #SEE IF IS POSSIBLE :=> is not possible until add services path to view path in config/application.rb or change the file generated path in every program to view path
         end
         def oeuvres3_4
+            TheHackingProject::S3RubyIntermediaire::J4TicTacToe::ProjetTicTacToe.new.run_spec
+            render :html => "../services/the_hacking_project/s3_ruby_intermediaire/j4_tic_tac_toe/rspec_results.html"
         end
         def oeuvres3_5
+            render :html => "not done"
         end
 
 
         def oeuvres4_1
+            render :html => "not done"
         end
         def oeuvres4_2
+            render :template => projects_oeuvres4_2_path    #custom template
         end
         def oeuvres4_3
+            arguments = { "gossip" =>      Proc.new {redirect_to the_gossip_project_path and return},
+                          "moussaillon" => Proc.new {redirect_to thp_moussaillons_path and return},
+                        }
+            render_default =  projects_oeuvres4_3_path
+            perform_search_choice_selection(arguments, render_default)
         end
         def oeuvres4_4
+            redirect_to base_de_donnees_path
         end
         def oeuvres4_5
         end
 
 
         def oeuvres5_1
+            redirect_to univers_response_path
         end
         def oeuvres5_2
+            redirect_to univers_response_path
         end
         def oeuvres5_3
+            render :html => "not done"
         end
         def oeuvres5_4
+            arguments = { "reservation" =>  Proc.new {redirect_to reservation_path and return},
+                          "usine" =>        Proc.new {redirect_to usine_path and return},
+                          "generate" =>     Proc.new {redirect_to generate_path and return},
+                          "courses" =>      Proc.new {redirect_to courses_path and return},
+                        }
+            render_default =  projects_oeuvres5_4_path
+            perform_search_choice_selection(arguments, render_default)
         end
         def oeuvres5_5
+            redirect_to eventbrite_path
         end
 
 
         def oeuvres6_1
+            redirect_to reservation_vol_path
         end
         def oeuvres6_2
+            arguments = { "devise_demo" =>  Proc.new {redirect_to devise_demo_path and return},
+                          "home_page" =>    Proc.new {redirect_to home_page_path and return},
+                        }
+            render_default =  projects_oeuvres6_2_path
+            perform_search_choice_selection(arguments, render_default)
         end
         def oeuvres6_3
         end
         def oeuvres6_4
+            load("#{Rails.root}/engines/thp/week/6/day/4/rails_service/services/say_hello.rb")
+            arguments = { "twitter_bis" =>   Proc.new {redirect_to twitter_bis_path and return},
+                          "rails_service" => Proc.new {render html: SayHello.new.perform and return},
+                        }
+            render_default =  projects_oeuvres6_4_path
+            perform_search_choice_selection(arguments, render_default)
         end
         def oeuvres6_5
         end
 
 
         def oeuvres7_1
+            render file: "#{Rails.root}/engines/thp/week/7/day/1/youtube/index"
         end
         def oeuvres7_2
+            redirect_to formulaire_stylay_path
         end
         def oeuvres7_3
         end
@@ -195,11 +262,122 @@ module Projects
         def oeuvres9_2
         end
         def oeuvres9_3
+            redirect_to email_viewer_path
+
         end
         def oeuvres9_4
         end
         def oeuvres9_5
         end
 
+
+        def perform_search_choice_selection(args={}, main_page)              # method for AJAX requests
+            if params.permit(:commit).values.join.include?("Search") then
+               @task_params = args.map do |key,value|
+                                    begin params.require(key.to_sym)  rescue  nil end  #getting the search performed
+                              end.compact.sample.permit(:search, :number, :text)
+
+               @name_task_params = params.to_unsafe_h.select{|key,value| value.class != String}.keys.first    # ActiveSupport::HashWithIndifferentAccess   recupere la clé du hash avec le tableau [des params of the search_task] en valeur
+               args[@name_task_params].call     #value must be a proc (use return because can't use two(render/redirect) times)
+            end
+            render :template => main_page
+        end
   end
 end
+
+
+
+
+# if params.permit(:commit).values.join.include?("Search") then
+#   @task_params = begin params.require(:hello)  rescue   #getting the search performed
+#     begin params.require(:temperature)         rescue
+#       begin params.require(:calculator)        rescue
+#         begin params.require(:simon_says)      rescue
+#           begin params.require(:pig_latin)     rescue
+#             begin params.require(:book_titles) rescue
+#                     params.require(:timer)
+#             end
+#           end
+#         end
+#       end
+#     end
+#   end.permit(:search, :number, :text)
+#   @name_task_params = params.to_unsafe_h.select{|key,value| value.class != String}.keys.first    # ActiveSupport::HashWithIndifferentAccess   renvoie le
+#   case @name_task_params
+#   when "hello"        then  render :template => "/projects/thp/week/2/day/2/rspec_results.html"
+#   when "temperature"  then  render :template => "/projects/thp/week/2/day/2/rspec_results0.html"
+#   when "calculator"   then  render :template => "/projects/thp/week/2/day/2/rspec_results1.html"
+#   when "simon_says"   then  render :template => "/projects/thp/week/2/day/2/rspec_results2.html"
+#   when "pig_latin"    then  render :template => "/projects/thp/week/2/day/2/rspec_results3.html"
+#   when "book_titles"  then  render :template => "/projects/thp/week/2/day/2/rspec_results4.html"
+#   when "timer"        then  render :template => "/projects/thp/week/2/day/2/rspec_results5.html"
+#   end
+# else
+#   render :template => projects_oeuvres2_2_path
+# end
+#
+#
+#
+# def search_choice_selection(args={}, main_page)
+#     if params.permit(:commit).values.join.include?("Search") then
+#       @task_params =
+#                     args.map do |key,value|
+#                         begin params.require(key.to_sym)  rescue  nil end  #getting the search performed
+#                     end.compact.sample.permit(:search, :number, :text)
+#
+#       @name_task_params = params.to_unsafe_h.select{|key,value| value.class != String}.keys.first    # ActiveSupport::HashWithIndifferentAccess   recupere la clé du hash avec le tableau [des params of the search_task] en valeur
+#       case @name_task_params
+#       when args.keys[0]  then  render :template => args.values[0]
+#       when args.keys[1]  then  render :template => args.values[1]
+#       when args.keys[2]  then  render :template => args.values[2]
+#       when args.keys[3]  then  render :template => args.values[3]
+#       when args.keys[4]  then  render :template => args.values[4]
+#       when args.keys[5]  then  render :template => args.values[5]
+#       when args.keys[6]  then  render :template => args.values[6]
+#       end
+#     else
+#       render :template => main_page
+#     end
+# end
+
+
+#
+# def oeuvres2_4
+#     if params.permit(:commit).values.join.include?("Search") then
+#         task_params = begin params.require(:incubateur)    rescue   #getting the search performed params
+#                        begin params.require(:obscur_trader) rescue
+#                              params.require(:route_mairie)
+#                        end
+#                        end.permit(:search, :number, :text)
+#         @name_task_params = params.to_unsafe_h.select{|key,value| value.class != String}.keys.first    # ActiveSupport::HashWithIndifferentAccess   renvoie le
+#         case @name_task_params
+#         when "incubateur"     then  render :json => TheHackingProject::S2DecouverteRuby::J4Nokogiri::Projet::Incubateurs.new.incubateurs
+#         when "obscur_trader"  then  render :json => TheHackingProject::S2DecouverteRuby::J4Nokogiri::Projet::ObscurTrader.new.obscur_trader
+#         when "route_mairie"   then  render :json => TheHackingProject::S2DecouverteRuby::J4Nokogiri::Projet::RouteMairie.new.perform
+#         end
+#     else
+#         render :template => projects_oeuvres2_4_path
+#     end
+# end
+
+#
+#
+# def oeuvres2_1
+#     if params.permit(:commit).values.join.include?("Search") then
+#       task_params = begin params.require(:cesar) rescue   #getting the search performed
+#         begin params.require(:multiplesum) rescue
+#           begin params.require(:trader) rescue
+#             params.require(:decomptemots)
+#           end
+#         end
+#       end.permit(:search, :number, :text)
+#       @name_task_params = params.to_unsafe_h.select{|key,value| value.class != String}.keys.first    # ActiveSupport::HashWithIndifferentAccess   renvoie le
+#       case @name_task_params
+#       when "cesar"        then  @res = TheHackingProject::S2DecouverteRuby::J1InitRuby::ChiffreDeCesar.new.chiffre_de_cesar(task_params[:search].to_s, task_params[:number].to_i)
+#       when "multiplesum"  then  @res = TheHackingProject::S2DecouverteRuby::J1InitRuby::SumOfMultiples.new.sum_of_multiples(*task_params[:search].split(",").map{|nbr| nbr.to_i}, 0, task_params[:number].to_i)
+#       when "trader"       then  @res = TheHackingProject::S2DecouverteRuby::J1InitRuby::StockPicker.new.trader_du_dimanche(task_params[:search].split(",").map{|nbr| nbr.to_i}).to_s
+#       when "decomptemots" then  @res = TheHackingProject::S2DecouverteRuby::J1InitRuby::CompterLesMots.new.jean_michel_data(task_params[:text].to_s, task_params[:search].to_s).to_s
+#       end
+#     end
+#     render :template => projects_oeuvres2_1_path
+# end
