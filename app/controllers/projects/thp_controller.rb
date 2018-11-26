@@ -88,15 +88,20 @@ module Projects
 
 
         def oeuvres1_1
+            render :html => "To check by Github account"
         end
         def oeuvres1_2
+            render :html => "To check by Github account"
 
         end
         def oeuvres1_3
+            render :html => "To check by Github account"
         end
         def oeuvres1_4
+            render :html => "To check by Github account"
         end
         def oeuvres1_5
+            render :html => "To check by Github account"
         end
 
 
@@ -180,6 +185,7 @@ module Projects
             redirect_to base_de_donnees_path
         end
         def oeuvres4_5
+            render :html => "not done"
         end
 
 
@@ -217,6 +223,7 @@ module Projects
             perform_search_choice_selection(arguments, render_default)
         end
         def oeuvres6_3
+            render :html => "not done"
         end
         def oeuvres6_4
             load("#{Rails.root}/engines/thp/week/6/day/4/rails_service/services/say_hello.rb")
@@ -227,51 +234,76 @@ module Projects
             perform_search_choice_selection(arguments, render_default)
         end
         def oeuvres6_5
+            render :html => "not done"
         end
 
 
-        def oeuvres7_1
+        def oeuvres7_1 #to move file engine to views beacause convention already violated
+            # render action: 'week/7/day/1/oeuvres7_1', :layout => 'application'
+            # render template: projects_home_path || projects_oeuvres6_4_path
             render file: "#{Rails.root}/engines/thp/week/7/day/1/youtube/index"
         end
         def oeuvres7_2
             redirect_to formulaire_stylay_path
         end
         def oeuvres7_3
+            # render action: 'week/7/day/3/article', :layout => 'application'
+            render file: "#{Rails.root}/engines/thp/week/7/day/3/new_york_times/page/article.html.erb"
         end
-        def oeuvres7_4
+        def oeuvres7_4  #to move file engine to views beacause convention already violated
+            arguments = { "checkr" => Proc.new {render file: "#{Rails.root}/engines/thp/week/7/day/4/landing_pages/homes/checkr.html.erb", layout: "layouts/../projects/thp/week/7/day/4/homes" and return},
+                          "flynn" => Proc.new {render file: "#{Rails.root}/engines/thp/week/7/day/4/landing_pages/homes/flynn.html.erb", layout: "layouts/../projects/thp/week/7/day/4/homes" and return},
+                          "sparks" => Proc.new {render file: "#{Rails.root}/engines/thp/week/7/day/4/landing_pages/homes/sparks.html.erb", layout: "layouts/../projects/thp/week/7/day/4/homes" and return},
+                        }
+            render_default =  projects_oeuvres7_4_path
+            perform_search_choice_selection(arguments, render_default)
         end
         def oeuvres7_5
+            render :html => "not done"
         end
 
 
 
         def oeuvres8_1
+            render :html => "not done"
         end
         def oeuvres8_2
+            render :html => "not done"
         end
-        def oeuvres8_3
+        def oeuvres8_3 #to move file engine to views beacause convention already violated
+            arguments = { "warmup" => Proc.new {      render file: "#{Rails.root}/engines/thp/week/8/day/3/a1_warnup/index" and return},
+                          "calculatrice" => Proc.new {render file: "#{Rails.root}/engines/thp/week/8/day/3/a2_calculatrice/index" and return},
+                          "simon" => Proc.new {       render file: "#{Rails.root}/engines/thp/week/8/day/3/a3_simon/index" and return},
+                        }
+            render_default =  projects_oeuvres8_3_path
+            perform_search_choice_selection(arguments, render_default)
         end
-        def oeuvres8_4
+        def oeuvres8_4 #to move file engine to views beacause convention already violated
+            render projects_oeuvres8_4_path
         end
         def oeuvres8_5
+            render :html => "not done"
         end
 
 
         def oeuvres9_1
+            render :html => "not done"
         end
         def oeuvres9_2
+          render file: "#{Rails.root}/engines/thp/week/9/day/2/google.html"
         end
         def oeuvres9_3
             redirect_to email_viewer_path
-
         end
         def oeuvres9_4
+            render :html => "not done"
         end
         def oeuvres9_5
+            render :html => "not done"
         end
 
 
-        def perform_search_choice_selection(args={}, main_page)              # method for AJAX requests
+        def perform_search_choice_selection(args={}, main_page)              # method for AJAX requests otherwise mainpage is displayed
             if params.permit(:commit).values.join.include?("Search") then
                @task_params = args.map do |key,value|
                                     begin params.require(key.to_sym)  rescue  nil end  #getting the search performed
