@@ -11,7 +11,7 @@ end
 # gem 'the_gossip_project', path: 'engines/the_gossip_project'   #engine
 # gem 'thp_moussaillons', path: 'engines/thp_moussaillons'   #engine
 # gem 'base_de_donnees', path: 'engines/base_de_donnees'   #engine
-
+#
 # gem 'je_me_presente',       path: 'engines/thp/week/4/day/2/je_me_presente'   #engine
 # gem 'movie_maker',          path: 'engines/thp/week/4/day/2/movie_maker'
 # gem 're_former',            path: 'engines/thp/week/4/day/2/re_former'
@@ -41,8 +41,8 @@ end
 #
 # gem 'email_viewer',         path: 'engines/thp/week/9/day/3/email_viewer'
 
-# gem 'tux'                         #ajout
-# gem 'sinatra'                     #ajout
+gem 'tux'                         #ajout
+gem 'sinatra'                     #ajout
 
 gem 'pry'                         #ajout
 gem 'json'                        #ajout
