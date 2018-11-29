@@ -41,7 +41,7 @@ end
 #
 # gem 'email_viewer',         path: 'engines/thp/week/9/day/3/email_viewer'
 
-gem 'tux'                         #ajout
+# gem 'tux'                         #ajout
 gem 'sinatra'                     #ajout
 
 gem 'pry'                         #ajout

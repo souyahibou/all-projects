@@ -1,0 +1,39 @@
+<<h1>Users#new</h1>
+<p>Find me in app/views/users/edit.html.erb</p>
+
+
+<h1>New user</h1>
+
+
+<%= form_with model: @user, local: true do |form| %>
+
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@user.errors.count, "error") %> prohibited
+          this user from being saved:
+        </h2>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <h1>2e version for update</h1>
+
+
+     <%= form_tag(@user, :method=>:post) do %>
+      <%= label_tag('user_name', 'name : ') %>
+      <%= form.text_field('name') %>
+      <%= label_tag('user_content','Content :') %>
+      <%= text_area_tag('user[content]') %>
+      <%= submit_tag("Ajouter") %>
+     <% end %>
+
+ <% end %>
+
+
+<%= link_to 'Back', users_path %>
