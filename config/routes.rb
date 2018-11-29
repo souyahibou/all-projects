@@ -1,32 +1,32 @@
 Rails.application.routes.draw do
-  # mount JeMePresente::Engine,     at: "/je_me_presente_engine"
-  # mount MovieMaker::Engine,       at: "/movie_maker_engine"
-  # mount ReFormer::Engine,         at: "/re_former_engine"
+  mount JeMePresente::Engine,     at: "/je_me_presente_engine"
+  mount MovieMaker::Engine,       at: "/movie_maker_engine"
+  mount ReFormer::Engine,         at: "/re_former_engine"
+
+  mount TheGossipProject::Engine, at: "/the_gossip_project_engine"
+  mount ThpMoussaillons::Engine,  at: "/thp_moussaillons_engine"
+
+  mount BaseDeDonnees::Engine,    at: "/base_de_donnees_engine"
+
+  mount UniversResponse::Engine,  at: "/univers_response_engine"
+
+  mount Reservation::Engine,      at: "/reservation_engine"
+  mount Usine::Engine,            at: "/usine_engine"
+  mount Generate::Engine,         at: "/generate_engine"
+  mount Courses::Engine,          at: "/courses_engine"
   #
-  # mount TheGossipProject::Engine, at: "/the_gossip_project_engine"
-  # mount ThpMoussaillons::Engine,  at: "/thp_moussaillons_engine"
+  # mount Eventbrite::Engine,       at: "/eventbrite_engine"
   #
-  # mount BaseDeDonnees::Engine,    at: "/base_de_donnees_engine"
+  mount ReservationVol::Engine,   at: "/reservation_vol_engine"
+
+  mount DeviseDemo::Engine,       at: "/devise_demo_engine"
+  mount HomePage::Engine,         at: "/home_page_engine"
+
+  mount TwitterBis::Engine,       at: "/twitter_bis_engine"
+
+  mount FormulaireStylay::Engine, at: "/formulaire_stylay_engine"
   #
-  # mount UniversResponse::Engine,  at: "/univers_response_engine"
-  #
-  # mount Reservation::Engine,      at: "/reservation_engine"
-  # mount Usine::Engine,            at: "/usine_engine"
-  # mount Generate::Engine,         at: "/generate_engine"
-  # mount Courses::Engine,          at: "/courses_engine"
-  # #
-  # # mount Eventbrite::Engine,       at: "/eventbrite_engine"
-  # #
-  # mount ReservationVol::Engine,   at: "/reservation_vol_engine"
-  #
-  # mount DeviseDemo::Engine,       at: "/devise_demo_engine"
-  # mount HomePage::Engine,         at: "/home_page_engine"
-  #
-  # mount TwitterBis::Engine,       at: "/twitter_bis_engine"
-  #
-  # mount FormulaireStylay::Engine, at: "/formulaire_stylay_engine"
-  # #
-  # mount EmailViewer::Engine,      at: "/email_viewer_engine"
+  mount EmailViewer::Engine,      at: "/email_viewer_engine"
 
   get 'projects/testo9'  => 'projects#testo9', as: :projects_testo9
 

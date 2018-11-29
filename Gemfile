@@ -4,44 +4,37 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-# gem 'je_me_presente', path: 'engines/je_me_presente'   #engine
-# gem 'movie_maker', path: 'engines/movie_maker'   #engine
-# gem 're_former', path: 'engines/re_former'   #engine
-#
-# gem 'the_gossip_project', path: 'engines/the_gossip_project'   #engine
-# gem 'thp_moussaillons', path: 'engines/thp_moussaillons'   #engine
-# gem 'base_de_donnees', path: 'engines/base_de_donnees'   #engine
-#
-# gem 'je_me_presente',       path: 'engines/thp/week/4/day/2/je_me_presente'   #engine
-# gem 'movie_maker',          path: 'engines/thp/week/4/day/2/movie_maker'
-# gem 're_former',            path: 'engines/thp/week/4/day/2/re_former'
-#
-# gem 'the_gossip_project',   path: 'engines/thp/week/4/day/3/the_gossip_project'
-# gem 'thp_moussaillons',     path: 'engines/thp/week/4/day/3/thp_moussaillons'
-#
-# gem 'base_de_donnees',      path: 'engines/thp/week/4/day/4/base_de_donnees'
-#
-# gem 'univers_response',     path: 'engines/thp/week/5/day/2/univers_response'
-# #
-# gem 'reservation',          path: 'engines/thp/week/5/day/4/reservation'
-# gem 'usine',                path: 'engines/thp/week/5/day/4/usine'
-# gem 'generate',             path: 'engines/thp/week/5/day/4/generate'
-# gem 'courses',              path: 'engines/thp/week/5/day/4/courses'
-# #
-# gem 'eventbrite',           path: 'engines/thp/week/5/day/5/eventbrite'
-# #
-# gem 'reservation_vol',      path: 'engines/thp/week/6/day/1/reservation_vol'
-# #
-# gem 'devise_demo',          path: 'engines/thp/week/6/day/2/devise_demo'
-# gem 'home_page',            path: 'engines/thp/week/6/day/2/home_page'
-#
-# gem 'twitter_bis',          path: 'engines/thp/week/6/day/4/twitter_bis'
-#
-# gem 'formulaire_stylay',    path: 'engines/thp/week/7/day/2/formulaire_stylay'
-#
-# gem 'email_viewer',         path: 'engines/thp/week/9/day/3/email_viewer'
 
-# gem 'tux'                         #ajout
+gem 'je_me_presente',       path: 'engines/thp/week/4/day/2/je_me_presente'   #engine
+gem 'movie_maker',          path: 'engines/thp/week/4/day/2/movie_maker'
+gem 're_former',            path: 'engines/thp/week/4/day/2/re_former'
+
+gem 'the_gossip_project',   path: 'engines/thp/week/4/day/3/the_gossip_project'
+gem 'thp_moussaillons',     path: 'engines/thp/week/4/day/3/thp_moussaillons'
+
+gem 'base_de_donnees',      path: 'engines/thp/week/4/day/4/base_de_donnees'
+
+gem 'univers_response',     path: 'engines/thp/week/5/day/2/univers_response'
+#
+gem 'reservation',          path: 'engines/thp/week/5/day/4/reservation'
+gem 'usine',                path: 'engines/thp/week/5/day/4/usine'
+gem 'generate',             path: 'engines/thp/week/5/day/4/generate'
+gem 'courses',              path: 'engines/thp/week/5/day/4/courses'
+#
+gem 'eventbrite',           path: 'engines/thp/week/5/day/5/eventbrite'
+#
+gem 'reservation_vol',      path: 'engines/thp/week/6/day/1/reservation_vol'
+#
+gem 'devise_demo',          path: 'engines/thp/week/6/day/2/devise_demo'
+gem 'home_page',            path: 'engines/thp/week/6/day/2/home_page'
+
+gem 'twitter_bis',          path: 'engines/thp/week/6/day/4/twitter_bis'
+
+gem 'formulaire_stylay',    path: 'engines/thp/week/7/day/2/formulaire_stylay'
+
+gem 'email_viewer',         path: 'engines/thp/week/9/day/3/email_viewer'
+
+# gem 'tux'                         #ajout pose probleme
 gem 'sinatra'                     #ajout
 
 gem 'pry'                         #ajout
