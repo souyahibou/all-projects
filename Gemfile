@@ -51,7 +51,7 @@ gem 'gmail'                       #ajout
 gem 'rspec'                       #ajout
 
 gem 'sprockets'                   #ajout
-gem 'rails_12factor'              #ajout
+# gem 'rails_12factor'              #ajout  instead config.serve_static_assets = true
 
 gem 'rails-latex'                 #ajout
 
