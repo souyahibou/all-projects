@@ -5,6 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+
+gem 'font-awesome-sass', '~> 5.5.0'   #added      @import "font-awesome";=> application.scss:  for loading icons
+gem "bulma-rails", "~> 0.7.2"         #added      @import "bulma";=> application.scss:  template css
+gem 'bootstrap-sass', '3.3.7'		      #ajout
+
 gem 'je_me_presente',       path: 'engines/thp/week/4/day/2/je_me_presente'   #engine
 gem 'movie_maker',          path: 'engines/thp/week/4/day/2/movie_maker'
 gem 're_former',            path: 'engines/thp/week/4/day/2/re_former'
@@ -64,8 +69,9 @@ gem 'watir'                       #ajout
 gem 'pry'                	        #ajout
 gem 'nokogiri'
 
-#require 'gmail'
 gem 'roo'                         #ajout
+
+gem 'jquery-rails', '4.3.1'       #uselfull(assets) can't be delete
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

@@ -1,102 +1,120 @@
-<h1>Projects#home</h1>
+<h1 class="title is-1">Map of All Projects</h1>
+<div class="subtitle"> Main work is on the Back-end:
+  <a class="button is-success is-inverted is-small  " href="#"> <span class="icon"><i class="fab fa-github"></i></span><span>source code</span>  </a>
+</div>
 
 <meta name="robots" content="noindex,nofollow"/>
 
-<div class="conteneur" style="display: flex; justify-content: center; align-items: center;  justify-content: space-between; flex-wrap: wrap;">
 
+<div class="conteneur has-text-left" style="display: flex; justify-content: center; align-items: center;  justify-content: space-between; flex-wrap: wrap;">
 
-  <%= render 'blocs', nb: 1, titre: "none", method_controler: projects_testo_path,                                    finish: true, bg_color: :cadetblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "" %>
+  <div class="conteneur" style="width:100%">
+      <hr class="hr" style="margin-bottom:6">
+      <h2 class="title is-2">Various Projects</h2>
+      <div class="tabs is-centered is-boxed">     <ul>  <li class="is-active"><a>Various Projects</a></li>    <li><a>THP Project</a></li></ul>  </div>
+  </div>
 
-  <%= render 'blocs', nb: 2, titre: "ScrapUrlsPros", method_controler: projects_scraping_sites_pro_path,              finish: false, bg_color: :powderblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "faire de la gestion d'erreur" %>
+  <%= render 'blocs', nb: 1, titre: "none", method_controler: projects_testo_path,                                    finish: true, bg_color: :cadetblue, rate: 50, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "" %>
 
-  <%= render 'blocs', nb: 3, titre: "ScrapGoogleCal", method_controler: projects_scraping_google_calendar_path,       finish: false, bg_color: :lightblue, file_source:  "none", file_results: "none",  data_table_bdd: "", message: "<br>create EvenementGoogle activerecord <br> model or reconfigurer avec <br> creation de model dynamique USING: Procédure Proc Stucture Struc Date Time sleep ScrapUrlsPros Geocoder"  %>
+  <%= render 'blocs', nb: 2, titre: "ScrapUrlsPros", method_controler: projects_scraping_sites_pro_path,              finish: false, bg_color: :powderblue, rate: 70, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "faire de la gestion d'erreur" %>
 
-  <%= render 'blocs', nb: 4, titre: "ScrapFbPros", method_controler: projects_scraping_facebook_path,                 finish: false, bg_color: :lightsteelblue, file_source:  "none", file_results: "none",  data_table_bdd: "", message: "<br>create EvenementGoogle activerecord <br> model or reconfigurer avec <br> creation de model dynamique"  %>
+  <%= render 'blocs', nb: 3, titre: "ScrapGoogleCal", method_controler: projects_scraping_google_calendar_path,       finish: false, bg_color: :lightblue, rate: 70, file_source:  "none", file_results: "none",  data_table_bdd: "", message: "<br>create EvenementGoogle activerecord <br> model or reconfigurer avec <br> creation de model dynamique USING: Procédure Proc Stucture Struc Date Time sleep ScrapUrlsPros Geocoder"  %>
 
-  <%= render 'blocs', nb: 5, titre: "ScrapPDFstage", method_controler: projects_projectsparsing_stage_CAJ_pdf_path,   finish: false, bg_color: :skyblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "<br>Parsing/scrapping catalog PDF CAJ <br> USING File  Struct  PDF::Reader  Proc  Hash  PG  %x!Commandebash args"  %>
+  <%= render 'blocs', nb: 4, titre: "ScrapFbPros", method_controler: projects_scraping_facebook_path,                 finish: false, bg_color: :lightsteelblue, rate: 70, file_source:  "none", file_results: "none",  data_table_bdd: "", message: "<br>create EvenementGoogle activerecord <br> model or reconfigurer avec <br> creation de model dynamique"  %>
 
-  <%= render 'blocs', nb: 6, titre: "ScrapCdiscount", method_controler: scraping_cdiscount_path,                      finish: true, bg_color: :lightskyblue, file_source:  "none", file_results: "",  data_table_bdd: "none", message: "<br> 2 program de scrapping <br> reconfigurer app :add out file <br> until provided:the_scrap_2.csv may be changed"  %>
+  <%= render 'blocs', nb: 5, titre: "ScrapPDFstage", method_controler: projects_projectsparsing_stage_CAJ_pdf_path,   finish: false, bg_color: :skyblue, rate: 70, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "<br>Parsing/scrapping catalog PDF CAJ <br> USING File  Struct  PDF::Reader  Proc  Hash  PG  %x!Commandebash args"  %>
 
-  <%= render 'blocs', nb: 7, titre: "conversion_vcf/xls", method_controler: reformat_contact_path,                    finish: false, bg_color: :deepskyblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: ""  %>
+  <%= render 'blocs', nb: 6, titre: "ScrapCdiscount", method_controler: scraping_cdiscount_path,                      finish: true, bg_color: :lightskyblue, rate: 75, file_source:  "none", file_results: "",  data_table_bdd: "none", message: "<br> 2 program de scrapping <br> reconfigurer app :add out file <br> until provided:the_scrap_2.csv may be changed"  %>
 
-  <%= render 'blocs', nb: 8, titre: "conversion_string/string", method_controler: reformat_key_env_path,              finish: false, bg_color: :dodgerblue, file_source:  "présent,_à_reconfigurer", file_results: "présent,_à_reconfigurer",  data_table_bdd: "none", message: ""  %>
+  <%= render 'blocs', nb: 7, titre: "conversion_vcf/xls", method_controler: reformat_contact_path,                    finish: false, bg_color: :deepskyblue, rate: 75, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: ""  %>
 
-  <%= render 'blocs', nb: 9, titre: "federdo calculatrice", method_controler: projects_federdo_calculatrice_path,     finish: true, bg_color: :royalblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Complete App: Litle Calculator"  %>
+  <%= render 'blocs', nb: 8, titre: "conversion_string/string", method_controler: reformat_key_env_path,              finish: false, bg_color: :dodgerblue, rate: 75, file_source:  "présent,_à_reconfigurer", file_results: "présent,_à_reconfigurer",  data_table_bdd: "none", message: ""  %>
 
-  <%= render 'blocs', nb: 10, titre: "scraping annuaire cabinets", method_controler: scraping_annuaire_cabinets_path, finish: false, bg_color: :cyan, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: ""  %>
+  <%= render 'blocs', nb: 9, titre: "federdo calculatrice", method_controler: projects_federdo_calculatrice_path,     finish: true, bg_color: :royalblue, rate: 100, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Complete App: Litle Calculator"  %>
 
-  <%= render 'blocs', nb: 11, titre: "googleMapsAPI_THP_P43", method_controler: googleMapsAPI_THP_P43_path,           finish: true, bg_color: :aqua, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Operational App: Using google map API"  %>
+  <%= render 'blocs', nb: 10, titre: "scraping annuaire cabinets", method_controler: scraping_annuaire_cabinets_path, finish: false, bg_color: :cyan, rate: 95, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: ""  %>
 
-  <%= render 'blocs', nb: 12, titre: "CV", method_controler: cv_path,                                                 finish: true, bg_color: :steelblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using Rails-Latex Gem: My CV:converting latex code <br> from a view into pdf file"  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 11, titre: "googleMapsAPI_THP_P43", method_controler: googleMapsAPI_THP_P43_path,           finish: true, bg_color: :aqua, rate: 99, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Operational App: Using google map API"  %>
 
-  <%= render 'blocs', nb: 13, titre: "Nom de couleurs HTML", method_controler: color_names_path,                      finish: true, bg_color: :cornflowerblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using regex and hashes:<br>Displaying color names"  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 12, titre: "CV", method_controler: cv_path,                                                 finish: true, bg_color: :steelblue, rate: 99, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using Rails-Latex Gem: My CV:converting latex code <br> from a view into pdf file"  %>    <!-- <%= link_to "cv", cv_path%> -->
 
-  <%= render 'blocs', nb: 14, titre: "Scraping & Donwload des tag img", method_controler: download_img_path,          finish: true, bg_color: :cornflowerblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using net/http & nokogiri gems and Dir & File Objects"  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 13, titre: "Nom de couleurs HTML", method_controler: color_names_path,                      finish: true, bg_color: :cornflowerblue, rate: 99, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using regex and hashes:<br>Displaying color names"  %>    <!-- <%= link_to "cv", cv_path%> -->
 
-  <%= render 'blocs', nb: 15, titre: "Scraping from slack des membres THP", method_controler: membre_THP_path,        finish: true, bg_color: :cornflowerblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using watir, PG, CSV, Net:HTTP <br>objects :[Proc Struct File Rails URI Dir]"  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 14, titre: "Scraping & Donwload des tag img", method_controler: download_img_path,          finish: true, bg_color: :cornflowerblue, rate: 50, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using net/http & nokogiri gems and Dir & File Objects"  %>    <!-- <%= link_to "cv", cv_path%> -->
 
-  <%= render 'blocs', nb: 16, titre: "Scraping annuaire cabinets ESN/SSII (Be Free Talent)", method_controler: scraping_annuaire_cabinets2_path,  finish: true, bg_color: :cornflowerblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "To complete "  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 15, titre: "Scraping from slack des membres THP(/!\\)", method_controler: membre_THP_path,        finish: true, bg_color: :cornflowerblue, rate: 5, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using watir, PG, CSV, Net:HTTP <br>objects :[Proc Struct File Rails URI Dir]"  %>    <!-- <%= link_to "cv", cv_path%> -->
 
-  <%= render 'blocs', nb: 17, titre: "Scraping annuaire starts ups Fr. (Be Free Talent)", method_controler: scraping_annuaire_startups_path,  finish: true, bg_color: :cornflowerblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "To complete "  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 16, titre: "Scraping annuaire cabinets ESN/SSII (Be Free Talent)", method_controler: scraping_annuaire_cabinets2_path,  finish: true, bg_color: :cornflowerblue, rate: 75, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "To complete "  %>    <!-- <%= link_to "cv", cv_path%> -->
 
-  <%= render 'blocs', nb: 18, titre: "HTML Forms", method_controler: html_forms_path,                                 finish: true, bg_color: :cornflowerblue, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using only html format"  %>
+  <%= render 'blocs', nb: 17, titre: "Scraping annuaire starts ups Fr. (Be Free Talent)", method_controler: scraping_annuaire_startups_path,  finish: true, bg_color: :cornflowerblue, rate: 75, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "To complete "  %>    <!-- <%= link_to "cv", cv_path%> -->
 
+  <%= render 'blocs', nb: 18, titre: "HTML Forms", method_controler: html_forms_path,                                 finish: true, bg_color: :cornflowerblue, rate: 99, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using only html format"  %>
+
+  <div class="conteneur" style="width:100%">
+      <hr class="hr" style="margin-bottom:6">
+      <h2 class="title is-2">CV Contact</h2>
+      <div class="tabs is-centered is-boxed">      <ul> <li><a>Various Projects</a></li>   <li class="is-active"><a>CV Contact</a></li>  <li ><a>THP Project</a></li></ul>      </div>
+  </div>
   <!-- <embed src= <%= cv_path %> width="100%" height="1500" type='application/pdf'> -->
   <iframe src=<%= cv_path %>.pdf width="100%" height="1500"> This browser does not support PDFs. Please download the PDF to view it: <a href=<%= cv_path %>.pdf>Download PDF</a></iframe>
 
 
   <div class="conteneur">
 
-  <%= render 'week_blocs', week: "Semaine1 Introduction Code",  title1:"Introductions",         act_cntrl1: projects_oeuvres1_1_path, msg1:"hehehe", fin1: false,
-                                                                title2:"HTML/CSS, basis",       act_cntrl2: projects_oeuvres1_2_path, msg2:"hehehe", fin2: false,
-                                                                title3:"Google",                act_cntrl3: projects_oeuvres1_3_path, msg3:"hehehe", fin3: false,
-                                                                title4:"Javascript, hype",      act_cntrl4: projects_oeuvres1_4_path, msg4:"hehehe", fin4: false,
-                                                                title5:"Jquery",                act_cntrl5: projects_oeuvres1_5_path, msg5:"hehehe", fin5: false%>
-  <%= render 'week_blocs', week: "Semaine2 Découverte Ruby",    title1:"Initiation Ruby",       act_cntrl1: projects_oeuvres2_1_path, msg1:"hehehe",fin1: true,
-                                                                title2:"RSpec",                 act_cntrl2: projects_oeuvres2_2_path, msg2:"hehehe", fin2: true,
-                                                                title3:"twitter",               act_cntrl3: projects_oeuvres2_3_path, msg3:"hehehe", fin3: false,
-                                                                title4:"Nokogiri",              act_cntrl4: projects_oeuvres2_4_path, msg4:"hehehe", fin4: true,
-                                                                title5:"Watir",                 act_cntrl5: projects_oeuvres2_5_path, msg5:"hehehe", fin5: "Mid"%>
-  <%= render 'week_blocs', week: "Semaine3 Ruby Intermédiaire", title1:"Excel",                 act_cntrl1: projects_oeuvres3_1_path, msg1:"hehehe",fin1: "Mid",
-                                                                title2:"Envoi Emails",          act_cntrl2: projects_oeuvres3_2_path, msg2:"hehehe", fin2: "Mid",
-                                                                title3:"POO, scrabbler",        act_cntrl3: projects_oeuvres3_3_path, msg3:"hehehe", fin3: true,
-                                                                title4:"Tic Tac Toe",           act_cntrl4: projects_oeuvres3_4_path, msg4:"hehehe", fin4: true,
-                                                                title5:"Frank Sinatra",         act_cntrl5: projects_oeuvres3_5_path, msg5:"hehehe", fin5: false%>
-  <%= render 'week_blocs', week: "Semaine4 Initiation Rails",   title1:"Découverte Rails",      act_cntrl1: projects_oeuvres4_1_path, msg1:"hehehe",fin1: false,
-                                                                title2:"First websites",        act_cntrl2: projects_oeuvres4_2_path, msg2:"hehehe", fin2: "Mid",
-                                                                title3:"CRUD style",            act_cntrl3: projects_oeuvres4_3_path, msg3:"hehehe", fin3: "Mid",
-                                                                title4:"BaseDD",                act_cntrl4: projects_oeuvres4_4_path, msg4:"hehehe", fin4: "Mid",
-                                                                title5:"Micro Reddit",          act_cntrl5: projects_oeuvres4_5_path, msg5:"hehehe", fin5: false%>
-  <%= render 'week_blocs', week: "Semaine5 Rails Intermédiaire", title1:"Login",                act_cntrl1: projects_oeuvres5_1_path, msg1:"hehehe",fin1: "Mid",
-                                                                title2:"Cookies",               act_cntrl2: projects_oeuvres5_2_path, msg2:"hehehe", fin2: "Mid",
-                                                                title3:"NONE",                  act_cntrl3: projects_oeuvres5_3_path, msg3:"hehehe", fin3: false,
-                                                                title4:"BDD Relationnelles",    act_cntrl4: projects_oeuvres5_4_path, msg4:"hehehe", fin4: "Mid",
-                                                                title5:"Eventbrite like",       act_cntrl5: projects_oeuvres5_5_path, msg5:"hehehe", fin5: "Mid"%>
-  <%= render 'week_blocs', week: "Semaine6 Rails Avancé",       title1:"Formulaire Avancé",     act_cntrl1: projects_oeuvres6_1_path, msg1:"hehehe",fin1: "Mid",
-                                                                title2:"Gemme Devise",          act_cntrl2: projects_oeuvres6_2_path, msg2:"hehehe", fin2: "Mid",
-                                                                title3:"Asset Pipeline",        act_cntrl3: cv_path, msg3:"hehehe", fin3: false,
-                                                                title4:"Services, APis",        act_cntrl4: projects_oeuvres6_4_path, msg4:"hehehe", fin4: "Mid",
-                                                                title5:"None",                  act_cntrl5: projects_oeuvres1_1_path, msg5:"hehehe", fin5: false%>
-  <%= render 'week_blocs', week: "Semaine7 HTML/CSS",           title1:"Come Back To HTML/CSS", act_cntrl1: projects_oeuvres7_1_path, msg1:"hehehe", fin1: "Mid",
-                                                                title2:"Formulaires",           act_cntrl2: projects_oeuvres7_2_path, msg2:"hehehe", fin2: "Mid",
-                                                                title3:"Page New York Times",   act_cntrl3: projects_oeuvres7_3_path, msg3:"hehehe", fin3: "Mid",
-                                                                title4:"Landing Pages",         act_cntrl4: projects_oeuvres7_4_path, msg4:"hehehe", fin4: "Mid",
-                                                                title5:"Responsive",            act_cntrl5: projects_oeuvres7_5_path, msg5:"hehehe", fin5: false%>
-  <%= render 'week_blocs', week: "Semaine8 JavaScript",         title1:"CSS frameworks",        act_cntrl1: projects_oeuvres8_1_path, msg1:"hehehe",fin1: false,
-                                                                title2:"JavaScript",            act_cntrl2: projects_oeuvres8_2_path, msg2:"hehehe", fin2: false,
-                                                                title3:"JavaScript",            act_cntrl3: projects_oeuvres8_3_path, msg3:"hehehe", fin3: "Mid",
-                                                                title4:"JQuery",                act_cntrl4: projects_oeuvres8_4_path, msg4:"hehehe", fin4: "Mid",
-                                                                title5:"JQuery",                act_cntrl5: projects_oeuvres8_5_path, msg5:"hehehe", fin5: false%>
-  <%= render 'week_blocs', week: "Semaine9 JavaScript front",   title1:"Callback",              act_cntrl1: projects_oeuvres9_1_path, msg1:"hehehe",fin1: false,
-                                                                title2:"APIs",                  act_cntrl2: projects_oeuvres9_2_path, msg2:"hehehe", fin2: true,
-                                                                title3:"AJAX",                  act_cntrl3: projects_oeuvres9_3_path, msg3:"hehehe", fin3: "Mid",
-                                                                title4:"NodeJS",                act_cntrl4: projects_oeuvres9_4_path, msg4:"hehehe", fin4: false,
-                                                                title5:"The End",               act_cntrl5: projects_oeuvres9_5_path, msg5:"hehehe", fin5: false%>
-  <%= render 'week_blocs', week: "Semaine10 Semaine11 final project",   title1:"bonjour", act_cntrl1: cv_path, msg1:"hehehe",fin1: false,
-                                                                title2:"bonjour",         act_cntrl2: cv_path, msg2:"hehehe", fin2: false,
-                                                                title3:"bonjour",         act_cntrl3: cv_path, msg3:"hehehe", fin3: false,
-                                                                title4:"bonjour",         act_cntrl4: cv_path, msg4:"hehehe", fin4: false,
-                                                                title5:"bonjour",         act_cntrl5: cv_path, msg5:"hehehe", fin5: false%>
+    <hr class="hr" style="margin-bottom:6">
+    <h2 class="title is-2">THP Projects</h2>
+    <div class="tabs is-centered is-boxed"><ul><li><a>Various Projects</a></li>     <li class="is-active"><a>THP Project</a></li></ul></div>
+
+  <%= render 'week_blocs', week: "Semaine1 Introduction Code",  title1:"Introductions",         act_cntrl1: projects_oeuvres1_1_path, msg1:"hehehe", rate1: 5, fin1: false,
+                                                                title2:"HTML/CSS, basis",       act_cntrl2: projects_oeuvres1_2_path, msg2:"hehehe", rate2: 5, fin2: false,
+                                                                title3:"Google",                act_cntrl3: projects_oeuvres1_3_path, msg3:"hehehe", rate3: 5, fin3: false,
+                                                                title4:"Javascript, hype",      act_cntrl4: projects_oeuvres1_4_path, msg4:"hehehe", rate4: 5, fin4: false,
+                                                                title5:"Jquery",                act_cntrl5: projects_oeuvres1_5_path, msg5:"hehehe", rate5: 5, fin5: false%>
+  <%= render 'week_blocs', week: "Semaine2 Découverte Ruby",    title1:"Initiation Ruby",       act_cntrl1: projects_oeuvres2_1_path, msg1:"hehehe", rate1: 90,fin1: true,
+                                                                title2:"RSpec",                 act_cntrl2: projects_oeuvres2_2_path, msg2:"hehehe", rate2: 90, fin2: true,
+                                                                title3:"twitter",               act_cntrl3: projects_oeuvres2_3_path, msg3:"hehehe", rate3: 5, fin3: false,
+                                                                title4:"Nokogiri",              act_cntrl4: projects_oeuvres2_4_path, msg4:"hehehe", rate4: 90, fin4: true,
+                                                                title5:"Watir",                 act_cntrl5: projects_oeuvres2_5_path, msg5:"hehehe", rate5: 50, fin5: "Mid"%>
+  <%= render 'week_blocs', week: "Semaine3 Ruby Intermédiaire", title1:"Excel",                 act_cntrl1: projects_oeuvres3_1_path, msg1:"hehehe", rate1: 50,fin1: "Mid",
+                                                                title2:"Envoi Emails",          act_cntrl2: projects_oeuvres3_2_path, msg2:"hehehe", rate2: 50, fin2: "Mid",
+                                                                title3:"POO, scrabbler",        act_cntrl3: projects_oeuvres3_3_path, msg3:"hehehe", rate3: 5, fin3: true,
+                                                                title4:"Tic Tac Toe",           act_cntrl4: projects_oeuvres3_4_path, msg4:"hehehe", rate4: 5, fin4: true,
+                                                                title5:"Frank Sinatra",         act_cntrl5: projects_oeuvres3_5_path, msg5:"hehehe", rate5: 5, fin5: false%>
+  <%= render 'week_blocs', week: "Semaine4 Initiation Rails",   title1:"Découverte Rails",      act_cntrl1: projects_oeuvres4_1_path, msg1:"hehehe", rate1: 5,fin1: false,
+                                                                title2:"First websites",        act_cntrl2: projects_oeuvres4_2_path, msg2:"hehehe", rate2: 50, fin2: "Mid",
+                                                                title3:"CRUD style",            act_cntrl3: projects_oeuvres4_3_path, msg3:"hehehe", rate3: 50, fin3: "Mid",
+                                                                title4:"BaseDD",                act_cntrl4: projects_oeuvres4_4_path, msg4:"hehehe", rate4: 5, fin4: "Mid",
+                                                                title5:"Micro Reddit",          act_cntrl5: projects_oeuvres4_5_path, msg5:"hehehe", rate5: 5, fin5: false%>
+  <%= render 'week_blocs', week: "Semaine5 Rails Intermédiaire", title1:"Login",                act_cntrl1: projects_oeuvres5_1_path, msg1:"hehehe", rate1: 50,fin1: "Mid",
+                                                                title2:"Cookies",               act_cntrl2: projects_oeuvres5_2_path, msg2:"hehehe", rate2: 50, fin2: "Mid",
+                                                                title3:"NONE",                  act_cntrl3: projects_oeuvres5_3_path, msg3:"hehehe", rate3: 0, fin3: false,
+                                                                title4:"BDD Relationnelles",    act_cntrl4: projects_oeuvres5_4_path, msg4:"hehehe", rate4: 50, fin4: "Mid",
+                                                                title5:"Eventbrite like",       act_cntrl5: projects_oeuvres5_5_path, msg5:"hehehe", rate5: 50, fin5: "Mid"%>
+  <%= render 'week_blocs', week: "Semaine6 Rails Avancé",       title1:"Formulaire Avancé",     act_cntrl1: projects_oeuvres6_1_path, msg1:"hehehe", rate1: 50,fin1: "Mid",
+                                                                title2:"Gemme Devise",          act_cntrl2: projects_oeuvres6_2_path, msg2:"hehehe", rate2: 50, fin2: "Mid",
+                                                                title3:"Asset Pipeline",        act_cntrl3: cv_path, msg3:"hehehe", rate3: 5, fin3: false,
+                                                                title4:"Services, APis",        act_cntrl4: projects_oeuvres6_4_path, msg4:"hehehe", rate4: 50, fin4: "Mid",
+                                                                title5:"None",                  act_cntrl5: projects_oeuvres1_1_path, msg5:"hehehe", rate5: 0, fin5: false%>
+  <%= render 'week_blocs', week: "Semaine7 HTML/CSS",           title1:"Come Back To HTML/CSS", act_cntrl1: projects_oeuvres7_1_path, msg1:"hehehe", rate1: 50, fin1: "Mid",
+                                                                title2:"Formulaires",           act_cntrl2: projects_oeuvres7_2_path, msg2:"hehehe", rate2: 50, fin2: "Mid",
+                                                                title3:"Page New York Times",   act_cntrl3: projects_oeuvres7_3_path, msg3:"hehehe", rate3: 50, fin3: "Mid",
+                                                                title4:"Landing Pages",         act_cntrl4: projects_oeuvres7_4_path, msg4:"hehehe", rate4: 50, fin4: "Mid",
+                                                                title5:"Responsive",            act_cntrl5: projects_oeuvres7_5_path, msg5:"hehehe", rate5: 5, fin5: false%>
+  <%= render 'week_blocs', week: "Semaine8 JavaScript",         title1:"CSS frameworks",        act_cntrl1: projects_oeuvres8_1_path, msg1:"hehehe", rate1: 5,fin1: false,
+                                                                title2:"JavaScript",            act_cntrl2: projects_oeuvres8_2_path, msg2:"hehehe", rate2: 5, fin2: false,
+                                                                title3:"JavaScript",            act_cntrl3: projects_oeuvres8_3_path, msg3:"hehehe", rate3: 50, fin3: "Mid",
+                                                                title4:"JQuery",                act_cntrl4: projects_oeuvres8_4_path, msg4:"hehehe", rate4: 50, fin4: "Mid",
+                                                                title5:"JQuery",                act_cntrl5: projects_oeuvres8_5_path, msg5:"hehehe", rate5: 5, fin5: false%>
+  <%= render 'week_blocs', week: "Semaine9 JavaScript front",   title1:"Callback",              act_cntrl1: projects_oeuvres9_1_path, msg1:"hehehe", rate1: 5,fin1: false,
+                                                                title2:"APIs",                  act_cntrl2: projects_oeuvres9_2_path, msg2:"hehehe", rate2: 90, fin2: true,
+                                                                title3:"AJAX",                  act_cntrl3: projects_oeuvres9_3_path, msg3:"hehehe", rate3: 50, fin3: "Mid",
+                                                                title4:"NodeJS",                act_cntrl4: projects_oeuvres9_4_path, msg4:"hehehe", rate4: 5, fin4: false,
+                                                                title5:"The End",               act_cntrl5: projects_oeuvres9_5_path, msg5:"hehehe", rate5: 5, fin5: false%>
+  <%= render 'week_blocs', week: "Semaine10 Semaine11 final project",   title1:"bonjour", act_cntrl1: cv_path, msg1:"hehehe", rate1: 0, fin1: false,
+                                                                title2:"bonjour",         act_cntrl2: cv_path, msg2:"hehehe", rate2: 0, fin2: false,
+                                                                title3:"bonjour",         act_cntrl3: cv_path, msg3:"hehehe", rate3: 0, fin3: false,
+                                                                title4:"bonjour",         act_cntrl4: cv_path, msg4:"hehehe", rate4: 0, fin4: false,
+                                                                title5:"bonjour",         act_cntrl5: cv_path, msg5:"hehehe", rate5: 0, fin5: false%>
   </div>
 
 </div>

@@ -78,7 +78,7 @@ Rails.application.routes.draw do
 
   get 'projects/scraping_sites_pro'
 
-  get 'projects/home'
+  match 'projects/home', via: [:get, :post]
 
   root to: 'projects#main'
 

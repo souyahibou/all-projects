@@ -1,10 +1,13 @@
 class ProjectsController < ApplicationController
     protect_from_forgery except: [:federdo_calculatrice, :googleMapsAPI_THP_P43, :html_forms]
+    @@counter = 0;     def self.counter()  @@counte  end
+
       def initialize
           @var
       end
 
       def home
+          @@counter+=1  #used by [un]color button
           render action: 'home',:layout => 'application', formats: [:html]
       end
 

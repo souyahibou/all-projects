@@ -290,7 +290,7 @@ module Projects
             render :html => "not done"
         end
         def oeuvres9_2
-          render file: "#{Rails.root}/engines/thp/week/9/day/2/google.html"
+            render file: "#{Rails.root}/engines/thp/week/9/day/2/google.html"
         end
         def oeuvres9_3
             redirect_to email_viewer_path
