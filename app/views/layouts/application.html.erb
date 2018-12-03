@@ -6,11 +6,6 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <script type="text/javascript">
-          $(document).ready(function() { $(".has-dropdown").click(function() {$(".has-dropdown").toggleClass("is-active");});});
-          // Check for click events on the navbar burger icon
-    </script>
   </head>
 
 
@@ -18,41 +13,7 @@
 
     <section class="hero is-fullheight-with-navbar is-light is-bold has-navbar-fixed-top">
 
-
-    <header class="hero-head navbar is-fixed-top">
-      <div class="container">
-        <div class="navbar-brand">
-          <span class="navbar-item">
-            <a class="button is-success is-inverted">
-              <span class="icon"><i class="fab fa-github"></i></span>
-              <span>Github project source page</span>
-            </a>
-          </span>
-          <span class="navbar-item">
-            <%= button_to projects_home_path, remote: true, method: :post, class: "button is-info is-inverted" do %>
-            <span class="icon"><i class="fas fa-palette"></i></span>
-            <span>[un]display color</span>
-            <% end %>
-          </span>
-        </div>
-
-
-        <div class="navbar-end">
-           <a class="navbar-item is-active">Home</a>
-
-           <div class="navbar-item has-dropdown">
-               <a class="navbar-link">Menu</a>
-               <div class="navbar-dropdown is-boxed">
-                   <a class="navbar-item">Various Projects</a>
-                   <a class="navbar-item">THP Projects</a>
-                   <a class="navbar-item">CV contact</a>
-                   <hr class="navbar-divider">
-                   <div class="navbar-item">Version 2.0.1</div>
-               </div>
-           </div>
-        </div>
-      </div>
-    </header>
+        <%= render partial: 'layouts/bulma_header_navbar' %>
 
     <div class="hero-body">
       <div class="container has-text-centered">

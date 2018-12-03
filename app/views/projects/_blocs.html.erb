@@ -23,7 +23,7 @@
 
         <input type="radio" name="complete" value="Non" <%=if !finish          then "checked" end%>> <span class="icon has-text-danger is-small"><i class="fas fa-ban is-small"></i></span>Unbegun
         <input type="radio" name="complete" value="Mid" <%=if finish  == "Mid" then "checked" end%>> <span class="icon has-text-warning is-small"><i class="fas fa-exclamation-triangle"></i></span>Partial
-        <input type="radio" name="complete" value="Oui" <%=if finish  != "Mid" then "checked" end%>> <span class="icon has-text-success is-small"><i class="fas fa-check-square"></i></span>Works<br>
+        <input type="radio" name="complete" value="Oui" <%=if finish  == true  then "checked" end%>> <span class="icon has-text-success is-small"><i class="fas fa-check-square"></i></span>Works<br>
 
         </div>
 
