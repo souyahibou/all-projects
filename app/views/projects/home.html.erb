@@ -14,41 +14,96 @@
       <div class="tabs is-centered is-boxed">     <ul>  <li class="is-active"><a>Various Projects</a></li>    <li><a>THP Project</a></li></ul>  </div>
   </div>
 
-  <%= render 'blocs', nb: 1, titre: "none", method_controler: projects_testo_path,                                    finish: true, bg_color: :cadetblue, rate: 50, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "" %>
+  <%= render 'blocs', nb: 1, titre: "none", method_controler: projects_testo_path,                                    finish: true, bg_color: :cadetblue, rate: 50, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "useless <br> used for some rendering some tests" %>
 
-  <%= render 'blocs', nb: 2, titre: "ScrapUrlsPros", method_controler: projects_scraping_sites_pro_path,              finish: false, bg_color: :powderblue, rate: 70, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "faire de la gestion d'erreur" %>
+  <%= render 'blocs', nb: 2, titre: "ScrapUrlsPros", method_controler: projects_scraping_sites_pro_path,              finish: "Mid", bg_color: :powderblue, rate: 70, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "useless script getting data from some website<br>
+using: googleauth, watir, nokogiri, differ, ruby(hash, Regex, array, ENV)++<br>
+must: watir webdriver setled, browser, model<br><strong>TODO faire de la gestion d'erreur</strong>" %>
 
-  <%= render 'blocs', nb: 3, titre: "ScrapGoogleCal", method_controler: projects_scraping_google_calendar_path,       finish: false, bg_color: :lightblue, rate: 70, file_source:  "none", file_results: "none",  data_table_bdd: "", message: "<br>create EvenementGoogle activerecord <br> model or reconfigurer avec <br> creation de model dynamique USING: Procédure Proc Stucture Struc Date Time sleep ScrapUrlsPros Geocoder"  %>
+  <%= render 'blocs', nb: 3, titre: "ScrapGoogleCal", method_controler: projects_scraping_google_calendar_path,       finish: "Mid", bg_color: :lightblue, rate: 70, file_source:  "none", file_results: "none",  data_table_bdd: "", message: "useless  script getting data from some google calendar well-structured<br>
+  using:  ActiveRecord, Geocoder, ScrapUrlsPros, ruby(Proc, Sleep, Hash, Date, Struct, Time)<br>
+  must:(model EvenementGoogle activerecord created)<br>
+  <strong>TODO</strong>: creation de model dynamiquement"  %>
 
-  <%= render 'blocs', nb: 4, titre: "ScrapFbPros", method_controler: projects_scraping_facebook_path,                 finish: false, bg_color: :lightsteelblue, rate: 70, file_source:  "none", file_results: "none",  data_table_bdd: "", message: "<br>create EvenementGoogle activerecord <br> model or reconfigurer avec <br> creation de model dynamique"  %>
+  <%= render 'blocs', nb: 4, titre: "ScrapFbPros", method_controler: projects_scraping_facebook_path,                 finish: "Mid", bg_color: :lightsteelblue, rate: 70, file_source:  "none", file_results: "none",  data_table_bdd: "", message: "
+  useless script getting data from Facebook API<br>
+  using: Koala, ActiveRecord, Hash, Time<br>
+  must:(API connection, model created)<br>
+  todo: creation de model dynamique"  %>
 
-  <%= render 'blocs', nb: 5, titre: "ScrapPDFstage", method_controler: projects_projectsparsing_stage_CAJ_pdf_path,   finish: false, bg_color: :skyblue, rate: 70, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "<br>Parsing/scrapping catalog PDF CAJ <br> USING File  Struct  PDF::Reader  Proc  Hash  PG  %x!Commandebash args"  %>
+  <%= render 'blocs', nb: 5, titre: "ScrapPDFstage", method_controler: projects_projectsparsing_stage_CAJ_pdf_path,   finish: "Mid", bg_color: :skyblue, rate: 90, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "<br>
+  useless script parsing data from pdf catalog<br>
+  using: gem (pdf-reader, PG(dynamicly)), ruby(File, struct, Proc, Hash,%x! !)<br>
+  must:(PG connection)"  %>
 
-  <%= render 'blocs', nb: 6, titre: "ScrapCdiscount", method_controler: scraping_cdiscount_path,                      finish: true, bg_color: :lightskyblue, rate: 75, file_source:  "none", file_results: "",  data_table_bdd: "none", message: "<br> 2 program de scrapping <br> reconfigurer app :add out file <br> until provided:the_scrap_2.csv may be changed"  %>
+  <%= render 'blocs', nb: 6, titre: "ScrapCdiscount", method_controler: scraping_cdiscount_path,                      finish: "Mid", bg_color: :lightskyblue, rate: 90, file_source:  "none", file_results: "",  data_table_bdd: "none", message: "
+  useless 2 scripts getting data from Cdiscount website<br>
+  using: Nokogiri, CSV, ruby(Array of Hashs)<br>
+  must: (CSV file for save) <br>
+  todo: reconfigurer app :add out file"  %>
 
-  <%= render 'blocs', nb: 7, titre: "conversion_vcf/xls", method_controler: reformat_contact_path,                    finish: false, bg_color: :deepskyblue, rate: 75, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: ""  %>
+  <%= render 'blocs', nb: 7, titre: "conversion_vcf/xls", method_controler: reformat_contact_path,                    finish: "Mid", bg_color: :deepskyblue, rate: 75, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+  useless script conversion tableau csv/excel into format contact VCF<br>
+  using: Roo, Ruby(File)<br>
+  must:(fichier source, Fichier final)"  %>
 
-  <%= render 'blocs', nb: 8, titre: "conversion_string/string", method_controler: reformat_key_env_path,              finish: false, bg_color: :dodgerblue, rate: 75, file_source:  "présent,_à_reconfigurer", file_results: "présent,_à_reconfigurer",  data_table_bdd: "none", message: ""  %>
+  <%= render 'blocs', nb: 8, titre: "conversion_string/string", method_controler: reformat_key_env_path,              finish: "Mid", bg_color: :dodgerblue, rate: 90, file_source:  "présent,_à_reconfigurer", file_results: "présent,_à_reconfigurer",  data_table_bdd: "none", message: "
+  useless script conversion variables ENV inner application.yml<br>
+  into inline format for easy integration on heroku config vars<br>
+  using: ruby(Regex, File)<br>
+  must:(fichier source, Fichier final)"  %>
 
-  <%= render 'blocs', nb: 9, titre: "federdo calculatrice", method_controler: projects_federdo_calculatrice_path,     finish: true, bg_color: :royalblue, rate: 100, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Complete App: Litle Calculator"  %>
+  <%= render 'blocs', nb: 9, titre: "federdo calculatrice", method_controler: projects_federdo_calculatrice_path,     finish: true, bg_color: :royalblue, rate: 99, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+  Complete App: Litle Calculator<br>
+  using: template(css/js/html) /without layout<br>
+  todo: add result inner box"  %>
 
-  <%= render 'blocs', nb: 10, titre: "scraping annuaire cabinets", method_controler: scraping_annuaire_cabinets_path, finish: false, bg_color: :cyan, rate: 95, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: ""  %>
+  <%= render 'blocs', nb: 10, titre: "scraping annuaire cabinets", method_controler: scraping_annuaire_cabinets_path, finish: "Mid", bg_color: :cyan, rate: 95, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+  script getting data form multipage website<br>
+  using: Nokogiri, CSV<br>
+  must:(final file)"  %>
 
-  <%= render 'blocs', nb: 11, titre: "googleMapsAPI_THP_P43", method_controler: googleMapsAPI_THP_P43_path,           finish: true, bg_color: :aqua, rate: 99, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Operational App: Using google map API"  %>
+  <%= render 'blocs', nb: 11, titre: "googleMapsAPI_THP_P43", method_controler: googleMapsAPI_THP_P43_path,           finish: true, bg_color: :aqua, rate: 99, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+  Operational App:<br>
+  Page displaying a Map of the World<br>
+  using: Google Map API, html, js<br>
+  must: ggle_API_key, JQuery"  %>
 
-  <%= render 'blocs', nb: 12, titre: "CV", method_controler: cv_path,                                                 finish: true, bg_color: :steelblue, rate: 99, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using Rails-Latex Gem: My CV:converting latex code <br> from a view into pdf file"  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 12, titre: "CV", method_controler: cv_path,                                                 finish: true, bg_color: :steelblue, rate: 99, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+  Page display pdf CV by direct live complitaion code in latex<br>
+  using: gem 'rails-latex'<br>
+  must: (buildpack-tex(heroku)/latex installed, config textlive.profile)"  %>
 
-  <%= render 'blocs', nb: 13, titre: "Nom de couleurs HTML", method_controler: color_names_path,                      finish: true, bg_color: :cornflowerblue, rate: 99, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using regex and hashes:<br>Displaying color names"  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 13, titre: "Nom de couleurs HTML", method_controler: color_names_path,                      finish: true, bg_color: :cornflowerblue, rate: 99, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+  Page displaying color classed(by names/groups)<br>
+  using: ruby(hasches, regex)"  %>
 
-  <%= render 'blocs', nb: 14, titre: "Scraping & Donwload des tag img", method_controler: download_img_path,          finish: true, bg_color: :cornflowerblue, rate: 50, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using net/http & nokogiri gems and Dir & File Objects"  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 14, titre: "Scraping & Donwload des tag img", method_controler: download_img_path,          finish: "Mid", bg_color: :cornflowerblue, rate: 50, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+  useless script getting all images from a website<br>
+  using: Nokogiri, net/http, ruby(Dir, File, URI)<br>
+  must: config initialize(xpath, filtre, dossier, url_com, url)"  %>
 
-  <%= render 'blocs', nb: 15, titre: "Scraping from slack des membres THP(/!\\)", method_controler: membre_THP_path,        finish: true, bg_color: :cornflowerblue, rate: 5, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using watir, PG, CSV, Net:HTTP <br>objects :[Proc Struct File Rails URI Dir]"  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 15, titre: "Scraping from slack des membres THP(/!\\)", method_controler: membre_THP_path,        finish: "Mid", bg_color: :cornflowerblue, rate: 5, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+  useless script for getting data from slack<br>
+  using watir, PG, CSV, Net:HTTP, ruby(Proc, Struct, File, Rails, URI, Dir)<br>
+  must: database, file final, directory destination"  %>
 
-  <%= render 'blocs', nb: 16, titre: "Scraping annuaire cabinets ESN/SSII (Be Free Talent)", method_controler: scraping_annuaire_cabinets2_path,  finish: true, bg_color: :cornflowerblue, rate: 75, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "To complete "  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 16, titre: "Scraping annuaire cabinets ESN/SSII (Be Free Talent)", method_controler: scraping_annuaire_cabinets2_path,  finish: "Mid", bg_color: :cornflowerblue, rate: 90, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+  script getting data from pages of website<br>
+  using: Nokogiri, URI, CSV, File, ruby(Regex)<br>
+  must:(final save file)<br>
+  To complete "  %>
 
-  <%= render 'blocs', nb: 17, titre: "Scraping annuaire starts ups Fr. (Be Free Talent)", method_controler: scraping_annuaire_startups_path,  finish: true, bg_color: :cornflowerblue, rate: 75, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "To complete "  %>    <!-- <%= link_to "cv", cv_path%> -->
+  <%= render 'blocs', nb: 17, titre: "Scraping annuaire starts ups Fr. (Be Free Talent)", method_controler: scraping_annuaire_startups_path,  finish: "Mid", bg_color: :cornflowerblue, rate: 90, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+  script getting data from pages of website<br>
+  using: Nokogiri, URI, CSV, ruby(Regex, File, Exception Handling)<br>
+  spécial: fonction decode encrypted email<br>
+  must:(final save file)<br>
+  To complete "  %>
 
-  <%= render 'blocs', nb: 18, titre: "HTML Forms", method_controler: html_forms_path,                                 finish: true, bg_color: :cornflowerblue, rate: 99, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "Using only html format"  %>
+  <%= render 'blocs', nb: 18, titre: "HTML Forms", method_controler: html_forms_path,                                 finish: true, bg_color: :cornflowerblue, rate: 99, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+  list of all main html compenents and properties<br>
+  using: html"  %>
 
   <div class="conteneur" style="width:100%">
       <hr class="hr" style="margin-bottom:6">
