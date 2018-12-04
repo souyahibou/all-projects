@@ -8,7 +8,7 @@
   <div class="navbar-brand">
     <class class="navbar-item">
       <div class="buttons">
-        <a class="button is-success is-inverted">
+        <a class="button is-success is-inverted" href="https://github.com/souyahibou/main_projects">
           <span class="icon"><i class="fab fa-github"></i></span>
           <span>Github project source page</span>
         </a>
@@ -30,14 +30,14 @@
 
   <div id="navbarLargeWindow" class="navbar-menu" >
     <div class="navbar-end"><!-- class="navbar-start" -->
-      <a class="navbar-item is-active">Home</a>
+      <a class="navbar-item is-active" href= <%= projects_home_path %> >Home</a>
 
       <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">Menu Main Projects</a>
           <div class="navbar-dropdown is-boxed">
-              <a class="navbar-item">Various Projects</a>
-              <a class="navbar-item">THP Projects</a>
-              <a class="navbar-item">CV contact</a>
+              <a class="navbar-item" href="<%=projects_home_path%>#VARIOUS_PROJECTS">Various Projects</a>
+              <a class="navbar-item" href="<%=projects_home_path%>#THP_PROJECTS">THP Projects</a>
+              <a class="navbar-item" href="<%=projects_home_path%>#CV_CONTACT">CV contact</a>
               <hr class="navbar-divider">
               <div class="navbar-item">Version 2.0.1</div>
           </div>

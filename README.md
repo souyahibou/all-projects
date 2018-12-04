@@ -23,6 +23,32 @@ Things you may want to cover:
 
 * ...
 
+            * CONFIG MODIFIED
+production.rb:
+config.public_file_server.enabled[2lines]
+config.assets.compile
+config.serve_static_assets
+config.force_ssl
+
+application.rb:
+config.assets.enabled = true
+config.assets.initialize_on_precompile = false
+config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+            * COMMANDS TO RUN
+
+run bundle [install|update]
+run rails assets:precompile           RAILS_ENV=production bundle exec rake assets:precompile
+run rails railties:install:migrations
+run rails db:migrate
+run rails db:seeds
+
+=>
+heroku run rake db:version  
+run heroku run rails railties:install:migrations
+run heroku run rails db:migrate
+run heroku run rails db:seeds
+heroku pg:reset => to drop
             * BE CAREFUL BY FILE ADDED IN GIT IGNORE
 
 %----------------------------------------------------------------------------------------
@@ -352,7 +378,7 @@ configuration of facebook program
             ENV["FACEBOOK_EMAIL"]
             ENV["FACEBOOK_MDP"]
 2 copié le nouveau token et remplacer l'ancien token de la variable environnement ENV["token"] par le nouveau token récupéré. Ce token est valide pendant 6mois.
-            2 bis possibilité d'utiliser le token disponible via l'interface API graph facebook, celui-ci est valide pendant 1 heure.
+            2 bis possibilité d'utiliser le token disponible via l'interface API graph facebook, celui-ci est valide pendant 1 heure.'
 ```
 
 
@@ -484,3 +510,193 @@ Other config
   to set automatic opening of a link from linux bash
     [export BROWSER='/mnt/c/Program Files (x86)/Opera/launcher.exe']    in linux subsytem
     [echo "export BROWSER='/mnt/c/Program Files (x86)/Opera/launcher.exe'" >> ~/.bashrc] semems useless
+
+
+
+
+%----------------------------------------------------------------------------------------------------------
+% Tuto: How to load an html svg css or any other file
+%----------------------------------------------------------------------------------------------------------
+
+    1 a). rename the file: logo.svg to => _logo.html.erb         ==then=>>            b). use under main html view: <%= render :partial => 'path/logo' %>
+    2 a). def svg(name)						                                                    b). use under main html view: <%= svg 'logo' %>
+          	file_path = "#{Rails.root}/app/assets/images/#{name}.svg"   #or another path
+          	return File.read(file_path).html_safe if File.exists?(file_path)
+          	'(not found)'
+          end_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%----------------------------------------------------------------------------------------
+% USELESS CAN BE DELETED IN THE FUTURE
+%----------------------------------------------------------------------------------------
+
+
+    #Comments of each projects
+
+    ##Various Projects
+
+    1: used for some rendering tests
+    2: useless script getting data from some website
+    using: googleauth, watir, nokogiri, differ, Regex, ruby(hash, array, ENV, ... )+++
+    must:(watir webdriver setled, browser, model)		
+    partiel
+    3: useless script getting data from some google calendar well-structured
+    using:  ActiveRecord, Geocoder, ruby(Proc, Sleep, Hash, Date, Struct, Time)
+    must:(model created)
+    partiel
+    4:useless script getting data from Facebook API  
+    using: Koala, ActiveRecord, Hash, Time
+    must:(API connection, model created)
+    partiel
+    5:useless script parsing data from pdf catalog
+    using: gem (pdf-reader, PG(dynamicly)), ruby(File, struct)
+    must:(PG connection)
+    partiel
+    6: 1srt script: useless 2 scripts getting data from Cdiscount website
+    using: Nokogiri, CSV, ruby(Array of Hashs)
+    must: (CSV file for save)
+    partiel (script works well)
+    7:conversion tableau csv/excel into contact VCF
+    using: Roo, Ruby(File)
+    must:(fichier source, Fichier final)
+    partiel
+    8:conversion variable ENV inner application.yml into in inline format for heroku
+    using: ruby(Regex, File)
+    must:(fichier source, Fichier final)
+    partiel
+    9:Complete App: Litle Calculator
+    using: template(css/js/html) /without layout
+    must:
+    complete:
+    10: script getting data form multipage website
+    using: Nokogiri, CSV
+    must:(final file)
+    partiel(works locally, not display in prod)
+    11: Page displaying a Map of the World
+    using: Google Map API, html, js
+    must: API_key, JQuery
+    complete
+    12: Page display pdf CV by direct live complitaion in latex
+    using: gem 'rails-latex'
+    must: (buildpack-tex(heroku)/latex installed, config textlive.profile)
+    complete
+    13: Page displaying color classed(by names/groups)
+    using: ruby(hasches, regex)
+    complete
+    14: useless script getting all images from a website
+    using: Nokogiri, net/http, ruby(Dir, File, URI)
+    must: config initialize(xpath, filtre, dossier, url_com, url)
+    partial
+    15: useless script for getting data from slack
+    using watir, PG, CSV, Net:HTTP, ruby(Proc, Struct, File, Rails, URI, Dir)
+    must: database, file final, directory destination
+    partial
+    16: script getting data from pages of website
+    using: Nokogiri, URI, CSV, File, ruby(Regex)
+    must:(final save file)
+    partial: works locally(build a view)
+
+    17: script getting data from pages of website
+    using: Nokogiri, URI, CSV, ruby(Regex, File, Exception Handling)
+    spécial: fonction decode encrypted email
+    must:(final save file)
+    partial: works locally(build a view)
+
+    18:list of all main html compenents and properties
+    using: html
+
+    ##Thp Projects
+    01:
+    02:
+    03:
+    04:
+    05:
+
+    06:4 Ruby Script Programs
+    07:7 Ruby Script Programs && theirs tests
+    08: non ok
+    09:3 Ruby Scrapping Scripts
+    10:1 Ruby Automation Script  TODO: set for running from heroku			 partial
+
+    11:2 Back-end Programs    1 -program read/write json format from/to file   2-Connexion/utilisation API Google_drive(gem)/Spreadsheets		partial(used in back-end)
+    12:1 -A custom back-end program to send an email    Using: gem(gmail Google_drive Nokogiri), ruby(Dir, File, CSV, Exception) ScrapUrlsPros	partial(back-end)
+    13:5 ruby Script programs			    Using: RSpec, Sinatra, %x!!(bash command), File, Opera					partial(works localy)
+    14:1 complete custom ruby POO program(back-end)     Using RSpec,rubyPOO(File)++ 								partial(works locally)
+    15:none
+
+    16:none
+    17:3 Basic Rails Apps 		Using: Engine, Database, MVC
+    18:2 Basic Rails Apps		Using: Engine, Database, boostraps, partial view, scaffold, model validation,
+    19:1 Basic Rails Apps 		Using: Engine, Database, Scaffold
+    20:none
+
+    21:Basic authentification Rails App Using: Engine, Database, boostraps		partial(works /univers_response_engine/sessions/new)
+    22:same as S5J1		
+    23:none
+    24:4 Basic Rails Apps 		Using:Engine, Activerecord DB				works(to check when migration)
+    25:1 Rails Apps 		Using:Engine, Activerecord DB relations			works(to check when migration)
+
+    26:1 Rails Apps			Using:Engine, Activerecord DB,
+    27:2 Rails Apps			Using:Engine, Devise ,Activerecord DB,bootstrap, pipeline assets(gems) works(to check when migration)
+    28:none
+    29:1 Ruby Script & 1 Rails App	Using:Engine, gem(twitter, bootstraps) 		must:API_keys	partial(back-end) 95%		
+    30:none
+
+    31:Remaking one Youtube Page	Using:template(HTML/CSS)			Works:50%
+    32:1 rails app			Using:Activerecords DB,gem(pipeline tubolinks)	works(to check when migration)
+    33:Remaking an Webpage		Using:template(HTML) 			Works:25%
+    34:Remaking 3 Webpages		Using:template(HTML/CSS/JS)		Works:13%
+    35:none
+
+    36:
+    37:
+    38:3 basic interactive page	Using: Template(HTML/CSS/JS), JS 	   Works:35%
+    39:A basic interactive webpage 	Using: Template(HTML/CSS/SVG), JS(Jquery)  Works:90%
+    40:
+
+    41:none
+    42:A map of the world		Using: Template(HTML), google_map API, Jquery
+    43:A mail manager 				Using: Engine, database, gem(sass-rails,turbolinks),AJAX		  works(to check when migration)
+    44:none
+    45:none

@@ -1,6 +1,6 @@
 <h1 class="title is-1">Map of All Projects</h1>
 <div class="subtitle"> Main work is on the Back-end:
-  <a class="button is-success is-inverted is-small  " href="#"> <span class="icon"><i class="fab fa-github"></i></span><span>source code</span>  </a>
+  <a class="button is-success is-inverted is-small  " href="https://github.com/souyahibou/main_projects"> <span class="icon"><i class="fab fa-github"></i></span><span>source code</span>  </a>
 </div>
 
 <meta name="robots" content="noindex,nofollow"/>
@@ -10,8 +10,9 @@
 
   <div class="conteneur" style="width:100%">
       <hr class="hr" style="margin-bottom:6">
-      <h2 class="title is-2">Various Projects</h2>
-      <div class="tabs is-centered is-boxed">     <ul>  <li class="is-active"><a>Various Projects</a></li>    <li><a>THP Project</a></li></ul>  </div>
+      <h2 class="title is-2" id="VARIOUS_PROJECTS">Various Projects</h2>
+
+      <div class="tabs is-centered is-boxed">     <ul>  <li class="is-active"><a>Various Projects</a></li>    <li><a href="#THP_PROJECTS">THP Project</a></li></ul>  </div>
   </div>
 
   <%= render 'blocs', nb: 1, titre: "none", method_controler: projects_testo_path,                                    finish: true, bg_color: :cadetblue, rate: 50, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "useless <br> used for some rendering some tests" %>
@@ -107,8 +108,8 @@ must: watir webdriver setled, browser, model<br><strong>TODO faire de la gestion
 
   <div class="conteneur" style="width:100%">
       <hr class="hr" style="margin-bottom:6">
-      <h2 class="title is-2">CV Contact</h2>
-      <div class="tabs is-centered is-boxed">      <ul> <li><a>Various Projects</a></li>   <li class="is-active"><a>CV Contact</a></li>  <li ><a>THP Project</a></li></ul>      </div>
+      <h2 class="title is-2" id="CV_CONTACT">CV Contact</h2>
+      <div class="tabs is-centered is-boxed">      <ul> <li><a href="#VARIOUS_PROJECTS">Various Projects</a></li>   <li class="is-active"><a href="#CV_CONTACT">CV Contact</a></li>  <li ><a href="#THP_PROJECTS">THP Project</a></li></ul>      </div>
   </div>
   <!-- <embed src= <%= cv_path %> width="100%" height="1500" type='application/pdf'> -->
   <iframe src=<%= cv_path %>.pdf width="100%" height="1500"> This browser does not support PDFs. Please download the PDF to view it: <a href=<%= cv_path %>.pdf>Download PDF</a></iframe>
@@ -117,9 +118,8 @@ must: watir webdriver setled, browser, model<br><strong>TODO faire de la gestion
   <div class="conteneur">
 
     <hr class="hr" style="margin-bottom:6">
-    <h2 class="title is-2">THP Projects</h2>
-    <div class="tabs is-centered is-boxed"><ul><li><a>Various Projects</a></li>     <li class="is-active"><a>THP Project</a></li></ul></div>
-
+    <h2 class="title is-2" id="THP_PROJECTS">THP Projects</h2>
+    <div class="tabs is-centered is-boxed"><ul><li><a href="#VARIOUS_PROJECTS">Various Projects</a></li>     <li class="is-active"><a>THP Project</a></li></ul></div>
   <%= render 'week_blocs', week: "Semaine1 Introduction Code",  title1:"Introductions",         act_cntrl1: projects_oeuvres1_1_path, rate1: 5,  fin1: false, msg1:"hehehehehehehehehehe",
                                                                 title2:"HTML/CSS, basis",       act_cntrl2: projects_oeuvres1_2_path, rate2: 5,  fin2: false, msg2:"hehehe",
                                                                 title3:"Google",                act_cntrl3: projects_oeuvres1_3_path, rate3: 5,  fin3: false, msg3:"hehehe",

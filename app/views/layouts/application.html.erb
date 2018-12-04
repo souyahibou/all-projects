@@ -10,37 +10,36 @@
 
 
   <body>
-
     <section class="hero is-fullheight-with-navbar is-light is-bold has-navbar-fixed-top">
 
-        <%= render partial: 'layouts/bulma_header_navbar' %>
+      <%= render partial: 'layouts/bulma_header_navbar' %>
 
-    <div class="hero-body">
-      <div class="container has-text-centered">
-        <%= yield %>
-      </div>
-    </div>
-
-    <div class="hero-foot">
-      <nav class="tabs is-boxed is-fullwidth">
-        <div class="container">
-          <ul>
-            <li class="is-active"><a>Overview</a></li>
-            <li><a>Map of Projects</a></li>
-            <li><a>List of Projects</a></li>
-            <li><a>Contact</a></li>
-            <li><a>Wikipédia</a></li>
-          </ul>
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <%= yield %>
         </div>
-      </nav>
-    </div>
+      </div>
+
+      <div class="hero-foot">
+        <nav class="tabs is-boxed is-fullwidth">
+          <div class="container">
+            <ul>
+              <li class="is-active"><a>Overview</a></li>
+              <li><%= link_to "Map of Projects", projects_home_path, remote: request.original_url.include?("home")? false : true %></li>
+              <li><%= link_to "List of Projects", "#" %></li>
+              <li><%= link_to "Contact",          cv_path(:format => :pdf) %></li>
+              <li><%= link_to "Wikipédia",        "https://en.wikipedia.org/wiki/List_of_wikis" %></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </section>
   </body>
 
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>This Website</strong> by <a href="https://jgthms.com">Dynosaurus</a>. The source code is licensed
+        <strong>This Website</strong> by <a href= <%= cv_path(:format => :pdf) %> >You</a>. The source code is licensed
         <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
         is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
       </p>
