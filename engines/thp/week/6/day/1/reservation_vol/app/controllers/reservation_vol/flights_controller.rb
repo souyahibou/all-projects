@@ -1,44 +1,45 @@
-class FlightsController < ApplicationController
+require_dependency  'reservation_vol/application_controller'
+module ReservationVol
+  class FlightsController < ApplicationController
 
-  def index
-    @user_options = Airport.all.map{ |u| [ u.airport_code, u.id ] }
-    @airports = Airport.all
-    if params[:flight] then @flights = Flight.search flight_params end
+      def index
+        @user_options = Airport.all.map{ |u| [ u.airport_code, u.id ] }
+        @airports = Airport.all
+        if params[:flight] then @flights = Flight.search flight_params end
 
-  end
+      end
 
+      def new
+        @user_options = Airport.all.map{ |u| [ u.airport_code, u.id ] }
+        @airports = Airport.all
+        @flights = Flight.search params2
 
+      end
 
-  def new
-    @user_options = Airport.all.map{ |u| [ u.airport_code, u.id ] }
-    @airports = Airport.all
-    @flights = Flight.search params2
+      def create
 
-  end
-
-  def create
-
-      @booking= Booking.new(params3)
-      #construire le nombre de passengers indiquées
-	  if @booking.save
-	     redirect_to @booking
-	  else
-	     render 'new'
-	  end
-  end
+        @booking= Booking.new(params3)
+        #construire le nombre de passengers indiquées
+        if @booking.save
+          redirect_to @booking
+        else
+          render 'new'
+        end
+      end
 
 
-private
-  def flight_params
-    params.require(:flight).permit(:departure_airport, :arrival_airport, :date_f, :nbr)
-  end
+      private
+      def flight_params
+        params.require(:flight).permit(:departure_airport, :arrival_airport, :date_f, :nbr)
+      end
 
-  def params2
-    params.permit(:departure_airport, :arrival_airport, :date_f, :nbr)
-  end
+      def params2
+        params.permit(:departure_airport, :arrival_airport, :date_f, :nbr)
+      end
 
-  def params3
-    params.permit(:departure_airport, :arrival_airport, :date_f, :nbr)
+      def params3
+        params.permit(:departure_airport, :arrival_airport, :date_f, :nbr)
+      end
   end
 end
 

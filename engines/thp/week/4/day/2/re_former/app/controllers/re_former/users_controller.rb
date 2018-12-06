@@ -1,3 +1,5 @@
+require_dependency "re_former/application_controller"
+
 module ReFormer
   class UsersController < ApplicationController
     def edit

@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rspec-rails', '~> 3.5.0'		#ajout
   s.add_dependency 'devise' 				#ajout
   s.add_dependency 'bootstrap-sass', '3.3.7'		#ajout
-  s.add_dependency 'rails-controller-testing'		#ajout
+  s.add_dependency 'faker'		#ajout
   s.add_dependency 'bcrypt',         '3.1.11'		#ajout
 
   s.add_development_dependency "sqlite3"

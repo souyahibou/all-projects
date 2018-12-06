@@ -5,7 +5,8 @@ require 'jquery-turbolinks'            	#ajout
 require 'devise-i18n'                 	#ajout
 require 'rspec-rails'		#ajout
 require 'bootstrap-sass'		#ajout
-require 'rails-controller-testing'		#ajout
+require 'faker'		#ajout
+require 'bcrypt'		#ajout
 require 'bcrypt'		#ajout
 
 module HomePage

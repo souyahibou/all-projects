@@ -175,7 +175,7 @@ module Projects
             render :html => "not done"
         end
         def oeuvres4_2
-            render :template => projects_oeuvres4_2_path    #custom template
+            render :template => projects_oeuvres4_2_path, layout: false #custom template
         end
         def oeuvres4_3
             arguments = { "gossip" =>      Proc.new {redirect_to the_gossip_project_path and return},

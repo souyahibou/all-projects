@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   mount Generate::Engine,         at: "/generate_engine"
   mount Courses::Engine,          at: "/courses_engine"
   #
-  # mount Eventbrite::Engine,       at: "/eventbrite_engine"
+  mount Eventbrite::Engine,       at: "/eventbrite_engine"
   #
   mount ReservationVol::Engine,   at: "/reservation_vol_engine"
 
