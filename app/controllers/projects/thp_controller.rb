@@ -91,14 +91,17 @@ module Projects
             render :html => "To check by Github account"
         end
         def oeuvres1_2
-            render :html => "To check by Github account"
+            render file: "#{Rails.root}/app/assets/the_hacking_project/W1D2/CodeWeb3.html.erb", layout: false
 
         end
         def oeuvres1_3
-            render :html => "To check by Github account"
+            render :file => "#{Rails.root}/app/assets/the_hacking_project/W1D3/GooglePage.html.erb", layout: false
         end
         def oeuvres1_4
-            render :html => "To check by Github account"
+            arguments = { "google"   =>  Proc.new {render :file =>"#{Rails.root}/app/assets/the_hacking_project/W1D4/Projet_Google_2/GooglePage", layout: false and return},
+                          "mozilla"  =>  Proc.new {render file: "#{Rails.root}/app/assets/the_hacking_project/W1D4/Javasripts/beginner_html_site_styled_gh_pages/index", layout: false and return},
+            }
+            perform_search_choice_selection(arguments, projects_oeuvres1_4_path)
         end
         def oeuvres1_5
             render :html => "To check by Github account"

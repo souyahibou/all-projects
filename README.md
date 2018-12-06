@@ -35,6 +35,11 @@ config.assets.enabled = true
 config.assets.initialize_on_precompile = false
 config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
+/initializers/assets.rb
+Rails.application.config.assets.precompile = [ Proc.new{ |path| !File.extname(path).in?(%w(.js .css .html .erb .md)) }, /application.(css|js)$/ ]
+Rails.application.config.assets.precompile << Dir.glob(Rails.root.join('app', 'assets', 'thp_projects', '**/*')).grep(/[\W\w]*\.(js|css|png|jpg)$/)
+***
+
             * COMMANDS TO RUN
 
 run bundle [install|update]
@@ -43,7 +48,13 @@ run rails railties:install:migrations
 run rails db:migrate
 run rails db:seeds
 
-=>
+=>assets
+rake assets:clobber
+rake assets:clean
+rake tmp:clear
+rake assets:precompile
+
+=>heroku
 heroku run rake db:version  
 run heroku run rails railties:install:migrations
 run heroku run rails db:migrate
@@ -529,8 +540,33 @@ Other config
 
 
 
+%------------------------------------------------------------------------------------------------------------
+%Congigution Nom de domaine OVH HEROKU
+%----------------------------------------------------------------------------------------------------------
+Configuration Redirection de nom de domaine
 
+https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-config/
 
+1. Set your A record to one of Heroku’s IPs
+nslookup yourappname.herokuapp.com
+Now in OVH, add an A record for your root domain (example.com) pointing to this IP:	example.com | A | 54.243.167.174
+On Heroku, don’t forget to declare your root domain:	$ heroku domains:add example.com
+
+2. Declare an app subdomain
+Now add a CNAME record for app subdomain, pointing to your Heroku app (mind the final dot):	app.example.com | CNAME | yourappname.herokuapp.com.
+And don’t forget to declare the subdomain on Heroku:	 $ heroku domains:add app.example.com
+
+3. Change your www subdomain to be an alias of app subdomain
+Now make sure your www CNAME points to the app subdomain:	www.example.com | CNAME | app.example.com.
+And don’t forget to declare the subdomain on Heroku:	 $ heroku domains:add www.example.com
+
+4. config allproject: force an application to use SSL/TLS
+uncomment  config.force_ssl = true  in config/environments/production.rb   to have SSL in ovh
+
+5. infos
+un CNAME sur un root est "interdit"
+OVH n'assure pas de SSL sur les redirections
+Empoisonnement du cache DNS => dnssec(solve)
 
 
 

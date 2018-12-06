@@ -12,3 +12,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
+
+# /config/initializers/assets.rb
+Rails.application.config.assets.precompile = [ Proc.new{ |path| !File.extname(path).in?(%w(.js .css .html .erb .md)) }, /application.(css|js)$/ ]   #added
+# Rails.application.config.assets.precompile = [ Proc.new { |filename, path| path =~ /app\/assets/ && !%w(.js .css .html .erb .md).include?(File.extname(filename)) },/application.(css|js)$/ ]  #added alternative but the means of "path":app/asset doesn't makes sens to me to configure
+Rails.application.config.assets.precompile << Dir.glob(Rails.root.join('app', 'assets', 'the_hacking_project', '**/*')).grep(/[\W\w]*\.(js|css|png|jpg)$/)                                              #added

@@ -28,7 +28,7 @@
         </div>
 
         <%=if false then link_to 'Back', projects_testo_path end%>
-        <% bar_color = rate>89?"is-success":(rate>74? "is-primary":(rate>59?"is-info":(rate>44?"is-warning":(rate>29? "is-link":"is-danger")))) %>
+        <% bar_color = rate>89?"is-success":(rate>74? "is-link":(rate>59?"is-info":(rate>44?"is-warning":(rate>29? "is-primary":"is-danger")))) %>
          <progress class='progress <%=bar_color%>' value='<%=rate%>' max='100'><%=rate%>%</progress>
     </fieldset>
   </form>
