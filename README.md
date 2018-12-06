@@ -43,10 +43,17 @@ Rails.application.config.assets.precompile << Dir.glob(Rails.root.join('app', 'a
             * COMMANDS TO RUN
 
 run bundle [install|update]
-run rails assets:precompile           RAILS_ENV=production bundle exec rake assets:precompile
-run rails railties:install:migrations
-run rails db:migrate
-run rails db:seeds
+run rails assets:precompile           RAILS_ENV=production bundle exec rails assets:precompile
+yes | rm -rf db/migrate/*
+rails db:version (20181206170175 version 1)
+rails db:drop
+rails db:schema:dump
+rails railties:install:migrations
+rails db:schema:load
+rails db:create
+rails db:migrate
+rails db:seeds
+rails db:rollback STEP=3
 
 =>assets
 rake assets:clobber
@@ -56,10 +63,13 @@ rake assets:precompile
 
 =>heroku
 heroku run rake db:version  
-run heroku run rails railties:install:migrations
+run heroku run rails db:create
+<!-- rake db:schema:load or
+rake db:structure:load -->
+run heroku run rails --trace db:schema:load DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 run heroku run rails db:migrate
 run heroku run rails db:seeds
-heroku pg:reset => to drop
+run heroku pg:reset => to drop
             * BE CAREFUL BY FILE ADDED IN GIT IGNORE
 
 %----------------------------------------------------------------------------------------

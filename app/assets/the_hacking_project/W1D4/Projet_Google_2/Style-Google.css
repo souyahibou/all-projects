@@ -19,7 +19,7 @@ header
 
   justify-content:space-around;                       //espace axe principal
   align-items:center;
-  margin:auto;;
+  margin:auto;
 
   height: 100px;
   width: 1000px;
@@ -140,38 +140,3 @@ Button{}
             color:            rgb(150,200,230);
             background-color: rgb(247,247,247);
 }
-
-/*
-        align-content:center;                         //espacement des bloquea
-        flex-wrap:wrap;          // retour eventuel à la ligne
-Propriétés bouton
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        text-align:center;
-        background-color: #FFF;
-        background-color: rgb(247,247,247);
-        padding-right:  2em;
-        padding-left:   2em;
-        padding-top:    1em;
-        padding-bottom: 1em;
-        color:rgb(150,200,230);
-        text-decoration: none;
-
-        {
-      	list-style-type: none;
-      	margin: 0;
-      	padding: 0;
-      	position:fixed; top:2%; right:3%; width: 100%;
-      	background-color: #FFF;
-      	justify-content: right;
-      }
-
-      li
-      {
-      	display:inline-block;
-      	margin:0.8em;
-        margin-left: 1.5em;
-        margin-right: 1.5em;
-        border:none;
-        outline:none;
