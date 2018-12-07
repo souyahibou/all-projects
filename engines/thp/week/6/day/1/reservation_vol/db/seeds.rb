@@ -25,7 +25,7 @@ ReservationVol::Airport.create airport_code:"BCN", airport_name:"Aéroport de Ba
 100.times do
     da = ((1..10).to_a).sample
     aa = ((1..10).to_a).sample
-    ReservationVol::Flight.create duration:((10..1000).to_a).sample,  departure_airport_id: da,  arrival_airport_id: aa,  departure_date:Faker::Date.between(Date.today,7.days.from_now), departure_airport: ReservationVol::Airport.find(da), arrival_airport: ReservationVol::Airport.find(aa)
+    ReservationVol::Flight.create duration:((10..1000).to_a).sample,  reservation_vol_departure_airport_id: da,  reservation_vol_arrival_airport_id: aa,  departure_date:Faker::Date.between(Date.today,7.days.from_now), reservation_vol_departure_airport: ReservationVol::Airport.find(da), reservation_vol_arrival_airport: ReservationVol::Airport.find(aa)
 end
 
 

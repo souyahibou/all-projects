@@ -114,7 +114,7 @@ module Projects
                         "trader"       =>  Proc.new { @res = TheHackingProject::S2DecouverteRuby::J1InitRuby::StockPicker.new.trader_du_dimanche(@task_params[:search].split(",").map{|nbr| nbr.to_i}).to_s},
                         "decomptemots" =>  Proc.new { @res = TheHackingProject::S2DecouverteRuby::J1InitRuby::CompterLesMots.new.jean_michel_data(@task_params[:text].to_s, @task_params[:search].to_s).to_s}
           }
-          perform_search_choice_selection(arguments, projects_oeuvres2_1_path)
+          perform_search_choice_selection(arguments, projects_oeuvres2_1_path, display_layout: false)
         end
         def oeuvres2_2
             arguments = {
@@ -306,7 +306,7 @@ module Projects
         end
 
 
-        def perform_search_choice_selection(args={}, main_page)              # method for AJAX requests otherwise mainpage is displayed
+        def perform_search_choice_selection(args={}, main_page, display_layout:true)              # method for AJAX requests otherwise mainpage is displayed
             if params.permit(:commit).values.join.include?("Search") then
                @task_params = args.map do |key,value|
                                     begin params.require(key.to_sym)  rescue  nil end  #getting the search performed
@@ -315,7 +315,7 @@ module Projects
                @name_task_params = params.to_unsafe_h.select{|key,value| value.class != String}.keys.first    # ActiveSupport::HashWithIndifferentAccess   recupere la clé du hash avec le tableau [des params of the search_task] en valeur
                args[@name_task_params].call     #value must be a proc (use return because can't use two(render/redirect) times)
             end
-            render :template => main_page
+            render :template => main_page, layout: display_layout
         end
   end
 end

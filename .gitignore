@@ -30,10 +30,20 @@ moderncv/
 !/app/assets/zizani/*.json
 
 #THP
+
+!/app/services/the_hacking_project
 /app/services/the_hacking_project/*
 !/app/services/the_hacking_project/s2_decouverte_ruby
+
+!/app/services/the_hacking_project/s3_ruby_intermediaire
+!/app/services/the_hacking_project/s3_ruby_intermediaire/*
+!/app/services/the_hacking_project/s3_ruby_intermediaire/j3_poo/*
+!/app/services/the_hacking_project/s3_ruby_intermediaire/j4_tic_tac_toe/*
+
+
+/app/services/the_hacking_project/s3_ruby_intermediaire/j1_excel/*
 !/app/services/the_hacking_project/s3_ruby_intermediaire/j1_excel/format_json_csv.rb
 !/app/services/the_hacking_project/s3_ruby_intermediaire/j1_excel/spreadsheets.rb
+
+/app/services/the_hacking_project/s3_ruby_intermediaire/j2_envoi_emails/*
 !/app/services/the_hacking_project/s3_ruby_intermediaire/j2_envoi_emails/projet_total.rb
-!/app/services/the_hacking_project/s3_ruby_intermediaire/j3_poo
-!/app/services/the_hacking_project/s3_ruby_intermediaire/j4_tic_tac_toe

@@ -63,13 +63,13 @@ rake assets:precompile
 
 =>heroku
 heroku run rake db:version  
-run heroku run rails db:create
+run heroku pg:reset => to drop
+run heroku run rails --trace db:schema:load DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 <!-- rake db:schema:load or
 rake db:structure:load -->
-run heroku run rails --trace db:schema:load DISABLE_DATABASE_ENVIRONMENT_CHECK=1
 run heroku run rails db:migrate
-run heroku run rails db:seeds
-run heroku pg:reset => to drop
+run heroku run rails db:seed
+
             * BE CAREFUL BY FILE ADDED IN GIT IGNORE
 
 %----------------------------------------------------------------------------------------

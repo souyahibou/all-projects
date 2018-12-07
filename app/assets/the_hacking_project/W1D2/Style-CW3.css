@@ -9,34 +9,33 @@ h1, p
 /*image*/
 a
 {
-  float:center;
+  float:left;
 }
 
 
 h1
 {
-  background-image:radial-gradient();
+  background-image: radial-gradient(closest-side, #3f87a6, #ebf8e1, #f69d3c);
 }
 
 @font-face
 {
   font-weight: 400;
-  font-face: 200;
-  font-size: normal;
-  font-family:;
+  font-size: 1.2em;
+  font-family: serif;
 }
 
 h1
 {
   border-width: thin;
-  border: ;
-  border-color:;
-  border-color: inherit;
-  border-style: outset;
-  border-radius:;
+  border: double;
+  border-color: red green blue yellow;
+  /* border-color: inherit; */
+  border-style: dotted solid double dashed;
+  border-radius: 5px;
 }
 
 h1
 {
-  text-shadow: 0,5;
+  text-shadow: #FC0 1px 0 10px;
 }
