@@ -60,7 +60,8 @@ module TheHackingProject
 
                def run_spec
                    %x!rspec #{File.join(@path,"orange_tree_spec.rb")} --format html --out #{File.join(@path,"rspec_results.html")}!
-                   %x!opera #{File.join(@path,"rspec_results.html")}!
+                   # %x!opera #{File.join(@path,"rspec_results.html")}!
+                   return File.join(@path,"rspec_results.html")
                end
            end
        end

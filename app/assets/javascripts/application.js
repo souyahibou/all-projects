@@ -9,7 +9,9 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
+// add require jquery_ujs or rails-ujs (allow to load js template and avoid to have "Can't verify CSRF token authenticity" error)
 //
 //= require jquery
+//= require jquery_ujs
 //= require turbolinks
 //= require_tree .

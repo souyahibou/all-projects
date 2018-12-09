@@ -6,6 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-ReservationVol::Engine.load_seed
 Eventbrite::Engine.load_seed
 HomePage::Engine.load_seed
+ReservationVol::Engine.load_seed

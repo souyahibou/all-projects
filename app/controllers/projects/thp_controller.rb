@@ -114,7 +114,7 @@ module Projects
                         "trader"       =>  Proc.new { @res = TheHackingProject::S2DecouverteRuby::J1InitRuby::StockPicker.new.trader_du_dimanche(@task_params[:search].split(",").map{|nbr| nbr.to_i}).to_s},
                         "decomptemots" =>  Proc.new { @res = TheHackingProject::S2DecouverteRuby::J1InitRuby::CompterLesMots.new.jean_michel_data(@task_params[:text].to_s, @task_params[:search].to_s).to_s}
           }
-          perform_search_choice_selection(arguments, projects_oeuvres2_1_path, display_layout: false)
+          perform_search_choice_selection(arguments, projects_oeuvres2_1_path, display_layout: "application_base")
         end
         def oeuvres2_2
             arguments = {
@@ -152,10 +152,10 @@ module Projects
             render :html => "program mail back-end"
         end
         def oeuvres3_3
-            arguments = { "hi" =>            Proc.new {render :html => TheHackingProject::S3RubyIntermediaire::J3Poo::Hi.new.perform and return},
-                          "monkey" =>        Proc.new {render :html => TheHackingProject::S3RubyIntermediaire::J3Poo::Monkey.new.run_spec and return},
-                          "orange_tree" =>   Proc.new {TheHackingProject::S3RubyIntermediaire::J3Poo::OrangeTree.new.run_spec},
-                          "scrabble_word" => Proc.new {TheHackingProject::S3RubyIntermediaire::J3Poo::ScrabbleWord.new.run_spec},
+            arguments = { "hi" =>            Proc.new {redirect_to sinatra_path and return},
+                          "monkey" =>        Proc.new {render file: TheHackingProject::S3RubyIntermediaire::J3Poo::Monkey.new.run_spec and return},
+                          "orange_tree" =>   Proc.new {render file: TheHackingProject::S3RubyIntermediaire::J3Poo::OrangeTree.new.run_spec, layout: false and return},
+                          "scrabble_word" => Proc.new {render file: TheHackingProject::S3RubyIntermediaire::J3Poo::ScrabbleWord.new.run_spec and return},
                           "superhero" =>     Proc.new {render :html => TheHackingProject::S3RubyIntermediaire::J3Poo::Superhero.new("name","age","superpower") and return}
                         }
             render_default =  projects_oeuvres3_3_path
@@ -164,7 +164,7 @@ module Projects
         end
         def oeuvres3_4
             TheHackingProject::S3RubyIntermediaire::J4TicTacToe::ProjetTicTacToe.new.run_spec
-            render :html => "../services/the_hacking_project/s3_ruby_intermediaire/j4_tic_tac_toe/rspec_results.html"
+            render :file => "../services/the_hacking_project/s3_ruby_intermediaire/j4_tic_tac_toe/rspec_results.html"
         end
         def oeuvres3_5
             render :html => "not done"
@@ -306,7 +306,7 @@ module Projects
         end
 
 
-        def perform_search_choice_selection(args={}, main_page, display_layout:true)              # method for AJAX requests otherwise mainpage is displayed
+        def perform_search_choice_selection(args={}, main_page, display_layout: "application_base")              # method for AJAX requests otherwise mainpage is displayed
             if params.permit(:commit).values.join.include?("Search") then
                @task_params = args.map do |key,value|
                                     begin params.require(key.to_sym)  rescue  nil end  #getting the search performed

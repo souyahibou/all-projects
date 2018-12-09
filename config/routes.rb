@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  match "/sinatra" => TheHackingProject::S3RubyIntermediaire::J3Poo::Hi, :anchor => false, via: [:get, :post]
+
   mount JeMePresente::Engine,     at: "/je_me_presente_engine"
   mount MovieMaker::Engine,       at: "/movie_maker_engine"
   mount ReFormer::Engine,         at: "/re_former_engine"

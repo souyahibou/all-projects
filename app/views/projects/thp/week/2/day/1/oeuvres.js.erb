@@ -1,4 +1,5 @@
 <% unless @res.nil? %>
+  alert("Welcome");
    var x = document.getElementById("myInput_<%= @name_task_params %>");
    var y = document.getElementsByName("<%=  @name_task_params  %>[<%= (@name_task_params == 'decomptemots')? 'text' : 'number'%>]")[0];
   document.getElementById("demo_<%= @name_task_params %>").innerHTML = "You are searching for: " + "(" + x.value +", " + y.value + ")=> <%= escape_javascript(@res) %>; ";
