@@ -51,3 +51,4 @@ moderncv/
 # Ignore application configuration use figaro to push into heroku
 /config/application.yml
 /config/application_fb.yml
+/public/assets/pictures
