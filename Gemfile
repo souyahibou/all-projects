@@ -5,10 +5,15 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+#############################################################################################
+############################ Templates CSS  #################################################################
 
 gem 'font-awesome-sass', '~> 5.5.0'   #added      @import "font-awesome";=> application.scss:  for loading icons
 gem "bulma-rails", "~> 0.7.2"         #added      @import "bulma";=> application.scss:  template css
 gem 'bootstrap-sass', '3.3.7'		      #ajout
+
+#############################################################################################
+############################ ENGINES  #################################################################
 
 gem 'je_me_presente',       path: 'engines/thp/week/4/day/2/je_me_presente'   #engine
 gem 'movie_maker',          path: 'engines/thp/week/4/day/2/movie_maker'
@@ -20,16 +25,16 @@ gem 'thp_moussaillons',     path: 'engines/thp/week/4/day/3/thp_moussaillons'
 gem 'base_de_donnees',      path: 'engines/thp/week/4/day/4/base_de_donnees'
 
 gem 'univers_response',     path: 'engines/thp/week/5/day/2/univers_response'
-#
+
 gem 'reservation',          path: 'engines/thp/week/5/day/4/reservation'
 gem 'usine',                path: 'engines/thp/week/5/day/4/usine'
 gem 'generate',             path: 'engines/thp/week/5/day/4/generate'
 gem 'courses',              path: 'engines/thp/week/5/day/4/courses'
-#
+
 gem 'eventbrite',           path: 'engines/thp/week/5/day/5/eventbrite'
-#
+
 gem 'reservation_vol',      path: 'engines/thp/week/6/day/1/reservation_vol'
-#
+
 gem 'devise_demo',          path: 'engines/thp/week/6/day/2/devise_demo'
 gem 'home_page',            path: 'engines/thp/week/6/day/2/home_page'
 
@@ -39,38 +44,42 @@ gem 'formulaire_stylay',    path: 'engines/thp/week/7/day/2/formulaire_stylay'
 
 gem 'email_viewer',         path: 'engines/thp/week/9/day/3/email_viewer'
 
-# gem 'tux'                         #ajout pose probleme
-gem 'sinatra'                     #ajout
-
-gem 'pry'                         #ajout
-gem 'json'                        #ajout
-gem 'csv'                         #ajout
-gem 'gmail'                       #ajout
-# require 'pp'                          #ajout
-
-gem 'rspec'                       #ajout
-
-gem 'sprockets'                   #ajout
+#############################################################################################
+############################# CUSTOM FOR THIS APP ################################################################
 # gem 'rails_12factor'              #ajout  instead config.serve_static_assets = true
 
-gem 'rails-latex'                 #ajout
+gem 'sinatra'                     #ajout
+gem 'gmail'                       #ajout
 
-gem 'geocoder'                    #ajout    or gem 'google-maps'
 gem 'paper-pdf-parser'
+gem 'rails-latex'                 #ajout
+#############################################################################################
+############################ TESTING DEBUGGING CONFIG  #################################################################
+gem 'pry'                         #ajout
+gem 'rspec'                       #ajout
+gem "figaro"			                #ajout
 
+#############################################################################################
+############################ BDD  #################################################################
 gem 'activerecord-diff'           #ajout
 gem 'differ'                      #ajout
 
-gem "figaro"			                #ajout
-gem "koala"			                  #ajout  gem facebook
+#############################################################################################
+############################ DATA SCRAPPING REQUEST MANIPULATION  #################################################################
+gem 'json'                        #ajout
+gem 'csv'                         #ajout
+gem 'roo'                         #ajout
+gem 'geocoder'                    #ajout    or gem 'google-maps'
 
 gem "google_drive"                #ajout
+gem "koala"			                  #ajout  gem facebook
 gem 'watir'                       #ajout
-gem 'pry'                	        #ajout
 gem 'nokogiri'
 
-gem 'roo'                         #ajout
+#############################################################################################
+############################ BASICS GEMS #################################################################
 
+gem 'sprockets'                   #ajout
 gem 'jquery-rails', '4.3.1'       #uselfull(assets) can't be delete
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

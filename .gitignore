@@ -13,7 +13,6 @@
 .byebug_history
 
 # Ignore application configuration data generated
-/config/application_fb.yml
 /All_Projects/images/
 /images_slack
 /slack.csv
@@ -25,7 +24,7 @@ moderncv/
 
 #see zizani directory
 /app/assets/zizani/*
-!/app/assets/zizani/pictures
+/app/assets/zizani/pictures
 !/app/assets/zizani/*.pdf
 !/app/assets/zizani/*.json
 
@@ -34,6 +33,7 @@ moderncv/
 !/app/services/the_hacking_project
 /app/services/the_hacking_project/*
 !/app/services/the_hacking_project/s2_decouverte_ruby
+!/app/services/the_hacking_project/s2_decouverte_ruby/**/*
 
 !/app/services/the_hacking_project/s3_ruby_intermediaire
 !/app/services/the_hacking_project/s3_ruby_intermediaire/*
@@ -47,3 +47,7 @@ moderncv/
 
 /app/services/the_hacking_project/s3_ruby_intermediaire/j2_envoi_emails/*
 !/app/services/the_hacking_project/s3_ruby_intermediaire/j2_envoi_emails/projet_total.rb
+
+# Ignore application configuration use figaro to push into heroku
+/config/application.yml
+/config/application_fb.yml

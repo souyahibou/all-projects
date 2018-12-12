@@ -1,3 +1,5 @@
+require 'scrap_urls_pros'  #load 'filename.rb' #every call require/require_relative 'filename' #only once call
+
 END {   puts "Terminating du Programme de Scan des events google calendar"}
 BEGIN {   puts "Initialition du programme de scan des événements Google Calendar"}
 

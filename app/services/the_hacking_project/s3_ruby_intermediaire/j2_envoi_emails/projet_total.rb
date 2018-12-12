@@ -3,6 +3,7 @@ require 'pry'
 require 'json'
 require 'csv'
 require 'gmail'
+# require 'scrap_urls_pros'  #load 'filename.rb' #every call require/require_relative 'filename' #only once call
 
 
  # fichier synthèse total(scrap email val d'oise, save( spreadsheet, json, csv), download mail, envoi, mail)

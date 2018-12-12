@@ -59,6 +59,10 @@ rake db:structure:load -->
 run heroku run rails db:migrate
 run heroku run rails db:seed
 
+=>figaro
+bundle exec figaro help heroku:set
+bundle exec figaro heroku:set -e production
+bundle exec figaro heroku:set -p config/application_fb.yml
 
             * GEMS USED
 ```ruby
