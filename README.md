@@ -1,131 +1,138 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+  This README would normally document whatever steps are necessary to get the
+  application up and running.
 
-* Deployment instructions
-
-
-
-            * CONFIG MODIFIED
-- production.rb:
-```ruby
-config.public_file_server.enabled[2lines]
-config.assets.compile
-config.serve_static_assets
-config.force_ssl
-```
-
-- application.rb:
-```ruby
-config.assets.enabled = true
-config.assets.initialize_on_precompile = false
-config.assets.paths << Rails.root.join("app", "assets", "fonts")
-```
-
-- /initializers/assets.rb
-```ruby
-Rails.application.config.assets.precompile = [ Proc.new{ |path| !File.extname(path).in?(%w(.js .css .html .erb .md)) }, /application.(css|js)$/ ]
-Rails.application.config.assets.precompile << Dir.glob(Rails.root.join('app', 'assets', 'thp_projects', '**/*')).grep(/[\W\w]*\.(js|css|png|jpg)$/)
-```
-
-            * COMMANDS TO RUN
-```bash
-bundle [install|update]
-rails assets:precompile           RAILS_ENV=production bundle exec rails assets:precompile
-yes | rm -rf db/migrate/*
-rails db:version (20181206170175 version 1)
-rails db:drop
-rails db:schema:dump
-rails railties:install:migrations
-rails db:schema:load
-rails db:create
-rails db:migrate
-rails db:seeds
-rails db:rollback STEP=3
-```
-=>assets
-rake assets:clobber
-rake assets:clean
-rake tmp:clear
-rake assets:precompile
-
-=>heroku
-heroku run rake db:version  
-run heroku pg:reset => to drop
-run heroku run rails --trace db:schema:load DISABLE_DATABASE_ENVIRONMENT_CHECK=1
-<!-- rake db:schema:load or
-rake db:structure:load -->
-run heroku run rails db:migrate
-run heroku run rails db:seed
-
-=>figaro
-bundle exec figaro help heroku:set
-bundle exec figaro heroku:set -e production
-bundle exec figaro heroku:set -p config/application_fb.yml
-
-            * GEMS USED
-```ruby
-gem 'font-awesome-sass'           
-gem "bulma-rails"                 
-gem 'bootstrap-sass'    		      
-
-gem 'sinatra'                     
-
-gem 'pry'                         
-gem 'json'                        
-gem 'csv'                         
-gem 'gmail'                       
-
-gem 'rspec'                       
-
-gem 'sprockets'                   
-
-gem 'rails-latex'                 
-
-gem 'geocoder'                     #or gem 'google-maps'
-gem 'paper-pdf-parser'
-
-gem 'activerecord-diff'           
-gem 'differ'                      
-
-gem "figaro"			                
-gem "koala"			                   #gem facebook
-
-gem "google_drive"                
-gem 'watir'                       
-gem 'pry'                	        
-gem 'nokogiri'
-
-gem 'roo'                         #ajout
-
-gem 'jquery-rails', '4.3.1'       #uselfull(assets) can't be delete
-
-gem 'rails', '~> 5.1.4'           # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'pg', '~> 0.18'               # Use postgresql as the database for Active Record
-gem 'puma', '~> 3.7'              # Use Puma as the app server
-
-gem 'sass-rails', '~> 5.0'        # Use SCSS for stylesheets
-gem 'uglifier', '>= 1.3.0'        # Use Uglifier as compressor for JavaScript assets
-gem 'coffee-rails', '~> 4.2'      # Use CoffeeScript for .coffee assets and views
-
-gem 'turbolinks', '~> 5'          # Turbolinks makes navigating your web application faster.
-gem 'jbuilder', '~> 2.5'          # Build JSON APIs with ease.
-```
+  * Deployment instructions
 
 
-            * ENGINE USED
+
+## CONFIG MODIFIED
+  - production.rb:
+  ```ruby
+  config.public_file_server.enabled[2lines]
+  config.assets.compile
+  config.serve_static_assets
+  config.force_ssl
+  ```
+
+  - application.rb:
+  ```ruby
+  config.assets.enabled = true
+  config.assets.initialize_on_precompile = false
+  config.assets.paths << Rails.root.join("app", "assets", "fonts")
+  ```
+
+  - /initializers/assets.rb
+  ```ruby
+  Rails.application.config.assets.precompile = [ Proc.new{ |path| !File.extname(path).in?(%w(.js .css .html .erb .md)) }, /application.(css|js)$/ ]
+  Rails.application.config.assets.precompile << Dir.glob(Rails.root.join('app', 'assets', 'thp_projects', '**/*')).grep(/[\W\w]*\.(js|css|png|jpg)$/)
+  ```
+
+## COMMANDS TO RUN
+  * rails
+  ```bash
+  bundle [install|update]
+  rails assets:precompile           
+  RAILS_ENV=production bundle exec rails assets:precompile
+  yes | rm -rf db/migrate/*
+  rails db:version (20181206170175 version 1)
+  rails db:drop
+  rails db:schema:dump
+  rails railties:install:migrations
+  rails db:schema:load
+  rails db:create
+  rails db:migrate
+  rails db:seeds
+  rails db:rollback STEP=3
+  ```
+  * assets
+  ```bash
+  rake assets:clobber
+  rake assets:clean
+  rake tmp:clear
+  rake assets:precompile
+  ```
+
+  * heroku
+  ```bash
+  heroku run rake db:version  
+  run heroku pg:reset #=> to drop
+  run heroku run rails --trace db:schema:load DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+  # rake db:schema:load || rake db:structure:load
+  run heroku run rails db:migrate
+  run heroku run rails db:seed
+  ```
+
+  * figaro
+  ```bash
+  bundle exec figaro help heroku:set
+  bundle exec figaro heroku:set -e production
+  bundle exec figaro heroku:set -p config/application_fb.yml
+  ```
+
+## GEMS USED
+  ```ruby
+  gem 'font-awesome-sass'           
+  gem "bulma-rails"                 
+  gem 'bootstrap-sass'    		      
+
+  gem 'sinatra'                     
+
+  gem 'pry'                         
+  gem 'json'                        
+  gem 'csv'                         
+  gem 'gmail'                       
+
+  gem 'rspec'                       
+
+  gem 'sprockets'                   
+
+  gem 'rails-latex'                 
+
+  gem 'geocoder'                     #or gem 'google-maps'
+  gem 'paper-pdf-parser'
+
+  gem 'activerecord-diff'           
+  gem 'differ'                      
+
+  gem "figaro"			                
+  gem "koala"			                   #gem facebook
+
+  gem "google_drive"                
+  gem 'watir'                       
+  gem 'pry'                	        
+  gem 'nokogiri'
+
+  gem 'roo'                         #ajout
+
+  gem 'jquery-rails', '4.3.1'       #uselfull(assets) can't be delete
+
+  gem 'rails', '~> 5.1.4'           # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+  gem 'pg', '~> 0.18'               # Use postgresql as the database for Active Record
+  gem 'puma', '~> 3.7'              # Use Puma as the app server
+
+  gem 'sass-rails', '~> 5.0'        # Use SCSS for stylesheets
+  gem 'uglifier', '>= 1.3.0'        # Use Uglifier as compressor for JavaScript assets
+  gem 'coffee-rails', '~> 4.2'      # Use CoffeeScript for .coffee assets and views
+
+  gem 'turbolinks', '~> 5'          # Turbolinks makes navigating your web application faster.
+  gem 'jbuilder', '~> 2.5'          # Build JSON APIs with ease.
+  ```
+
+
+## ENGINE USED
 
 - 42 je_me_presente   #engine
 - 42 movie_maker
 - 42 re_former
 
 - 43 the_gossip_project
-- 43 thp_moussaillons (GEM bootstrap)
+- 43 thp_moussaillons (bootstrap)
 
 - 44 base_de_donnees
 
-- 52 univers_response (gem bootstrap-sass)
+- 52 univers_response (bootstrap-sass)
 
 - 54 reservation
 - 54 usine
@@ -137,20 +144,20 @@ gem 'jbuilder', '~> 2.5'          # Build JSON APIs with ease.
 - 61 reservation_vol (faker)
 
 - 62 devise_demo ()
-     gem 'devise', 'devise_zxcvbn', 'devise-i18n', 'delayed_job_active_record'
-     gem 'jquery-turbolinks', 'bootstrap-sass', 'coffee-rails'  	                 #pipeline
+    - gem 'devise', 'devise_zxcvbn', 'devise-i18n', 'delayed_job_active_record'
+    - gem 'jquery-turbolinks', 'bootstrap-sass', 'coffee-rails'  	                 #pipeline
 - 62 home_page
-     gem 'devise', 'devise-i18n', 'delayed_job_active_record'
-     gem 'jquery-turbolinks', 'bootstrap-sass'
-     gem 'faker'
-     gem 'bcrypt'
+    - gem 'devise', 'devise-i18n', 'delayed_job_active_record'
+    - gem 'jquery-turbolinks', 'bootstrap-sass'
+    - gem 'faker'
+    - gem 'bcrypt'
 - 64 twitter_bis (twitter, bootstrap-sass)
 
-- 72 formulaire_stylay(gem  'devise', 'devise-i18n', pipeline('sass-rails', 'uglifier', 'coffee-rails'), 'turbolinks')
+- 72 formulaire_stylay('devise', 'devise-i18n', pipeline('sass-rails', 'uglifier', 'coffee-rails'), 'turbolinks')
 - 93 email_viewer (sass-rails', 'turbolinks')
 
 
-            * SERVICES
+## SERVICES
 ```ruby
 TheHackingProject::S2DecouverteRuby::J1InitRuby::ChiffreDeCesar.new.chiffre_de_cesar("test", 27)
 TheHackingProject::S2DecouverteRuby::J1InitRuby::CompterLesMots.new.jean_michel_data(corpus, dictionary)
@@ -171,7 +178,6 @@ TheHackingProject::S2DecouverteRuby::J4Nokogiri::Projet::RouteMairie.new.perform
 
 TheHackingProject::S2DecouverteRuby::J5Watir::WatirGoogle.new.perform
 
-
 TheHackingProject::S3RubyIntermediaire::J1Excel::Spreadsheets.new.perform
 TheHackingProject::S3RubyIntermediaire::J1Excel::FormatJsonCsv.new.perform
 
@@ -185,6 +191,7 @@ TheHackingProject::S3RubyIntermediaire::J3Poo::Superhero.new
 
 TheHackingProject::S3RubyIntermediaire::J4TicTacToe::ProjetTicTacToe.new.perform
 
+
 SpecialProjects::ColorNames.new.color_by_names
 SpecialProjects::FormatContact.new.perform
 SpecialProjects::FormatKeysEnv.new.perform
@@ -197,11 +204,12 @@ SpecialProjects::ScrapJournalDuNet.new.perform
 SpecialProjects::ScrapSlackMbr.new.perform
 SpecialProjects::ScrapUsineDigital.new.perform
 
+
 ScrapFbPros.new.perform
 ScrapGoogleCal.new.perform
 ScrapUrlsPros.new.perform
 ```
-            * SYSTEM DEPENDENCIES
+## SYSTEM DEPENDENCIES
 1. Rails 5.0.1
 2. LaTeX
 3. PostgreSQL
@@ -209,7 +217,7 @@ ScrapUrlsPros.new.perform
 5. buildpacks on heroku prod
 6. heroku config
 
-            * HOW TO RUN APP
+## HOW TO RUN APP
 1. bundle install && bundle update
 2. rails assets:preccompile
 3. rails db:create
@@ -218,115 +226,115 @@ ScrapUrlsPros.new.perform
 6. rails s
 7. Enjoy
 
-            * JOBS
+## JOBS
 
-            * BE CAREFUL BY FILE ADDED IN GIT IGNORE
+## BE CAREFUL BY FILE ADDED IN GIT IGNORE
 
-%----------------------------------------------------------------------------------------
-%	HOW TO ADD NEW PROJECT
-%----------------------------------------------------------------------------------------
 
-###make interface for each project
-  1. with some initial configuration and données d'entrées if needed
-  2. with description of project
-  3. principal features gems configuration paths associées au project/fichier to ignore
-  4. add features to more configure project ex: scrap only 2 page instead of 48(all page) or until stop activate
+# HOW TO ADD NEW PROJECT
+
+
+  ### make interface for each project
+    1. with some initial configuration and données d'entrées if needed
+    2. with description of project
+    3. principal features gems configuration paths associées au project/fichier to ignore
+    4. add features to more configure project ex: scrap only 2 page instead of 48(all page) or until stop activate
+  **************************************************************************************
+  ### Procédure pour chaque nouveau projet
+    1. modify controller => add action or controller action
+    2. add ruby code in service folder if needed
+    3. add view with same name of the action
+    4. define route associated with the view and the action controller
+    5. add project on index of projects in home view
+    6. complete readme.md for how to use app && what is the app && how app is build && how long taking && ext. config
 **************************************************************************************
-###Procédure pour chaque nouveau projet
-  1. modify controller => add action or controller action
-  2. add ruby code in service folder if needed
-  3. add view with same name of the action
-  4. define route associated with the view and the action controller
-  5. add project on index of projects in home view
-  6. complete readme.md for how to use app && what is the app && how app is build && how long taking && ext. config
-**************************************************************************************
 
 
-%----------------------------------------------------------------------------------------
-%	DESCRIPTION OF EACH PROJECTS
-%----------------------------------------------------------------------------------------
-
---------------------------------------------------------------------------------------
-Le Projet ScrapImageHtmlTag:   Le 15/07/2018
-Ce script permet à partir d'une Url d'un site donnée:
-1. de récupérer les Url des valise HTML img
-2. de les télécharger dans un dossier images crée si non-éxistant
-
-  def initialize              contient les entrées/reglages à paramétrer
-  def get_html(url)           récupère le code source HTML de l'URL
-  def parse_html(html)        récupère les information HTML spécifié
-  def downloader(url, paths)  télécharge les images à partir des URL got
-  def test_response(resp)     non utilisé
-  def perform                 éxécution du script
-
-3. ajouter le dossier des images au git ignore
-4. Gems/Objects used:  ['net/http' , 'nokogiri']/[Dir, File]
-
--------------------------------------------------------------------------------------
-Le projet ScrapSlackMbr: Le 19/07/2018
-Ce script permet de récupérer les informations et images de tous les membres du slack THP:
-1. récupère le pseudo/nom-prénom/statut/identifiant/url_images depuis le jobboard slack THP
-2. sauvegarde le résultat en base de données et export dans un fichier de format csv avec une éxécution de Commande bash %x!cmd!
-
-3. ajouter le dossier images_slack au git ignore
-4. Gems/Object useed: [Watir PG CSV Net::HTTP]/[Proc Struct File Rails URI Dir]
-
-  def Scrap_members_from_board
-  def save_on_database_and_csv_file(tab_membre)
-  def downloading_images_members
-                        ScrapUrlsPros.set_browser_session
-                        ScrapImageHtmlTag.downloader
-5. files generated: dossier contenant images_slack et fichier csb mbrs slack.csv
-6. a faire gerer les quelque bug de scrap()/faire method initialize avec IOput/parametre app/view/controller pour récupérer des arguments de fct°
-
-"Completed 500 Internal Server Error in 59168ms
-Selenium::WebDriver::Error::StaleElementReferenceError (The element reference of <a class="c-unified_member c-unified_member--large c-unified_member--linked member_preview_link focus-ring" href="/team/U76U5TEVB"> is stale; either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed):"
-to solve with on error resume next
-
--------------------------------------------------------------------------------------
-Le Projet CV:   Le ../../2018
-Cette configuration permet de generer un pdf à partir d'un fichier latex et de l'afficher:
-
-###Rails-latex:
-1. intaller une distribution latex dans l'OS
-2. Gemfile: 	gem 'rails-latex'
-3. Configuration:Add to `config\initializers\mime_types.rb`  this=> Mime::Type.register "application/pdf", :pdf, ['text/pdf'], ['pdf']  #added
-4. Implémenter décor:	  `app\views\layouts\application.pdf.erbtex` ex:=> <% @latex_config={:parse_runs => 3} %> \n <%= yield %>
-5. Implémenter action:	`app\controllers\projects_controller.rb`  ex:=> render action: 'cv', :layout => 'application'#, formats: [:pdf]
-7. Definir route:       `config\routes.rb` ex:=>  get 'projects/cv' => 'projects#cv', as: :cv
-8. Implémenter LaTeX code: `app\views\projects\File.pdf.erb`  ex:=> cv.pdf.erb    
-                      ```latex
-                      \documentclass[12pt]{article}
-                      \begin{document}
-                      Hello world!
-                      \end{document}
-                      ```
-###To build on Heroku:
-9.  Fork or not buildpack: https://github.com/Thermondo/heroku-buildpack-tex
-10. add bldpck herokuapp:  heroku buildpacks:add git://github.com/Thermondo/heroku-buildpack-tex.git  or https://github.com/souyahibou/heroku-buildpack-tex
-11. create texlive.profile    download original config from repo [unecessary because already exist]
-12. create texlive.packages   add from(echo or vim) bash all app latex code packages depedencies ex:=> moderncv babel textcase
-13. create texlive.repository add tex repo ex:=> ftp://tug.org/historic/systems/texlive/2017/tlnet-final [unecessary if! last year is set]
-14. be careful to the extern links.
-15. Implement to heroku:    git add .     git commit     git push heroku master
-16. Enjoy
-00. to test if package are available: run after one build of buildpacks in heroku: heroku run bash then tlmgr install pckgeslist
-00. packages used in my project: moderncv babel textcase textpos multirow xargs psnfss tools graphics enumitem etoolbox unicode-math microtype fontspec xcolor pgf lipsum xkeyval greek-fontenc greek-inputenc
-environ latexmk collection-bibtexextra collection-langgerman collection-xetex collection-fontsrecommended fontawesome ifsym tocloft
-
--------------------------------------------------------------------------------------
-Le Projet program_scrap_carrierinfo:   Le 30/08/2018
-Ce script permet de scrapper toutes les ESN/SSII de francecdu site carrier-info:
 
 
--------------------------------------------------------------------------------------
-Le Projet program_scrap_usine_digital:   Le 03/09/2018
-Ce script permet de scrapper toutes les starups de france du site usine digitale:
+## DESCRIPTION OF EACH PROJECTS
+
+    --------------------------------------------------------------------------------------
+    Le Projet ScrapImageHtmlTag:   Le 15/07/2018
+    Ce script permet à partir d'une Url d'un site donnée:
+    1. de récupérer les Url des valise HTML img
+    2. de les télécharger dans un dossier images crée si non-éxistant
+
+      def initialize              contient les entrées/reglages à paramétrer
+      def get_html(url)           récupère le code source HTML de l'URL
+      def parse_html(html)        récupère les information HTML spécifié
+      def downloader(url, paths)  télécharge les images à partir des URL got
+      def test_response(resp)     non utilisé
+      def perform                 éxécution du script
+
+    3. ajouter le dossier des images au git ignore
+    4. Gems/Objects used:  ['net/http' , 'nokogiri']/[Dir, File]
+
+    -------------------------------------------------------------------------------------
+    Le projet ScrapSlackMbr: Le 19/07/2018
+    Ce script permet de récupérer les informations et images de tous les membres du slack THP:
+    1. récupère le pseudo/nom-prénom/statut/identifiant/url_images depuis le jobboard slack THP
+    2. sauvegarde le résultat en base de données et export dans un fichier de format csv avec une éxécution de Commande bash %x!cmd!
+
+    3. ajouter le dossier images_slack au git ignore
+    4. Gems/Object useed: [Watir PG CSV Net::HTTP]/[Proc Struct File Rails URI Dir]
+
+      def Scrap_members_from_board
+      def save_on_database_and_csv_file(tab_membre)
+      def downloading_images_members
+                            ScrapUrlsPros.set_browser_session
+                            ScrapImageHtmlTag.downloader
+    5. files generated: dossier contenant images_slack et fichier csb mbrs slack.csv
+    6. a faire gerer les quelque bug de scrap()/faire method initialize avec IOput/parametre app/view/controller pour récupérer des arguments de fct°
+
+    "Completed 500 Internal Server Error in 59168ms
+    Selenium::WebDriver::Error::StaleElementReferenceError (The element reference of <a class="c-unified_member c-unified_member--large c-unified_member--linked member_preview_link focus-ring" href="/team/U76U5TEVB"> is stale; either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed):"
+    to solve with on error resume next
+
+    -------------------------------------------------------------------------------------
+    Le Projet CV:   Le ../../2018
+    Cette configuration permet de generer un pdf à partir d'un fichier latex et de l'afficher:
+
+    ### Rails-latex:
+    1. intaller une distribution latex dans l'OS
+    2. Gemfile: 	gem 'rails-latex'
+    3. Configuration:Add to `config\initializers\mime_types.rb`  this=> Mime::Type.register "application/pdf", :pdf, ['text/pdf'], ['pdf']  #added
+    4. Implémenter décor:	  `app\views\layouts\application.pdf.erbtex` ex:=> <% @latex_config={:parse_runs => 3} %> \n <%= yield %>
+    5. Implémenter action:	`app\controllers\projects_controller.rb`  ex:=> render action: 'cv', :layout => 'application'#, formats: [:pdf]
+    7. Definir route:       `config\routes.rb` ex:=>  get 'projects/cv' => 'projects#cv', as: :cv
+    8. Implémenter LaTeX code: `app\views\projects\File.pdf.erb`  ex:=> cv.pdf.erb    
+                          ```latex
+                          \documentclass[12pt]{article}
+                          \begin{document}
+                          Hello world!
+                          \end{document}
+                          ```
+    ### To build on Heroku:
+    9.  Fork or not buildpack: https://github.com/Thermondo/heroku-buildpack-tex
+    10. add bldpck herokuapp:  heroku buildpacks:add git://github.com/Thermondo/heroku-buildpack-tex.git  or https://github.com/souyahibou/heroku-buildpack-tex
+    11. create texlive.profile    download original config from repo [unecessary because already exist]
+    12. create texlive.packages   add from(echo or vim) bash all app latex code packages depedencies ex:=> moderncv babel textcase
+    13. create texlive.repository add tex repo ex:=> ftp://tug.org/historic/systems/texlive/2017/tlnet-final [unecessary if! last year is set]
+    14. be careful to the extern links.
+    15. Implement to heroku:    git add .     git commit     git push heroku master
+    16. Enjoy
+    00. to test if package are available: run after one build of buildpacks in heroku: heroku run bash then tlmgr install pckgeslist
+    00. packages used in my project: moderncv babel textcase textpos multirow xargs psnfss tools graphics enumitem etoolbox unicode-math microtype fontspec xcolor pgf lipsum xkeyval greek-fontenc greek-inputenc
+    environ latexmk collection-bibtexextra collection-langgerman collection-xetex collection-fontsrecommended fontawesome ifsym tocloft
+
+    -------------------------------------------------------------------------------------
+    Le Projet program_scrap_carrierinfo:   Le 30/08/2018
+    Ce script permet de scrapper toutes les ESN/SSII de francecdu site carrier-info:
 
 
--------------------------------------------------------------------------------------
-Le Projet program_scrap_journal_du_net:   Le 03/09/2018
-Ce script permet de scrapper toutes les VCs de france du site journal du net:
+    -------------------------------------------------------------------------------------
+    Le Projet program_scrap_usine_digital:   Le 03/09/2018
+    Ce script permet de scrapper toutes les starups de france du site usine digitale:
+
+
+    -------------------------------------------------------------------------------------
+    Le Projet program_scrap_journal_du_net:   Le 03/09/2018
+    Ce script permet de scrapper toutes les VCs de france du site journal du net:
 
 
 
@@ -346,148 +354,149 @@ Ce script permet de scrapper toutes les VCs de france du site journal du net:
 
 
 -------------------------------------------------------------------------------------
-Le Projet program scrap urls pro:   redigé Le 10/09/2018
-Ce script permet de copier le contenu des sites d'un site, de l'enregistrer(spreadsheet), et comparer(entre 2 copie):
+    Le Projet program scrap urls pro:   redigé Le 10/09/2018
+    Ce script permet de copier le contenu des sites d'un site, de l'enregistrer(spreadsheet), et comparer(entre 2 copie):
 
-PARAMÈTRE
-Gem : `"googleauth", "watir", "google_drive", 'nokogiri', "koala", "differ"
-Buildpacks: "google chrome", "Selenium chromedriver","Ruby(Bundler)oR"
-Class: "ScrapUrlsPros", "attr_accessor", "Hash", "scan(Regx)", "gsub"`
-Notes:
-données in/out: données dans spreadsheets  
-`ENV["SPREADSHEET_SCRAPPING_FB_EVENTS"]
-ENV["SPEADSHEET_SCRAPPING_URLS"]
-ENV["SPEADSHEET_LIENS_ET_IDS"]
-ENV["LOCAL_OR_HEROKU"]
-ENV["GOOGLE_CHROME_BIN"]
-ENV["GOOGLE_client_id"]
-ENV["GOOGLE_client_secret"]
-ENV["GOOGLE_refresh_token"]
-ENV["GOOGLE_redirect_uri"]`
-
-DURÉE
-
-DESCRIPTION
-`  #   perform
-             # tab = [];
-             # list_urls = get_all_professors_urls
-             # tab = scrap_links_for_all_webpages(list_urls);
-             # comp_data_in_SpreadSheet(tab);
-             # save_from_on_GoogleDrive(tab);
-             # return tab;`
-  1. récupération des urls de site à scrapper
-  2. récupérations des copies de pages de chaque sites
-  3. compare si les copies sont identique au précédent  enregistrement en base
-  4. sauvegarde toute les copies des pages en base
-
-
-METHODES
-#config
-```ruby
-set_google_drive_session  #connexion_to_GoogleDrive
-set_browser_session       #exe  new_browser
-set_first_connexion       #activate_first_connexion_GoogleDrive(GgDrv): connexion_to_GoogleDrive("first")
-set_refresh_connexion     #Pour reactiver la connection GgDrv ifnot first time: connexion_to_GoogleDrive("refresh")
-initialize                #set all configurations externes(keys(GoogleDrive)), des nom&&nombre des colonnes
-
-public
- scrap_links_for_all_webpages    #exe scrap_soft_link or scrap_hard_links and return one tab of hash
-  scrap_soft_link(link)           #use nokogiri
-  scrap_hard_links()              #use watir
-  scrap_justdancewithlife_link(link) #use watir specificly for extact data in googleagenda
-
-  get_all_professors_urls               #recupere les urls a scraper dans un spreadsheets
-  comp_data_in_SpreadSheet(table_data)  #test if one scrap has change(new event) and return table_data modified or not if has some change
-  save_from_on_GoogleDrive(table_data)  #save tab of hash in spreadsheets(only the new hash(lines(event)) if not first time)
-
-private
-  new_browser                             #configuration de watir en local ou heroku return un navigateur            
-  connexion_to_GoogleDrive(type_connex)   #configuration de la connexion à google drive
-  column_code_of_hash_keys                #attribution des code colonne pour spreadsheet pour each key
-```
-
-
--------------------------------------------------------------------------------------
-Le Projet program scrap fb pro:   redigé Le 10/09/2018
-Ce script permet de recupérer les datas d'events de groupe fb via FB API, de l'enregistrer(spreadsheet), et comparer(entre 2 requete):
-
-PARAMÈTRE
-Gem : "Koala", "ActiveRecord", "FBGraph"
-Buildpacks: 0
-Class: "ScrapUrlsPros", "ScrapFbPros", "attr_accessor", "Hash", Time
-Notes:
-données in/out:
-fields_of_events:   data expected on the fb request
-database_of_events: un model Evenement
-access_token:   ENV["token"]
-ENV["SPEADSHEET_LIENS_ET_IDS"]
-[ ENV["FIRST_APP_ID"], ENV["FACEBOOK_redirect_uri"], ENV["FACEBOOK_scopes_auths2"]
-  ENV["FACEBOOK_EMAIL"], ENV["FACEBOOK_MDP"], ENV["FACEBOOK_redirect_uri"]       ]
-
-DURÉE
-
-DESCRIPTION
-  #perform
-      #groups = get_all_facebook_groups                                        #get all group ids
-      #scrap_events_facebook_groups(groups, @database_of_events)               #extraction data request & save
-      #compare_datas_in_database(@database_of_events)                          #edit/update the events status
-      #@tab                                                                    #allow to print the database
-
-METHODES
-- config
-rails generate model Evenement  event_id    event_name      event_start_time      event_end_time      event_description      event_place_id      event_place_name      event_place_location_data      change      event_place_city      event_place_country      event_place_latitude      event_place_longitude      event_place_street      event_place_zip      event_event_times_data      event_owner_name      event_photos_images      last_date      groupe_id    origin_base  event_owner_id    changements origin_base:string:index
-
-add into model:
-      require 'active_record/diff'
-      class Evenement < ApplicationRecord
-          include ActiveRecord::Diff
-          validates_uniqueness_of :event_id, scope: [:origin_base]
-      end
-- initialize                #set all config externes(keys(Fbgraphtoken),database), des nom&&nombre champs,msgs
-
-- public
-    ```ruby
-    get_all_facebook_groups
-    compare_datas_in_database
-    scrap_events_facebook_groups
-    perform               #modified or not if has some change
+    * PARAMÈTRE
+      Gem : "googleauth", "watir", "google_drive", 'nokogiri', "koala", "differ"
+      Buildpacks: "google chrome", "Selenium chromedriver","Ruby(Bundler)oR"
+      Class: "ScrapUrlsPros", "attr_accessor", "Hash", "scan(Regx)", "gsub"
+      Notes:
+      données in/out: données dans spreadsheets  
+      ```ruby
+      ENV["SPREADSHEET_SCRAPPING_FB_EVENTS"]
+      ENV["SPEADSHEET_SCRAPPING_URLS"]
+      ENV["SPEADSHEET_LIENS_ET_IDS"]
+      ENV["LOCAL_OR_HEROKU"]
+      ENV["GOOGLE_CHROME_BIN"]
+      ENV["GOOGLE_client_id"]
+      ENV["GOOGLE_client_secret"]
+      ENV["GOOGLE_refresh_token"]
+      ENV["GOOGLE_redirect_uri"]
     ```
-- private
-    #`get_access_token    #connec fb from browser to get token by uri generated, temp save in ENV var`      
+    * DURÉE
+
+    * DESCRIPTION
+        #   perform
+                   # tab = [];
+                   # list_urls = get_all_professors_urls
+                   # tab = scrap_links_for_all_webpages(list_urls);
+                   # comp_data_in_SpreadSheet(tab);
+                   # save_from_on_GoogleDrive(tab);
+                   # return tab;
+        1. récupération des urls de site à scrapper
+        2. récupérations des copies de pages de chaque sites
+        3. compare si les copies sont identique au précédent  enregistrement en base
+        4. sauvegarde toute les copies des pages en base
+
+
+    * METHODES
+      # config
+      ```ruby
+      set_google_drive_session  #connexion_to_GoogleDrive
+      set_browser_session       #exe  new_browser
+      set_first_connexion       #activate_first_connexion_GoogleDrive(GgDrv): connexion_to_GoogleDrive("first")
+      set_refresh_connexion     #Pour reactiver la connection GgDrv ifnot first time: connexion_to_GoogleDrive("refresh")
+      initialize                #set all configurations externes(keys(GoogleDrive)), des nom&&nombre des colonnes
+
+      public
+       scrap_links_for_all_webpages    #exe scrap_soft_link or scrap_hard_links and return one tab of hash
+        scrap_soft_link(link)           #use nokogiri
+        scrap_hard_links()              #use watir
+        scrap_justdancewithlife_link(link) #use watir specificly for extact data in googleagenda
+
+        get_all_professors_urls               #recupere les urls a scraper dans un spreadsheets
+        comp_data_in_SpreadSheet(table_data)  #test if one scrap has change(new event) and return table_data modified or not if has some change
+        save_from_on_GoogleDrive(table_data)  #save tab of hash in spreadsheets(only the new hash(lines(event)) if not first time)
+
+      private
+        new_browser                             #configuration de watir en local ou heroku return un navigateur            
+        connexion_to_GoogleDrive(type_connex)   #configuration de la connexion à google drive
+        column_code_of_hash_keys                #attribution des code colonne pour spreadsheet pour each key
+    ```
 
 
 -------------------------------------------------------------------------------------
-Le Projet program scrap google pro:   redigé Le 10/09/2018
-Ce script permet de recupérer les datas d'events de calendrier google, make clean, de l'enregistrer(en base)
+    Le Projet program scrap fb pro:   redigé Le 10/09/2018
+    Ce script permet de recupérer les datas d'events de groupe fb via FB API, de l'enregistrer(spreadsheet), et comparer(entre 2 requete):
 
-PARAMÈTRE
-Gem : "Koala", "ActiveRecord", "FBGraph", "Geocoder"
-Buildpacks: 0
-Class: "ScrapUrlsPros", "Proc", "Sleep", "Hash", Date, Struct, Time
-Notes:
-données in/out:
-database_model: un model EvenementGoogle
+      * PARAMÈTRE
+        Gem : "Koala", "ActiveRecord", "FBGraph"
+        Buildpacks: 0
+        Class: "ScrapUrlsPros", "ScrapFbPros", "attr_accessor", "Hash", Time
+        Notes:
+        données in/out:
+        fields_of_events:   data expected on the fb request
+        database_of_events: un model Evenement
+        access_token:   ENV["token"]
+        ENV["SPEADSHEET_LIENS_ET_IDS"]
+        [ ENV["FIRST_APP_ID"], ENV["FACEBOOK_redirect_uri"], ENV["FACEBOOK_scopes_auths2"]
+          ENV["FACEBOOK_EMAIL"], ENV["FACEBOOK_MDP"], ENV["FACEBOOK_redirect_uri"]       ]
 
-DURÉE
+      * DURÉE
 
-DESCRIPTION
-  #perform
-      #groups = get_all_facebook_groups                                        #get all group ids
-      #scrap_events_facebook_groups(groups, @database_of_events)               #extraction data request & save
-      #compare_datas_in_database(@database_of_events)                          #edit/update the events status
-      #@tab                                                                    #allow to print the database
+      * DESCRIPTION
+          #perform
+              #groups = get_all_facebook_groups                                        #get all group ids
+              #scrap_events_facebook_groups(groups, @database_of_events)               #extraction data request & save
+              #compare_datas_in_database(@database_of_events)                          #edit/update the events status
+              #@tab                                                                    #allow to print the database
 
-METHODES
-#config
-  # rails generate model EvenementGoogle site heure titre date lieu map description
+      * METHODES
+        - config
+        rails generate model Evenement  event_id    event_name      event_start_time      event_end_time      event_description      event_place_id      event_place_name      event_place_location_data      change      event_place_city      event_place_country      event_place_latitude      event_place_longitude      event_place_street      event_place_zip      event_event_times_data      event_owner_name      event_photos_images      last_date      groupe_id    origin_base  event_owner_id    changements origin_base:string:index
 
-# public
-    get_google_links
-    scrap_google_calendar links
-    scrap_events_facebook_groups
-    save_in_database(@database_model)
-    @all_events
-    data_enrichment
+        add into model:
+              require 'active_record/diff'
+              class Evenement < ApplicationRecord
+                  include ActiveRecord::Diff
+                  validates_uniqueness_of :event_id, scope: [:origin_base]
+              end
+        - initialize                #set all config externes(keys(Fbgraphtoken),database), des nom&&nombre champs,msgs
+
+        - public
+            ```ruby
+            get_all_facebook_groups
+            compare_datas_in_database
+            scrap_events_facebook_groups
+            perform               #modified or not if has some change
+            ```
+        - private
+            #`get_access_token    #connec fb from browser to get token by uri generated, temp save in ENV var`      
+
+
+    -------------------------------------------------------------------------------------
+    Le Projet program scrap google pro:   redigé Le 10/09/2018
+    Ce script permet de recupérer les datas d'events de calendrier google, make clean, de l'enregistrer(en base)
+
+      * PARAMÈTRE
+        Gem : "Koala", "ActiveRecord", "FBGraph", "Geocoder"
+        Buildpacks: 0
+        Class: "ScrapUrlsPros", "Proc", "Sleep", "Hash", Date, Struct, Time
+        Notes:
+        données in/out:
+        database_model: un model EvenementGoogle
+
+      * DURÉE
+
+      * DESCRIPTION
+          #perform
+              #groups = get_all_facebook_groups                                        #get all group ids
+              #scrap_events_facebook_groups(groups, @database_of_events)               #extraction data request & save
+              #compare_datas_in_database(@database_of_events)                          #edit/update the events status
+              #@tab                                                                    #allow to print the database
+
+      * METHODES
+        #config
+          # rails generate model EvenementGoogle site heure titre date lieu map description
+
+        # public
+            get_google_links
+            scrap_google_calendar links
+            scrap_events_facebook_groups
+            save_in_database(@database_model)
+            @all_events
+            data_enrichment
 
 
 
