@@ -26,22 +26,22 @@ class ProjectsController < ApplicationController
       end
 
       def projectsparsing_stage_CAJ_pdf
-          @var = ScrapCajStage.new(stage_file: params[:project], result_file: params[:result_path], table_name: params[:table]).perform
+          @var = SpecialProjects::ScrapCajStage.new(stage_file: params[:project], result_file: params[:result_path], table_name: params[:table]).perform
           render :json => @var
       end
 
       def scrap1
-        @var = ScrapCdiscount.new.perform
+        @var = SpecialProjects::ScrapCdiscount.new.perform
         render :json => @var
       end
 
       def reformat
-        @var = FormatKeysEnv.new.perform
+        @var = SpecialProjects::FormatKeysEnv.new.perform
         render :json => @var
       end
 
       def reformat2
-        @var = FormatContact.new.perform
+        @var = SpecialProjects::FormatContact.new.perform
         render :json => @var
       end
 
@@ -64,7 +64,7 @@ class ProjectsController < ApplicationController
       end
 
       def scraping_annuaire_cabinets
-        @var = ScrapCadremploi.new.perform
+        @var = SpecialProjects::ScrapCadremploi.new.perform
         render :json => @var
       end
 
@@ -82,28 +82,28 @@ class ProjectsController < ApplicationController
       end
 
       def displaying_color_names
-          @var = ColorNames.new.res
-          @var2 = ColorNames.new.res2
+          @var = SpecialProjects::ColorNames.new.res
+          @var2 = SpecialProjects::ColorNames.new.res2
       end
 
       def scraping_image_tag_to_download
-          ScrapImageHtmlTag.new.perform
+          SpecialProjects::ScrapImageHtmlTag.new.perform
           @var = Dir.glob(["images/*.jpg", "images/*.png", "images/*"])
           render :json => @var
       end
 
       def scraping_membres_THP_by_slack
-          @var = ScrapSlackMbr.new.perform
+          @var = SpecialProjects::ScrapSlackMbr.new.perform
           render :json => @var
       end
 
       def scraping_annuaire_cabinets2
-        @var = ScrapCarrierInfo.new.perform
+        @var = SpecialProjects::ScrapCarrierInfo.new.perform
         render :json => @var
       end
 
       def scraping_annuaire_startups
-        @var = ScrapUsineDigital.new.perform
+        @var = SpecialProjects::ScrapUsineDigital.new.perform
         render :json => @var
       end
 

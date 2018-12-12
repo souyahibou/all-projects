@@ -25,22 +25,22 @@
    <fieldset style="display:flex;flex-direction:column;">
      <legend>Liste functions javascripts:</legend>
 
-     <div class="form-group row has-success" style="display:block;">
-         Nombre Maximum: <input type="text" name="maxNumber" value="&infin;" id="max" pattern="[0-9]+" title="Only Number">
-         <input type="button" value="Submit Max Number" onclick="document.getElementById('max').value ='sde';"><br>
-     </div>
+      <div class="form-group row has-success" style="display:block;">
+          Nombre Maximum: <input type="text" name="maxNumber" value="&infin; click and hold on ⇽" id="max" pattern="[0-9]+" title="Only Number" placeholder="1,10,3,8,5,6">
+          <input type="button" value="Submit Max Number" onclick="document.getElementById('max').value = my_max(document.getElementById('max').value)"><br>
+      </div>
 
-     <div class="form-group row" style="display:block">
-         <label for="vowel" style="margin-top:auto">Décompte de voyelles:</label>
-         <input type="text" name="vowelCount" value="[A-Za-z]+ (regex presence)" id="vowel" placeholder="Enter a word or a string" pattern="[A-Za-z]+" title="Only letter no special chars no numbers">
-         <input type="button" value="Submit Vowel_count" onclick="$(':input').filter($('#vowel')).prop('value','rqegg');"><br>  <!-- attr('value','rqegg') -->
-     </div>
+      <div class="form-group row" style="display:block">
+          <label for="vowel" style="margin-top:auto">Décompte de voyelles:</label>
+          <input type="text" name="vowelCount" value="" id="vowel" placeholder="Enter words" pattern="[A-Za-z]+" title="Only letter no special chars no numbers">
+          <input type="button" value="Submit Vowel_count" onclick="$(':input').filter($('#vowel')).prop('value',vowel_count($('#vowel').prop('value')));"><br>  <!-- attr('value','rqegg') -->
+      </div>
 
-     <div class="form-group row" style="display:block">
-         <label for="reverse">Inversement de caractères:</label>
-         <input type="text" name="reverse" value="[A-Za-z0-9]+ (regex presence)" id="reverse" placeholder="Enter a word or a string or a number" pattern="[A-Za-z0-9]+" title="Only letter no special chars">
-         <input type="button" value="Submit Reverse" onclick="$(':input').filter($('#reverse')).prop('value','rqejyyfgg')"><br>
-     </div>
+      <div class="form-group row" style="display:block">
+          <label for="reverse">Inversement de caractères:</label>
+          <input type="text" name="reverse" value="ytreza" id="reverse" placeholder="Enter a word or a string or a number [A-Za-z0-9]+" pattern="[A-Za-z0-9]+" title="Only letter no special chars">
+          <input type="button" value="Submit Reverse" onclick="$(':input').filter($('#reverse')).prop('value',reverse_order($('#reverse').prop('value')))"><br>
+      </div>
    </fieldset>
  </form>
   		...
@@ -79,7 +79,7 @@
                   }
 
           ////////////////////////////////////////////////////////////////////
-                  function reverse(wrd_of_str){
+                  function reverse_order(wrd_of_str){
                       new_wrd = []
                       for (i=1 ; i <= wrd_of_str.length; i++){
                         new_wrd[i-1] = wrd_of_str[wrd_of_str.length-i];

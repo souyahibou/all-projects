@@ -3,47 +3,36 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
 * Deployment instructions
 
-* ...
+
 
             * CONFIG MODIFIED
-production.rb:
+- production.rb:
+```ruby
 config.public_file_server.enabled[2lines]
 config.assets.compile
 config.serve_static_assets
 config.force_ssl
+```
 
-application.rb:
+- application.rb:
+```ruby
 config.assets.enabled = true
 config.assets.initialize_on_precompile = false
 config.assets.paths << Rails.root.join("app", "assets", "fonts")
+```
 
-/initializers/assets.rb
+- /initializers/assets.rb
+```ruby
 Rails.application.config.assets.precompile = [ Proc.new{ |path| !File.extname(path).in?(%w(.js .css .html .erb .md)) }, /application.(css|js)$/ ]
 Rails.application.config.assets.precompile << Dir.glob(Rails.root.join('app', 'assets', 'thp_projects', '**/*')).grep(/[\W\w]*\.(js|css|png|jpg)$/)
-***
+```
 
             * COMMANDS TO RUN
-
-run bundle [install|update]
-run rails assets:precompile           RAILS_ENV=production bundle exec rails assets:precompile
+```bash
+bundle [install|update]
+rails assets:precompile           RAILS_ENV=production bundle exec rails assets:precompile
 yes | rm -rf db/migrate/*
 rails db:version (20181206170175 version 1)
 rails db:drop
@@ -54,7 +43,7 @@ rails db:create
 rails db:migrate
 rails db:seeds
 rails db:rollback STEP=3
-
+```
 =>assets
 rake assets:clobber
 rake assets:clean
@@ -70,19 +59,176 @@ rake db:structure:load -->
 run heroku run rails db:migrate
 run heroku run rails db:seed
 
+
+            * GEMS USED
+```ruby
+gem 'font-awesome-sass'           
+gem "bulma-rails"                 
+gem 'bootstrap-sass'    		      
+
+gem 'sinatra'                     
+
+gem 'pry'                         
+gem 'json'                        
+gem 'csv'                         
+gem 'gmail'                       
+
+gem 'rspec'                       
+
+gem 'sprockets'                   
+
+gem 'rails-latex'                 
+
+gem 'geocoder'                     #or gem 'google-maps'
+gem 'paper-pdf-parser'
+
+gem 'activerecord-diff'           
+gem 'differ'                      
+
+gem "figaro"			                
+gem "koala"			                   #gem facebook
+
+gem "google_drive"                
+gem 'watir'                       
+gem 'pry'                	        
+gem 'nokogiri'
+
+gem 'roo'                         #ajout
+
+gem 'jquery-rails', '4.3.1'       #uselfull(assets) can't be delete
+
+gem 'rails', '~> 5.1.4'           # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'pg', '~> 0.18'               # Use postgresql as the database for Active Record
+gem 'puma', '~> 3.7'              # Use Puma as the app server
+
+gem 'sass-rails', '~> 5.0'        # Use SCSS for stylesheets
+gem 'uglifier', '>= 1.3.0'        # Use Uglifier as compressor for JavaScript assets
+gem 'coffee-rails', '~> 4.2'      # Use CoffeeScript for .coffee assets and views
+
+gem 'turbolinks', '~> 5'          # Turbolinks makes navigating your web application faster.
+gem 'jbuilder', '~> 2.5'          # Build JSON APIs with ease.
+```
+
+
+            * ENGINE USED
+
+- 42 je_me_presente   #engine
+- 42 movie_maker
+- 42 re_former
+
+- 43 the_gossip_project
+- 43 thp_moussaillons (GEM bootstrap)
+
+- 44 base_de_donnees
+
+- 52 univers_response (gem bootstrap-sass)
+
+- 54 reservation
+- 54 usine
+- 54 generate
+- 54 courses
+
+- 55 eventbrite
+
+- 61 reservation_vol (faker)
+
+- 62 devise_demo ()
+     gem 'devise', 'devise_zxcvbn', 'devise-i18n', 'delayed_job_active_record'
+     gem 'jquery-turbolinks', 'bootstrap-sass', 'coffee-rails'  	                 #pipeline
+- 62 home_page
+     gem 'devise', 'devise-i18n', 'delayed_job_active_record'
+     gem 'jquery-turbolinks', 'bootstrap-sass'
+     gem 'faker'
+     gem 'bcrypt'
+- 64 twitter_bis (twitter, bootstrap-sass)
+
+- 72 formulaire_stylay(gem  'devise', 'devise-i18n', pipeline('sass-rails', 'uglifier', 'coffee-rails'), 'turbolinks')
+- 93 email_viewer (sass-rails', 'turbolinks')
+
+
+            * SERVICES
+```ruby
+TheHackingProject::S2DecouverteRuby::J1InitRuby::ChiffreDeCesar.new.chiffre_de_cesar("test", 27)
+TheHackingProject::S2DecouverteRuby::J1InitRuby::CompterLesMots.new.jean_michel_data(corpus, dictionary)
+TheHackingProject::S2DecouverteRuby::J1InitRuby::StockPicker.new.trader_du_dimanche([1,14,23,1,4,8,5,12])
+TheHackingProject::S2DecouverteRuby::J1InitRuby::SumOfMultiples.new.sum_of_multiples(\*multiples, nbr_begin, nbr_end)
+
+TheHackingProject::S2DecouverteRuby::J2Rspec::P00Hello::Hello.new.run_spec
+TheHackingProject::S2DecouverteRuby::J2Rspec::P01Temperature::Temperature.new.run_temperature_spec
+TheHackingProject::S2DecouverteRuby::J2Rspec::P02Calculator::Calculator.new.run_spec
+TheHackingProject::S2DecouverteRuby::J2Rspec::P03SimonSays::SimonSays.new.run_spec
+TheHackingProject::S2DecouverteRuby::J2Rspec::P04PigLatin::PigLatin.new.run_spec
+TheHackingProject::S2DecouverteRuby::J2Rspec::P05BookTitles::Book.new.run_spec
+TheHackingProject::S2DecouverteRuby::J2Rspec::P06Timer::Timer.new.run_spec
+
+TheHackingProject::S2DecouverteRuby::J4Nokogiri::Projet::Incubateurs.new.incubateurs
+TheHackingProject::S2DecouverteRuby::J4Nokogiri::Projet::ObscurTrader.new.obscur_trader
+TheHackingProject::S2DecouverteRuby::J4Nokogiri::Projet::RouteMairie.new.perform
+
+TheHackingProject::S2DecouverteRuby::J5Watir::WatirGoogle.new.perform
+
+
+TheHackingProject::S3RubyIntermediaire::J1Excel::Spreadsheets.new.perform
+TheHackingProject::S3RubyIntermediaire::J1Excel::FormatJsonCsv.new.perform
+
+TheHackingProject::S3RubyIntermediaire::J2EnvoiEmails::ProjetTotal.new.perform
+
+TheHackingProject::S3RubyIntermediaire::J3Poo::Hi.run!
+TheHackingProject::S3RubyIntermediaire::J3Poo::Monkey.new.perform
+TheHackingProject::S3RubyIntermediaire::J3Poo::OrangeTree.new.perform
+TheHackingProject::S3RubyIntermediaire::J3Poo::ScrabbleWord.new.perform
+TheHackingProject::S3RubyIntermediaire::J3Poo::Superhero.new
+
+TheHackingProject::S3RubyIntermediaire::J4TicTacToe::ProjetTicTacToe.new.perform
+
+SpecialProjects::ColorNames.new.color_by_names
+SpecialProjects::FormatContact.new.perform
+SpecialProjects::FormatKeysEnv.new.perform
+SpecialProjects::ScrapCadremploi.new.perform
+SpecialProjects::ScrapCajStage.new.perform
+SpecialProjects::ScrapCarrierInfo.new.perform
+SpecialProjects::ScrapCdiscount.new.perform
+SpecialProjects::ScrapImageHtmlTag.new.perform
+SpecialProjects::ScrapJournalDuNet.new.perform
+SpecialProjects::ScrapSlackMbr.new.perform
+SpecialProjects::ScrapUsineDigital.new.perform
+
+ScrapFbPros.new.perform
+ScrapGoogleCal.new.perform
+ScrapUrlsPros.new.perform
+```
+            * SYSTEM DEPENDENCIES
+1. Rails 5.0.1
+2. LaTeX
+3. PostgreSQL
+4. Watir webdriver
+5. buildpacks on heroku prod
+6. heroku config
+
+            * HOW TO RUN APP
+1. bundle install && bundle update
+2. rails assets:preccompile
+3. rails db:create
+4. rails db:migrate
+5. rails db:seed
+6. rails s
+7. Enjoy
+
+            * JOBS
+
             * BE CAREFUL BY FILE ADDED IN GIT IGNORE
 
 %----------------------------------------------------------------------------------------
 %	HOW TO ADD NEW PROJECT
 %----------------------------------------------------------------------------------------
 
-make interface for each project
+###make interface for each project
   1. with some initial configuration and données d'entrées if needed
   2. with description of project
   3. principal features gems configuration paths associées au project/fichier to ignore
   4. add features to more configure project ex: scrap only 2 page instead of 48(all page) or until stop activate
 **************************************************************************************
-Procédure pour chaque nouveau projet
+###Procédure pour chaque nouveau projet
   1. modify controller => add action or controller action
   2. add ruby code in service folder if needed
   3. add view with same name of the action
@@ -137,19 +283,21 @@ to solve with on error resume next
 Le Projet CV:   Le ../../2018
 Cette configuration permet de generer un pdf à partir d'un fichier latex et de l'afficher:
 
-Rails-latex:
+###Rails-latex:
 1. intaller une distribution latex dans l'OS
 2. Gemfile: 	gem 'rails-latex'
-3. Configuration:Add to config\initializers\mime_types.rb  this=> Mime::Type.register "application/pdf", :pdf, ['text/pdf'], ['pdf']  #added
-4. Implémenter décor:	  app\views\layouts\application.pdf.erbtex ex:=> <% @latex_config={:parse_runs => 3} %> \n <%= yield %>
-5. Implémenter action:	app\controllers\projects_controller.rb  ex:=> render action: 'cv', :layout => 'application'#, formats: [:pdf]
-7. Definir route:       config\routes.rb ex:=>  get 'projects/cv' => 'projects#cv', as: :cv
-8. Implémenter LaTeX code: app\views\projects\File.pdf.erb  ex:=> cv.pdf.erb    
+3. Configuration:Add to `config\initializers\mime_types.rb`  this=> Mime::Type.register "application/pdf", :pdf, ['text/pdf'], ['pdf']  #added
+4. Implémenter décor:	  `app\views\layouts\application.pdf.erbtex` ex:=> <% @latex_config={:parse_runs => 3} %> \n <%= yield %>
+5. Implémenter action:	`app\controllers\projects_controller.rb`  ex:=> render action: 'cv', :layout => 'application'#, formats: [:pdf]
+7. Definir route:       `config\routes.rb` ex:=>  get 'projects/cv' => 'projects#cv', as: :cv
+8. Implémenter LaTeX code: `app\views\projects\File.pdf.erb`  ex:=> cv.pdf.erb    
+                      ```latex
                       \documentclass[12pt]{article}
                       \begin{document}
                       Hello world!
                       \end{document}
-To build on Heroku:
+                      ```
+###To build on Heroku:
 9.  Fork or not buildpack: https://github.com/Thermondo/heroku-buildpack-tex
 10. add bldpck herokuapp:  heroku buildpacks:add git://github.com/Thermondo/heroku-buildpack-tex.git  or https://github.com/souyahibou/heroku-buildpack-tex
 11. create texlive.profile    download original config from repo [unecessary because already exist]
@@ -198,12 +346,12 @@ Le Projet program scrap urls pro:   redigé Le 10/09/2018
 Ce script permet de copier le contenu des sites d'un site, de l'enregistrer(spreadsheet), et comparer(entre 2 copie):
 
 PARAMÈTRE
-Gem : "googleauth", "watir", "google_drive", 'nokogiri', "koala", "differ"
+Gem : `"googleauth", "watir", "google_drive", 'nokogiri', "koala", "differ"
 Buildpacks: "google chrome", "Selenium chromedriver","Ruby(Bundler)oR"
-Class: "ScrapUrlsPros", "attr_accessor", "Hash", "scan(Regx)", "gsub"
+Class: "ScrapUrlsPros", "attr_accessor", "Hash", "scan(Regx)", "gsub"`
 Notes:
 données in/out: données dans spreadsheets  
-ENV["SPREADSHEET_SCRAPPING_FB_EVENTS"]
+`ENV["SPREADSHEET_SCRAPPING_FB_EVENTS"]
 ENV["SPEADSHEET_SCRAPPING_URLS"]
 ENV["SPEADSHEET_LIENS_ET_IDS"]
 ENV["LOCAL_OR_HEROKU"]
@@ -211,18 +359,18 @@ ENV["GOOGLE_CHROME_BIN"]
 ENV["GOOGLE_client_id"]
 ENV["GOOGLE_client_secret"]
 ENV["GOOGLE_refresh_token"]
-ENV["GOOGLE_redirect_uri"]
+ENV["GOOGLE_redirect_uri"]`
 
 DURÉE
 
 DESCRIPTION
-  #   perform
+`  #   perform
              # tab = [];
              # list_urls = get_all_professors_urls
              # tab = scrap_links_for_all_webpages(list_urls);
              # comp_data_in_SpreadSheet(tab);
              # save_from_on_GoogleDrive(tab);
-             # return tab;
+             # return tab;`
   1. récupération des urls de site à scrapper
   2. récupérations des copies de pages de chaque sites
   3. compare si les copies sont identique au précédent  enregistrement en base
@@ -231,27 +379,28 @@ DESCRIPTION
 
 METHODES
 #config
-# set_google_drive_session  #connexion_to_GoogleDrive
-# set_browser_session       #exe  new_browser
-# set_first_connexion       #activate_first_connexion_GoogleDrive(GgDrv): connexion_to_GoogleDrive("first")
-# set_refresh_connexion     #Pour reactiver la connection GgDrv ifnot first time: connexion_to_GoogleDrive("refresh")
-# initialize                #set all configurations externes(keys(GoogleDrive)), des nom&&nombre des colonnes
+```ruby
+set_google_drive_session  #connexion_to_GoogleDrive
+set_browser_session       #exe  new_browser
+set_first_connexion       #activate_first_connexion_GoogleDrive(GgDrv): connexion_to_GoogleDrive("first")
+set_refresh_connexion     #Pour reactiver la connection GgDrv ifnot first time: connexion_to_GoogleDrive("refresh")
+initialize                #set all configurations externes(keys(GoogleDrive)), des nom&&nombre des colonnes
 
-# public
-#  scrap_links_for_all_webpages    exe scrap_soft_link or scrap_hard_links and return one tab of hash
-#   scrap_soft_link(link)           use nokogiri
-#   scrap_hard_links()              use watir
-#   scrap_justdancewithlife_link(link) use watir specificly for extact data in googleagenda
-#
-#   get_all_professors_urls               recupere les urls a scraper dans un spreadsheets
-#   comp_data_in_SpreadSheet(table_data)  test if one scrap has change(new event) and return table_data modified or not if has some change
-#   save_from_on_GoogleDrive(table_data)  save tab of hash in spreadsheets(only the new hash(lines(event)) if not first time)
+public
+ scrap_links_for_all_webpages    #exe scrap_soft_link or scrap_hard_links and return one tab of hash
+  scrap_soft_link(link)           #use nokogiri
+  scrap_hard_links()              #use watir
+  scrap_justdancewithlife_link(link) #use watir specificly for extact data in googleagenda
 
-# private
-#   new_browser                             configuration de watir en local ou heroku return un navigateur            
-#   connexion_to_GoogleDrive(type_connex)   configuration de la connexion à google drive
-#   column_code_of_hash_keys                attribution des code colonne pour spreadsheet pour each key
+  get_all_professors_urls               #recupere les urls a scraper dans un spreadsheets
+  comp_data_in_SpreadSheet(table_data)  #test if one scrap has change(new event) and return table_data modified or not if has some change
+  save_from_on_GoogleDrive(table_data)  #save tab of hash in spreadsheets(only the new hash(lines(event)) if not first time)
 
+private
+  new_browser                             #configuration de watir en local ou heroku return un navigateur            
+  connexion_to_GoogleDrive(type_connex)   #configuration de la connexion à google drive
+  column_code_of_hash_keys                #attribution des code colonne pour spreadsheet pour each key
+```
 
 
 -------------------------------------------------------------------------------------
@@ -281,7 +430,7 @@ DESCRIPTION
       #@tab                                                                    #allow to print the database
 
 METHODES
-#config
+- config
 rails generate model Evenement  event_id    event_name      event_start_time      event_end_time      event_description      event_place_id      event_place_name      event_place_location_data      change      event_place_city      event_place_country      event_place_latitude      event_place_longitude      event_place_street      event_place_zip      event_event_times_data      event_owner_name      event_photos_images      last_date      groupe_id    origin_base  event_owner_id    changements origin_base:string:index
 
 add into model:
@@ -290,16 +439,17 @@ add into model:
           include ActiveRecord::Diff
           validates_uniqueness_of :event_id, scope: [:origin_base]
       end
-# initialize                #set all config externes(keys(Fbgraphtoken),database), des nom&&nombre champs,msgs
+- initialize                #set all config externes(keys(Fbgraphtoken),database), des nom&&nombre champs,msgs
 
-# public
+- public
+    ```ruby
     get_all_facebook_groups
     compare_datas_in_database
     scrap_events_facebook_groups
-    perform modified or not if has some change
-
-# private
-    #get_access_token    connec fb from browser to get token by uri generated, temp save in ENV var      
+    perform               #modified or not if has some change
+    ```
+- private
+    #`get_access_token    #connec fb from browser to get token by uri generated, temp save in ENV var`      
 
 
 -------------------------------------------------------------------------------------
