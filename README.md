@@ -61,6 +61,18 @@
   rails db:migrate
   rails db:seeds
   rails db:rollback STEP=3
+
+  rails db:drop
+  rails db:create
+  rails db:migrate
+  rails db:seeds
+
+  rails db:migrate:redo && rails db:reset		#or
+  rails db:migrate:reset && rails db:seeds
+
+  db:migrate:reset(db:drop db:create db:migrate)
+  db:reset(db:drop db:setup)
+  db:setup(db:create db:schema:load db:seed)
   ```
   * assets
   ```bash
@@ -94,11 +106,15 @@
   gem 'bootstrap-sass'    		      
 
   gem 'sinatra'                     
+  gem 'devise'
+  gem 'twitter'
+  gem "google_drive"                
+  gem 'gmail'                       
 
   gem 'pry'                         
   gem 'json'                        
   gem 'csv'                         
-  gem 'gmail'                       
+  gem 'roo'                         
 
   gem 'rspec'                       
 
@@ -115,12 +131,10 @@
   gem "figaro"			                
   gem "koala"			                   #gem facebook
 
-  gem "google_drive"                
-  gem 'watir'                       
   gem 'pry'                	        
+  gem 'watir'                       
   gem 'nokogiri'
 
-  gem 'roo'                         #ajout
 
   gem 'jquery-rails', '4.3.1'       #uselfull(assets) can't be delete
 
@@ -884,6 +898,132 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
 
 
 
+----------------------------------------------------------------------------------------------------------------------
+
+## Configuration Engine App
+
+### Engine APP
+  1. Run `rails plugin new engine_name --mountable`
+      - add isolate_namespace Blorgh   to    lib/blorgh/engine.rb (Usefull: allows Blorgh::Article instead of Article)
+      - add to lib/blorgh.rb  require "blorgh/engine"
+  2. Delete TODO occurences && Implement specs attributes in blorgh.gemspec
+  3. Add gems dependancies
+      - add `s.add_dependency 'gem-name', 'version'` in enginename.gemspec
+      - add `require 'gem-name'` in /lib/enginename.rb
+  4. Run `bundle install`
+  5. Implement engine app across directories
+      - models: rails g model arg1 arg2 ...  || /!\\  module namespace
+      - routes: 1rst: "root to:"  2nd: other routes  3rd: custom routes. /!\ mount priority
+      - controllers: /!\\ model namespace
+      - views: /!\\ paths. Rewrite/Adapt paths in layouts. Rewrite paths in rendering methods.
+      - db: Rewrite db/migrate(=>class Create**EngineName**Models) &&  => create_table :**engine_name_**\models && file=> ...\_create_**engine_name_**models.rb ), tablename, model)
+      - seeds: wrap code by module namespace
+  6. Add `require_dependency "engine_name/application_controller"` in each controllers to avoid to load the file of the main app
+  7. Add main_app.main_app_path or main_app.root_path if needed
+  8. For add devise:
+    - Installation
+      - add gem into gemspec
+        ```ruby
+        Gem::Specification.new do |s|
+          s.add_dependency "devise"
+        end
+        ```
+      - Import or Generate the config files : `rails generate devise:install`
+      - And generate a model if you need to : `rails generate devise MODEL`
+    - Configurations
+      - set Devise.router_name in config/initializers/devise.rb with the mountable engine's named-route
+        ```ruby
+        Devise.setup do |config|
+          config.router_name = :engine_name
+        end
+        ```
+      - set the Devise helper in routes.rb with `isolate_namespace` used : `devise_for :users, class_name: "EngineName::Controller", module: :devise`
+      - Set this in config/initializers/devise.rb. For Devise's controllers to inherit from engine's and not the main controller
+        ```ruby
+        Devise.setup do |config|
+          config.parent_controller = 'MyEngine::ApplicationController'
+        end
+        ```
+      - Add `require 'devise'` to lib/my_engine.rb
+      - Set the layout for specific Devise controllers using a callback in lib/my_engine.rb if needed
+      ```ruby
+      module MyEngine
+        class Engine < ::Rails::Engine
+          config.to_prepare do
+            Devise::SessionsController.layout "layout_for_sessions_controller"
+          end
+        end
+      end
+      ```
+  9. Add in /lib/engine_name/engine.rb. To avoid to run engine_name:install:migrations
+    ```ruby
+    initializer :append_migrations do |app|
+      unless app.root.to_s.match(root.to_s)
+        config.paths["db/migrate"].expanded.each do |p|
+          app.config.paths["db/migrate"] << p
+        end
+      end
+    end
+    ```
+
+### Main APP
+  1. add engines folders to a root_path (inner engines or lib folders)
+  2. add gem 'engine_name', path: 'engines/engine_name'         to gemfile of the main app containing the engine
+  3. add mount GemName::Engine, at: "/engine_name_engine", as: 'engine_name_engine'    to config/routes.rb to the main app containing the engine
+  4. add in seeds.rb EngineName::Engine.load_seed   if needed
+  5. add engine_name.articles_path or engine_name.engine_routes_path or engine_name.root_path if needed
+  5. run bundle	from main app
+  6. run rails engine_name:install:migrations or railties:install:migrations(+all engines)  unless config already set in engine.rb
+  7. run rails db:migrate [SCOPE=blorgh]
+
+
+
+* Main APP to: => Engine APP
+  - transform an app to an engine two ways(1: hard refactoring, 2:rebegin with engine new )
+  - engine routes from main app:  blorgh.articles_path and vice versa main app root inner engine: main_app.root_path
+
+* Configuring gem specifications 
+```ruby
+Gem::Specification.new do |s|
+  s.name        = 'example'                                #required	This gem's name
+  s.version     = '0.1.0'                                  #required	gem's version
+  s.licenses    = ['MIT']                                  #recommended The license for this gem
+  s.summary     = "This is an example!"                    #required	short gem's descp.(gem list -d)
+  s.description = "Much longer explanation of the example!"#recommended  A long gem description(>summary)
+  s.authors     = ["Ruby Coder"]                           #recommended	 array list of authors.
+  s.email       = 'rubycoder@example.com'                  #recommended	 A contact email address for this gem
+  s.files       = ["lib/example.rb"]                       #required     Files included in this gem
+  s.files       = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
+  s.homepage    = 'https://rubygems.org/gems/example'     #recommended		The URL of this gem's home page
+  s.metadata    = { "source_code_uri" => "https://github.com/example/example" }  #recommended	  holds extra data for this gem
+  s.description = <<-EOF
+    Rake is a Make-like program implemented in Ruby. Tasks and
+    dependencies are specified in standard Ruby syntax.
+  EOF
+  s.metadata = {     metadata: Hash object,Strings(Keys(max:128 bytes),Values(max:1024 bytes)) in UTF-8 format
+    "changelog_uri"     => "https://example.com/user/bestgemever/CHANGELOG.md",
+    "documentation_uri" => "https://www.example.info/gems/bestgemever/0.0.1",
+    "homepage_uri"      => "https://bestgemever.example.io",
+    "mailing_list_uri"  => "https://groups.example.com/bestgemever",
+    "source_code_uri"   => "https://example.com/user/bestgemever",
+    "wiki_uri"          => "https://example.com/user/bestgemever/wiki"
+  }
+  spec.author = 'John Jones'                              #recommended  Singular writer for authors
+  spec.email = ['jack@example.com', 'jill@example.com']
+  spec.licenses = ['MIT', 'GPL-2.0']
+  spec.add_development_dependency 'example', '~> 1.1', '>= 1.1.4'
+  spec.add_runtime_dependency 'example', '~> 1.1', '>= 1.1.4'
+  s.add_dependency "rails", "~> 5.1.6", ">= 5.1.6.1"
+  spec.extra_rdoc_files = ['README', 'doc/user-guide.txt']#optional  to add to RDoc(no code file,infos(txt)
+  spec.post_install_message = "Thanks for installing!"    #optional  A msg displayed after gem installation
+  spec.requirements << 'libmagick, v6.0'
+  spec.requirements << 'A good graphics card' 	          #optional	Lists the external(to RubyGems) requirements
+end
+```
+
+
+
+
 
 
 
@@ -995,71 +1135,67 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
 
 Number (week,day)| Description | Tools Used  | Other infos   | See
 ------------     | ---------- | ------------ | --------------|--------------
-01               |                           | ------------- | --------------| [see](../#)
-02               |                           | ------------- | --------------| [see](../../tree/master/app/assets/the_hacking_project/W1D2)
-03               |                           | ------------- | --------------| [see](../../tree/master/app/assets/the_hacking_project/W1D3)
-04               |                           | ------------- | --------------| [see](../../tree/master/app/assets/the_hacking_project/W1D4)
+01               |  Utilisation de Git       | ------------- | --------------|
+02               |  Fake CV                  | HTML, CSS     | --------------| [see](../../tree/master/app/assets/the_hacking_project/W1D2)
+03               |  Fake Google Homepage 1   | HTML, CSS     | --------------| [see](../../tree/master/app/assets/the_hacking_project/W1D3)
+04               |  Fake Google Homepage 2   | HTML, CSS, JS | --------------| [see](../../tree/master/app/assets/the_hacking_project/W1D4)
 05               |                           | ------------- | --------------|
-------------     |---------------------------| ------------- | --------------|
-06               | 4 Ruby Script             | ------------- | --------------| [see06]
-07               | 7 Ruby Script && tests    | ------------- | --------------| [see07]
+------------     |-------------              | ------------- | --------------|
+06               | 4 Ruby Script             | Ruby classes  | --------------| [see](../../tree/master/app/services/the_hacking_project/s2_decouverte_ruby/j1_init_ruby)
+07               | 7 Ruby Script && tests    | RSpec         | --------------| [see](../../tree/master/app/services/the_hacking_project/s2_decouverte_ruby/j2_rspec)
 08               |                           | ------------- | --------------|
-09               | 3 Ruby Scrapping Scripts  | ------------- | --------------| [see09]
-10               | 1 Ruby Automation Script  | ------------- | (p)           | [see10]
-------------     |---------------------------| ------------- | --------------|
-11               | 2 Back-end Scripts       | 1 -manipulation json format   2-Manipulation API Google_drive(gem)/Spreadsheets	       |  (p) |	[see11]
+09               | 3 Ruby Scrapping Scripts  | Nokogiri      | --------------| [see](../../tree/master/app/services/the_hacking_project/s2_decouverte_ruby/j4_nokogiri)
+10               | 1 Ruby Automation Script  | Watir         | (p)           | [see](../../tree/master/app/services/the_hacking_project/s2_decouverte_ruby/j5_watir)
+------------     |------------               | ------------- | --------------|
+11               | 2 Back-end Scripts        | json, API Google_drive(gem)/Spreadsheets, File                                	       |  (p) |	[see11]
 12               | 1 Ruby Script to send emails  |  gem(gmail Google_drive Nokogiri), ruby(Dir, File, CSV, Exception) ScrapUrlsPros  |  (p) | [see12]
 13               | 5 Ruby Scripts 			    |  RSpec, Sinatra, %x!!(bash command), File, Opera	                                      | --- |	[see13]
 14               | 1 Ruby POO program       |  Using RSpec,rubyPOO(File)++                                                            | (p) | [see14]
 15               |                          | ------------- | -------------- |
-------------     |--------------------------| ------------- | -------------- |
+------------     |------------              | ------------- | -------------- |
 16               |                          | ------------- | -------------- |
 17               | 3 Basic Rails Apps 		  |  Engine, Database, MVC | ----- | [see](../../tree/master/engines/thp/week/4/day/2)
 18               | 2 Basic Rails Apps		    |  Engine, Database, boostraps, partial view, scaffold, model validation     | --------------| [see18]
 19               | 1 Basic Rails Apps 		  |  Engine, Database, Scaffold   | --------------| [see](../../tree/master/engines/thp/week/4/day/2)
 20               |                          | ------------- | --------------| --------------
-------------     |--------------------------| ------------- | --------------
+------------     |------------              | ------------- | --------------
 21               | Basic authentification Rails App | Engine, Database, boostraps	      |	partial(works /univers_response_engine/sessions/new) | [see21]
 22               | same as S5J1 (21)        | --------------| --------------
 23               |
 24               | 4 Basic Rails Apps 		  | Engine, Activerecord DB       | --------------| [see](../../tree/master/engines/thp/week/5/day/4)
 25               | 1 Rails Apps 		        | Engine, Activerecord DB relations | ----------| [see](../../tree/master/engines/thp/week/5/day/5/eventbrite)
-------------     |--------------------------| ------------- | --------------
+------------     |------------              | ------------- | --------------
 26               | 1 Rails Apps			        | Engine, Activerecord DB       | --------------| [see](../../tree/master/engines/thp/week/6/day/1/reservation_vol)
-27               | 2 Rails Apps			        | Engine, Devise ,Activerecord DB,bootstrap, pipeline assets(gems) | works | [see27]
+27               | 2 Rails Apps			        | Engine, Devise ,Activerecord DB,bootstrap, pipeline assets(gems) | works | [see](../../tree/master/engines/thp/week/6/day/2)
 28               |                          | ------------- | --------------
 29               | 1 Ruby Script, 1 RoR App	| Engine, gem(twitter, bootstraps) | must:API_keys (p) 95%	| [see](../../tree/master/engines/thp/week/6/day/4)
 30               |                          | ------------- | --------------
-------------     |--------------------------| ------------- | --------------
+------------     |------------              | ------------- | --------------
 31               | Youtube Page	remade      | template(HTML/CSS)		        |	Works:50%| [see](../../tree/master/engines/thp/week/7/day/1/youtube)
 32               | 1 RoR app		            | Activerecords DB,gem(pipeline tubolinks) | works | [see](../../tree/master/engines/thp/week/7/day/2/formulaire_stylay)
 33               | Remaking an Webpage	    | template(HTML) 			          | Works:25%| [see](../../tree/master/engines/thp/week/7/day/3/new_york_times)
 34               | Remaking 3 Webpages	    | template(HTML/CSS/JS)         |	Works:13%| [see](../../tree/master/engines/thp/week/7/day/4/landing_pages)
 35               |                          | ------------- | --------------
-------------     |--------------------------| ------------- | --------------
+------------     |------------              | ------------- | --------------
 36               |                          | ------------- | --------------
 37               |                          | ------------- | --------------
 38               | 3 interactive page	      |  Template(HTML/CSS/JS), JS 	  | Works:35%| [see](../../tree/master/engines/thp/week/8/day/3)
 39               | 1 interactive webpage 	  |  Template(HTML/CSS/SVG), JS(Jquery)| Works:90%| [see](../../tree/master/app/views/projects/thp/week/8/day/4)
 40               |                          | ------------- | --------------
-------------     |--------------------------| ------------- | --------------
+------------     |-----------               | ------------- | --------------
 41               |                          | ------------- | --------------
 42               | A map of the world		    |  Template(HTML), google_map API, Jquery  | --- | [see](../../tree/master/engines/thp/week/9/day/2)
 43               | A mail manager 			    |  Engine, database, gem(sass-rails,turbolinks),AJAX | works| [see](../../tree/master/engines/thp/week/9/day/3/email_viewer)
 44               |                          | ------------- | --------------
 45               |                          | ------------- | --------------
 
-[see06]: ../../tree/master/app/services/the_hacking_project/s2_decouverte_ruby/j1_init_ruby
-[see07]: ../../tree/master/app/services/the_hacking_project/s2_decouverte_ruby/j2_rspec
-[see09]: ../../tree/master/app/services/the_hacking_project/s2_decouverte_ruby/j4_nokogiri
-[see10]: ../../tree/master/app/services/the_hacking_project/s2_decouverte_ruby/j5_watir
+
 [see11]: ../../tree/master/app/services/the_hacking_project/s3_ruby_intermediaire/j1_excel
 [see12]: ../../tree/master/app/services/the_hacking_project/s3_ruby_intermediaire/j2_envoi_emails
 [see13]: ../../tree/master/app/services/the_hacking_project/s3_ruby_intermediaire/j3_poo
 [see14]: ../../tree/master/app/services/the_hacking_project/s3_ruby_intermediaire/j4_tic_tac_toe
 [see18]: ../../tree/master/engines/thp/week/4/day/3
 [see21]: ../../tree/master/engines/thp/week/5/day/1
-[see27]: ../../tree/master/engines/thp/week/6/day/2
 
 
 
