@@ -86,10 +86,11 @@
   ```bash
   heroku run rake db:version  
   run heroku pg:reset #=> to drop
-  run heroku run rails --trace db:schema:load DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+  # run heroku run rails --trace db:schema:load DISABLE_DATABASE_ENVIRONMENT_CHECK=1  #first time
   # rake db:schema:load || rake db:structure:load
   run heroku run rails db:migrate
   run heroku run rails db:seed
+  #or   run heroku run rails db:migrate && rails db:seed
   ```
 
   * figaro
@@ -1165,7 +1166,7 @@ Number (week,day)| Description | Tools Used  | Other infos   | See
 24               | 4 Basic Rails Apps 		  | Engine, Activerecord DB       | --------------| [see](../../tree/master/engines/thp/week/5/day/4)
 25               | 1 Rails Apps 		        | Engine, Activerecord DB relations | ----------| [see](../../tree/master/engines/thp/week/5/day/5/eventbrite)
 ------------     |------------              | ------------- | --------------
-26               | 1 Rails Apps			        | Engine, Activerecord DB       | --------------| [see](../../tree/master/engines/thp/week/6/day/1/reservation_vol)
+26               | 1 Rails Apps			        | Engine, Activerecord DB       | /!\-drop>seed-| [see](../../tree/master/engines/thp/week/6/day/1/reservation_vol)
 27               | 2 Rails Apps			        | Engine, Devise ,Activerecord DB,bootstrap, pipeline assets(gems) | works | [see](../../tree/master/engines/thp/week/6/day/2)
 28               |                          | ------------- | --------------
 29               | 1 Ruby Script, 1 RoR App	| Engine, gem(twitter, bootstraps) | must:API_keys (p) 95%	| [see](../../tree/master/engines/thp/week/6/day/4)

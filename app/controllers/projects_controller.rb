@@ -7,8 +7,9 @@ class ProjectsController < ApplicationController
       end
 
       def home
-          @@counter = !@@counter if request.post?     #used by [un]color button
-          render action: 'home',:layout => 'application', formats: [:html]
+          @@counter = !@@counter if request.post? && params[:basic_layout].nil?    #used by [un]color button
+          layout_type = params[:basic_layout].nil?? 'application' : 'application_base'
+          render action: 'home',:layout => layout_type, formats: [:html]
       end
 
       def scraping_facebook
