@@ -50,4 +50,5 @@
 # Ignore application configuration use figaro to push into heroku
 /config/application.yml
 /config/application_fb.yml
+# see /engines/thp/week/6/day/4/twitter_bis/.gitignore
 /public/assets/pictures

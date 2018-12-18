@@ -1,4 +1,4 @@
-<h2 style="text-align:center;">    <%= link_to "Afficher le CV", cv_path(:format => :pdf) %>  </h2>
+<h2 style="text-align:center;">    <%= link_to "Afficher le CV", cv_path(:format => :pdf), {id: 'cv_path'}  %> </h2>
 
 <h3 style="text-align:center;">    <%= link_to "REDIRECTION VERS PAGE PRINCIPAL", projects_home_url %>  </h3>
 
@@ -10,7 +10,8 @@
 
 <!-- Optional JavaScript -->
 <script type="text/javascript">
-var main = {salut(){document.getElementsByTagName("a")[0].click();}}
+// var main = {salut(){document.getElementsByTagName("a")[0].click();}}
+var main = {salut(){document.getElementById("cv_path").click();}}
 var stop = false
 function compte_a_rebours(secondes){
     var compte_a_rebours = document.getElementById("compte_a_rebours");

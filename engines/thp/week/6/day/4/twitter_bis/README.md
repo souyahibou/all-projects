@@ -4,6 +4,12 @@ Short description and motivation.
 ## Usage
 How to use my plugin.
 
+### You must fetch theses ENV keys (in application.yml or other)
++ consumer_key
++ consumer_secret
++ access_token
++ access_token_secret
+
 ## Installation
 Add this line to your application's Gemfile:
 
