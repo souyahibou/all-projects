@@ -80,7 +80,7 @@ gem 'nokogiri'
 ############################ BASICS GEMS #################################################################
 
 gem 'sprockets'                   #ajout
-gem 'jquery-rails', '4.3.1'       #uselfull(assets) can't be delete
+gem 'jquery-rails'                #uselfull(assets) can't be delete , '4.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

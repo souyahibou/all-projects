@@ -23,23 +23,23 @@
 
            <div class="form-group row" style="display:inline">
                <label for="label1" style="">The Lattitude:</label>
-               <input type="text" name="lattitude" value="[A-Za-z]+ (regex presence)" id="label1" placeholder="Enter a word or a string" pattern="[0-9.-]+" title="Only letter no special chars no numbers">
+               <input type="text" name="lattitude" value="" id="label1" placeholder="Enter a number betwenn -90 up to 90" pattern="[0-9.-]+" title="Only number no special chars no string letter">
 
                <label for="reverse" style="">The Longitude:</label>
-               <input type="text" name="longitude" value="[A-Za-z0-9]+ (regex presence)" id="label2" placeholder="Enter a word or a string or a number" pattern="[0-9.-]+" title="Only letter no special chars" >
+               <input type="text" name="longitude" value="" id="label2" placeholder="Enter a number between -180 up to 180" pattern="[0-9.-]+" title="Only number no special chars" >
 
                <input type="button" value="Submit Localization" onclick="localize();" id="button_localize"><br>
            </div>
 
            <div class="form-group row" style="display:inline;display:flex;">
              <label for="labelzoom" style="margin:auto;">The Zoom:</label>
-             <input type="text" name="longitude" value="" id="labelzoom" placeholder="Enter a word or a string or a numbe [-0-9]+ (regex presence)r [-0-9]+ (regex presence)" pattern="[0-9.-]+" title="Only letter no special chars" style="flex:7";>
+             <input type="text" name="longitude" value="" id="labelzoom" placeholder="Enter a number between 0 up to 200" pattern="[0-9.-]+" title="Only one number" style="flex:7";>
              <input type="button" value="Submit Zoom" onclick="zoom();" id="button_zoom"><br>
            </div>
 
            <div class="form-group row" style="display:inline;display:flex;">
              <label for="labelmsg" style="margin:auto;">Any message:</label>
-             <input type="text" name="msg" value="" id="labelmsg" placeholder="Enter a word to display on the marker" pattern="[Ww]+" title="A short message" style="flex:7";>
+             <input type="text" name="msg" value="" id="labelmsg" placeholder="Enter a word to display on the marker (set an localization before)" pattern="[Ww]+" title="A short message" style="flex:7";>
              <input type="button" value="Submit msg" onclick="note();" id="button_msg"><br>
            </div>
 

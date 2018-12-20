@@ -307,7 +307,7 @@ module Projects
 
 
         def perform_search_choice_selection(args={}, main_page, display_layout: "application_base")              # method for AJAX requests otherwise mainpage is displayed
-            if params.permit(:commit).values.join.include?("Search") then
+            if params.permit(:commit).values.join.include?("Perform Task") then
                @task_params = args.map do |key,value|
                                     begin params.require(key.to_sym)  rescue  nil end  #getting the search performed
                               end.compact.sample.permit(:search, :number, :text)
