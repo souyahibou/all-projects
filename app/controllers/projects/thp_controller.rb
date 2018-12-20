@@ -310,7 +310,7 @@ module Projects
             if params.permit(:commit).values.join.include?("Perform Task") then
                @task_params = args.map do |key,value|
                                     begin params.require(key.to_sym)  rescue  nil end  #getting the search performed
-                              end.compact.sample.permit(:search, :number, :text)
+                              end.compact.sample.permit(:search, :number, :text, :hidden)                         #hidden was used if other params aren't displayed
 
                @name_task_params = params.to_unsafe_h.select{|key,value| value.class != String}.keys.first    # ActiveSupport::HashWithIndifferentAccess   recupere la clé du hash avec le tableau [des params of the search_task] en valeur
                args[@name_task_params].call     #value must be a proc (use return because can't use two(render/redirect) times)
