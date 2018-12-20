@@ -983,7 +983,7 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
   - transform an app to an engine two ways(1: hard refactoring, 2:rebegin with engine new )
   - engine routes from main app:  blorgh.articles_path and vice versa main app root inner engine: main_app.root_path
 
-* Configuring gem specifications 
+* Configuring gem specifications
 ```ruby
 Gem::Specification.new do |s|
   s.name        = 'example'                                #required	This gem's name
@@ -1025,8 +1025,16 @@ end
 
 
 
-
-
+----------------------------------------------------------------------------------------------------------------------
+<!-- ## Other
+### filtered files
+#### git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch path/sensitive_data.js' --prune-empty --tag-name-filter cat -- --all
++ engines/thp/week/6/day/2/home_page/config/initializers/devise.rb
++ engines/thp/week/7/day/2/formulaire_stylay/config/initializers/devise.rb
++ app/assets/zizani/config.json
++ public/assets/config*
++ config/application_fb.yml
++ config/application.yml -->
 
 
 
