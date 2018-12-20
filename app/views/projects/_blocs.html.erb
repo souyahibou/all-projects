@@ -1,5 +1,5 @@
 <%to_del =Rails.root,'app/assets/zizani/results2.csv'%>
-<div style="display:flex; flex: auto;  min-height: 180px;    border: 5px solid white;    padding: 10px;background-color:<%= bg_color %>;    margin: 5px; outline:thick ridge <%= bg_color %>;outline-offset: -15px" class="box">
+<div style="display:flex; flex: auto;  min-height: 180px;    border: 4px solid white;    padding: 10px;background-color:<%= bg_color %>;    margin: 5px; outline:thick ridge <%= bg_color %>;outline-offset: -15px" class="box">
   <form class="has-text-centered" name= "bloc_projet" accept-charset="UTF-8" method="get" action= <%= method_controler %> style="background-color:<%= bg_color %>; margin:auto;">
     <fieldset  style="border: 0px solid black; border-radius:8px;" class=<%= (ProjectsController.counter)? "box" : ""  %>>
         <label for="project" class="title is-6">Project n° <%= nb %>:  <%= titre %></label><br>
@@ -15,17 +15,17 @@
                                 info: <%= (message!="")? message.html_safe : "messaging or ..." %></div><br>
 
 
-        <input type="submit" id="submit" value="See Project →"  name="commit" class="button is-info is-rounded is-small"><br>
+        <input type="submit" id="submit" value="See Project →"  name="commit" class="button is-info is-rounded is-small"  style="font-size: 100%"><br>
  <!-- is-inverted is-outlined -->
  <!-- content is-small -->
  <!-- content is-large -->
-        <div style="font-size: 80%;">
+        <span style="font-size: 80%;font-weight:bold;border-radius:8px;" class="has-background-light">
 
         <input type="radio" name="complete" value="Non" <%=if !finish          then "checked" end%>> <span class="icon has-text-danger is-small"><i class="fas fa-ban is-small"></i></span>Unbegun
         <input type="radio" name="complete" value="Mid" <%=if finish  == "Mid" then "checked" end%>> <span class="icon has-text-warning is-small"><i class="fas fa-exclamation-triangle"></i></span>Partial
-        <input type="radio" name="complete" value="Oui" <%=if finish  == true  then "checked" end%>> <span class="icon has-text-success is-small"><i class="fas fa-check-square"></i></span>Works<br>
+        <input type="radio" name="complete" value="Oui" <%=if finish  == true  then "checked" end%>> <span class="icon has-text-success is-small"><i class="fas fa-check-square"></i></span>Works
 
-        </div>
+      </span><br>
 
         <%=if false then link_to 'Back', projects_testo_path end%>
         <% bar_color = rate>89?"is-success":(rate>74? "is-link":(rate>59?"is-info":(rate>44?"is-warning":(rate>29? "is-primary":"is-danger")))) %>
