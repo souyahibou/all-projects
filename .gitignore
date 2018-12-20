@@ -23,7 +23,7 @@
 
 #see zizani directory
 /app/assets/zizani/*
-/app/assets/zizani/pictures
+!/app/assets/zizani/pictures
 !/app/assets/zizani/*.pdf
 !/app/assets/zizani/*.json
 

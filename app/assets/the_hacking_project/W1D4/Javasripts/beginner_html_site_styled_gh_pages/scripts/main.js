@@ -1,7 +1,7 @@
-let monImage = document.querySelector('html');
+var monImage = document.querySelector('html');
 
 monImage.onclick = function() {
-    let maSrc = monImage.getAttribute('src');
+    var maSrc = monImage.getAttribute('src');
     if(maSrc === 'images/firefox-icon.png') {
       monImage.setAttribute ('src','images/Paris2.jpg');
     } else {
@@ -9,11 +9,11 @@ monImage.onclick = function() {
     }
 }
 
-let monBouton = document.querySelector('button');
-let monTitre = document.querySelector('h1');
+var monBouton = document.querySelector('button');
+var monTitre = document.querySelector('h1');
 
 function définirNomUtilisateur() {
-  let monNom = prompt('Veuillez saisir votre nom.');
+  var monNom = prompt('Veuillez saisir votre nom.');
   localStorage.setItem('nom', monNom);
   monTitre.textContent = 'Mozilla est cool, ' + monNom;
 }
@@ -22,7 +22,7 @@ function définirNomUtilisateur() {
 if(!localStorage.getItem('nom')) {
   définirNomUtilisateur();
 } else {
-  let nomEnregistré = localStorage.getItem('nom');
+  var nomEnregistré = localStorage.getItem('nom');
   monTitre.textContent = 'Mozilla est cool, ' + nomEnregistré;
 }
 
