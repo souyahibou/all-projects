@@ -1036,7 +1036,12 @@ end
 + config/application_fb.yml
 + config/application.yml
 + /engines/thp/week/6/day/4/twitter_bis/app/services/twitter_bis/send_tweet.rb
-+ /engines/thp/week/6/day/4/twitter_bis/config/application.yml -->
++ /engines/thp/week/6/day/4/twitter_bis/config/application.yml
++ app/assets/zizani/Replace_project/file.txt
++ app/assets/zizani/pictures/Capture du 2018-04-28 07-43-35.png
++ app/assets/zizani/pictures/Capture du 2018-04-28 07-44-08.png
++ app/assets/zizani/pictures/PhotoCV1.jpg
+ -->
 
 
 
