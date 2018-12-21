@@ -1041,6 +1041,7 @@ end
 + app/assets/zizani/pictures/Capture du 2018-04-28 07-43-35.png
 + app/assets/zizani/pictures/Capture du 2018-04-28 07-44-08.png
 + app/assets/zizani/pictures/PhotoCV1.jpg
++ public/*
  -->
 
 
