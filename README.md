@@ -1034,7 +1034,9 @@ end
 + app/assets/zizani/config.json
 + public/assets/config*
 + config/application_fb.yml
-+ config/application.yml -->
++ config/application.yml
++ /engines/thp/week/6/day/4/twitter_bis/app/services/twitter_bis/send_tweet.rb
++ /engines/thp/week/6/day/4/twitter_bis/config/application.yml -->
 
 
 
