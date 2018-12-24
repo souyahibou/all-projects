@@ -172,6 +172,26 @@ must: watir webdriver setled, browser, model<br><strong>TODO faire de la gestion
                                                                 title5:"bonjour",         act_cntrl5: cv_path, msg5:"hehehe", rate5: 0, fin5: false%>
   </div>
 
+  <div class="container">
+    <hr class="hr" style="margin-bottom:6">
+    <h2 class="title is-2" id="OTHERS_APPS">Others Projects</h2>
+    <div class="tabs is-centered is-boxed"><ul><li><a href="#VARIOUS_PROJECTS">Various Projects</a></li>
+                                               <li><a href="#CV_CONTACT">      CV Contact      </a></li>
+                                               <li><a href="#THP_PROJECTS">    THP Project     </a></li>
+                                               <li class="is-active"><a>   Others Projects     </a></li></ul></div>
+
+     <%= render 'blocs', nb: 1, titre: "Blog", method_controler: blog_engine_path, finish: true, bg_color: :goldenrod, rate: 100, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+                                               basic rails app using scaffold; blog: articles, comment<br>
+                                               using: Engine, ActiveRecord, gems(pipeline)"  %>
+     <%= render 'blocs', nb: 2, titre: "Hello World", method_controler: hello_engine_path, finish: true, bg_color: :rosybrown, rate: 100, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+                                               a minimalist as possible rails app<br>
+                                               using: Engine"  %>
+     <%= render 'blocs', nb: 3, titre: "Login", method_controler: login_password_full_master_engine_path, finish: true, bg_color: :bisque, rate: 100, file_source:  "none", file_results: "none",  data_table_bdd: "none", message: "
+                                               basic rails app using authentification<br>
+                                               using: Engine, ActiveRecord"  %>
+
+  </div>
+
 </div>
 </div>
 

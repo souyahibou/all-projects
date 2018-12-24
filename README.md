@@ -181,7 +181,9 @@
   - [formulaire_stylay("devise", "devise-i18n", pipeline("sass-rails", "uglifier", "coffee-rails"), "turbolinks")](https://github.com/souyahibou/all-projects/tree/master/engines/thp/week/7/day/2/formulaire_stylay)
   - [email_viewer ("sass-rails", "turbolinks")   ](https://github.com/souyahibou/all-projects/tree/master/engines/thp/week/9/day/3/email_viewer)
 
-
+  - [blog](https://github.com/souyahibou/all-projects/tree/master/engines/manifold/blog)
+  - [hello_engine](https://github.com/souyahibou/all-projects/tree/master/engines/manifold/hello_engine)
+  - [login_password_full_master](https://github.com/souyahibou/all-projects/tree/master/engines/manifold/login_password_full_master)
 
 ```ruby
   42 JeMePresente::Engine    
@@ -209,7 +211,11 @@
   64 TwitterBis::Engine    
 
   72 FormulaireStylay::Engine    
-  93 EmailViewer::Engine    
+  93 EmailViewer::Engine   
+
+  Blog::Engine
+  Hello_engine::Engine
+  Login_password_full_master::Engine
 ```
 
 ## SERVICES
@@ -390,12 +396,13 @@ ScrapUrlsPros.new.perform
     4. add features to more configure project ex: scrap only 2 page instead of 48(all page) or until stop activate
 **************************************************************************************
 #### Procédure pour chaque nouveau projet
-    1. modify controller => add action or controller action
-    2. add ruby code in service folder if needed
-    3. add view with same name of the action
-    4. define route associated with the view and the action controller
-    5. add project on index of projects in home view
-    6. complete readme.md for how to use app && what is the app && how app is build && how long taking && ext. config
+    0. Implementer le projet en tant que plugin(under engine folder) ou service(under app/services folder) ou Template
+    1. Charger le plugin dans le Gemfile, Ajouter une nouvelle route(charger le plugins, chemin vers une action si services/templates)
+    2. Implementer l'action dans un controlleur (avec ajax si besoin)
+    3. Implementer la view [template(html,css,js,svg)] nom mm que l'action (si besoin)
+    4. Intégrer le project dans la view de l'index des projects(home)
+    5. complete readme.md for how to use app && what is the app && how app is build && how long taking && ext. config
+    6. ...
 **************************************************************************************
 
 
@@ -446,12 +453,12 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
 #### Rails-latex:
   - 1. intaller une distribution latex dans l'OS
   - 2. Gemfile: 	gem 'rails-latex'
-  - 3. Configuration:Add to `config\initializers\mime_types.rb`  this=> ```ruby Mime::Type.register "application/pdf", :pdf, ['text/pdf'], ['pdf']```
-  - 4. Add in layout:	  `app\views\layouts\application.pdf.erbtex` ex:=> ```ruby <% @latex_config={:parse_runs => 3} %> \n <%= yield %>```
-  - 5. Add in action:	`app\controllers\projects_controller.rb`  ex:=> ```ruby render action: 'cv', :layout => 'application'#, formats: [:pdf]```
-  - 7. Definir route:       `config\routes.rb` ex:=>  ```ruby get 'projects/cv' => 'projects#cv', as: :cv```
+  - 3. Configuration:Add to `config\initializers\mime_types.rb`  this=> ` Mime::Type.register "application/pdf", :pdf, ['text/pdf'], ['pdf']`
+  - 4. Add in layout:	  `app\views\layouts\application.pdf.erbtex` ex:=> ` <% @latex_config={:parse_runs => 3} %> \n <%= yield %>`
+  - 5. Add in action:	`app\controllers\projects_controller.rb`  ex:=> ` render action: 'cv', :layout => 'application'#, formats: [:pdf]`
+  - 7. Definir route:       `config\routes.rb` ex:=>  ` get 'projects/cv' => 'projects#cv', as: :cv`
   - 8. Implémenter LaTeX code: `app\views\projects\File.pdf.erb`  ex:=> cv.pdf.erb    
-                    ```
+                    ```css
                     \documentclass[12pt]{article}
                       \begin{document}
                         Hello world!

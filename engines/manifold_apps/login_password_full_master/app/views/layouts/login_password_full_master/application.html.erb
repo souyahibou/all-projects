@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <title><%= yield(:title) %> TOP-SECRET </title>
+      <%= stylesheet_link_tag    "login_password_full_master/application", media: "all", 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag "login_password_full_master/application", 'data-turbolinks-track': 'reload' %>
+      <%= csrf_meta_tags %>
+
+      <link rel="stylesheet" href="https://cdn.rawgit.com/yegor256/tacit/gh-pages/tacit-0.8.1.min.css"/>
+
+      <%= render 'layouts/login_password_full_master/shim' %>
+  </head>
+  <body>
+      <%= render 'layouts/login_password_full_master/header' %>
+      <%= yield %>
+
+  </body>
+</html>

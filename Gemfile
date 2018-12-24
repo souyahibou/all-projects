@@ -44,6 +44,10 @@ gem 'formulaire_stylay',    path: 'engines/thp/week/7/day/2/formulaire_stylay'
 
 gem 'email_viewer',         path: 'engines/thp/week/9/day/3/email_viewer'
 
+gem 'blog',                 path: 'engines/manifold_apps/blog'
+gem 'hello_engine',         path: 'engines/manifold_apps/hello_engine'
+gem 'login_password_full_master', path: 'engines/manifold_apps/login_password_full_master'
+
 #############################################################################################
 ############################# CUSTOM FOR THIS APP ################################################################
 # gem 'rails_12factor'              #ajout  instead config.serve_static_assets = true

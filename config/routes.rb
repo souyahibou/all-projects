@@ -29,6 +29,10 @@ Rails.application.routes.draw do
   mount FormulaireStylay::Engine, at: "/formulaire_stylay_engine"
   #
   mount EmailViewer::Engine,      at: "/email_viewer_engine"
+  #Others
+  mount Blog::Engine,             at: '/blog_engine'
+  mount HelloEngine::Engine,      at: '/hello_engine'
+  mount LoginPasswordFullMaster::Engine,       at: '/login_password_full_master_engine'
 
   get 'projects/testo9'  => 'projects#testo9', as: :projects_testo9
 
