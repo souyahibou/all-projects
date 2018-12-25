@@ -118,7 +118,6 @@ PATH
   remote: engines/thp/week/6/day/2/home_page
   specs:
     home_page (0.1.0)
-      activerecord
       bcrypt (= 3.1.11)
       bootstrap-sass (= 3.3.7)
       delayed_job_active_record

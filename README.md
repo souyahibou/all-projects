@@ -927,8 +927,9 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
       - db: Rewrite db/migrate(=>class Create**EngineName**Models) &&  => create_table :**engine_name_**\models && file=> ...\_create_**engine_name_**models.rb ), tablename, model)
       - seeds: wrap code by module namespace
   6. Add `require_dependency "engine_name/application_controller"` in each controllers to avoid to load the file of the main app
-  7. Add main_app.main_app_path or main_app.root_path if needed
-  8. For add devise:
+  7. Add `require_dependency "engine_name/application_helper"` in each helpers to avoid to load the file of the main app
+  8. Add main_app.main_app_path or main_app.root_path if needed
+  9. For add devise:
     - Installation
       - add gem into gemspec
         ```ruby
@@ -938,6 +939,7 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
         ```
       - Import or Generate the config files : `rails generate devise:install`
       - And generate a model if you need to : `rails generate devise MODEL`
+        - add `require 'devise/orm/active_record'` or `extend Devise::Models` in devise model if troublesome
     - Configurations
       - set Devise.router_name in config/initializers/devise.rb with the mountable engine's named-route
         ```ruby
@@ -963,7 +965,7 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
         end
       end
       ```
-  9. Add in /lib/engine_name/engine.rb. To avoid to run engine_name:install:migrations
+  10. Add in /lib/engine_name/engine.rb. To avoid to run engine_name:install:migrations
     ```ruby
     initializer :append_migrations do |app|
       unless app.root.to_s.match(root.to_s)
