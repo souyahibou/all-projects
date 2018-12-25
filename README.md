@@ -16,6 +16,74 @@
 <details><summary>Next</summary>
 <p>
 
+## SYSTEM DEPENDENCIES
+    1. Rails 5.0.1
+    2. LaTeX
+    3. PostgreSQL
+    4. Watir webdriver
+    5. buildpacks on heroku prod
+    6. heroku config
+
+## HOW TO RUN APP
+    1. bundle install && bundle update
+    2. rails assets:preccompile
+    3. rails db:create
+    4. rails db:migrate
+    5. rails db:seed
+    6. rails s
+    7. Enjoy
+
+
+## JOBS
+
+## TASKS
+- lib/tasks/scheduler.rake
+  Can be used by heroku scheduler:
+
+  ```bash
+  $ bundle exec rake job
+  $ bundle exec rake test
+  $ bundle exec rake service_for_url
+  $ bundle exec rake service_for_ids
+  $ bundle exec rake first_connexion
+  ```
+
+## ENVIRONMENT VARIABLES
+  ```ruby
+    ENV["FACEBOOK_scopes_auths1"]
+    ENV["FACEBOOK_scopes_auths2"]
+    ENV["FACEBOOK_redirect_uri"]
+
+    ENV["FIRST_USER_TOKEN"]
+    ENV["FIRST_APP_TOKEN"]
+    ENV["FIRST_APP_ID"]
+    ENV["app_id"]
+    ENV["app_name"]
+    ENV["app_token"]
+    ENV["client_id"]
+    ENV["client_token"]
+    ENV["secret_id"]
+    ENV["token"]
+
+    ENV["SPREADSHEET_SCRAPPING_FB_EVENTS"]
+    ENV["SPEADSHEET_SCRAPPING_URLS"]
+    ENV["SPEADSHEET_LIENS_ET_IDS"]
+
+    ENV["consumer_key"]
+    ENV["consumer_secret"]
+    ENV["access_token"]
+    ENV["access_token_secret"]
+
+    ENV["LOCAL_OR_HEROKU"]
+
+    ENV["GOOGLE_client_id"]
+    ENV["GOOGLE_client_secret"]
+    ENV["GOOGLE_refresh_token"]
+    ENV["GOOGLE_redirect_uri"]
+
+    ENV["FACEBOOK_EMAIL"]
+    ENV["FACEBOOK_MDP"]
+  ```
 
 
 ## CONFIG MODIFIED
@@ -49,26 +117,26 @@
   * rails
   ```bash
   bundle [install|update]
-  rails assets:precompile           
-  RAILS_ENV=production bundle exec rails assets:precompile
-  yes | rm -rf db/migrate/*
-  rails db:version (20181206170175 version 1)
-  rails db:drop
-  rails db:schema:dump
-  rails railties:install:migrations
-  rails db:schema:load
-  rails db:create
-  rails db:migrate
-  rails db:seeds
-  rails db:rollback STEP=3
+  $ rails assets:precompile           
+  $ RAILS_ENV=production bundle exec rails assets:precompile
+  $ yes | rm -rf db/migrate/*
+  $ rails db:version (20181206170175 version 1)
+  $ rails db:drop
+  $ rails db:schema:dump
+  $ rails railties:install:migrations
+  $ rails db:schema:load
+  $ rails db:create
+  $ rails db:migrate
+  $ rails db:seeds
+  $ rails db:rollback STEP=3
 
-  rails db:drop
-  rails db:create
-  rails db:migrate
-  rails db:seeds
+  $ rails db:drop
+  $ rails db:create
+  $ rails db:migrate
+  $ rails db:seeds
 
-  rails db:migrate:redo && rails db:reset		#or
-  rails db:migrate:reset && rails db:seeds
+  $ rails db:migrate:redo && rails db:reset		#or
+  $ rails db:migrate:reset && rails db:seeds
 
   db:migrate:reset(db:drop db:create db:migrate)
   db:reset(db:drop db:setup)
@@ -76,28 +144,28 @@
   ```
   * assets
   ```bash
-  rake assets:clobber
-  rake assets:clean
-  rake tmp:clear
-  rake assets:precompile
+  $ rake assets:clobber
+  $ rake assets:clean
+  $ rake tmp:clear
+  $ rake assets:precompile
   ```
 
   * heroku
   ```bash
-  heroku run rake db:version  
-  run heroku pg:reset #=> to drop
+  $ heroku run rake db:version  
+  $ run heroku pg:reset #=> to drop
   # run heroku run rails --trace db:schema:load DISABLE_DATABASE_ENVIRONMENT_CHECK=1  #first time
   # rake db:schema:load || rake db:structure:load
-  run heroku run rails db:migrate
-  run heroku run rails db:seed
+  $ run heroku run rails db:migrate
+  $ run heroku run rails db:seed
   #or   run heroku run rails db:migrate && rails db:seed
   ```
 
   * figaro
   ```bash
-  bundle exec figaro help heroku:set
-  bundle exec figaro heroku:set -e production
-  bundle exec figaro heroku:set -p config/application_fb.yml
+  $ bundle exec figaro help heroku:set
+  $ bundle exec figaro heroku:set -e production
+  $ bundle exec figaro heroku:set -p config/application_fb.yml
   ```
 
 ## GEMS USED
@@ -270,36 +338,6 @@ ScrapFbPros.new.perform
 ScrapGoogleCal.new.perform
 ScrapUrlsPros.new.perform
 ```
-## JOBS
-
-## TASKS
-- lib/tasks/scheduler.rake
-  Can be used by heroku scheduler:
-
-  ```bash
-  bundle exec rake job
-  bundle exec rake test
-  bundle exec rake service_for_url
-  bundle exec rake service_for_ids
-  bundle exec rake first_connexion
-  ```
-## SYSTEM DEPENDENCIES
-    1. Rails 5.0.1
-    2. LaTeX
-    3. PostgreSQL
-    4. Watir webdriver
-    5. buildpacks on heroku prod
-    6. heroku config
-
-## HOW TO RUN APP
-    1. bundle install && bundle update
-    2. rails assets:preccompile
-    3. rails db:create
-    4. rails db:migrate
-    5. rails db:seed
-    6. rails s
-    7. Enjoy
-
 
 ## BE CAREFUL BY FILE ADDED IN GIT IGNORE
   ```git
@@ -349,49 +387,12 @@ ScrapUrlsPros.new.perform
   !/app/services/the_hacking_project/s3_ruby_intermediaire/j2_envoi_emails/projet_total.rb
   ```
 
-## ENVIRONMENT VARIABLES
-  ```ruby
-    ENV["FACEBOOK_scopes_auths1"]
-    ENV["FACEBOOK_scopes_auths2"]
-    ENV["FACEBOOK_redirect_uri"]
-
-    ENV["FIRST_USER_TOKEN"]
-    ENV["FIRST_APP_TOKEN"]
-    ENV["FIRST_APP_ID"]
-    ENV["app_id"]
-    ENV["app_name"]
-    ENV["app_token"]
-    ENV["client_id"]
-    ENV["client_token"]
-    ENV["secret_id"]
-    ENV["token"]
-
-    ENV["SPREADSHEET_SCRAPPING_FB_EVENTS"]
-    ENV["SPEADSHEET_SCRAPPING_URLS"]
-    ENV["SPEADSHEET_LIENS_ET_IDS"]
-
-    ENV["consumer_key"]
-    ENV["consumer_secret"]
-    ENV["access_token"]
-    ENV["access_token_secret"]
-
-    ENV["LOCAL_OR_HEROKU"]
-
-    ENV["GOOGLE_client_id"]
-    ENV["GOOGLE_client_secret"]
-    ENV["GOOGLE_refresh_token"]
-    ENV["GOOGLE_redirect_uri"]
-
-    ENV["FACEBOOK_EMAIL"]
-    ENV["FACEBOOK_MDP"]
-  ```
-
 ## HOW TO ADD NEW PROJECT
 
 
 #### make interface for each project
-    1. with some initial configuration and données d'entrées if needed
-    2. with description of project
+    1. Configuration et paramètres d'entrées if needed
+    2. description du projet
     3. principal features gems configuration paths associées au project/fichier to ignore
     4. add features to more configure project ex: scrap only 2 page instead of 48(all page) or until stop activate
 **************************************************************************************
@@ -604,7 +605,7 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
 4. **METHODES**
     - config
         ```bash
-        rails generate model Evenement  event_id    event_name      event_start_time      event_end_time      event_description      event_place_id      event_place_name      event_place_location_data      change      event_place_city      event_place_country      event_place_latitude      event_place_longitude      event_place_street      event_place_zip      event_event_times_data      event_owner_name      event_photos_images      last_date      groupe_id    origin_base  event_owner_id    changements origin_base:string:index
+        $ rails generate model Evenement  event_id    event_name      event_start_time      event_end_time      event_description      event_place_id      event_place_name      event_place_location_data      change      event_place_city      event_place_country      event_place_latitude      event_place_longitude      event_place_street      event_place_zip      event_event_times_data      event_owner_name      event_photos_images      last_date      groupe_id    origin_base  event_owner_id    changements origin_base:string:index
         ```
     - add into model:
         ```ruby
@@ -735,19 +736,19 @@ _Delete or implement this file, do not leave this file empty_
 * HEROKU
   - Basics:
     ```bash
-    heroku create
-    git push heroku master
-    heroku open
+    $ heroku create
+    $ git push heroku master
+    $ heroku open
     ```
   - See the logs:
     ```bash
-    heroku logs
-    heroku logs -n 200                              display nbr lines
-    heroku logs --tail                              logs in real time
-    heroku logs --dyno (router|web|worker)          to filter
-    heroku logs --source app                        to filter
+    $ heroku logs
+    $ heroku logs -n 200                              display nbr lines
+    $ heroku logs --tail                              logs in real time
+    $ heroku logs --dyno (router|web|worker)          to filter
+    $ heroku logs --source app                        to filter
 
-    heroku ps[:scale web=1]                         to see/set procfile
+    $ heroku ps[:scale web=1]                         to see/set procfile
     ```
   - Run the app locally:
     ```
@@ -769,15 +770,15 @@ _Delete or implement this file, do not leave this file empty_
     ```
   - Consoles:
     ```bash
-    heroku run rails console
-    heroku run bash
+    $ heroku run rails console
+    $ heroku run bash
 
-    heroku config
-    heroku config:set VAR=val
+    $ heroku config
+    $ heroku config:set VAR=val
 
-    heroku run rake db:migrate          to connect to the database
-    heroku pg
-    heroku pg:psql
+    $ heroku run rake db:migrate          to connect to the database
+    $ heroku pg
+    $ heroku pg:psql
     ```
 
 
@@ -1160,7 +1161,7 @@ end
 ## Thp Projects
 
 Number (week,day)| Description | Tools Used  | Other infos   | See
-------------     | ---------- | ------------ | --------------|--------------
+:------------:   | ---------- | ------------ | :------------:|:-------------:
 01               |  Utilisation de Git       | ------------- | --------------|
 02               |  Fake CV                  | HTML, CSS     | --------------| [see](../../tree/master/app/assets/the_hacking_project/W1D2)
 03               |  Fake Google Homepage 1   | HTML, CSS     | --------------| [see](../../tree/master/app/assets/the_hacking_project/W1D3)
