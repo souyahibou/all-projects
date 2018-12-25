@@ -1,3 +1,5 @@
+require_dependency 'home_page/application_controller'
+
 module HomePage
   class GossipsController < ApplicationController
     before_action :set_gossip, only: [:show, :edit, :update, :destroy]

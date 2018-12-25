@@ -7,7 +7,6 @@ require 'rspec-rails'		#ajout
 require 'bootstrap-sass'		#ajout
 require 'faker'		#ajout
 require 'bcrypt'		#ajout
-require 'bcrypt'		#ajout
 
 module HomePage
   # Your code goes here...

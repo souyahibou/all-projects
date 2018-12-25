@@ -1,3 +1,4 @@
+require 'devise/orm/active_record'
 module HomePage
   class Moussaillon < ApplicationRecord
     # Include default devise modules. Others available are:

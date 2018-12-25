@@ -1,3 +1,5 @@
+require_dependency 'home_page/application_controller'
+
 module HomePage
   class PagesController < ApplicationController
     def index
