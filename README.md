@@ -459,7 +459,7 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
   - 5. Add in action:	`app\controllers\projects_controller.rb`  ex:=> ` render action: 'cv', :layout => 'application'#, formats: [:pdf]`
   - 7. Definir route:       `config\routes.rb` ex:=>  ` get 'projects/cv' => 'projects#cv', as: :cv`
   - 8. Implémenter LaTeX code: `app\views\projects\File.pdf.erb`  ex:=> cv.pdf.erb    
-                    ```css
+                    ```tex
                     \documentclass[12pt]{article}
                       \begin{document}
                         Hello world!
@@ -1035,6 +1035,15 @@ end
 
 
 
+
+
+### Github Push
+  1. git branch github
+  2. git pull . master
+  3. edit .gitignore
+  4. commit "MAJ gitignore for github"
+  5. git push origin master => error (if there aren't errors => check if sentive file has sent)
+  6. git push -f origin master
 ----------------------------------------------------------------------------------------------------------------------
 <!-- ## Other
 ### filtered files
