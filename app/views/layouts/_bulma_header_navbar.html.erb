@@ -1,7 +1,30 @@
 <script type="text/javascript">
       // Check for click events on the navbar burger icon/
-      $(document).ready(function() { $(".navbar-burger").click(function() { $(".navbar-burger").toggleClass("is-active");  $(".navbar-menu").toggleClass("is-active");});});
-      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      $(document).ready(function() {
+          // // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          // $(".navbar-burger").click(function() {
+          //     $(".navbar-burger").toggleClass("is-active");
+          //     $(".navbar-menu").toggleClass("is-active");});
+
+          // Close mobile & tablet menu on item click
+          $('.navbar-item').each(function(e) { $(this).click(function(){
+              if($('.navbar-burger').hasClass('is-active')){
+                  $('.navbar-burger').removeClass('is-active');
+                  $('#navbarLargeWindow').removeClass('is-active');
+              }
+          });});
+
+          // Open or Close mobile & tablet menu
+          $('.navbar-burger').click(function () {
+              if($('.navbar-burger').hasClass('is-active')){
+                  $('.navbar-burger').removeClass('is-active');
+                  $('#navbarLargeWindow').removeClass('is-active');
+              }else {
+                  $('.navbar-burger').addClass('is-active');
+                  $('#navbarLargeWindow').addClass('is-active');
+              }
+          });
+      });
 </script>
 
 <nav class="hero-head navbar is-fixed-top" role="navigation" aria-label="main navigation">
@@ -22,6 +45,7 @@
         <span class="icon"><i class="fas fa-expand-arrows-alt"></i></span>
         <span>remove layout</span>
         <% end %>
+
       </div>
     </class>
 

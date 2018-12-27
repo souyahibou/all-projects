@@ -48,6 +48,8 @@ Rails.application.routes.draw do
 
   match 'projects/thp/execute', via: [:get, :post]
 
+  get 'projects/displaying_status_codes', as: :status_codes
+
   get 'projects/wiki', as: :wiki
 
   get 'projects/html_forms' => :html_forms, controller: 'projects', as: :html_forms

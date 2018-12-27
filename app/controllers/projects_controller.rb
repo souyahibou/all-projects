@@ -115,4 +115,8 @@ class ProjectsController < ApplicationController
         render :inline => "<%= markdown(File.read(Rails.root.join('README.md'))) %>"
       end
 
+      def displaying_status_codes
+          @var = SpecialProjects::ListStatusCodes.new.res
+      end
+
 end

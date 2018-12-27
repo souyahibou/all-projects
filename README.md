@@ -690,6 +690,73 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
         ```
 
 
+-------------------------------------------------------------------------------------
+### Le projet program scrap google pro:   26/12/2018
+* Ce snippet permet d'afficher le fichier de documentation README.md en conservant le format du markdown
+  - [Lien 1 rails markdown highlighting](https://pdabrowski.com/blog/ruby/code-syntax-highlighting-in-rails-app/)
+  - [Lien 2 rails markdown highlighting](http://www.jasonramirez.com/posts/rails-markdown-syntax-highlighting)
+  
+1. **PARAMÈTRE**
+    - **Gem** : "redcarpet", "coderay", "rouge-rails"
+    - **Buildpacks**: 0
+    - **Class**: "File", "erb"
+    - **Notes**: Utilisation helper(markdown); Génération library sass(github.css)
+    - **données in/out**:
+    - **database_model**: 0
+
+2. **DURÉE**
+
+3. **DESCRIPTION**
+    - Action du Controller:
+
+        ```ruby
+            def wiki
+              render :inline => "<%= markdown(File.read(Rails.root.join('README.md'))) %>"
+            end
+        ```
+4. **METHODES**
+    - config:
+        *autumn.scss,		borland.scss,		bw.scss,		colorful.scss,		colorschemes.scss,		default.scss,		emacs.scss,		friendly.scss,		fruity.scss,		github.scss,		manni.scss,		monokai.scss,		murphy.scss,		native.scss,		pastie.scss,		perldoc.scss,		solarized-dark.scss,		solarized-light.scss,		tango.scss,		trac.scss,		vim.scss,		vs.scss,		zenburn.scss*
+        Exemple: `$ rougify style github > app/assets/stylesheets/github.css` => application.scss:   `@import "github";`
+
+    - application_helper content
+        ```ruby
+          class CodeRayify < Redcarpet::Render::HTML                             #second
+            def block_code(code, language)
+              language ||= :plaintext
+              CodeRay.scan(code, language).div
+            end
+          end
+
+          class RougeRenderer < Redcarpet::Render::HTML                          #third
+            require "rouge"
+            require "rouge/plugins/redcarpet"
+
+            include Rouge::Plugins::Redcarpet
+          end
+
+          def markdown(text)
+            coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)    #second
+            coderougify = RougeRenderer.new(filter_html: true, hard_wrap: true)  #third
+            renderbasic = Redcarpet::Render::HTML.new(filter_html: true, hard_wrap: true, link_attributes: { rel: 'nofollow', target: "_blank" })
+
+            options = {
+              fenced_code_blocks: true,
+              no_intra_emphasis: true,
+              autolink: true,
+              lax_html_blocks: true,
+              tables: true,
+            }
+
+            markdown_to_html = Redcarpet::Markdown.new(renderbasic, options)    #first
+            markdown_to_html = Redcarpet::Markdown.new(coderayified, options)   #second
+            markdown_to_html = Redcarpet::Markdown.new(coderougify, options)    #third
+
+            markdown_to_html.render(text).html_safe                             #third
+          end
+        ```
+
+
 
 
 

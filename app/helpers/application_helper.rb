@@ -29,14 +29,14 @@ module ApplicationHelper
   #   markdown.render(text).html_safe
   # end
 
-  class CodeRayify < Redcarpet::Render::HTML
+  class CodeRayify < Redcarpet::Render::HTML                             #second
     def block_code(code, language)
       language ||= :plaintext
       CodeRay.scan(code, language).div
     end
   end
 
-  class RougeRenderer < Redcarpet::Render::HTML
+  class RougeRenderer < Redcarpet::Render::HTML                          #third
     require "rouge"
     require "rouge/plugins/redcarpet"
 
@@ -44,8 +44,10 @@ module ApplicationHelper
   end
 
   def markdown(text)
-    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)
-    coderougify = RougeRenderer.new(filter_html: true, hard_wrap: true)
+    coderayified = CodeRayify.new(filter_html: true, hard_wrap: true)    #second
+    coderougify = RougeRenderer.new(filter_html: true, hard_wrap: true)  #third
+    renderbasic = Redcarpet::Render::HTML.new(filter_html: true, hard_wrap: true, link_attributes: { rel: 'nofollow', target: "_blank" })
+
     options = {
       fenced_code_blocks: true,
       no_intra_emphasis: true,
@@ -53,9 +55,11 @@ module ApplicationHelper
       lax_html_blocks: true,
       tables: true,
     }
-    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
-    markdown_to_html = Redcarpet::Markdown.new(coderougify, options)
 
-    markdown_to_html.render(text).html_safe
+    markdown_to_html = Redcarpet::Markdown.new(renderbasic, options)    #first      #nullufy use now
+    markdown_to_html = Redcarpet::Markdown.new(coderayified, options)   #second     #nullify use now
+    markdown_to_html = Redcarpet::Markdown.new(coderougify, options)    #third      #active use
+
+    markdown_to_html.render(text).html_safe                             #third
   end
 end

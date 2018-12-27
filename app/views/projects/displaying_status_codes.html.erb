@@ -1,0 +1,27 @@
+<h1 style="text-align:center">List of status codes and their symbols</h1>
+
+<div class="" style="display: flex; justify-content: center">
+      <table>
+          <tr> <th colspan="2"><h2>Classed by groupes</h2> </th> </tr>
+          <% @var.each do |group_name, group_status|%>
+          <tbody>
+                  <tr>
+                      <th style="">Status code</th>
+                      <th style="">Symbol(descr)</th>
+                  </tr>
+
+                  <tr>
+                      <td style=""><%= group_name[/.xx/] %></td>
+                      <td style=""><%= group_name[/ [ \w]+/] %></td>
+                  </tr>
+
+              <% group_status.each do |status_code, status_symbol|%>
+                  <tr>
+                      <td><a target="_blank" href="#"><%= status_code %></a>&nbsp;</td>
+                      <td><a target="_blank" href="#"><%= status_symbol %></a></td>
+                  </tr>
+              <% end %>
+          </tbody>
+          <% end %>
+      </table>
+</div>
