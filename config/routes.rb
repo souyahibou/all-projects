@@ -48,6 +48,8 @@ Rails.application.routes.draw do
 
   match 'projects/thp/execute', via: [:get, :post]
 
+  get 'projects/wiki', as: :wiki
+
   get 'projects/html_forms' => :html_forms, controller: 'projects', as: :html_forms
 
   get 'projects/scraping_annuaire_startups' => 'projects#scraping_annuaire_startups', as: :scraping_annuaire_startups, defaults: { format: 'html' }

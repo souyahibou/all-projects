@@ -111,4 +111,8 @@ class ProjectsController < ApplicationController
       def html_forms
       end
 
+      def wiki
+        render :inline => "<%= markdown(File.read(Rails.root.join('README.md'))) %>"
+      end
+
 end
