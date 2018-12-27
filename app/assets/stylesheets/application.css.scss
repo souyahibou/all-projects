@@ -21,3 +21,23 @@
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+/*markdown*/
+@import "github";
+
+/*
+https://pdabrowski.com/blog/ruby/code-syntax-highlighting-in-rails-app/
+http://www.jasonramirez.com/posts/rails-markdown-syntax-highlighting
+class RougeRenderer < Redcarpet::Render::HTML
+  require "rouge"
+  require "rouge/plugins/redcarpet"
+
+  include Rouge::Plugins::Redcarpet
+end
+RougeRenderer.new(render_options = {})
+<%= Redcarpet::Markdown.new(BlogRender, fenced_code_blocks: true).render(@article.content).html_safe %>
+Gemfile:    gem "rouge-rails"
+autumn.scss,		borland.scss,		bw.scss,		colorful.scss,		colorschemes.scss,		default.scss,		emacs.scss,		friendly.scss,		fruity.scss,		github.scss,		manni.scss,		monokai.scss,		murphy.scss,		native.scss,		pastie.scss,		perldoc.scss,		solarized-dark.scss,		solarized-light.scss,		tango.scss,		trac.scss,		vim.scss,		vs.scss,		zenburn.scss
+rougify style github > app/assets/stylesheets/github.css
+application.scss:   @import "github";
+*/

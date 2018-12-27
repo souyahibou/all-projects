@@ -192,8 +192,25 @@ must: watir webdriver setled, browser, model<br><strong>TODO faire de la gestion
 
   </div>
 
+  <div class="container" style="display: block">
+    <hr class="hr" style="margin-bottom:6">
+    <h2 class="title is-2" id="WIKI">Wikipédia</h2>
+    <div class="tabs is-centered is-boxed"><ul><li><a href="#VARIOUS_PROJECTS">Various Projects</a></li>
+                                               <li><a href="#CV_CONTACT">      CV Contact      </a></li>
+                                               <li><a href="#THP_PROJECTS">    THP Project     </a></li>
+                                               <li><a href="#OTHERS_APPS">   Others Projects   </a></li>
+                                               <li class="is-active"><a>        Wikipédia      </a></li></ul></div>
+    <details>
+      <summary style="font-size:40px"><h2 class="title is-2" id="OTHERS_APPS" style="display:inline-flex">GITHUB README OF THE APP</h2></summary>
+      <p>
+          <%= markdown(File.read(Rails.root.join("README.md"))) %>
+          <%# puts File.read(Rails.root.join("README.md")).gsub(/^(s+)```(\w+)/,"\n#{$1}```#{$2}") %>
+      </p>
+    </details>
+  </div>
+
 </div>
-</div>
+
 
 
 <script></script>
@@ -203,3 +220,51 @@ must: watir webdriver setled, browser, model<br><strong>TODO faire de la gestion
     h1   {color: blue;}
     p    {color: black;}
 </style> -->
+
+
+<style>
+/* mainly uses for link and title for markdown complement */
+.container a{
+  align-items: center;
+
+  cursor: pointer;
+  background-color: turquoise;
+  display: inline-flex;
+
+  justify-content: center;
+
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 4px;
+
+  height: 36px;
+  margin-bottom: 8px;  margin-right: 8px;
+  padding-bottom: 5px;  padding-left: 12px;  padding-right: 12px;  padding-top: 5px;
+
+  opacity: 0.8;
+  }
+
+.container a:hover {
+ background-color: whitesmoke;
+ border-color: #b5b5b5;
+ z-index: 2;
+ opacity: 1;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+margin: 0; padding: 0;
+color: #363636; font-weight: 600; line-height: 1.125;
+}
+
+.container h1 {font-size: 2em; margin-bottom: 0.5em;}
+.container h1:not(:first-child) {margin-top: 1em; }
+.container h2 {font-size: 1.75em; margin-bottom: 0.5714em;}
+.container h2:not(:first-child) {margin-top: 1.1428em; }
+.container h3 {font-size: 1.5em; margin-bottom: 0.6666em;}
+.container h3:not(:first-child) {margin-top: 1.3333em; }
+.container h4 {font-size: 1.25em; margin-bottom: 0.8em;}
+.container h5 {font-size: 1.125em; margin-bottom: 0.8888em;}
+.container h6 {font-size: 1em; margin-bottom: 1em;}
+</style>

@@ -88,6 +88,7 @@
 
 ## CONFIG MODIFIED
   - production.rb:
+
   ```ruby
   config.public_file_server.enabled[2lines]
   config.assets.compile
@@ -96,25 +97,29 @@
   ```
 
   - application.rb:
+
   ```ruby
   config.assets.enabled = true
   config.assets.initialize_on_precompile = false
   config.assets.paths << Rails.root.join("app", "assets", "fonts")
   ```
 
-  - /initializers/assets.rb
+  - /initializers/assets.rb:
+
   ```ruby
   Rails.application.config.assets.precompile = [ Proc.new{ |path| !File.extname(path).in?(%w(.js .css .html .erb .md)) }, /application.(css|js)$/ ]
   Rails.application.config.assets.precompile << Dir.glob(Rails.root.join('app', 'assets', 'thp_projects', '**/*')).grep(/[\W\w]*\.(js|css|png|jpg)$/)
   ```
 
-  - /initializers/figaro.rb
+  - /initializers/figaro.rb:
+
   ```ruby
     # Figaro.require_keys("pusher_app_id", "pusher_key", "pusher_secret")
   ```
 
 ## COMMANDS TO RUN
-  * rails
+  * rails:
+
   ```bash
   bundle [install|update]
   $ rails assets:precompile           
@@ -142,7 +147,8 @@
   db:reset(db:drop db:setup)
   db:setup(db:create db:schema:load db:seed)
   ```
-  * assets
+  * assets:
+
   ```bash
   $ rake assets:clobber
   $ rake assets:clean
@@ -150,7 +156,8 @@
   $ rake assets:precompile
   ```
 
-  * heroku
+  * heroku:
+
   ```bash
   $ heroku run rake db:version  
   $ run heroku pg:reset #=> to drop
@@ -161,7 +168,8 @@
   #or   run heroku run rails db:migrate && rails db:seed
   ```
 
-  * figaro
+  * figaro:
+
   ```bash
   $ bundle exec figaro help heroku:set
   $ bundle exec figaro heroku:set -e production
@@ -427,26 +435,32 @@ Ce script permet à partir d'une Url d'un site donnée:
     4. Gems/Objects used:  ['net/http' , 'nokogiri']/[Dir, File]
 
 -------------------------------------------------------------------------------------
-<!-- ### Le projet ScrapSlackMbr: Le 19/07/2018
+<!--
+### Le projet ScrapSlackMbr: Le 19/07/2018
 * Ce script permet de récupérer les informations et images de tous les membres du slack THP:
+
 1. récupère le pseudo/nom-prénom/statut/identifiant/url_images depuis le jobboard slack THP
 2. sauvegarde le résultat en base de données et export dans un fichier de format csv avec une éxécution de Commande bash %x!cmd!
 
 3. ajouter le dossier images_slack au git ignore
-4. Gems/Object useed: [Watir PG CSV Net::HTTP]/[Proc Struct File Rails URI Dir]
+4. Gems/Object useed: [Watir PG CSV Net::HTTP]/[Proc Struct File Rails URI Dir]:
 
+  ```ruby
   def Scrap_members_from_board
   def save_on_database_and_csv_file(tab_membre)
   def downloading_images_members
                         ScrapUrlsPros.set_browser_session
                         ScrapImageHtmlTag.downloader
+  ```
 5. files generated: dossier contenant images_slack et fichier csb mbrs slack.csv
-6. a faire gerer les quelque bug de scrap()/faire method initialize avec IOput/parametre app/view/controller pour récupérer des arguments de fct°
+6. a faire gerer les quelque bug de scrap()/faire method initialize avec IOput/parametre app/view/controller pour récupérer des arguments de fct°:
+
 ```bash
 "Completed 500 Internal Server Error in 59168ms
 Selenium::WebDriver::Error::StaleElementReferenceError (The element reference of <a class="c-unified_member c-unified_member--large c-unified_member--linked member_preview_link focus-ring" href="/team/U76U5TEVB"> is stale; either the element is no longer attached to the DOM, it is not in the current frame context, or the document has been refreshed):"
 to solve with on error resume next
-``` -->
+```
+ -->
 -------------------------------------------------------------------------------------
 ### Le projet CV:   Le ../../2018
 Cette configuration permet de generer un pdf à partir d'un fichier latex et de l'afficher:
@@ -458,15 +472,16 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
   - 4. Add in layout:	  `app\views\layouts\application.pdf.erbtex` ex:=> ` <% @latex_config={:parse_runs => 3} %> \n <%= yield %>`
   - 5. Add in action:	`app\controllers\projects_controller.rb`  ex:=> ` render action: 'cv', :layout => 'application'#, formats: [:pdf]`
   - 7. Definir route:       `config\routes.rb` ex:=>  ` get 'projects/cv' => 'projects#cv', as: :cv`
-  - 8. Implémenter LaTeX code: `app\views\projects\File.pdf.erb`  ex:=> cv.pdf.erb    
-                    ```tex
-                    \documentclass[12pt]{article}
-                      \begin{document}
-                        Hello world!
-                      \end{document}
-                    ```
+  - 8. Implémenter LaTeX code: `app\views\projects\File.pdf.erb`  ex:=> cv.pdf.erb:    
+
+    ```tex
+                              \documentclass[12pt]{article}
+                                \begin{document}
+                                  Hello world!
+                                \end{document}
+    ```
 #### To build on Heroku:
-  - 9.  Fork or not buildpack: https://github.com/Thermondo/heroku-buildpack-tex
+  - 9. Fork or not buildpack: https://github.com/Thermondo/heroku-buildpack-tex
   - 10. add bldpck herokuapp:  heroku buildpacks:add git://github.com/Thermondo/heroku-buildpack-tex.git  or https://github.com/souyahibou/heroku-buildpack-tex
   - 11. create texlive.profile    download original config from repo [unecessary because already exist]
   - 12. create texlive.packages   add from(echo or vim) bash all app latex code packages depedencies ex: moderncv babel textcase
@@ -474,8 +489,8 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
   - 14. be careful to the extern links.
   - 15. Implement to heroku:    git add .     git commit     git push heroku master
   - 16. Enjoy
-  - 00. to test if package are available: run after one build of buildpacks in heroku: heroku run bash then tlmgr install pckgeslist
-  - 00. packages used in my project: moderncv babel textcase textpos multirow xargs psnfss tools graphics enumitem etoolbox unicode-math microtype fontspec xcolor pgf lipsum xkeyval greek-fontenc greek-inputenc environ latexmk collection-bibtexextra collection-langgerman collection-xetex collection-fontsrecommended fontawesome ifsym tocloft
+  - 17. to test if package are available: run after one build of buildpacks in heroku: heroku run bash then tlmgr install pckgeslist
+  - 18. packages used in my project: moderncv babel textcase textpos multirow xargs psnfss tools graphics enumitem etoolbox unicode-math microtype fontspec xcolor pgf lipsum xkeyval greek-fontenc greek-inputenc environ latexmk collection-bibtexextra collection-langgerman collection-xetex collection-fontsrecommended fontawesome ifsym tocloft
 
 -------------------------------------------------------------------------------------
 ### Le projet program_scrap_carrierinfo:   Le 30/08/2018
@@ -518,6 +533,7 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
     - **Class**: "ScrapUrlsPros", "attr_accessor", "Hash", "scan(Regx)", "gsub"
     - **Notes**:
     - **données in/out**: données dans spreadsheets  
+
     ```ruby
     ENV["SPREADSHEET_SCRAPPING_FB_EVENTS"]
     ENV["SPEADSHEET_SCRAPPING_URLS"]
@@ -532,6 +548,7 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
 2. **DURÉE**
 
 3. **DESCRIPTION**
+
     ```ruby
       perform
                tab = [];
@@ -548,7 +565,8 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
 
 
 4. **METHODES**
-    - config
+    - config:
+
         ```ruby
         set_google_drive_session  #connexion_to_GoogleDrive
         set_browser_session       #exe  new_browser
@@ -585,6 +603,7 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
     - **données in/out**:
     - **fields_of_events**:   data expected on the fb request
     - **database_of_events**: un model Evenement
+
     ```ruby
     ENV["token"]
     ENV["SPEADSHEET_LIENS_ET_IDS"]
@@ -594,6 +613,7 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
 2. **DURÉE**
 
 3. **DESCRIPTION**
+
     ```ruby
     perform
         groups = get_all_facebook_groups                                #get all group ids
@@ -603,11 +623,13 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
     ```
 
 4. **METHODES**
-    - config
+    - config:
+
         ```bash
         $ rails generate model Evenement  event_id    event_name      event_start_time      event_end_time      event_description      event_place_id      event_place_name      event_place_location_data      change      event_place_city      event_place_country      event_place_latitude      event_place_longitude      event_place_street      event_place_zip      event_event_times_data      event_owner_name      event_photos_images      last_date      groupe_id    origin_base  event_owner_id    changements origin_base:string:index
         ```
     - add into model:
+
         ```ruby
             require 'active_record/diff'
             class Evenement < ApplicationRecord
@@ -615,6 +637,7 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
                 validates_uniqueness_of :event_id, scope: [:origin_base]
             end
         ```
+
         ```ruby
           initialize                #set all config externes(keys(Fbgraphtoken),database), des nom&&nombre champs,msgs
 
@@ -643,7 +666,8 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
 2. **DURÉE**
 
 3. **DESCRIPTION**
-    - perform
+    - perform:
+
         ```ruby
         groups = get_all_facebook_groups                                #get all group ids
         scrap_events_facebook_groups(groups, @database_of_events)       #extraction data request & save
@@ -651,8 +675,9 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
         @tab                                                            #allow to print the database
         ```
 4. **METHODES**
-    - config
+    - config:
         `rails generate model EvenementGoogle site heure titre date lieu map description`
+
 
         ```ruby
         public
@@ -718,6 +743,7 @@ _Delete or implement this file, do not leave this file empty_
 
 
 #### pour récupérer un token via ScrapFbPros.new.get_token:
+
   ```ruby
   1 mettre ses identifiant Facebook
               ENV["FACEBOOK_EMAIL"]
@@ -735,12 +761,14 @@ _Delete or implement this file, do not leave this file empty_
 
 * HEROKU
   - Basics:
+
     ```bash
     $ heroku create
     $ git push heroku master
     $ heroku open
     ```
   - See the logs:
+
     ```bash
     $ heroku logs
     $ heroku logs -n 200                              display nbr lines
@@ -751,6 +779,7 @@ _Delete or implement this file, do not leave this file empty_
     $ heroku ps[:scale web=1]                         to see/set procfile
     ```
   - Run the app locally:
+
     ```
     which psql                                      check if postgresql is installed
     bundle install
@@ -769,6 +798,7 @@ _Delete or implement this file, do not leave this file empty_
     heroku addons:open
     ```
   - Consoles:
+
     ```bash
     $ heroku run rails console
     $ heroku run bash
@@ -859,6 +889,7 @@ _Delete or implement this file, do not leave this file empty_
 
 1. a). rename the file: logo.svg to => \_logo.html.erb              b). use under main html view: ```ruby <%= render :partial => 'path/logo' %>```
 2. a). see below ↓ [inner controller]						                    b). use under main html view: ```ruby <%= svg 'logo' %>```
+
       ```ruby
       def svg(name)
         file_path = "#{Rails.root}/app/assets/images/#{name}.svg"   #or another path
@@ -932,7 +963,8 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
   8. Add main_app.main_app_path or main_app.root_path if needed
   9. For add devise:
     - Installation
-      - add gem into gemspec
+      - add gem into gemspec:
+
         ```ruby
         Gem::Specification.new do |s|
           s.add_dependency "devise"
@@ -942,7 +974,8 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
       - And generate a model if you need to : `rails generate devise MODEL`
         - add `require 'devise/orm/active_record'` or `extend Devise::Models` in devise model if troublesome
     - Configurations
-      - set Devise.router_name in config/initializers/devise.rb with the mountable engine's named-route
+      - set Devise.router_name in config/initializers/devise.rb with the mountable engine's named-route:
+
         ```ruby
         Devise.setup do |config|
           config.router_name = :engine_name
@@ -950,6 +983,7 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
         ```
       - set the Devise helper in routes.rb with `isolate_namespace` used : `devise_for :users, class_name: "EngineName::Controller", module: :devise`
       - Set this in config/initializers/devise.rb. For Devise's controllers to inherit from engine's and not the main controller
+
         ```ruby
         Devise.setup do |config|
           config.parent_controller = 'MyEngine::ApplicationController'
@@ -957,6 +991,7 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
         ```
       - Add `require 'devise'` to lib/my_engine.rb
       - Set the layout for specific Devise controllers using a callback in lib/my_engine.rb if needed
+
       ```ruby
       module MyEngine
         class Engine < ::Rails::Engine
@@ -967,6 +1002,7 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
       end
       ```
   10. Add in /lib/engine_name/engine.rb. To avoid to run engine_name:install:migrations
+
     ```ruby
     initializer :append_migrations do |app|
       unless app.root.to_s.match(root.to_s)
@@ -993,7 +1029,8 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
   - transform an app to an engine two ways(1: hard refactoring, 2:rebegin with engine new )
   - engine routes from main app:  blorgh.articles_path and vice versa main app root inner engine: main_app.root_path
 
-* Configuring gem specifications
+* Configuring gem specifications:
+
 ```ruby
 Gem::Specification.new do |s|
   s.name        = 'example'                                #required	This gem's name
@@ -1045,7 +1082,8 @@ end
   5. git push origin master => error (if there aren't errors => check if sentive file has sent)
   6. git push -f origin master
 ----------------------------------------------------------------------------------------------------------------------
-<!-- ## Other
+<!--
+## Other
 ### filtered files
 #### git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch path/sensitive_data.js' --prune-empty --tag-name-filter cat -- --all
 + engines/thp/week/6/day/2/home_page/config/initializers/devise.rb
