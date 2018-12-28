@@ -1,15 +1,17 @@
 class ProjectsController < ApplicationController
     protect_from_forgery except: [:federdo_calculatrice, :googleMapsAPI_THP_P43, :html_forms]
-    @@counter = false;     def self.counter()  @@counter  end
+    @@counter = false;                def self.counter()     @@counter  end
+    @@lateral_spaces_status = false;  def self.lat_spaces()  @@lateral_spaces_status  end
 
       def initialize
           @var
       end
 
       def home
-          @@counter = !@@counter if request.post? && params[:basic_layout].nil?    #used by [un]color button
+          @@counter = !@@counter if request.post? && params[:basic_layout].nil? && params[:lateral_spaces].nil?          #used by [un]color button  (haven't params)
+          @@lateral_spaces_status = !@@lateral_spaces_status if !params[:lateral_spaces].nil?                            #used by lateral spaces button(have param)
           layout_type = params[:basic_layout].nil?? 'application' : 'application_base'
-          render action: 'home',:layout => layout_type, formats: [:html]
+          render action: 'home',:layout => layout_type
       end
 
       def scraping_facebook

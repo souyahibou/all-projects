@@ -5,7 +5,6 @@
           // $(".navbar-burger").click(function() {
           //     $(".navbar-burger").toggleClass("is-active");
           //     $(".navbar-menu").toggleClass("is-active");});
-
           // Close mobile & tablet menu on item click
           $('.navbar-item').each(function(e) { $(this).click(function(){
               if($('.navbar-burger').hasClass('is-active')){
@@ -41,7 +40,7 @@
         <span>[un]display color</span>
         <% end %>
 
-        <%= button_to main_app.projects_home_path, remote: true, method: :post, class: "button is-danger is-inverted", params: {:basic_layout => true} do %>
+        <%= button_to main_app.projects_home_path, remote: false, method: :post, class: "button is-danger is-inverted", params: {:basic_layout => true} do %>
         <span class="icon"><i class="fas fa-expand-arrows-alt"></i></span>
         <span>remove layout</span>
         <% end %>
@@ -59,6 +58,13 @@
 
   <div id="navbarLargeWindow" class="navbar-menu" >
     <div class="navbar-end"><!-- class="navbar-start" -->
+      <a class="navbar-item">
+        <%= button_to main_app.projects_home_path, remote: true, method: :post, class: "button is-warning is-inverted", params: {:lateral_spaces => true} do %>
+          <span class="icon"><i class="fas fa-expand-arrows-alt"></i></span>
+          <span>remove lateral spaces</span>
+        <% end %>
+     </a>
+
       <a class="navbar-item is-active" href= <%= main_app.projects_home_path %> >Home</a>
 
       <div class="navbar-item has-dropdown is-hoverable">
