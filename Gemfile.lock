@@ -21,6 +21,36 @@ PATH
       rails (~> 5.1.6, >= 5.1.6.1)
 
 PATH
+  remote: engines/thp/week/1/day/2/c_v
+  specs:
+    c_v (0.1.0)
+      rails (~> 5.1.6, >= 5.1.6.1)
+
+PATH
+  remote: engines/thp/week/1/day/2/cv_webpage
+  specs:
+    cv_webpage (0.1.0)
+      rails (~> 5.1.6)
+
+PATH
+  remote: engines/thp/week/1/day/3/google_page1
+  specs:
+    google_page1 (0.1.0)
+      rails (~> 5.1.6, >= 5.1.6.1)
+
+PATH
+  remote: engines/thp/week/1/day/4/google_page2
+  specs:
+    google_page2 (0.1.0)
+      rails (~> 5.1.6, >= 5.1.6.1)
+
+PATH
+  remote: engines/thp/week/1/day/4/mozilla_page
+  specs:
+    mozilla_page (0.1.0)
+      rails (~> 5.1.6, >= 5.1.6.1)
+
+PATH
   remote: engines/thp/week/4/day/2/je_me_presente
   specs:
     je_me_presente (0.1.0)
@@ -513,7 +543,7 @@ GEM
     unf_ext (0.0.7.5)
     warden (1.2.8)
       rack (>= 2.0.6)
-    watir (6.16.1)
+    watir (6.16.5)
       regexp_parser (~> 1.2)
       selenium-webdriver (~> 3.6)
     web-console (3.7.0)
@@ -539,11 +569,13 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.7)
   bulma-rails (~> 0.7.2)
   byebug
+  c_v!
   capybara (~> 2.13)
   coderay
   coffee-rails (~> 4.2)
   courses!
   csv
+  cv_webpage!
   devise_demo!
   differ
   email_viewer!
@@ -555,6 +587,8 @@ DEPENDENCIES
   geocoder
   gmail
   google_drive
+  google_page1!
+  google_page2!
   hello_engine!
   home_page!
   jbuilder (~> 2.5)
@@ -565,6 +599,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   login_password_full_master!
   movie_maker!
+  mozilla_page!
   nokogiri
   paper-pdf-parser
   pg (~> 0.18)
@@ -597,4 +632,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

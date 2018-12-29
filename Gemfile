@@ -19,6 +19,11 @@ gem 'bootstrap-sass', '3.3.7'		      #ajout
 
 #############################################################################################
 ############################ ENGINES  #################################################################
+gem 'c_v',                  path: 'engines/thp/week/1/day/2/c_v'
+gem 'cv_webpage',           path: 'engines/thp/week/1/day/2/cv_webpage'
+gem 'google_page1',         path: 'engines/thp/week/1/day/3/google_page1'
+gem 'google_page2',         path: 'engines/thp/week/1/day/4/google_page2'
+gem 'mozilla_page',         path: 'engines/thp/week/1/day/4/mozilla_page'
 
 gem 'je_me_presente',       path: 'engines/thp/week/4/day/2/je_me_presente'   #engine
 gem 'movie_maker',          path: 'engines/thp/week/4/day/2/movie_maker'

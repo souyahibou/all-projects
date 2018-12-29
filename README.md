@@ -695,7 +695,7 @@ Cette configuration permet de generer un pdf à partir d'un fichier latex et de 
 * Ce snippet permet d'afficher le fichier de documentation README.md en conservant le format du markdown
   - [Lien 1 rails markdown highlighting](https://pdabrowski.com/blog/ruby/code-syntax-highlighting-in-rails-app/)
   - [Lien 2 rails markdown highlighting](http://www.jasonramirez.com/posts/rails-markdown-syntax-highlighting)
-  
+
 1. **PARAMÈTRE**
     - **Gem** : "redcarpet", "coderay", "rouge-rails"
     - **Buildpacks**: 0
@@ -1079,6 +1079,24 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
       end
     end
     ```
+  11. -Assets integration
+    - Add in /lib/engine_name/engine.rb. To extend file area inclusion to assets:precompile as last option
+
+    ```ruby
+    Rails.application.config.assets.precompile += ['*.js', '*.css', '**/*.js', '**/*.css', '*.jpg',
+                                '*.png', '*.ico', '*.gif', '*.woff2', '*.eot',
+                                '*.woff', '*.ttf', '*.svg']
+    ```
+    - *to get access to files in app/assets or in app/assets/any_folder you should use path /assets/file.*
+
+    - to include all css et js files (excluded by default), add in /lib/engine_name/engine.rb
+
+      ```ruby
+        initializer "engine_name.assets.precompile" do |app|
+            app.config.assets.precompile += [ Proc.new { |filename, path| path =~ /#{EngineName::Engine.root}\/app\/assets/ && %w(.js .css).include?(File.extname(filename)) }, /application.(css|js)$/ ]
+        end
+      ```
+  12. Remove useless directories
 
 ### Main APP
   1. add engines folders to a root_path (inner engines or lib folders)
@@ -1095,6 +1113,7 @@ https://jibai31.wordpress.com/2015/01/29/host-your-ovh-domain-on-heroku-dns-conf
 * Main APP to: => Engine APP
   - transform an app to an engine two ways(1: hard refactoring, 2:rebegin with engine new )
   - engine routes from main app:  blorgh.articles_path and vice versa main app root inner engine: main_app.root_path
+  - replace `Rails.root`  by  `EngineName::Engine.root`
 
 * Configuring gem specifications:
 
@@ -1148,6 +1167,16 @@ end
   4. commit "MAJ gitignore for github"
   5. git push origin master => error (if there aren't errors => check if sentive file has sent)
   6. git push -f origin master
+----------------------------------------------------------------------------------------------------------------------
+
+### Rails Install
+  1. [install rails inner ubuntu](https://gorails.com/setup/ubuntu/18.04)
+    `git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs yarn`
+  2. prerequist: some Libraries, Node.js and Yarn
+  3. Install ruby:(rbenv or rvm)
+  4. Install bundler
+  5. Install rails
+  6. Install PostgreSQL
 ----------------------------------------------------------------------------------------------------------------------
 <!--
 ## Other
@@ -1277,9 +1306,9 @@ end
 Number (week,day)| Description | Tools Used  | Other infos   | See
 :------------:   | ---------- | ------------ | :------------:|:-------------:
 01               |  Utilisation de Git       | ------------- | --------------|
-02               |  Fake CV                  | HTML, CSS     | --------------| [see](../../tree/master/app/assets/the_hacking_project/W1D2)
-03               |  Fake Google Homepage 1   | HTML, CSS     | --------------| [see](../../tree/master/app/assets/the_hacking_project/W1D3)
-04               |  Fake Google Homepage 2   | HTML, CSS, JS | --------------| [see](../../tree/master/app/assets/the_hacking_project/W1D4)
+02               |  Fake CV                  | HTML, CSS     | --------------| [see](../../tree/master/engines/thp/week/1/day/2/c_v_page/app/assets/source_code)
+03               |  Fake Google Homepage 1   | HTML, CSS     | --------------| [see](../../tree/master/engines/thp/week/1/day/3/*/app/assets/source_code)
+04               |  Fake Google Homepage 2   | HTML, CSS, JS | --------------| [see](../../tree/master/engines/thp/week/1/day/4/*/app/assets/source_code)
 05               |                           | ------------- | --------------|
 ------------     |-------------              | ------------- | --------------|
 06               | 4 Ruby Script             | Ruby classes  | --------------| [see](../../tree/master/app/services/the_hacking_project/s2_decouverte_ruby/j1_init_ruby)

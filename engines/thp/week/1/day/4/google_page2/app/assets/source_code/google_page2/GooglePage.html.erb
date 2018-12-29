@@ -1,0 +1,70 @@
+<% data_path = "google_page2" %>
+
+|<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <!-- <link rel="stylesheet" href="Style-Google.css"> -->
+    <%= stylesheet_link_tag "/assets/#{data_path}/Style-Google.css", media: "all", "data-turbolinks-track" => "reload"%>
+    <title>LE SUPER CV</title>
+  </head>
+  <body >
+
+    <header id="DebutPage">
+      <!-- <p class="bloc1"><img  src="DocGoogle/BountonConnect.png" alt="Connect Google" target="_blank"/></p>
+      <p class="bloc1"><img class="google" src="DocGoogle/LogoApps.png" alt="Applis Google" target="_blank"/></p> -->
+      <p class="bloc1"> <%= image_tag("/assets/#{data_path}/DocGoogle/BountonConnect", alt: "Logo Google", target: "_blank") %> </p>
+      <p class="bloc1"> <%= image_tag("/assets/#{data_path}/DocGoogle/LogoApps", alt: "Applis Google", target: "_blank", class:"google") %> </p>
+      <div class="bloc1">Images</div>
+      <div class="bloc1">Gmail</div>
+      <div class="bloc1"></div>
+    </header>
+
+
+    <section id="CorpsText" style="display:none">
+      <p Class="LogoGoogle">
+        <!-- <img src="DocGoogle/LogoGoogle.png" alt="Logo Google" target="_blank"/> -->
+        <%= image_tag("/assets/#{data_path}/DocGoogle/LogoGoogle", alt: "Logo Google", target: "_blank") %>
+      </p>
+
+      <div Class="rechercheBar"> </div>
+
+      <div Class="recherButtons">
+          <div I=id="Boute">
+
+          <a  class="rechercheB" href="'https://www.google.fr/#q='" class="BCstyle"> Recherche Google </a></div>
+          <div Class="rechercheB" class="BCstyle"> J'ai de la chance </div>
+      </div>
+
+
+      <div Class="PhraseDom"> Le Domaine Google.fr est disponible en :English  </div>
+
+
+    </section>
+
+
+    <section id="CorpsButt" style="display: block">
+      <button id="Bouton2Masque" class="BCstyle">
+        Veuillez pour activer la recherche
+      </button>
+    </section>
+
+
+    <footer id="FinPage">
+          <div class="bloc">Publicité</div>
+          <div class="bloc">Entreprise</div>
+          <div class="bloc">À propos</div>
+          <div class="bloc"></div>
+          <div class="bloc">Confidentialité</div>
+          <div class="bloc">Conditions</div>
+          <div class="bloc">Paramètres</div>
+    </footer>
+    <!-- <script type="text/javascript" src="scripts/mainGoogle.js"></script> -->
+    <%= javascript_include_tag "/assets/#{data_path}/scripts/mainGoogle", 'data-turbolinks-track': 'reload' %>
+      <!--balise<></>dispo-->
+  </body>
+</html><!--
+/*
+
+
+<button type="button" onclick="document.getElementById('demo').style.display='none'">Click Me!</button>
