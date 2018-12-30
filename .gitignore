@@ -53,12 +53,10 @@
 # see /engines/thp/week/6/day/4/twitter_bis/.gitignore
 /engines/thp/week/6/day/4/twitter_bis/config/application.yml
 
-/public/assets/pictures
-/public/assets/config*
 
 
 #for github uncomment && ignore
-#/app/assets/zizani/pictures/PhotoCV1.jpg
+#app/assets/zizani/pictures/PhotoCV1.jpg
 #/public
 #/engines/thp/week/6/day/2/home_page/config/initializers/devise.rb           #add inner own gitignore
 #/engines/thp/week/7/day/2/formulaire_stylay/config/initializers/devise.rb   #add inner own gitignore

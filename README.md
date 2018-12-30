@@ -107,8 +107,7 @@
   - /initializers/assets.rb:
 
   ```ruby
-  Rails.application.config.assets.precompile = [ Proc.new{ |path| !File.extname(path).in?(%w(.js .css .html .erb .md)) }, /application.(css|js)$/ ]
-  Rails.application.config.assets.precompile << Dir.glob(Rails.root.join('app', 'assets', 'thp_projects', '**/*')).grep(/[\W\w]*\.(js|css|png|jpg)$/)
+  Rails.application.config.assets.precompile = [ Proc.new { |filename, path| path =~ /app\/assets/ && !(path =~ /app\/assets\/public_data/) && !(path =~ /app\/assets\/zizani/) && !%w(.js .css .html .erb .md).include?(File.extname(filename)) }, /application.(css|js)$/, /daniele.jpg$/]
   ```
 
   - /initializers/figaro.rb:
@@ -229,6 +228,10 @@
 
 
 ## ENGINES
+  - [cv_webpage](../../tree/master/engines/thp/week/1/day/2/c_v_page/app/assets/source_code)
+  - [google_page1](../../tree/master/engines/thp/week/1/day/3/*/app/assets/source_code)
+  - [javascript](../../tree/master/engines/thp/week/1/day/4/*/app/assets/source_code)
+
   - [je_me_presente](https://github.com/souyahibou/all-projects/tree/master/engines/thp/week/4/day/2/je_me_presente)
   - [movie_maker](https://github.com/souyahibou/all-projects/engines/thp/week/4/day/2/movie_maker)
   - [re_former](https://github.com/souyahibou/all-projects/tree/master/engines/thp/week/4/day/2/re_former)
@@ -1170,6 +1173,18 @@ end
 ----------------------------------------------------------------------------------------------------------------------
 
 ### Rails Install
+  1. [install rails inner ubuntu](https://gorails.com/setup/ubuntu/18.04)
+    `git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs yarn`
+  2. prerequist: some Libraries, Node.js and Yarn
+  3. Install ruby:(rbenv or rvm)
+  4. Install bundler
+  5. Install rails
+  6. Install PostgreSQL
+
+
+----------------------------------------------------------------------------------------------------------------------
+
+### Asset
   1. [install rails inner ubuntu](https://gorails.com/setup/ubuntu/18.04)
     `git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev nodejs yarn`
   2. prerequist: some Libraries, Node.js and Yarn
