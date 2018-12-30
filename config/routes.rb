@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   match "/sinatra" => TheHackingProject::S3RubyIntermediaire::J3Poo::Hi, :anchor => false, via: [:get, :post]
 
-  mount CV::Engine,               at: "/c_v_engine",           as: :c_v1
   mount CvWebpage::Engine,        at: "/c_v_webpage_engine",   as: :c_v_webpage
   mount GooglePage1::Engine,      at: "/google_page1_engine"
   mount GooglePage2::Engine,      at: "/google_page2_engine"

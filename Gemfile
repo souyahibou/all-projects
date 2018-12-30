@@ -19,7 +19,6 @@ gem 'bootstrap-sass', '3.3.7'		      #ajout
 
 #############################################################################################
 ############################ ENGINES  #################################################################
-gem 'c_v',                  path: 'engines/thp/week/1/day/2/c_v'
 gem 'cv_webpage',           path: 'engines/thp/week/1/day/2/cv_webpage'
 gem 'google_page1',         path: 'engines/thp/week/1/day/3/google_page1'
 gem 'google_page2',         path: 'engines/thp/week/1/day/4/google_page2'

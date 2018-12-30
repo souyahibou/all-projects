@@ -21,12 +21,6 @@ PATH
       rails (~> 5.1.6, >= 5.1.6.1)
 
 PATH
-  remote: engines/thp/week/1/day/2/c_v
-  specs:
-    c_v (0.1.0)
-      rails (~> 5.1.6, >= 5.1.6.1)
-
-PATH
   remote: engines/thp/week/1/day/2/cv_webpage
   specs:
     cv_webpage (0.1.0)
@@ -569,7 +563,6 @@ DEPENDENCIES
   bootstrap-sass (= 3.3.7)
   bulma-rails (~> 0.7.2)
   byebug
-  c_v!
   capybara (~> 2.13)
   coderay
   coffee-rails (~> 4.2)

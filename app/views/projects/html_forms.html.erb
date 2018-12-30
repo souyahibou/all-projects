@@ -311,9 +311,9 @@
 				<%= select_year(2009) %>
 				<%= select_year(Time.now) %>
 
-				<% link_to "my_path", method: :delete, confirm: 'Delete?', class: 'link-delete', 'data-message' => 'Are you sure?', 'data-severity' => 'danger', :remote => true do %>
+				<%= link_to "home", method: :delete, confirm: 'Delete?', class: 'link-delete', 'data-message' => 'Are you sure?', 'data-severity' => 'danger', :remote => true do %>
 				  <span class="icon"><i class="icon-trash"></i> </span>
-					<span>delete</span>
+					<span>false delete: link to home</span>
 				<% end %>
 	</fieldset>
 
