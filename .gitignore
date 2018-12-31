@@ -53,8 +53,6 @@
 # see /engines/thp/week/6/day/4/twitter_bis/.gitignore
 /engines/thp/week/6/day/4/twitter_bis/config/application.yml
 
-/public/assets/pictures
-/public/assets/config*
 
 
 #for github uncomment && ignore

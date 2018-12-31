@@ -290,7 +290,7 @@
 				<%= hidden_field_tag :foo, "hello world" %>
 
 				<br><br>
-				
+
 				<%= "<span> html safe </span>".html_safe %>
 				<%= text_field(:person, :name) %>
 				<%= options_for_select([['Lisbon', 1], ['Madrid', 2], ]) %>
@@ -310,6 +310,11 @@
 				<%= date_select :person, :birth_date %>
 				<%= select_year(2009) %>
 				<%= select_year(Time.now) %>
+
+				<%= link_to "home", method: :delete, confirm: 'Delete?', class: 'link-delete', 'data-message' => 'Are you sure?', 'data-severity' => 'danger', :remote => true do %>
+				  <span class="icon"><i class="icon-trash"></i> </span>
+					<span>false delete: link to home</span>
+				<% end %>
 	</fieldset>
 
 

@@ -1,0 +1,8 @@
+<% if ProjectsController.counter  %> $("fieldset").addClass("box") <% else %>  $("fieldset").removeClass("box") <% end %>
+<% if ProjectsController.lat_spaces  %>
+      $("#main_container").removeClass("hero-body")
+      $("#sub_main_container").removeClass("container")
+   <% else %>
+      $("#main_container").addClass("hero-body")
+      $("#sub_main_container").addClass("container")
+<% end %>

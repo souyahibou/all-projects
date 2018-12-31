@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   match "/sinatra" => TheHackingProject::S3RubyIntermediaire::J3Poo::Hi, :anchor => false, via: [:get, :post]
 
+  mount CvWebpage::Engine,        at: "/c_v_webpage_engine",   as: :c_v_webpage
+  mount GooglePage1::Engine,      at: "/google_page1_engine"
+  mount GooglePage2::Engine,      at: "/google_page2_engine"
+  mount MozillaPage::Engine,      at: "/mozilla_page_engine"
+
   mount JeMePresente::Engine,     at: "/je_me_presente_engine"
   mount MovieMaker::Engine,       at: "/movie_maker_engine"
   mount ReFormer::Engine,         at: "/re_former_engine"
@@ -47,6 +52,10 @@ Rails.application.routes.draw do
   end
 
   match 'projects/thp/execute', via: [:get, :post]
+
+  get 'projects/displaying_status_codes', as: :status_codes
+
+  get 'projects/wiki', as: :wiki
 
   get 'projects/html_forms' => :html_forms, controller: 'projects', as: :html_forms
 

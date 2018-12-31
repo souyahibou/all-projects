@@ -1,33 +1,91 @@
-<!-- <img src= <%= File.join(Rails.root,'app/assets/zizani/pictures/PhotoCV1.jpg') %> alt="1">
-<img src= <%= File.join(Rails.root,'public/assets/zizani/pictures/1200px-Flag_of_the_United_Kingdom.png') %> alt="2">
-<img src= <%= File.join(Rails.root,'app/assets/zizani/pictures/1500px-Flag_of_Spain.png') %> alt="3">
-<img src= <%= File.join(Rails.root,'public\assets\pictures\Capture du 2018-04-28 07-44-08-c7668693a3aee8fa14bd32fb3151b5d13c56228b9cf619910c3d6c79a2841f7a.png') %> alt="6">
-<img src= "public\assets\pictures\Capture du 2018-04-28 07-44-08-c7668693a3aee8fa14bd32fb3151b5d13c56228b9cf619910c3d6c79a2841f7a.png" alt="7">
-<img src=  "C:\Users\SYB\Documents\RubyProjects\All_Projects\public\assets\pictures\Capture du 2018-04-28 07-44-08-c7668693a3aee8fa14bd32fb3151b5d13c56228b9cf619910c3d6c79a2841f7a.png" alt="8">
-<img src= <%= File.join(Rails.root,'PSA_Group_2.png') %> alt="9">
-<img src='app/assets/zizani/pictures/PSAGroup_logo.jpg' alt="10"> -->
+<ul style="display: flex; flex-direction: horizontal">
+  <li><a href="#none"> <%= image_tag "logo.png" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/1 Main Techno.jpg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/2 heroku.jpeg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/3 bulma bootstrap.png" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/4 facebook.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/6 postgresql.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/7 latex.png" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/8 twitter API.png" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/9 json.jpeg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/10 csv.jpeg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/11 Ajax.jpeg" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/12 google API.jpeg" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/13 RSpec.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/14 watir.jpeg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/15 keep calm.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/16 Regex.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/17 git brand.jpg" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/17-bis git.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/bash 1.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/bash 2.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/engrenage.jpg" %>   </a></li>
+</ul>
 
 
-<%= image_tag "logo.png", {style: 'height:50vw;width:100vw;margin-bottom:20px;'} %>
-<%= image_tag "logo.png" %>
-<%= image_tag "images-technos/1 Main Techno.jpg" %>
-<%= image_tag "images-technos/2 heroku.jpeg" %>
-<%= image_tag "images-technos/3 bulma bootstrap.png" %>
-<%= image_tag "images-technos/4 facebook.png" %>
-<%= image_tag "images-technos/6 postgresql.png" %>
-<%= image_tag "images-technos/7 latex.png" %>
-<%= image_tag "images-technos/8 twitter API.png" %>
-<%= image_tag "images-technos/9 json.jpeg" %>
-<%= image_tag "images-technos/10 csv.jpeg" %>
-<%= image_tag "images-technos/11 Ajax.jpeg" %>
-<%= image_tag "images-technos/12 google API.jpeg" %>
-<%= image_tag "images-technos/13 RSpec.png" %>
-<%= image_tag "images-technos/14 watir.jpeg" %>
-<%= image_tag "images-technos/15 keep calm.png" %>
-<%= image_tag "images-technos/16 Regex.png" %>
-<%= image_tag "images-technos/17 git brand.jpg" %>
-<%= image_tag "images-technos/17-bis git.png" %>
-<%= image_tag "images-technos/bash 1.png" %>
-<%= image_tag "images-technos/bash 2.png" %>
-<%= image_tag "images-technos/engrenage.jpg" %>
-<!-- puts each image on assets then run rails assets:precompile -->
+
+<ul id="nav" class="gallery" style="display: flex; flex-direction: horizontal; flex-wrap: wrap; justify-content: space-around;">
+  <li><a href="#none"> <%= image_tag "logo.png" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/1 Main Techno.jpg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/2 heroku.jpeg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/3 bulma bootstrap.png" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/4 facebook.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/6 postgresql.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/7 latex.png" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/8 twitter API.png" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/9 json.jpeg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/10 csv.jpeg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/11 Ajax.jpeg" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/12 google API.jpeg" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/13 RSpec.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/14 watir.jpeg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/15 keep calm.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/16 Regex.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/17 git brand.jpg" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/17-bis git.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/bash 1.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/bash 2.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/engrenage.jpg" %>   </a></li>
+</ul>
+
+
+<style media="screen">
+
+  ul.gallery li {
+    margin: 5px;
+    border: 1px solid #ccc;
+  }
+
+  ul#nav li img {
+    width: auto;
+    height: 100px;
+  }
+</style>
+
+
+<li><a href="#none"> <%= image_tag "logo.png", {style: 'height:50vw;width:100vw;margin-bottom:20px;'} %>   </a></li>
+<ul class="gallery">
+  <li><a href="#none"> <%= image_tag "logo.png" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/1 Main Techno.jpg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/2 heroku.jpeg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/3 bulma bootstrap.png" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/4 facebook.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/6 postgresql.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/7 latex.png" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/8 twitter API.png" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/9 json.jpeg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/10 csv.jpeg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/11 Ajax.jpeg" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/12 google API.jpeg" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/13 RSpec.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/14 watir.jpeg" %>   </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/15 keep calm.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/16 Regex.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/17 git brand.jpg" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/17-bis git.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/bash 1.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/bash 2.png" %>  </a></li>
+  <li><a href="#none"> <%= image_tag "images-technos/engrenage.jpg" %>   </a></li>
+</ul>
+
+<br>
