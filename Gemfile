@@ -19,6 +19,8 @@ gem 'bootstrap-sass', '3.3.7'		      #ajout
 
 #############################################################################################
 ############################ ENGINES  #################################################################
+gem 'port_folio',           path: 'engines/port_folio'
+
 gem 'cv_webpage',           path: 'engines/thp/week/1/day/2/cv_webpage'
 gem 'google_page1',         path: 'engines/thp/week/1/day/3/google_page1'
 gem 'google_page2',         path: 'engines/thp/week/1/day/4/google_page2'
@@ -64,7 +66,7 @@ gem 'login_password_full_master', path: 'engines/manifold_apps/login_password_fu
 gem 'sinatra'                     #ajout
 gem 'gmail'                       #ajout
 
-gem 'paper-pdf-parser'
+gem 'pdf-reader'
 gem 'rails-latex'                 #ajout
 #############################################################################################
 ############################ TESTING DEBUGGING CONFIG  #################################################################
